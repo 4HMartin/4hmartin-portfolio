@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Space_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { cn } from "@/lib/utils";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -27,12 +30,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${spaceMono.variable} h-full antialiased`}
+      className={cn("h-full", "antialiased", spaceGrotesk.variable, spaceMono.variable, "font-sans")}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         <Providers>
-          {children}
+          <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
         </Providers>
       </body>
     </html>
