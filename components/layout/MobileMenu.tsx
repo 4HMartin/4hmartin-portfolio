@@ -13,6 +13,7 @@ import { Mail, MenuIcon, Phone } from "lucide-react";
 
 import ImagotypeLight from "@/public/IMAGOTYPE_LIGHT.png";
 import ImagotypeDark from "@/public/IMAGOTYPE_DARK.png";
+import CustomCtaButton from "../ui/CustomCtaButton";
 
 export default function MobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
@@ -107,14 +108,23 @@ export default function MobileMenu() {
                             <NavLinks />
                         </div>
                         <div className="flex items-center justify-center mt-6">
-                            <Button
+
+                            <CustomCtaButton
+                                variant="primary"
+                                text={t('hire-me_label')}
+                                icon="MoveUpRight"
+                                target="/#contact"
+                                setIsOpen={setIsOpen}
+                            />
+
+                            {/* <Button
                                 variant="default"
                                 className="px-6 border bg-accent"
                             >
                                 <Link href={'#reservar'} onClick={() => setIsOpen(false)} className="uppercase text-xs tracking-widest">
                                     Reservar ahora
                                 </Link>
-                            </Button>
+                            </Button> */}
                         </div>
                         <div className="flex flex-col w-full items-center mt-16 gap-4">
                             <div className="flex hover:text-secondary transition-all w-full ml-4">
