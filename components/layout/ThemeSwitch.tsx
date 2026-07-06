@@ -16,10 +16,10 @@ export default function ThemeSwitch(){
     )
 
     if(resolvedTheme === 'dark'){
-        return <Sun onClick={() => setTheme('light')} />
+        return <Sun onClick={() => setTheme('light')} className="text-secondary transition-all duration-150 group-hover:text-primary"/>
     }
 
     if(resolvedTheme === 'light'){
-        return <Moon onClick={() => setTheme('dark')} />
+        return <Moon onClick={() => setTheme('dark')} className="text-secondary transition-all duration-150 group-hover:text-primary"/>
     }
 }

@@ -12,9 +12,7 @@ export default function LanguageSelector() {
 
     const languages = [
         { code: 'es', name: 'Español', flag: 'ES' },
-        { code: 'ca', name: 'Català', flag: 'CA' },
         { code: 'en', name: 'English', flag: 'GB' },
-        { code: 'de', name: 'Deutsch', flag: 'DE' },
     ];
 
     const currentLanguage = languages.find(lang => lang.code === locale);
@@ -29,14 +27,14 @@ export default function LanguageSelector() {
       {/* Botón del selector */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex items-center gap-2 px-4 py-3 w-full justify-center bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-200 lg:w-fit"
+        className="inline-flex items-center gap-2 px-4 py-3 justify-center bg-transparent transition-all duration-150 lg:w-fit group"
       >
-        <Globe className="w-4 h-4 text-gray-600" />
-        <span className="text-sm font-bold text-txt-body">
+        <Globe className="w-5 h-5 text-gray-600 transition-all duration-150 group-hover:text-primary" />
+        {/* <span className="text-sm font-bold text-txt-body">
           {currentLanguage?.flag} {currentLanguage?.name}
-        </span>
+        </span> */}
         <ChevronDown 
-          className={`w-4 h-4 text-txt-body transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-4 h-4 text-txt-body transition-transform duration-150 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
@@ -50,7 +48,7 @@ export default function LanguageSelector() {
           />
           
           {/* Menú de opciones */}
-          <div className="absolute right-0 z-20 mt-2 w-48 origin-top-right rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="absolute -right-8 z-20 mt-2 w-48 origin-top-right bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none animate-in fade-in slide-in-from-top-2 duration-200">
             <div className="py-1">
               {languages.map((language) => (
                 <button

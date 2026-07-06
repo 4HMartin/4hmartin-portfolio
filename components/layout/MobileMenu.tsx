@@ -1,19 +1,23 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { useLocale, useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { Drawer, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { ThemeImage } from "../ui/ThemeImage";
+import ThemeSwitch from "./ThemeSwitch";
 import { Button } from "@/components/ui/button";
 import LocaleSwitcher from "@/components/layout/LocaleSwitcher";
 import CornerIcons from "@/components/ui/cornerIcons";
+import CustomCtaButton from "../ui/CustomCtaButton";
 import { Mail, MenuIcon, Phone } from "lucide-react";
+import LinkedinIcon from "@/public/icons/linkedin-svgrepo-com.svg";
+import GitHubIcon from "@/public/icons/github.svg";
 
 import ImagotypeLight from "@/public/IMAGOTYPE_LIGHT.png";
 import ImagotypeDark from "@/public/IMAGOTYPE_DARK.png";
-import CustomCtaButton from "../ui/CustomCtaButton";
 
 export default function MobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
@@ -71,6 +75,26 @@ export default function MobileMenu() {
         </>
     );
 
+    // Corner icons for grid icons
+    const CornerIconsMobile = () => {
+        return (
+            <>
+                <span className="absolute -top-2.5 left-0 text-2xl text-gray-600 transition-all duration-300 group-hover:text-violet-600">
+                    ⌜
+                </span>
+                <span className="absolute -bottom-2 left-0 text-2xl text-gray-600 transition-all duration-300 group-hover:text-violet-600">
+                    ⌞
+                </span>
+                <span className="absolute -top-2.5 -right-0.5 text-2xl text-gray-600 transition-all duration-300 group-hover:text-violet-600">
+                    ⌝
+                </span>
+                <span className="absolute -bottom-2 -right-0.5 text-2xl text-gray-600 transition-all duration-300 group-hover:text-violet-600">
+                    ⌟
+                </span>
+            </>
+        )
+    }
+
     return (
         !isDesktop &&
         <div>
@@ -116,43 +140,43 @@ export default function MobileMenu() {
                                 target="/#contact"
                                 setIsOpen={setIsOpen}
                             />
-
-                            {/* <Button
-                                variant="default"
-                                className="px-6 border bg-accent"
-                            >
-                                <Link href={'#reservar'} onClick={() => setIsOpen(false)} className="uppercase text-xs tracking-widest">
-                                    Reservar ahora
-                                </Link>
-                            </Button> */}
-                        </div>
-                        <div className="flex flex-col w-full items-center mt-16 gap-4">
-                            <div className="flex hover:text-secondary transition-all w-full ml-4">
-                                <LocaleSwitcher />
-                            </div>
-                            {/* Email link */}
-                            {/* <Link href={`mailto:${contactEmail}`} onClick={() => setIsOpen(false)} className="flex flex-col items-center gap-2 text-secondary text-sm  font-light group hover:cursor-pointer">
-                                <Mail className="w-4 text-secondary pb-0.5 transition-all group-hover:text-secondary" />
-                                {contactEmail}
-                            </Link> */}
-                            {/* Phone link */}
-                            {/* <Link href={`tel:${contactPhone}`} onClick={() => setIsOpen(false)} className="flex flex-col items-center gap-2 text-secondary text-sm font-light group hover:cursor-pointer">
-                                <Phone className="w-3.5 text-secondary pb-0.5 transition-all group-hover:text-secondary" />
-                                {contactPhone}
-                            </Link> */}
                         </div>
                     </DrawerHeader>
-                    <DrawerFooter className="w-full flex items-center mb-4">
-                        {/* Social links */}
-                        <div className="flex gap-3">
-                            {/* Instagram */}
-                            {/* <Link href={`${instagramLink}`} onClick={() => setIsOpen(false)} aria-label="Visit our Instagram" className="w-10 h-10 rounded-full border border-slate-500 flex items-center justify-center transition-all duration-300 text-decoration-none group hover:border-secondary hover:bg-secondary/10 hover:text-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9b9b9b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
-                            </Link> */}
-                            {/* Facebook */}
-                            {/* <Link href={`${facebookLink}`} onClick={() => setIsOpen(false)} aria-label="Visit our Facebook" className="w-10 h-10 rounded-full border border-slate-500 flex items-center justify-center transition-all duration-300 text-decoration-none group hover:border-secondary hover:bg-secondary/10 hover:text-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9b9b9b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
-                            </Link> */}
+
+                    <DrawerFooter className="w-full grid grid-cols-2 gap-4 pb-12 place-content-center items-center">
+                        {/* Theme Switch */}
+                        <div className="relative group w-14 h-14 place-self-end flex items-center justify-center">
+                            <ThemeSwitch />
+                            <CornerIconsMobile />
+                        </div>
+                        {/* Locale Switcher */}
+                        <div className="relative group w-14 h-14 flex items-center justify-center">
+                            <LocaleSwitcher />
+                            <CornerIconsMobile />
+                        </div>
+                        {/* Linkedin link */}
+                        <div className="relative group w-14 h-14 place-self-end flex items-center justify-center">
+                            <Link href={linkedinURL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'}>
+                                <Image
+                                    src={LinkedinIcon}
+                                    alt="Linkedin icon"
+                                    width={22}
+                                    height={22}
+                                />
+                            </Link>
+                            <CornerIconsMobile />
+                        </div>
+                        {/* GitHub link */}
+                        <div className="relative group w-14 h-14 flex items-center justify-center">
+                            <Link href={githubURL ?? 'https://github.com/4HMartin'}>
+                                <Image
+                                    src={GitHubIcon}
+                                    alt="GitHub icon"
+                                    width={22}
+                                    height={22}
+                                />
+                            </Link>
+                            <CornerIconsMobile />
                         </div>
                     </DrawerFooter>
                 </DrawerContent>
