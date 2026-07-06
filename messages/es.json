@@ -1,0 +1,11 @@
+{
+    "navigation": {
+        "home_label": "inicio",
+        "about_label": "sobre mi",
+        "projects_label": "proyectos",
+        "certs_label": "certificados",
+        "skills_label": "habilidades",
+        "contact_label": "contacto",
+        "hire-me_label": "contratar"
+    }
+}

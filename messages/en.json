@@ -1,0 +1,11 @@
+{
+    "navigation": {
+        "home_label": "home",
+        "about_label": "about",
+        "projects_label": "projects",
+        "certs_label": "certs",
+        "skills_label": "skills",
+        "contact_label": "contact",
+        "hire-me_label": "hire me"
+    }
+}
