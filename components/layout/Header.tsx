@@ -10,6 +10,7 @@ import LocaleSwitcher from "./LocaleSwitcher";
 import ThemeSwitch from "./ThemeSwitch";
 import { LinkedInIcon } from "../icons/LinkedInIcon";
 import GitHubIcon from "../icons/GitHubIcon";
+import { flickerVariant } from "@/lib/animations";
 
 import ImagotypeLight from "@/public/IMAGOTYPE_LIGHT.png";
 import ImagotypeDark from "@/public/IMAGOTYPE_DARK.png";
@@ -27,7 +28,11 @@ export default function Header() {
     // Separator details
     const SeparatorDetails = ({ hiddeIcon }: { hiddeIcon?: string }) => {
         return (
-            <div className="hidden xl:flex items-center justify-center relative w-10 h-14">
+            <motion.div className="hidden xl:flex items-center justify-center relative w-10 h-14"
+                variants={flickerVariant}
+                initial="hidden"
+                animate="visible"
+            >
                 <span className="text-gray-300 dark:text-gray-800 text-xl">∷</span>
                 <span className={`${hiddeIcon === 'right' && 'hidden'} absolute -right-1 text-xl text-gray-300 dark:text-gray-800`}>
                     ⊣
@@ -47,15 +52,15 @@ export default function Header() {
                 <span className="absolute right-2 bottom-2 text-xl text-gray-300 dark:text-gray-800">
                     ⌌
                 </span>
-            </div>
+            </motion.div>
         )
     }
 
     return (
         <motion.header className="fixed top-0 w-full h-14 flex justify-between items-center bg-background border-b-[0.5px] border-gray-300 dark:border-gray-800 dark:bg-background"
-            initial={{ opacity: 0, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, filter: 'none' }}
-            transition={{ duration: 0.3, ease: 'easeIn' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'linear' }}
         >
             <MobileMenu />
 
@@ -88,35 +93,65 @@ export default function Header() {
                     >
                         {t('home_label')}
                     </Link>
-                    <span className="text-gray-300 dark:text-gray-800">∷</span>
+                    <motion.span className="text-gray-300 dark:text-gray-800"
+                        variants={flickerVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        ∷
+                    </motion.span>
                     {/* ABOUT */}
                     <Link href={'/#about'}
                         className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('about_label')}
                     </Link>
-                    <span className="text-gray-300 dark:text-gray-800">∷</span>
+                    <motion.span className="text-gray-300 dark:text-gray-800"
+                        variants={flickerVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        ∷
+                    </motion.span>
                     {/* PROJECTS */}
                     <Link href={'/#projects'}
                         className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('projects_label')}
                     </Link>
-                    <span className="text-gray-300 dark:text-gray-800">∷</span>
+                    <motion.span className="text-gray-300 dark:text-gray-800"
+                        variants={flickerVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        ∷
+                    </motion.span>
                     {/* CERTS */}
                     <Link href={'/#certs'}
                         className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('certs_label')}
                     </Link>
-                    <span className="text-gray-300 dark:text-gray-800">∷</span>
+                    <motion.span className="text-gray-300 dark:text-gray-800"
+                        variants={flickerVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        ∷
+                    </motion.span>
                     {/* SKILLS */}
                     <Link href={'/#skills'}
                         className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('skills_label')}
                     </Link>
-                    <span className="text-gray-300 dark:text-gray-800">∷</span>
+                    <motion.span className="text-gray-300 dark:text-gray-800"
+                        variants={flickerVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        ∷
+                    </motion.span>
                     {/* CONTACT */}
                     <Link href={'/#contact'}
                         className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
@@ -164,7 +199,7 @@ export default function Header() {
                     />
 
                     {/* Separator */}
-                    <SeparatorDetails hiddeIcon="right"/>
+                    <SeparatorDetails hiddeIcon="right" />
                 </div>
             </div>
         </motion.header>
