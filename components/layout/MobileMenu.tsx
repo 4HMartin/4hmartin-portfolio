@@ -4,20 +4,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { useLocale, useTranslations } from "next-intl";
-import { useTheme } from "next-themes";
 import { Drawer, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
 import { ThemeImage } from "../ui/ThemeImage";
 import ThemeSwitch from "./ThemeSwitch";
-import { Button } from "@/components/ui/button";
 import LocaleSwitcher from "@/components/layout/LocaleSwitcher";
 import CornerIcons from "@/components/ui/cornerIcons";
 import CustomCtaButton from "../ui/CustomCtaButton";
-import { Mail, MenuIcon, Phone } from "lucide-react";
-import LinkedinIcon from "@/public/icons/linkedin-svgrepo-com.svg";
-import GitHubIcon from "@/public/icons/github.svg";
+import { MenuIcon } from "lucide-react";
+import { LinkedInIcon } from "../icons/LinkedInIcon";
 
 import ImagotypeLight from "@/public/IMAGOTYPE_LIGHT.png";
 import ImagotypeDark from "@/public/IMAGOTYPE_DARK.png";
+import GitHubIcon from "../icons/GitHubIcon";
 
 export default function MobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
@@ -99,7 +97,7 @@ export default function MobileMenu() {
         !isDesktop &&
         <div>
             <Drawer swipeDirection="right" open={isOpen} onOpenChange={setIsOpen}>
-                <DrawerTrigger aria-label="Open navigation menu" className="relative h-14 w-16 ml-1 mt-1.5">
+                <DrawerTrigger aria-label="Open navigation menu" className="relative h-14 w-14 ml-1 mt-1.5">
                     <MenuIcon className="ml-4 mt-2" />
                     <CornerIcons />
                 </DrawerTrigger>
@@ -138,6 +136,8 @@ export default function MobileMenu() {
                                 text={t('hire-me_label')}
                                 icon="MoveUpRight"
                                 target="/#contact"
+                                width="w-40"
+                                height="h-10"
                                 setIsOpen={setIsOpen}
                             />
                         </div>
@@ -157,24 +157,14 @@ export default function MobileMenu() {
                         {/* Linkedin link */}
                         <div className="relative group w-14 h-14 place-self-end flex items-center justify-center">
                             <Link href={linkedinURL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'}>
-                                <Image
-                                    src={LinkedinIcon}
-                                    alt="Linkedin icon"
-                                    width={22}
-                                    height={22}
-                                />
+                                <LinkedInIcon className="w-6 h-6 text-secondary transition-all duration-150 group-hover:text-primary"/>
                             </Link>
                             <CornerIconsMobile />
                         </div>
                         {/* GitHub link */}
                         <div className="relative group w-14 h-14 flex items-center justify-center">
                             <Link href={githubURL ?? 'https://github.com/4HMartin'}>
-                                <Image
-                                    src={GitHubIcon}
-                                    alt="GitHub icon"
-                                    width={22}
-                                    height={22}
-                                />
+                                <GitHubIcon className="w-6 h-6 text-secondary transition-all duration-150 group-hover:text-primary"/>
                             </Link>
                             <CornerIconsMobile />
                         </div>
