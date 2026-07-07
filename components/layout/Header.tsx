@@ -28,19 +28,31 @@ export default function Header() {
     const SeparatorDetails = ({ hiddeIcon }: { hiddeIcon?: string }) => {
         return (
             <div className="hidden xl:flex items-center justify-center relative w-10 h-14">
-                <span className="text-gray-300 text-xl">∷</span>
-                <span className={`${hiddeIcon === 'right' && 'hidden'} absolute -right-1 text-xl text-gray-300`}>⊣</span>
-                <span className={`${hiddeIcon === 'left' && 'hidden'} absolute -left-1 text-xl text-gray-300`}>⊢</span>
-                <span className="absolute left-2 top-2 text-xl text-gray-300">⌏</span>
-                <span className="absolute right-2 top-2 text-xl text-gray-300">⌎</span>
-                <span className="absolute left-2 bottom-2 text-xl text-gray-300">⌍</span>
-                <span className="absolute right-2 bottom-2 text-xl text-gray-300">⌌</span>
+                <span className="text-gray-300 dark:text-gray-800 text-xl">∷</span>
+                <span className={`${hiddeIcon === 'right' && 'hidden'} absolute -right-1 text-xl text-gray-300 dark:text-gray-800`}>
+                    ⊣
+                </span>
+                <span className={`${hiddeIcon === 'left' && 'hidden'} absolute -left-1 text-xl text-gray-300 dark:text-gray-800`}>
+                    ⊢
+                </span>
+                <span className="absolute left-2 top-2 text-xl text-gray-300 dark:text-gray-800">
+                    ⌏
+                </span>
+                <span className="absolute right-2 top-2 text-xl text-gray-300 dark:text-gray-800">
+                    ⌎
+                </span>
+                <span className="absolute left-2 bottom-2 text-xl text-gray-300 dark:text-gray-800">
+                    ⌍
+                </span>
+                <span className="absolute right-2 bottom-2 text-xl text-gray-300 dark:text-gray-800">
+                    ⌌
+                </span>
             </div>
         )
     }
 
     return (
-        <motion.header className="fixed top-0 w-full h-14 flex justify-between items-center bg-background border-b-[0.5px] border-gray-300"
+        <motion.header className="fixed top-0 w-full h-14 flex justify-between items-center bg-background border-b-[0.5px] border-gray-300 dark:border-gray-800 dark:bg-background"
             initial={{ opacity: 0, filter: 'blur(10px)' }}
             animate={{ opacity: 1, filter: 'none' }}
             transition={{ duration: 0.3, ease: 'easeIn' }}
@@ -54,12 +66,12 @@ export default function Header() {
 
                 {/* Imagotype */}
                 <Link href={'/#hero'} aria-label="4HMartin Portfolio - Home" className="md:hidden xl:block xl:min-w-fit">
-                    <div className="relative h-14 overflow-hidden flex items-center">
+                    <div className="relative h-12  flex items-center">
                         <ThemeImage
                             lightSrc={ImagotypeLight}
                             darkSrc={ImagotypeDark}
                             alt="4HMartin Imagotype"
-                            className="w-36 h-20"
+                            className="w-36 p-6 brightness-0 dark:brightness-200"
                         />
                         <CornerIcons />
                     </div>
@@ -72,42 +84,42 @@ export default function Header() {
                 <nav className="relative h-14 hidden md:flex items-center px-4 lg:px-8 gap-2 lg:gap-3 xl:gap-4 text-sm lg:text-base">
                     {/* HOME-HERO */}
                     <Link href={'/#hero'}
-                        className="text-secondary uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary"
+                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('home_label')}
                     </Link>
-                    <span className="text-gray-300">∷</span>
+                    <span className="text-gray-300 dark:text-gray-800">∷</span>
                     {/* ABOUT */}
                     <Link href={'/#about'}
-                        className="text-secondary uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary"
+                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('about_label')}
                     </Link>
-                    <span className="text-gray-300">∷</span>
+                    <span className="text-gray-300 dark:text-gray-800">∷</span>
                     {/* PROJECTS */}
                     <Link href={'/#projects'}
-                        className="text-secondary uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary"
+                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('projects_label')}
                     </Link>
-                    <span className="text-gray-300">∷</span>
+                    <span className="text-gray-300 dark:text-gray-800">∷</span>
                     {/* CERTS */}
                     <Link href={'/#certs'}
-                        className="text-secondary uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary"
+                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('certs_label')}
                     </Link>
-                    <span className="text-gray-300">∷</span>
+                    <span className="text-gray-300 dark:text-gray-800">∷</span>
                     {/* SKILLS */}
                     <Link href={'/#skills'}
-                        className="text-secondary uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary"
+                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('skills_label')}
                     </Link>
-                    <span className="text-gray-300">∷</span>
+                    <span className="text-gray-300 dark:text-gray-800">∷</span>
                     {/* CONTACT */}
                     <Link href={'/#contact'}
-                        className="text-secondary uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary"
+                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('contact_label')}
                     </Link>
@@ -129,14 +141,14 @@ export default function Header() {
                 {/* Linkedin link */}
                 <div className="relative group w-8 lg:w-12 h-8 lg:h-12 place-self-end md:place-self-auto flex items-center justify-center hover:cursor-pointer">
                     <Link href={linkedinURL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'} target="_blank" className="z-10">
-                        <LinkedInIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary transition-all duration-150 group-hover:text-primary" />
+                        <LinkedInIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400" />
                     </Link>
                     <CornerIcons />
                 </div>
                 {/* GitHub link */}
                 <div className="relative group w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center hover:cursor-pointer">
                     <Link href={githubURL ?? 'https://github.com/4HMartin'} target="_blank" className="z-10">
-                        <GitHubIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary transition-all duration-150 group-hover:text-primary" />
+                        <GitHubIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400" />
                     </Link>
                     <CornerIcons />
                 </div>
@@ -148,7 +160,7 @@ export default function Header() {
                         icon="MoveUpRight"
                         target="/#contact"
                         width="w-30 lg:w-40"
-                        height="h-8 lg:h-11"
+                        height="h-8 lg:h-12"
                     />
 
                     {/* Separator */}
