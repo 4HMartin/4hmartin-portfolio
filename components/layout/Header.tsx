@@ -57,7 +57,7 @@ export default function Header() {
     }
 
     return (
-        <motion.header className="fixed top-0 w-full h-14 flex justify-between items-center bg-background border-b-[0.5px] border-gray-300 dark:border-gray-800 dark:bg-background"
+        <motion.header className="fixed z-50 top-0 w-full h-14 flex justify-between items-center bg-background border-b-[0.5px] border-gray-300 dark:border-gray-800 dark:bg-background"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3, ease: 'linear' }}
@@ -192,7 +192,7 @@ export default function Header() {
                     <CustomCtaButton
                         variant="primary"
                         text={t('hire-me_label')}
-                        icon="MoveUpRight"
+                        icon="MoveDown"
                         target="/#contact"
                         width="w-30 lg:w-40"
                         height="h-8 lg:h-12"

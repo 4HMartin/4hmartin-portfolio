@@ -7,5 +7,21 @@
         "skills_label": "skills",
         "contact_label": "contact",
         "hire-me_label": "hire me"
+    },
+    "hero_section": {
+        "hero-description_label": "A passion for web design, programming and constantly learning about new technologies.",
+        "explore-work_label": "Explore work",
+        "path_label": "Path",
+        "status_label": "Status",
+        "rendered_label": "rendered",
+        "component_label": "Component",
+        "phone_label": "phone",
+        "anodized_label": "Anodized Black",
+        "finish_label": "Finish",
+        "weight_label": "Weight",
+        "properties_label": "Properties",
+        "durable_label": "Durable",
+        "lightweight_label": "Lightweight",
+        "minimal_label": "Minimal"
     }
 }

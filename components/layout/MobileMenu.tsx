@@ -152,7 +152,7 @@ export default function MobileMenu() {
                             <CustomCtaButton
                                 variant="primary"
                                 text={t('hire-me_label')}
-                                icon="MoveUpRight"
+                                icon="MoveDown"
                                 target="/#contact"
                                 width="w-40"
                                 height="h-10"

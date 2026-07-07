@@ -62,11 +62,11 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: var(--font-mono);
+  font-family: var(--font-space-mono);
 }
 
 h1,h2,h3,h4,h5 {
-  font-family: var(--font-sans);
+  font-family: var(--font-space-grotesk);
 }
 
 :root {
@@ -151,5 +151,8 @@ h1,h2,h3,h4,h5 {
   }
   html {
     @apply font-mono;
+  }
+  h1,h2,h3,h4 {
+    @apply font-sans
   }
 }
