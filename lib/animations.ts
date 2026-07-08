@@ -16,3 +16,11 @@ export const flickerVariant = {
   }
 };
 
+export const fadeUp = {
+  hidden: { opacity: 0, y: 12 },
+  visible: (customDelay: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, delay: customDelay, ease: "easeOut" as EasingDefinition }
+  })
+}

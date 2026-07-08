@@ -23,5 +23,21 @@
         "durable_label": "Durable",
         "lightweight_label": "Lightweight",
         "minimal_label": "Minimal"
+    },
+    "about_section": {
+        "about-me_label": "about me",
+        "first-paragraph": "I am a full-stack developer who is passionate about web development and keen to establish myself in the software industry.",
+        "second-paragraph": "I specialize in building performant, well-architected web applications from conception to deployment — from polished React interfaces to scalable APIs and relational databases. I care deeply about code quality, developer experience, and shipping things that actually work.",
+        "third-paragraph": "Currently, I am seeking to join a dynamic technical team where I can contribute my continuous learning ability and continue to grow professionally.",
+        "download-cv_label": "Download CV",
+        "experience_label": "Experience",
+        "freelance-dev_label": "Freelance Developer",
+        "self-employed_label": "Self-employed",
+        "present_label": "present",
+        "freelance_paragraph": "Building custom web applications and websites for clients.Freelance projects has taught me the importance of good planning, enabling me to identify all the processes required to create a solution tailored to each client's needs.",
+        "web-dev_label": "Web Developer",
+        "dev_paragraph": "Management and maintenance of development and production web/mail servers, DNS config, domain transfers and project deployment. SEO and Performance + Plugins and custom front-end development for WordPress.",
+        "it-technician_label": "IT Technician",
+        "it_paragraph": "Management and maintenance of an IoT sensor monitoring platform based on the TIG stack (Telegraf, InfluxDB and Grafana). Provided technical support in a SaaS environment to ensure correct visualization and availability of data dashboards for clients."
     }
 }
