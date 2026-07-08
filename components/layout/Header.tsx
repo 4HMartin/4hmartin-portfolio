@@ -70,7 +70,7 @@ export default function Header() {
                 <SeparatorDetails hiddeIcon="left" />
 
                 {/* Imagotype */}
-                <Link href={'/#hero'} aria-label="4HMartin Portfolio - Home" className="md:hidden xl:block xl:min-w-fit">
+                <Link href={'/#hero'} aria-label="4HMartin Portfolio - Home" className="md:hidden xl:block xl:max-w-28">
                     <div className="relative h-12  flex items-center">
                         <ThemeImage
                             lightSrc={ImagotypeLight}
@@ -162,19 +162,19 @@ export default function Header() {
             </div>
 
             {/* Icons + CTA Button */}
-            <div className="hidden md:flex items-center gap-2 lg:gap-4 md:mr-4 xl:mr-0">
+            <div className="hidden md:flex items-center gap-2 2xl:gap-0 md:mr-4 lg:mr-8 xl:mr-0">
                 {/* Locale Switcher */}
-                <div className="relative group w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center hover:cursor-pointer">
+                <div className="relative group w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center hover:cursor-pointer 2xl:mr-2">
                     <LocaleSwitcher />
                     <CornerIcons />
                 </div>
                 {/* Theme Switch */}
-                <div className="relative group w-8 lg:w-12 h-8 lg:h-12 place-self-end md:place-self-auto flex items-center justify-center hover:cursor-pointer">
+                <div className="relative group w-8 lg:w-12 h-8 lg:h-12 place-self-end md:place-self-auto flex items-center justify-center hover:cursor-pointer 2xl:mr-2">
                     <ThemeSwitch />
                     <CornerIcons />
                 </div>
                 {/* Linkedin link */}
-                <div className="relative group w-8 lg:w-12 h-8 lg:h-12 place-self-end md:place-self-auto flex items-center justify-center hover:cursor-pointer">
+                <div className="relative group w-8 lg:w-12 h-8 lg:h-12 place-self-end md:place-self-auto flex items-center justify-center hover:cursor-pointer 2xl:mr-2">
                     <Link href={linkedinURL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'} target="_blank" className="z-10">
                         <LinkedInIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400" />
                     </Link>
@@ -188,13 +188,15 @@ export default function Header() {
                     <CornerIcons />
                 </div>
                 <div className="flex items-center gap-0.5">
+                    {/* Separator */}
+                    <SeparatorDetails />
+
                     {/* CTA BUTTON */}
                     <CustomCtaButton
                         variant="primary"
                         text={t('hire-me_label')}
-                        icon="MoveDown"
                         target="/#contact"
-                        width="w-30 lg:w-40"
+                        width="w-30 lg:w-[110px]"
                         height="h-8 lg:h-12"
                     />
 

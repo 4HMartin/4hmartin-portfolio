@@ -1,6 +1,6 @@
 export default function Footer(){
     return (
-        <footer>
+        <footer className="min-h-screen">
             FOOTER COMPONENT
         </footer>
     )

@@ -77,10 +77,10 @@ export default async function RootLayout({
           suppressHydrationWarning
         />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="relative min-h-full flex flex-col overflow-x-hidden">
         <Providers locale={locale} messages={messages}>
           <Header />
-          <main className="relative">
+          <main>
             <FixedLinesPattern />
             {children}
           </main>

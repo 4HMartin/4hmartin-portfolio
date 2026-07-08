@@ -5,7 +5,7 @@ import Link from "next/link";
 type CustomCtaButtonProps = {
     variant: "primary" | "secondary" | "neutral",
     text: string,
-    icon: string,
+    icon?: string,
     target: string,
     width: string,
     height: string,
@@ -14,7 +14,7 @@ type CustomCtaButtonProps = {
 
 export default function CustomCtaButton({ variant, text, icon, target, width, height, setIsOpen }: CustomCtaButtonProps) {
 
-    const IconComponent = IconMap[icon] ?? '⊹';
+    const IconComponent = icon ? IconMap[icon] : null;
 
     return (
         <Link href={`${target}`} target={`${target.startsWith('https') && '_blank'}`}>
@@ -28,7 +28,7 @@ export default function CustomCtaButton({ variant, text, icon, target, width, he
                     ${width} ${height}`
                 }
             >
-                {text} <IconComponent className="w-12" />
+                {text} {IconComponent && <IconComponent className="w-12" />}
 
                 <span className={`absolute -top-2.5 -left-0.5 text-2xl transition-all duration-300 group-hover:-top-3.5 group-hover:-left-1 group-active:top-0.5 group-active:left-2
                     ${variant === 'primary' ? 'text-violet-600' : 'text-gray-600'}`}>

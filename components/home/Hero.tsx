@@ -1,8 +1,11 @@
 "use client"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "next-intl";
+import { motion } from "motion/react";
+import { flickerVariant } from "@/lib/animations";
 import CustomCtaButton from "../ui/CustomCtaButton";
 import Link from "next/link";
 import Image from "next/image";
+import { Box } from "lucide-react";
 
 import ProfileBadge from "@/public/images/PROFILE_BADGE_V6.png";
 import M85mm from "@/public/images/85mm.png";
@@ -16,35 +19,93 @@ export default function Hero() {
     const linkedinURL = process.env.NEXT_PUBLIC_LINKEDIN_URL;
     const githubURL = process.env.NEXT_PUBLIC_GITHUB_URL;
 
-    const CornerPlusIcon = ({ position }: { position: string }) => {
+    const CornerPlusIcon = ({ position, color }: { position: string, color: string }) => {
         return (
-            <span className={`absolute ${position} text-xs text-lime-400 bg-gray-950 w-3 flex items-center justify-center rounded-full`}>
+            <span className={`absolute ${position} ${color} text-xs bg-gray-950 w-3 flex items-center justify-center rounded-full`}>
                 ⊹
             </span>
         )
     }
 
-    return (
-        <section id="hero" className="min-h-screen flex flex-col mt-14 bg-gray-950 lg:flex-row">
+    const IsometricCube = ({
+        primary, styles, animationDelay, opacity, animationDirection
+        }:{
+        primary: boolean, styles: string, animationDelay: number, opacity: number, animationDirection: string
+    }) => {
 
-            <div className="relative flex w-full border-b border-gray-800">
-                {/* VERTICAL LEFT LINE DECORATION */}
-                <div className="border-r border-gray-800 md:border-none w-7.5 min-h-full flex flex-col items-center justify-between py-2">
-                    <span className="text-lime-500">
+        const yAxis = animationDirection === 'down' ? -12 : 12;
+        const xAxis = animationDirection === 'down' ? 12 : -12;
+
+        return (
+            <motion.div className={`${primary ? 'border-lime-500 text-lime-500' : 'border-dashed border-gray-500 text-gray-500'} relative border bg-gray-950 w-10 h-10 flex items-center justify-center -rotate-45 skew-12 ${styles}`}
+                initial={{ 
+                    opacity: 0, y: yAxis, x: xAxis, skewY: 18, skewX: 18
+                }}
+                animate={{ opacity: opacity, y: 0, x: 0, skewY: 18, skewX: 18 }}
+                transition={{ ease: 'easeOut', duration: 0.4, delay: animationDelay }}
+            >
+                <CornerPlusIcon position="-top-2.5 -left-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+                <CornerPlusIcon position="-top-2.5 -right-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+                <CornerPlusIcon position="-bottom-1.75 -left-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+                <CornerPlusIcon position="-bottom-1.75 -right-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+                {primary ? '○' : '◌'}
+            </motion.div>
+        )
+    }
+
+    return (
+        <section id="hero" className="flex flex-col mt-14 bg-gray-950 lg:flex-row">
+
+            <div className="relative flex gap-0 w-full border-b border-gray-800">
+                {/* VERTICAL LEFT TEXT DECORATION */}
+                <div className="border-r border-gray-800 md:border-0 2xl:border-r 2xl:border-gray-800 w-7.5 xl:w-11 2xl:w-12.75 min-h-full flex flex-col items-center justify-between py-2">
+                    <span className="text-violet-500">
                         ⊹
                     </span>
                     <p className="[writing-mode:vertical-rl] text-[10px] tracking-widest text-gray-800">
                         2026 - FULL-STACK DEVELOPER
                     </p>
-                    <span className="text-lime-500">
+                    <span className="text-violet-500">
                         ⊹
                     </span>
                 </div>
 
+                {/* VERTICAL LEFT LINES DECORATION - VISIBLE >2XL */}
+                <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-35.5 2xl:items-center">
+                    {/* CUBES LINES TOP ◌ ○ */}
+                    <div className="w-full h-[40%] flex flex-col items-center pt-6">
+                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-30 -translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-20 -translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-10 -translate-y-7" animationDelay={1} opacity={0.4} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-0 -translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-0-translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="down"/>
+                    </div>
+
+                    {/* CUBE ISOMETRIC ICON */}
+                    <motion.div className="w-full h-[20%] flex items-center justify-center"
+                        variants={flickerVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        <Box className="w-4 h-4 text-violet-900" />
+                    </motion.div>
+
+                    {/* CUBES LINES BOTTOM */}
+                    <div className="w-full h-[40%] flex flex-col items-center pb-6">
+                        <IsometricCube primary={false} styles="z-0 translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-0 translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-10 translate-y-7" animationDelay={1} opacity={0.4} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-20 translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-30 translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="up"/>
+                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="up"/>
+                    </div>
+                </div>
+
                 {/* LEFT CONTENT */}
-                <article className="relative w-full text-gray-400 pt-10 px-2 md:px-12">
-                    <span className="md:hidden text-lime-500 absolute top-2 right-2">⊹</span>
-                    <span className="md:hidden text-lime-500 absolute bottom-2 right-2">⊹</span>
+                <article className="relative w-full text-gray-400 pt-10 px-2 md:px-12 lg:pl-14 lg:pr-4">
+                    <span className="md:hidden text-violet-500 absolute top-2 right-2">⊹</span>
+                    <span className="md:hidden text-violet-500 absolute bottom-2 right-2">⊹</span>
 
                     {/* TOP DETAILS */}
                     <div className="flex justify-between text-gray-800 text-xs">
@@ -57,13 +118,13 @@ export default function Hero() {
 
                     {/* TITLE + SHORT DESCRIPTION */}
                     <div>
-                        <h1 className="text-white text-[50px] font-bold leading-12 mb-4 w-72.5">
+                        <h1 className="text-white text-[50px] lg:text-7xl font-bold leading-12 lg:leading-18 mb-4 w-72.5">
                             HEBER MARTIN RODRIGUEZ
                         </h1>
                         <h2 className="text-violet-600 text-base mb-4">
                             FULL-STACK DEVELOPER
                         </h2>
-                        <p className="text-xs text-gray-300 mb-4 md:max-w-87.5">
+                        <p className="text-xs text-gray-300 mb-4 xs:max-w-87.5">
                             {t('hero-description_label')}
                         </p>
                     </div>
@@ -103,7 +164,7 @@ export default function Hero() {
                 </article>
 
                 {/* VERTICAL RIGHT LINE DECORATION */}
-                <div className="hidden md:flex w-7.5 min-h-full flex-col items-center justify-between py-2">
+                <div className="hidden md:flex lg:hidden w-7.5 min-h-full flex-col items-center justify-between py-2">
                     <span className="text-lime-500">
                         ⊹
                     </span>
@@ -117,20 +178,20 @@ export default function Hero() {
             </div>
 
             {/* RIGHT CONTENT */}
-            <div className="relative w-full">
+            <div className="relative w-full lg:border-l lg:border-gray-800 lg:flex lg:justify-between">
                 {/* Horizontal pattern separator */}
-                <div className="w-full h-7.5 bg-[url('/patterns/diagonal-lines-gray-300.svg')] bg-repeat opacity-20" />
+                <div className="w-full h-7.5 bg-[url('/patterns/diagonal-lines-gray-300.svg')] bg-repeat opacity-20 lg:hidden" />
 
-                <article className="relative w-full px-4 pb-6 overflow-hidden flex flex-col items-center bg-[url('/patterns/bg_image_pattern_dots.png')] bg-repeat bg-contain border-t border-gray-800">
+                <article className="relative w-full px-4 lg:px-0 lg:mr-10 pb-6 overflow-hidden flex flex-col items-center bg-[url('/patterns/bg_image_pattern_dots.png')] bg-repeat bg-contain border-t border-gray-800">
 
                     {/* DETAIL BOXES CONTAINER */}
                     <div className="absolute top-2 xs:top-6 flex items-start justify-between w-full">
                         {/* LEFT BOX DETAILS */}
-                        <div className="relative w-27.5 xs:w-32 md:w-fit border border-lime-500/40 ml-2 xs:ml-6 md:ml-23 p-1 md:py-2 md:px-4 flex flex-col gap-1 xs:gap-3">
-                            <CornerPlusIcon position="-top-2 -left-1.5" />
-                            <CornerPlusIcon position="-top-2 -right-1.5" />
-                            <CornerPlusIcon position="-bottom-2 -right-1.5" />
-                            <CornerPlusIcon position="-bottom-2 -left-1.5" />
+                        <div className="relative w-27.5 xs:w-32 md:w-fit border border-lime-500/40 ml-2 xs:ml-6 md:ml-23 lg:ml-6 p-1 md:py-2 md:px-4 flex flex-col gap-1 xs:gap-3">
+                            <CornerPlusIcon position="-top-2 -left-1.5" color="text-lime-400" />
+                            <CornerPlusIcon position="-top-2 -right-1.5" color="text-lime-400" />
+                            <CornerPlusIcon position="-bottom-2 -right-1.5" color="text-lime-400" />
+                            <CornerPlusIcon position="-bottom-2 -left-1.5" color="text-lime-400" />
 
                             <div className="flex flex-col items-start gap-0">
                                 <p className="text-[9px] xs:text-xs text-lime-500 uppercase">EMAIL</p>
@@ -147,19 +208,20 @@ export default function Hero() {
                         </div>
 
                         {/* RIGHT BOX DETAILS */}
-                        <div className="relative w-26 xs:w-31 md:w-55 border border-lime-500/40 mr-2 xs:mr-6 md:mr-23 p-1 md:py-2 md:px-4 flex flex-col md:flex-row md:flex-wrap gap-1 xs:gap-3">
-                            <CornerPlusIcon position="-top-2 -left-1.5" />
-                            <CornerPlusIcon position="-top-2 -right-1.5" />
-                            <CornerPlusIcon position="-bottom-2 -right-1.5" />
-                            <CornerPlusIcon position="-bottom-2 -left-1.5" />
-
+                        <div className="relative w-26 xs:w-31 md:w-55 lg:w-36.5 border border-lime-500/40 mr-2 xs:mr-6 md:mr-23 lg:mr-6 p-1 md:py-2 md:px-4 flex flex-col md:flex-row md:flex-wrap gap-1 xs:gap-3">
+                            <CornerPlusIcon position="-top-2 -left-1.5" color="text-lime-400" />
+                            <CornerPlusIcon position="-top-2 -right-1.5" color="text-lime-400" />
+                            <CornerPlusIcon position="-bottom-2 -right-1.5" color="text-lime-400" />
+                            <CornerPlusIcon position="-bottom-2 -left-1.5" color="text-lime-400" />
+                            {/* PATH */}
                             <div>
                                 <p className="text-[9px] xs:text-xs text-lime-500 uppercase">
                                     {t('path_label')}
                                 </p>
                                 <p className="text-[8px] xs:text-[10px] text-gray-300">/components/IDCard</p>
                             </div>
-                            <div>
+                            {/* STATUS */}
+                            <div className="lg:hidden">
                                 <p className="text-[9px] xs:text-xs text-lime-500 uppercase">
                                     {t('status_label')}
                                 </p>
@@ -167,13 +229,15 @@ export default function Hero() {
                                     {t('rendered_label')}
                                 </p>
                             </div>
+                            {/* COMPONENT */}
                             <div className="md:w-28">
                                 <p className="text-[9px] xs:text-xs text-lime-500 uppercase">
                                     {t('component_label')}
                                 </p>
                                 <p className="text-[8px] xs:text-[10px] text-gray-300">{'<IDCard />'}</p>
                             </div>
-                            <div className="hidden md:block">
+                            {/* SSR */}
+                            <div className="hidden md:block lg:hidden">
                                 <p className="text-xs text-lime-500 uppercase">SSR</p>
                                 <p className="text-[10px] text-gray-300">True</p>
                             </div>
@@ -216,7 +280,7 @@ export default function Hero() {
                         </div>
 
                         {/* CASE PROPERTIES DETAILS */}
-                        <div className="absolute top-[34%] right-[-18%] xs:right-[-22%] md:right-[-30%]">
+                        <div className="absolute top-[34%] right-[-18%] xs:right-[-22%] md:right-[-30%] lg:right-[-25%]">
                             {/* MATERIAL */}
                             <div className="relative w- flex flex-col items-start mb-4">
                                 <p className="text-[7px] xs:text-[10px] text-lime-500 uppercase tracking-wider">
@@ -265,6 +329,49 @@ export default function Hero() {
                         </div>
                     </div>
                 </article>
+
+                {/* VERTICAL RIGHT LINES DECORATION - VISIBLE >2XL */}
+                <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-37 2xl:items-center">
+                    {/* CUBES LINES TOP ◌ ○ */}
+                    <div className="w-full h-[40%] flex flex-col items-center pt-6">
+                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-30 -translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-20 -translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-10 -translate-y-7" animationDelay={1} opacity={0.4} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-0 -translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="down"/>
+                        <IsometricCube primary={false} styles="z-0 -translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="down"/>
+                    </div>
+                    {/* CUBE ISOMETRIC ICON */}
+                    <motion.div className="w-full h-[20%] flex items-center justify-center"
+                        variants={flickerVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        <Box className="w-4 h-4 text-violet-900" />
+                    </motion.div>
+                    {/* CUBES LINES BOTTOM */}
+                    <div className="w-full h-[40%] flex flex-col items-center pb-6">
+                        <IsometricCube primary={false} styles="z-0 translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-0 translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-10 translate-y-7" animationDelay={1} opacity={0.4} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-20 translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-30 translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="up"/>
+                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="up"/>
+                    </div>
+                </div>
+
+                {/* VERTICAL RIGHT TEXT DECORATION */}
+                <div className="hidden lg:flex w-7.5 xl:w-11 2xl:w-13.5 min-h-full flex-col items-center justify-between py-2 2xl:border-l 2xl:border-gray-800">
+                    <span className="text-violet-500">
+                        ⊹
+                    </span>
+                    <p className="[writing-mode:vertical-rl] text-[10px] tracking-widest text-gray-800">
+                        PORTFOLIO WEB
+                    </p>
+                    <span className="text-violet-500">
+                        ⊹
+                    </span>
+                </div>
             </div>
         </section>
     )
