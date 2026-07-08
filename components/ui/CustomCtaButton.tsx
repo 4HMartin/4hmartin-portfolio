@@ -24,7 +24,7 @@ export default function CustomCtaButton({ variant, text, icon, target, width, he
                     `relative group rounded-none uppercase font-bold tracking-widest cursor-pointer text-xs  
                     ${variant === 'primary' ? 'bg-transparent bg-[url("/patterns/diagonal-lines-button-primary.svg")] bg-repeat flex items-center gap-2 text-violet-600 hover:bg-violet-600 hover:text-white dark:hover:text-white'
                     : variant === 'secondary' ? 'bg-transparent bg-[url("/patterns/diagonal-lines-button-secondary.svg")] bg-repeat text-gray-600 hover:bg-gray-600 hover:text-white'
-                    : 'text-gray-400 flex flex-row-reverse bg-transparent border border-gray-800 border-dashed'}
+                    : 'text-gray-400 flex flex-row-reverse bg-transparent border border-gray-800 border-dashed hover:bg-gray-800 hover:text-gray-300'}
                     ${width} ${height}`
                 }
             >

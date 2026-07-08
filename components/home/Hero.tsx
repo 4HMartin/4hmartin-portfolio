@@ -21,15 +21,17 @@ export default function Hero() {
 
     const CornerPlusIcon = ({ position, color }: { position: string, color: string }) => {
         return (
-            <span className={`absolute ${position} ${color} text-xs bg-gray-950 w-3 flex items-center justify-center rounded-full`}>
+            <motion.span className={`absolute ${position} ${color} text-xs bg-gray-950 w-3 flex items-center justify-center rounded-full`}
+                variants={flickerVariant} initial="hidden" animate="visible"
+            >
                 ⊹
-            </span>
+            </motion.span>
         )
     }
 
     const IsometricCube = ({
         primary, styles, animationDelay, opacity, animationDirection
-        }:{
+    }: {
         primary: boolean, styles: string, animationDelay: number, opacity: number, animationDirection: string
     }) => {
 
@@ -38,7 +40,7 @@ export default function Hero() {
 
         return (
             <motion.div className={`${primary ? 'border-lime-500 text-lime-500' : 'border-dashed border-gray-500 text-gray-500'} relative border bg-gray-950 w-10 h-10 flex items-center justify-center -rotate-45 skew-12 ${styles}`}
-                initial={{ 
+                initial={{
                     opacity: 0, y: yAxis, x: xAxis, skewY: 18, skewX: 18
                 }}
                 animate={{ opacity: opacity, y: 0, x: 0, skewY: 18, skewX: 18 }}
@@ -58,28 +60,32 @@ export default function Hero() {
 
             <div className="relative flex gap-0 w-full border-b border-gray-800">
                 {/* VERTICAL LEFT TEXT DECORATION */}
-                <div className="border-r border-gray-800 md:border-0 2xl:border-r 2xl:border-gray-800 w-7.5 xl:w-11 2xl:w-12.75 min-h-full flex flex-col items-center justify-between py-2">
-                    <span className="text-violet-500">
+                <motion.div className="border-r border-gray-800 md:border-0 2xl:border-r 2xl:border-gray-800 w-7.5 xl:w-11 2xl:w-12.75 min-h-full flex flex-col items-center justify-between py-2"
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.6 }}
+                >
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
                         ⊹
-                    </span>
+                    </motion.span>
                     <p className="[writing-mode:vertical-rl] text-[10px] tracking-widest text-gray-800">
                         2026 - FULL-STACK DEVELOPER
                     </p>
-                    <span className="text-violet-500">
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
                         ⊹
-                    </span>
-                </div>
+                    </motion.span>
+                </motion.div>
 
                 {/* VERTICAL LEFT LINES DECORATION - VISIBLE >2XL */}
                 <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-35.5 2xl:items-center">
                     {/* CUBES LINES TOP ◌ ○ */}
                     <div className="w-full h-[40%] flex flex-col items-center pt-6">
-                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-30 -translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-20 -translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-10 -translate-y-7" animationDelay={1} opacity={0.4} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-0 -translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-0-translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="down"/>
+                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-30 -translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-20 -translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-10 -translate-y-7" animationDelay={1} opacity={0.4} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="down" />
                     </div>
 
                     {/* CUBE ISOMETRIC ICON */}
@@ -93,54 +99,84 @@ export default function Hero() {
 
                     {/* CUBES LINES BOTTOM */}
                     <div className="w-full h-[40%] flex flex-col items-center pb-6">
-                        <IsometricCube primary={false} styles="z-0 translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="up"/>
-                        <IsometricCube primary={false} styles="z-0 translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="up"/>
-                        <IsometricCube primary={false} styles="z-10 translate-y-7" animationDelay={1} opacity={0.4} animationDirection="up"/>
-                        <IsometricCube primary={false} styles="z-20 translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="up"/>
-                        <IsometricCube primary={false} styles="z-30 translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="up"/>
-                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-0 translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-0 translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-10 translate-y-7" animationDelay={1} opacity={0.4} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-20 translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-30 translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="up" />
+                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="up" />
                     </div>
                 </div>
 
                 {/* LEFT CONTENT */}
                 <article className="relative w-full text-gray-400 pt-10 px-2 md:px-12 lg:pl-14 lg:pr-4">
-                    <span className="md:hidden text-violet-500 absolute top-2 right-2">⊹</span>
-                    <span className="md:hidden text-violet-500 absolute bottom-2 right-2">⊹</span>
+                    <motion.span className="md:hidden text-violet-500 absolute top-2 right-2" variants={flickerVariant} initial="hidden" animate="visible">
+                        ⊹
+                    </motion.span>
+                    <motion.span className="md:hidden text-violet-500 absolute bottom-2 right-2" variants={flickerVariant} initial="hidden" animate="visible">
+                        ⊹
+                    </motion.span>
 
                     {/* TOP DETAILS */}
-                    <div className="flex justify-between text-gray-800 text-xs">
+                    <motion.div className="flex justify-between text-gray-800 text-xs"
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3, ease: "easeOut" }}
+                    >
                         <span>/01</span>
                         <div className="flex flex-col items-end gap-2">
                             <span>▸ PORTFOLIO_V1.0</span>
                             <span>100%</span>
                         </div>
-                    </div>
+                    </motion.div>
 
                     {/* TITLE + SHORT DESCRIPTION */}
                     <div>
-                        <h1 className="text-white text-[50px] lg:text-7xl font-bold leading-12 lg:leading-18 mb-4 w-72.5">
+                        <motion.h1 className="text-white text-[50px] lg:text-7xl font-bold leading-12 lg:leading-18 mb-4 w-72.5"
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
+                        >
                             HEBER MARTIN RODRIGUEZ
-                        </h1>
-                        <h2 className="text-violet-600 text-base mb-4">
+                        </motion.h1>
+                        <motion.h2 className="text-violet-600 text-base mb-4"
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
+                        >
                             FULL-STACK DEVELOPER
-                        </h2>
-                        <p className="text-xs text-gray-300 mb-4 xs:max-w-87.5">
+                        </motion.h2>
+                        <motion.p className="text-xs text-gray-300 mb-4 xs:max-w-87.5"
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
+                        >
                             {t('hero-description_label')}
-                        </p>
+                        </motion.p>
                     </div>
 
                     {/* BUTTONS */}
                     <div className="pb-12 md:flex md:itmes-center md:gap-4 lg:flex-col">
                         {/* Explore work button */}
-                        <CustomCtaButton
-                            variant="primary"
-                            text={t('explore-work_label')}
-                            icon="MoveDown"
-                            target="/#projects"
-                            width="w-36 lg:w-40"
-                            height="h-8 lg:h-12"
-                        />
-                        <div className="mt-4 md:mt-0 flex items-center gap-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, ease: "easeOut", delay: 0.6 }}
+                        >
+                            <CustomCtaButton
+                                variant="primary"
+                                text={t('explore-work_label')}
+                                icon="MoveDown"
+                                target="/#projects"
+                                width="w-36 lg:w-40"
+                                height="h-8 lg:h-12"
+                            />
+                        </motion.div>
+                        <motion.div className="mt-4 md:mt-0 flex items-center gap-4"
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.3, ease: "easeOut", delay: 0.8 }}
+                        >
                             {/* Linkeding button */}
                             <CustomCtaButton
                                 variant="neutral"
@@ -159,22 +195,26 @@ export default function Hero() {
                                 width="w-30 lg:w-40"
                                 height="h-8 lg:h-12"
                             />
-                        </div>
+                        </motion.div>
                     </div>
                 </article>
 
                 {/* VERTICAL RIGHT LINE DECORATION */}
-                <div className="hidden md:flex lg:hidden w-7.5 min-h-full flex-col items-center justify-between py-2">
-                    <span className="text-lime-500">
+                <motion.div className="hidden md:flex lg:hidden w-7.5 min-h-full flex-col items-center justify-between py-2"
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                >
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
                         ⊹
-                    </span>
+                    </motion.span>
                     <p className="[writing-mode:vertical-rl] text-[10px] tracking-widest text-gray-800">
                         PORTFOLIO WEB
                     </p>
-                    <span className="text-lime-500">
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
                         ⊹
-                    </span>
-                </div>
+                    </motion.span>
+                </motion.div>
             </div>
 
             {/* RIGHT CONTENT */}
@@ -187,28 +227,36 @@ export default function Hero() {
                     {/* DETAIL BOXES CONTAINER */}
                     <div className="absolute top-2 xs:top-6 flex items-start justify-between w-full">
                         {/* LEFT BOX DETAILS */}
-                        <div className="relative w-27.5 xs:w-32 md:w-fit border border-lime-500/40 ml-2 xs:ml-6 md:ml-23 lg:ml-6 p-1 md:py-2 md:px-4 flex flex-col gap-1 xs:gap-3">
+                        <motion.div className="relative w-27.5 xs:w-32 md:w-fit border border-lime-500/40 ml-2 xs:ml-6 md:ml-23 lg:ml-6 p-1 md:py-2 md:px-4 flex flex-col gap-1 xs:gap-3"
+                            initial={{ opacity: 0, y: -12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
+                        >
                             <CornerPlusIcon position="-top-2 -left-1.5" color="text-lime-400" />
                             <CornerPlusIcon position="-top-2 -right-1.5" color="text-lime-400" />
                             <CornerPlusIcon position="-bottom-2 -right-1.5" color="text-lime-400" />
                             <CornerPlusIcon position="-bottom-2 -left-1.5" color="text-lime-400" />
 
-                            <div className="flex flex-col items-start gap-0">
+                            <div className="flex flex-col items-start gap-0 overflow-hidden">
                                 <p className="text-[9px] xs:text-xs text-lime-500 uppercase">EMAIL</p>
                                 <Link href={'mailto:dev@4hmartin.com'} className="text-[8px] xs:text-xs text-gray-300">
                                     dev@4hmartin.com
                                 </Link>
                             </div>
-                            <div>
+                            <div className="overflow-hidden">
                                 <p className="text-[9px] xs:text-xs text-lime-500 uppercase">
                                     {t('phone_label')}
                                 </p>
                                 <p className="text-[8px] xs:text-xs text-gray-300">+34-640-77-44-30</p>
                             </div>
-                        </div>
+                        </motion.div>
 
                         {/* RIGHT BOX DETAILS */}
-                        <div className="relative w-26 xs:w-31 md:w-55 lg:w-36.5 border border-lime-500/40 mr-2 xs:mr-6 md:mr-23 lg:mr-6 p-1 md:py-2 md:px-4 flex flex-col md:flex-row md:flex-wrap gap-1 xs:gap-3">
+                        <motion.div className="relative w-26 xs:w-31 md:w-55 lg:w-36.5 border border-lime-500/40 mr-2 xs:mr-6 md:mr-23 lg:mr-6 p-1 md:py-2 md:px-4 flex flex-col md:flex-row md:flex-wrap gap-1 xs:gap-3"
+                            initial={{ opacity: 0, y: -12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
+                        >
                             <CornerPlusIcon position="-top-2 -left-1.5" color="text-lime-400" />
                             <CornerPlusIcon position="-top-2 -right-1.5" color="text-lime-400" />
                             <CornerPlusIcon position="-bottom-2 -right-1.5" color="text-lime-400" />
@@ -241,11 +289,15 @@ export default function Hero() {
                                 <p className="text-xs text-lime-500 uppercase">SSR</p>
                                 <p className="text-[10px] text-gray-300">True</p>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
 
                     {/* Image container */}
-                    <div className="relative w-[70vw] max-w-67.5">
+                    <motion.div className="relative w-[70vw] max-w-67.5"
+                        initial={{ opacity: 0, y: 12, x: -12 }}
+                        animate={{ opacity: 1, y: 0, x: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.3 }}
+                    >
                         {/* Main profile card image */}
                         <Image
                             src={ProfileBadge}
@@ -255,32 +307,50 @@ export default function Hero() {
                         />
 
                         {/* Height measurement 85mm */}
-                        <div className="absolute left-[-10%] top-[24%] w-[15%] h-[67%]">
+                        <motion.div className="absolute left-[-10%] top-[24%] w-[15%] h-[67%]"
+                            initial={{ opacity: 0, x: 24 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
+                        >
                             <Image
                                 src={M85mm}
                                 alt="Heber Martin Rodriguez card measurement"
                                 fill
                             />
-                        </div>
+                        </motion.div>
+
                         {/* Width measurement 54mm */}
-                        <div className="absolute bottom-[-4%] left-[5%] w-[84%] h-[13%]">
+                        <motion.div className="absolute bottom-[-4%] left-[5%] w-[84%] h-[13%]"
+                            initial={{ opacity: 0, y: -24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ ease: "easeOut", duration: 0.3, delay: 0.4 }}
+                        >
                             <Image
                                 src={M54mm}
                                 alt="Heber Martin Rodriguez card measurement"
                                 fill
                             />
-                        </div>
+                        </motion.div>
+
                         {/* Depth measurement 5mm */}
-                        <div className="absolute bottom-[-1%] right-[-19%] w-[32%] h-[6%]">
+                        <motion.div className="absolute bottom-[-1%] right-[-19%] w-[32%] h-[6%]"
+                            initial={{ opacity: 0, x: -24, y: -12 }}
+                            animate={{ opacity: 1, x: 0, y: 0 }}
+                            transition={{ ease: "easeOut", duration: 0.3, delay: 0.6 }}
+                        >
                             <Image
                                 src={M5mm}
                                 alt="Heber Martin Rodriguez card measurement"
                                 fill
                             />
-                        </div>
+                        </motion.div>
 
                         {/* CASE PROPERTIES DETAILS */}
-                        <div className="absolute top-[34%] right-[-18%] xs:right-[-22%] md:right-[-30%] lg:right-[-25%]">
+                        <motion.div className="absolute top-[34%] right-[-18%] xs:right-[-22%] md:right-[-30%] lg:right-[-25%]"
+                            initial={{ opacity: 0, y: 12, x: -12 }}
+                            animate={{ opacity: 1, y: 0, x: 0 }}
+                            transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
+                        >
                             {/* MATERIAL */}
                             <div className="relative w- flex flex-col items-start mb-4">
                                 <p className="text-[7px] xs:text-[10px] text-lime-500 uppercase tracking-wider">
@@ -326,20 +396,20 @@ export default function Hero() {
                                     ▹ {t('minimal_label')}
                                 </p>
                             </div>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </article>
 
                 {/* VERTICAL RIGHT LINES DECORATION - VISIBLE >2XL */}
                 <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-37 2xl:items-center">
                     {/* CUBES LINES TOP ◌ ○ */}
                     <div className="w-full h-[40%] flex flex-col items-center pt-6">
-                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-30 -translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-20 -translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-10 -translate-y-7" animationDelay={1} opacity={0.4} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-0 -translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="down"/>
-                        <IsometricCube primary={false} styles="z-0 -translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="down"/>
+                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-30 -translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-20 -translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-10 -translate-y-7" animationDelay={1} opacity={0.4} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="down" />
                     </div>
                     {/* CUBE ISOMETRIC ICON */}
                     <motion.div className="w-full h-[20%] flex items-center justify-center"
@@ -351,27 +421,31 @@ export default function Hero() {
                     </motion.div>
                     {/* CUBES LINES BOTTOM */}
                     <div className="w-full h-[40%] flex flex-col items-center pb-6">
-                        <IsometricCube primary={false} styles="z-0 translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="up"/>
-                        <IsometricCube primary={false} styles="z-0 translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="up"/>
-                        <IsometricCube primary={false} styles="z-10 translate-y-7" animationDelay={1} opacity={0.4} animationDirection="up"/>
-                        <IsometricCube primary={false} styles="z-20 translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="up"/>
-                        <IsometricCube primary={false} styles="z-30 translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="up"/>
-                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="up"/>
+                        <IsometricCube primary={false} styles="z-0 translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-0 translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-10 translate-y-7" animationDelay={1} opacity={0.4} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-20 translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-30 translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="up" />
+                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="up" />
                     </div>
                 </div>
 
                 {/* VERTICAL RIGHT TEXT DECORATION */}
-                <div className="hidden lg:flex w-7.5 xl:w-11 2xl:w-13.5 min-h-full flex-col items-center justify-between py-2 2xl:border-l 2xl:border-gray-800">
-                    <span className="text-violet-500">
+                <motion.div className="hidden lg:flex w-7.5 xl:w-11 2xl:w-13.5 min-h-full flex-col items-center justify-between py-2 2xl:border-l 2xl:border-gray-800"
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.6 }}
+                >
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
                         ⊹
-                    </span>
+                    </motion.span>
                     <p className="[writing-mode:vertical-rl] text-[10px] tracking-widest text-gray-800">
                         PORTFOLIO WEB
                     </p>
-                    <span className="text-violet-500">
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
                         ⊹
-                    </span>
-                </div>
+                    </motion.span>
+                </motion.div>
             </div>
         </section>
     )

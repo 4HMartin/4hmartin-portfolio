@@ -71,12 +71,12 @@ export default function Header() {
 
                 {/* Imagotype */}
                 <Link href={'/#hero'} aria-label="4HMartin Portfolio - Home" className="md:hidden xl:block xl:max-w-28">
-                    <div className="relative h-12  flex items-center">
+                    <div className="relative h-12 flex items-center">
                         <ThemeImage
                             lightSrc={ImagotypeLight}
                             darkSrc={ImagotypeDark}
                             alt="4HMartin Imagotype"
-                            className="w-36 p-6 brightness-0 dark:brightness-200"
+                            className="w-36 p-6 brightness-0 dark:brightness-200 scale-150"
                         />
                         <CornerIcons />
                     </div>
