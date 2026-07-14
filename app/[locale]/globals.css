@@ -47,17 +47,26 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
   --breakpoint-xs: 26.56rem;
+  --breakpoint-3xl: 111.25rem;
 }
 
 /**
 * Tailwind CSS Breakpoints (mobile-first)
 * Breakpoint        Min size    Padding x axis
-* xs                425 px      4 - 1rem - 16px
+* xs (custom)       425 px      4 - 1rem - 16px
 * sm                640 px      8 - 2rem - 32px
 * md                768 px      8 - 2rem - 32px
 * lg                1024 px     12 - 3rem - 48px
 * xl                1280 px     16 - 4rem - 64px
 * 2xl               1536 px
+* 3xl (custom)      1780 px / 111.25 rem
+*/
+
+/**
+* Main icons
+ ▸ ◂ ◇ ◈ ∷ ○ ◌ ▹ ⊹
+ ⊢ ⊣ ⌜ ⌞⌟  ⌝ ⇠  ◃ 
+ ⌏ ⌎ ⌍ ⌌ 
 */
 
 html { scroll-behavior: smooth; }

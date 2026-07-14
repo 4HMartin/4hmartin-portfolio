@@ -28,28 +28,28 @@ export default function Header() {
     // Separator details
     const SeparatorDetails = ({ hiddeIcon }: { hiddeIcon?: string }) => {
         return (
-            <motion.div className="hidden xl:flex items-center justify-center relative w-10 h-14"
+            <motion.div className="hidden xl:flex items-center justify-center relative w-10 h-14 cursor-default"
                 variants={flickerVariant}
                 initial="hidden"
                 animate="visible"
             >
-                <span className="text-gray-300 dark:text-gray-800 text-xl">∷</span>
-                <span className={`${hiddeIcon === 'right' && 'hidden'} absolute -right-1 text-xl text-gray-300 dark:text-gray-800`}>
+                <span className="text-gray-300 dark:text-gray-800 text-xl cursor-default">∷</span>
+                <span className={`${hiddeIcon === 'right' && 'hidden'} absolute -right-1 text-xl text-gray-300 dark:text-gray-800 cursor-default`}>
                     ⊣
                 </span>
-                <span className={`${hiddeIcon === 'left' && 'hidden'} absolute -left-1 text-xl text-gray-300 dark:text-gray-800`}>
+                <span className={`${hiddeIcon === 'left' && 'hidden'} absolute -left-1 text-xl text-gray-300 dark:text-gray-800 cursor-default`}>
                     ⊢
                 </span>
-                <span className="absolute left-2 top-2 text-xl text-gray-300 dark:text-gray-800">
+                <span className="absolute left-2 top-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
                     ⌏
                 </span>
-                <span className="absolute right-2 top-2 text-xl text-gray-300 dark:text-gray-800">
+                <span className="absolute right-2 top-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
                     ⌎
                 </span>
-                <span className="absolute left-2 bottom-2 text-xl text-gray-300 dark:text-gray-800">
+                <span className="absolute left-2 bottom-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
                     ⌍
                 </span>
-                <span className="absolute right-2 bottom-2 text-xl text-gray-300 dark:text-gray-800">
+                <span className="absolute right-2 bottom-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
                     ⌌
                 </span>
             </motion.div>
@@ -89,11 +89,11 @@ export default function Header() {
                 <nav className="relative h-14 hidden md:flex items-center px-4 lg:px-8 gap-2 lg:gap-3 xl:gap-4 text-sm lg:text-base">
                     {/* HOME-HERO */}
                     <Link href={'/#hero'}
-                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
+                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('home_label')}
                     </Link>
-                    <motion.span className="text-gray-300 dark:text-gray-800"
+                    <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
@@ -102,11 +102,11 @@ export default function Header() {
                     </motion.span>
                     {/* ABOUT */}
                     <Link href={'/#about'}
-                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
+                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('about_label')}
                     </Link>
-                    <motion.span className="text-gray-300 dark:text-gray-800"
+                    <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
@@ -115,11 +115,11 @@ export default function Header() {
                     </motion.span>
                     {/* PROJECTS */}
                     <Link href={'/#projects'}
-                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
+                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('projects_label')}
                     </Link>
-                    <motion.span className="text-gray-300 dark:text-gray-800"
+                    <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
@@ -128,11 +128,11 @@ export default function Header() {
                     </motion.span>
                     {/* CERTS */}
                     <Link href={'/#certs'}
-                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
+                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('certs_label')}
                     </Link>
-                    <motion.span className="text-gray-300 dark:text-gray-800"
+                    <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
@@ -141,11 +141,11 @@ export default function Header() {
                     </motion.span>
                     {/* SKILLS */}
                     <Link href={'/#skills'}
-                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
+                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('skills_label')}
                     </Link>
-                    <motion.span className="text-gray-300 dark:text-gray-800"
+                    <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
@@ -154,7 +154,7 @@ export default function Header() {
                     </motion.span>
                     {/* CONTACT */}
                     <Link href={'/#contact'}
-                        className="text-secondary dark:text-gray-400 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
+                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('contact_label')}
                     </Link>
@@ -176,14 +176,14 @@ export default function Header() {
                 {/* Linkedin link */}
                 <div className="relative group w-8 lg:w-12 h-8 lg:h-12 place-self-end md:place-self-auto flex items-center justify-center hover:cursor-pointer 2xl:mr-2">
                     <Link href={linkedinURL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'} target="_blank" className="z-10">
-                        <LinkedInIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400" />
+                        <LinkedInIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary dark:text-gray-300 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500" />
                     </Link>
                     <CornerIcons />
                 </div>
                 {/* GitHub link */}
                 <div className="relative group w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center hover:cursor-pointer">
                     <Link href={githubURL ?? 'https://github.com/4HMartin'} target="_blank" className="z-10">
-                        <GitHubIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400" />
+                        <GitHubIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary dark:text-gray-300 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500" />
                     </Link>
                     <CornerIcons />
                 </div>

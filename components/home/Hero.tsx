@@ -21,7 +21,7 @@ export default function Hero() {
 
     const CornerPlusIcon = ({ position, color }: { position: string, color: string }) => {
         return (
-            <motion.span className={`absolute ${position} ${color} text-xs bg-gray-950 w-3 flex items-center justify-center rounded-full`}
+            <motion.span className={`absolute ${position} ${color} text-xs bg-gray-950 w-3 flex items-center justify-center rounded-full cursor-default`}
                 variants={flickerVariant} initial="hidden" animate="visible"
             >
                 ⊹
@@ -39,7 +39,7 @@ export default function Hero() {
         const xAxis = animationDirection === 'down' ? 12 : -12;
 
         return (
-            <motion.div className={`${primary ? 'border-lime-500 text-lime-500' : 'border-dashed border-gray-500 text-gray-500'} relative border bg-gray-950 w-10 h-10 flex items-center justify-center -rotate-45 skew-12 ${styles}`}
+            <motion.div className={`${primary ? 'border-lime-500 text-lime-500' : 'border-dashed border-gray-500 text-gray-500'} relative border bg-gray-950 w-10 h-10 flex items-center justify-center -rotate-45 skew-12 cursor-default ${styles}`}
                 initial={{
                     opacity: 0, y: yAxis, x: xAxis, skewY: 18, skewX: 18
                 }}
@@ -58,7 +58,7 @@ export default function Hero() {
     return (
         <section id="hero" className="flex flex-col mt-14 bg-gray-950 lg:flex-row">
 
-            <div className="relative flex gap-0 w-full border-b border-gray-800">
+            <div className="relative flex gap-0 w-full border-b border-gray-800 2xl:border-0">
                 {/* VERTICAL LEFT TEXT DECORATION */}
                 <motion.div className="border-r border-gray-800 md:border-0 2xl:border-r 2xl:border-gray-800 w-7.5 xl:w-11 2xl:w-12.75 min-h-full flex flex-col items-center justify-between py-2"
                     initial={{ opacity: 0, x: -12 }}
@@ -139,14 +139,14 @@ export default function Hero() {
                         >
                             HEBER MARTIN RODRIGUEZ
                         </motion.h1>
-                        <motion.h2 className="text-violet-600 text-base mb-4"
+                        <motion.h2 className="text-violet-600 text-base xl:text-lg mb-4"
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
                         >
                             FULL-STACK DEVELOPER
                         </motion.h2>
-                        <motion.p className="text-xs text-gray-300 mb-4 xs:max-w-87.5"
+                        <motion.p className="text-xs xl:text-base text-gray-300 mb-4 xs:max-w-87.5"
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
@@ -218,11 +218,11 @@ export default function Hero() {
             </div>
 
             {/* RIGHT CONTENT */}
-            <div className="relative w-full lg:border-l lg:border-gray-800 lg:flex lg:justify-between">
+            <div className="relative w-full lg:border-l lg:border-dashed lg:border-gray-800 lg:flex lg:justify-between">
                 {/* Horizontal pattern separator */}
                 <div className="w-full h-7.5 bg-[url('/patterns/diagonal-lines-gray-300.svg')] bg-repeat opacity-20 lg:hidden" />
 
-                <article className="relative w-full px-4 lg:px-0 lg:mr-10 pb-6 overflow-hidden flex flex-col items-center bg-[url('/patterns/bg_image_pattern_dots.png')] bg-repeat bg-contain border-t border-gray-800">
+                <article className="relative w-full px-4 lg:px-0 lg:mr-10 pb-6 overflow-hidden flex flex-col items-center bg-[url('/patterns/bg_image_pattern_dots.png')] bg-repeat bg-contain border-t border-gray-800 2xl:border-0">
 
                     {/* DETAIL BOXES CONTAINER */}
                     <div className="absolute top-2 xs:top-6 flex items-start justify-between w-full">
@@ -238,21 +238,21 @@ export default function Hero() {
                             <CornerPlusIcon position="-bottom-2 -left-1.5" color="text-lime-400" />
 
                             <div className="flex flex-col items-start gap-0 overflow-hidden">
-                                <p className="text-[9px] xs:text-xs text-lime-500 uppercase">EMAIL</p>
-                                <Link href={'mailto:dev@4hmartin.com'} className="text-[8px] xs:text-xs text-gray-300">
+                                <p className="text-[9px] xs:text-xs xl:text-sm text-lime-500 uppercase">EMAIL</p>
+                                <Link href={'mailto:dev@4hmartin.com'} className="text-[8px] xs:text-xs xl:text-sm text-gray-300">
                                     dev@4hmartin.com
                                 </Link>
                             </div>
                             <div className="overflow-hidden">
-                                <p className="text-[9px] xs:text-xs text-lime-500 uppercase">
+                                <p className="text-[9px] xs:text-xs xl:text-sm text-lime-500 uppercase">
                                     {t('phone_label')}
                                 </p>
-                                <p className="text-[8px] xs:text-xs text-gray-300">+34-640-77-44-30</p>
+                                <p className="text-[8px] xs:text-xs xl:text-sm text-gray-300">+34-640-77-44-30</p>
                             </div>
                         </motion.div>
 
                         {/* RIGHT BOX DETAILS */}
-                        <motion.div className="relative w-26 xs:w-31 md:w-55 lg:w-36.5 border border-lime-500/40 mr-2 xs:mr-6 md:mr-23 lg:mr-6 p-1 md:py-2 md:px-4 flex flex-col md:flex-row md:flex-wrap gap-1 xs:gap-3"
+                        <motion.div className="relative w-26 xs:w-31 md:w-55 lg:w-36.5 3xl:w-70 border border-lime-500/40 mr-2 xs:mr-6 md:mr-23 lg:mr-6 p-1 md:py-2 md:px-4 flex flex-col md:flex-row md:flex-wrap gap-1 xs:gap-3"
                             initial={{ opacity: 0, y: -12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
@@ -263,31 +263,31 @@ export default function Hero() {
                             <CornerPlusIcon position="-bottom-2 -left-1.5" color="text-lime-400" />
                             {/* PATH */}
                             <div>
-                                <p className="text-[9px] xs:text-xs text-lime-500 uppercase">
+                                <p className="text-[9px] xs:text-xs 3xl:text-sm text-lime-500 uppercase">
                                     {t('path_label')}
                                 </p>
-                                <p className="text-[8px] xs:text-[10px] text-gray-300">/components/IDCard</p>
+                                <p className="text-[8px] xs:text-[10px] 3xl:text-sm text-gray-300">/components/IDCard</p>
                             </div>
                             {/* STATUS */}
-                            <div className="lg:hidden">
-                                <p className="text-[9px] xs:text-xs text-lime-500 uppercase">
+                            <div className="lg:hidden 3xl:block">
+                                <p className="text-[9px] xs:text-xs 3xl:text-sm text-lime-500 uppercase">
                                     {t('status_label')}
                                 </p>
-                                <p className="text-[8px] xs:text-[10px] text-gray-300">
+                                <p className="text-[8px] xs:text-[10px] 3xl:text-sm text-gray-300">
                                     {t('rendered_label')}
                                 </p>
                             </div>
                             {/* COMPONENT */}
                             <div className="md:w-28">
-                                <p className="text-[9px] xs:text-xs text-lime-500 uppercase">
+                                <p className="text-[9px] xs:text-xs 3xl:text-sm text-lime-500 uppercase">
                                     {t('component_label')}
                                 </p>
-                                <p className="text-[8px] xs:text-[10px] text-gray-300">{'<IDCard />'}</p>
+                                <p className="text-[8px] xs:text-[10px] 3xl:text-sm text-gray-300">{'<IDCard />'}</p>
                             </div>
                             {/* SSR */}
-                            <div className="hidden md:block lg:hidden">
-                                <p className="text-xs text-lime-500 uppercase">SSR</p>
-                                <p className="text-[10px] text-gray-300">True</p>
+                            <div className="hidden md:block lg:hidden 3xl:block">
+                                <p className="text-xs 3xl:text-sm text-lime-500 uppercase">SSR</p>
+                                <p className="text-[10px] 3xl:text-sm text-gray-300">True</p>
                             </div>
                         </motion.div>
                     </div>

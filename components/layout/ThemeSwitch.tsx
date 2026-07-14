@@ -16,10 +16,10 @@ export default function ThemeSwitch(){
     )
 
     if(resolvedTheme === 'dark'){
-        return <Sun onClick={() => setTheme('light')} className="z-10 w-6 md:w-3 lg:w-5 h-6 md:h-3 lg:h-5 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400"/>
+        return <Sun onClick={() => setTheme('light')} className="z-10 w-6 md:w-3 lg:w-5 h-6 md:h-3 lg:h-5 text-secondary dark:text-gray-300 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500"/>
     }
 
     if(resolvedTheme === 'light'){
-        return <Moon onClick={() => setTheme('dark')} className="z-10 w-6 md:w-3 lg:w-5 h-6 md:h-3 lg:h-5 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400"/>
+        return <Moon onClick={() => setTheme('dark')} className="z-10 w-6 md:w-3 lg:w-5 h-6 md:h-3 lg:h-5 text-secondary dark:text-gray-300 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500"/>
     }
 }

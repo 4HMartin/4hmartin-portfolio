@@ -29,12 +29,12 @@ export default function LanguageSelector() {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-0.5 pl-4 md:pl-2 lg:pl-3 py-3 justify-center bg-transparent transition-all duration-150 lg:w-fit group hover:cursor-pointer"
       >
-        <Globe className="w-6 md:w-3 lg:w-5 h-6 md:h-3 lg:h-5 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400" />
+        <Globe className="w-6 md:w-3 lg:w-5 h-6 md:h-3 lg:h-5 text-secondary dark:text-gray-300 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500" />
         {/* <span className="text-sm font-bold text-txt-body">
           {currentLanguage?.flag} {currentLanguage?.name}
         </span> */}
         <ChevronDown 
-          className={`w-5 md:w-3 lg:w-4 h-5 md:h-3 lg:h-4 text-secondary dark:text-gray-400 transition-transform duration-150 dark:group-hover:text-violet-400 ${isOpen ? 'rotate-180' : ''}`}
+          className={`w-5 md:w-3 lg:w-4 h-5 md:h-3 lg:h-4 text-secondary dark:text-gray-300 transition-transform duration-150 dark:group-hover:text-violet-500 ${isOpen ? 'rotate-180' : ''}`}
         />
       </button>
 
@@ -56,14 +56,14 @@ export default function LanguageSelector() {
                   onClick={() => handleLanguageChange(language.code)}
                   className={`w-full flex items-center gap-3 px-4 py-2.5 text-sm transition-colors ${
                     locale === language.code
-                      ? 'bg-primary/10 dark:bg-violet-400/10 text-primary dark:text-violet-400 font-medium'
+                      ? 'bg-primary/10 dark:bg-violet-400/10 text-primary dark:text-violet-500 font-medium'
                       : 'text-gray-700 hover:bg-gray-50'
                   }`}
                 >
                   <span className="text-xl">{language.flag}</span>
                   <span>{language.name}</span>
                   {locale === language.code && (
-                    <span className="ml-auto text-primary dark:text-violet-400">✓</span>
+                    <span className="ml-auto text-primary dark:text-violet-500">✓</span>
                   )}
                 </button>
               ))}
