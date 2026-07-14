@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!project) return {};
 
   return {
-    title: project.name,
-    description: project.shortDescription,
+    title: project.name['en'],
+    description: project.shortDescription['en'],
     openGraph: {
       images: [project.mainGif],
     },
@@ -32,8 +32,12 @@ export default async function ProjectPage({ params }: Props) {
   if (!project) notFound();
 
   return (
-    <main>
+    <section className="min-h-screen flex flex-col gap-4 items-center justify-center">
       {/* ProjectHero, TechStackBadges, KeyFeaturesList, etc. */}
-    </main>
+      <h1 className="text-gray-800 dark:text-gray-300">
+        PROJECT PAGE
+      </h1>
+      <h2>{project.name['en']}</h2>
+    </section>
   );
 }

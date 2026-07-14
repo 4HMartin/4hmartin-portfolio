@@ -1,21 +1,22 @@
-export type ProjectCategory = "production_ready" | "in_development" | "archived";
+export type ProjectCategory = "production_ready" | "in_development" | "practice";
 export type DevelopmentType = "full-stack web app" | "frontend" | "backend" | "mobile app";
+export type Locale = "en" | "es";
 
 export interface KeyFeature {
-  key: string;
-  value: string;
+  key: Record<Locale, string>;
+  value: Record<Locale, string>;
 }
 
 export interface Project {
   slug: string; // usado para la URL: /projects/[slug]
   category: ProjectCategory;
-  name: string;
+  name: Record<Locale, string>;
   developmentType: DevelopmentType;
-  shortDescription: string;
+  shortDescription: Record<Locale, string>;
   publicUrl?: string;
   publicRepo?: string;
   mainGif: string;
-  overview: string;
+  overview: Record<Locale, string>;
   techStack: string[];
   keyFeaturesUser: KeyFeature[];
   keyFeaturesAdmin: KeyFeature[];

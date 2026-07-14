@@ -1,6 +1,7 @@
 "use client"
 import { motion } from "motion/react";
 import { fadeUp, flickerVariant } from "@/lib/animations";
+import SectionHeader from "../layout/SectionHeader";
 import { useTranslations } from "next-intl";
 import DownloadCVButton from "../ui/DownloadCVButton";
 import { ExternalLink } from "lucide-react";
@@ -11,54 +12,10 @@ export default function About() {
     const t = useTranslations('about_section');
 
     return (
-        <section id="about" className="relative bg-white dark:bg-gray-950 border-y border-gray-300 dark:border-gray-800">
+        <section id="about" className="relative bg-white dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800">
 
             {/* HEADER */}
-            <motion.header className="w-full flex items-center"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: "some" }}
-            >
-                {/* TOP LEFT CORNER ICON */}
-                <div className="hidden md:flex w-20.5 2xl:w-60 h-12.5 border-b border-dashed border-gray-300 dark:border-gray-800 items-center justify-start md:pl-2 xl:pl-3.5">
-                    <motion.span className="hidden md:block text-violet-500"
-                        variants={flickerVariant}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: "some" }}
-                    >
-                        ⊹
-                    </motion.span>
-                </div>
-
-                {/* TEXT */}
-                <div className="border-b border-gray-300 dark:border-gray-800 w-full h-8 md:h-12.5 pt-1 px-4 flex items-center bg-[url('/patterns/diagonal-lines-gray-300.svg')] dark:bg-[url('/patterns/diagonal-lines-gray-800.svg')] bg-repeat">
-                    <h2 className="text-xs uppercase tracking-wider font-bold">
-                        <motion.span className="text-violet-500 mr-0.5 md:mr-1"
-                            variants={flickerVariant}
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true }}
-                        >
-                            /02
-                        </motion.span>
-                        {t('about-me_label')}
-                    </h2>
-                </div>
-
-                {/* TOP RIGHT CORNER ICON */}
-                <div className="hidden md:flex w-20.5 2xl:w-60 h-12.5 border-b border-dashed border-gray-300 dark:border-gray-800 items-center justify-end md:pr-2 xl:pr-3.5">
-                    <motion.span className="hidden md:block text-violet-500"
-                        variants={flickerVariant}
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, amount: "some" }}
-                    >
-                        ⊹
-                    </motion.span>
-                </div>
-            </motion.header>
+            <SectionHeader parentTranslations="about_section" titleLabel="about-me_label" sectionNumber="02" />
 
             {/* CONTENT CONTAINER */}
             <div className="flex flex-col xl:flex-row items-center xl:items-start xl:gap-6 px-4 md:px-22 xl:px-26 2xl:px-52">

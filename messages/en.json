@@ -39,5 +39,14 @@
         "dev_paragraph": "Management and maintenance of development and production web/mail servers, DNS config, domain transfers and project deployment. SEO and Performance + Plugins and custom front-end development for WordPress.",
         "it-technician_label": "IT Technician",
         "it_paragraph": "Management and maintenance of an IoT sensor monitoring platform based on the TIG stack (Telegraf, InfluxDB and Grafana). Provided technical support in a SaaS environment to ensure correct visualization and availability of data dashboards for clients."
+    },
+    "projects_section": {
+        "projects_label": "projects",
+        "all_label": "all",
+        "production_label": "production_ready",
+        "practice_label": "practice",
+        "development_label": "in_development",
+        "live_label": "live",
+        "view-docs_label": "View docs"
     }
 }

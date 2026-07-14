@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from "motion/react";
+import { Link as ScrollLink } from 'react-scroll';
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import CornerIcons from "@/components/ui/cornerIcons";
@@ -22,8 +23,6 @@ export default function Header() {
 
     const linkedinURL = process.env.NEXT_PUBLIC_LINKEDIN_URL;
     const githubURL = process.env.NEXT_PUBLIC_GITHUB_URL;
-
-    // ⌏ ⌎ ⌍ ⌌ ∷ ◈
 
     // Separator details
     const SeparatorDetails = ({ hiddeIcon }: { hiddeIcon?: string }) => {
@@ -70,7 +69,7 @@ export default function Header() {
                 <SeparatorDetails hiddeIcon="left" />
 
                 {/* Imagotype */}
-                <Link href={'/#hero'} aria-label="4HMartin Portfolio - Home" className="md:hidden xl:block xl:max-w-28">
+                <ScrollLink to="hero" aria-label="4HMartin Portfolio - Home" className="md:hidden xl:block xl:max-w-28">
                     <div className="relative h-12 flex items-center">
                         <ThemeImage
                             lightSrc={ImagotypeLight}
@@ -80,7 +79,7 @@ export default function Header() {
                         />
                         <CornerIcons />
                     </div>
-                </Link>
+                </ScrollLink>
 
                 {/* Separator */}
                 <SeparatorDetails />
@@ -88,11 +87,11 @@ export default function Header() {
                 {/* Navigation */}
                 <nav className="relative h-14 hidden md:flex items-center px-4 lg:px-8 gap-2 lg:gap-3 xl:gap-4 text-sm lg:text-base">
                     {/* HOME-HERO */}
-                    <Link href={'/#hero'}
+                    <ScrollLink to="hero" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('home_label')}
-                    </Link>
+                    </ScrollLink>
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
@@ -101,11 +100,11 @@ export default function Header() {
                         ∷
                     </motion.span>
                     {/* ABOUT */}
-                    <Link href={'/#about'}
+                    <ScrollLink to="about" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('about_label')}
-                    </Link>
+                    </ScrollLink>
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
@@ -114,11 +113,11 @@ export default function Header() {
                         ∷
                     </motion.span>
                     {/* PROJECTS */}
-                    <Link href={'/#projects'}
+                    <ScrollLink to="projects" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('projects_label')}
-                    </Link>
+                    </ScrollLink>
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
@@ -127,11 +126,11 @@ export default function Header() {
                         ∷
                     </motion.span>
                     {/* CERTS */}
-                    <Link href={'/#certs'}
+                    <ScrollLink to="certs" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('certs_label')}
-                    </Link>
+                    </ScrollLink>
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
@@ -140,11 +139,11 @@ export default function Header() {
                         ∷
                     </motion.span>
                     {/* SKILLS */}
-                    <Link href={'/#skills'}
+                    <ScrollLink to="skills" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('skills_label')}
-                    </Link>
+                    </ScrollLink>
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
@@ -153,11 +152,11 @@ export default function Header() {
                         ∷
                     </motion.span>
                     {/* CONTACT */}
-                    <Link href={'/#contact'}
+                    <ScrollLink to="contact" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
                     >
                         {t('contact_label')}
-                    </Link>
+                    </ScrollLink>
                 </nav>
             </div>
 
