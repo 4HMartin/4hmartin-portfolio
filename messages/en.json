@@ -48,5 +48,10 @@
         "development_label": "in_development",
         "live_label": "live",
         "view-docs_label": "View docs"
+    },
+    "certificates_section": {
+        "certificates_label": "certificates",
+        "course-link_label": "course link",
+        "verify_label": "verify"
     }
 }

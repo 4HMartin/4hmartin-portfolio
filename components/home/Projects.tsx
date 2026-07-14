@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import { fadeUp, flickerVariant } from "@/lib/animations";
+import { fadeUp } from "@/lib/animations";
 import SectionHeader from "../layout/SectionHeader";
 import { useTranslations } from "next-intl";
 import { projects } from "@/data/projects";
@@ -58,7 +58,7 @@ export default function Projects() {
 
             {/* PROJECTS CONTAINER */}
             <article className="mb-4 px-4 md:px-22 xl:px-26 2xl:px-52">
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 xl:p-6 gap-4">
                     {filtered.map((project, index) => (
                         <motion.div
                             key={project.slug}
@@ -68,7 +68,7 @@ export default function Projects() {
                             viewport={{ once: true, amount: "some" }}
                             custom={(index + 2) * 0.2}
                         >
-                            <ProjectCard key={project.slug} project={project} />
+                            <ProjectCard project={project} />
                         </motion.div>
                     ))}
                 </div>

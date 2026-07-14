@@ -24,3 +24,15 @@ export interface Project {
   dbDiagramImage?: string;
   screenshots: string[];
 }
+
+export interface Cert {
+  slug: string;
+  name: Record<Locale, string>;
+  platform: string;
+  platformLogo: string;
+  overview: Record<Locale, string>;
+  tags: string[];
+  courseLink: string;
+  certLink: string;
+  filename: string;
+}

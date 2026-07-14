@@ -32,8 +32,8 @@ export default function ProjectCard({ project }: { project: Project; }) {
         <div className="border border-gray-200 dark:border-gray-800 hover:border-violet-300 dark:hover:border-violet-700 transition-colors flex flex-col group">
 
             {/* MAIN GIF */}
-            <div className="relative bg-violet-100 dark:bg-gray-900 aspect-video flex items-center justify-center pl-8 overflow-hidden border-b border-gray-200 dark:border-gray-800 group-hover:border-violet-300 dark:group-hover:border-violet-800 transition-colors">
-                <Link href={`/projects/${project.slug}`} className="flex flex-col items-center w-full h-[80%] -rotate-6 scale-105 transition-all duration-150 hover:scale-100">
+            <div className="relative bg-violet-100 dark:bg-violet-950 aspect-video flex items-center justify-center pl-8 overflow-hidden border-b border-gray-200 dark:border-gray-800 group-hover:border-violet-300 dark:group-hover:border-violet-800 transition-colors">
+                <Link href={`/projects/${project.slug}`} className="flex flex-col items-center w-full h-[80%] -rotate-6 scale-105 transition-all duration-300 hover:scale-100">
                     <ThemeImage
                         lightSrc={SafariUIFrameLight}
                         darkSrc={SafariUIFrameDark}
@@ -67,7 +67,7 @@ export default function ProjectCard({ project }: { project: Project; }) {
             <div className="p-4 flex flex-col gap-3 flex-1">
                 <div className="flex items-start justify-between gap-2">
                     {/* NAME */}
-                    <h3 className="text-gray-900 dark:text-gray-100 text-xs md:text-sm font-bold leading-tight">
+                    <h3 className="text-gray-900 dark:text-gray-100 text-xs lg:text-sm font-bold leading-tight">
                         {project.name[locale]}
                     </h3>
                     <Link
@@ -96,7 +96,12 @@ export default function ProjectCard({ project }: { project: Project; }) {
                     )}
                 </div>
 
-                <div className="flex items-center gap-3 pt-1 xs:pt-2 border-t border-gray-100 dark:border-gray-800">
+                {/* SEPARATOR AUX LINE */}
+                <div className="relative w-full h-2 mt-2 mb-2 md:w-full border-b border-dashed border-gray-300
+                before:content-['◂'] before:absolute before:-left-1.5 before:-top-1.25 before:text-gray-300
+                after:content-['▸'] after:absolute after:-right-1.5 after:-top-1.25 after:text-gray-300"/>
+
+                <div className="flex items-center gap-3">
                     {/* PUBLIC URL */}
                     {project.publicUrl && (
                         <Link
