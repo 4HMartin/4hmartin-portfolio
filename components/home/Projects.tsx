@@ -65,7 +65,7 @@ export default function Projects() {
                             variants={fadeUp}
                             initial="hidden"
                             whileInView="visible"
-                            viewport={{ once: true, amount: "some" }}
+                            viewport={{ once: true, amount: 0.25 }}
                             custom={(index + 2) * 0.2}
                         >
                             <ProjectCard project={project} />

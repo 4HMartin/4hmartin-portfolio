@@ -9,6 +9,7 @@ import { ThemeImage } from "../ui/ThemeImage";
 import SafariUIFrameLight from "@/public/images/safari_browser_ui_light.png";
 import SafariUIFrameDark from "@/public/images/safari_browser_ui_dark.png";
 import Image from "next/image";
+import TechBadge from "../ui/TechBadge";
 
 export default function ProjectCard({ project }: { project: Project; }) {
 
@@ -17,16 +18,6 @@ export default function ProjectCard({ project }: { project: Project; }) {
 
     const catLabel = project.category === "production_ready" ? t('production_label') :
         project.category === "practice" ? t('practice_label') : t('development_label');
-
-    function TechBadge({ name }: { name: string }) {
-        return (
-            <span
-                className="inline-block border border-violet-300 dark:border-violet-700 text-violet-500 dark:text-violet-400 text-[10px] xs:text-xs px-2 py-0.5"
-            >
-                {name}
-            </span>
-        );
-    }
 
     return (
         <div className="border border-gray-200 dark:border-gray-800 hover:border-violet-300 dark:hover:border-violet-700 transition-colors flex flex-col group">
@@ -78,15 +69,15 @@ export default function ProjectCard({ project }: { project: Project; }) {
                         <CornerIcons />
                     </Link>
                 </div>
-                
+
                 {/* SHORT DESCRIPTION */}
                 <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed flex-1">
                     {project.shortDescription[locale]}
                 </p>
-                
+
                 {/* TECH BADGES */}
                 <div className="flex flex-wrap gap-1">
-                    {project.techStack.slice(0,4).map((tech) => (
+                    {project.techStack.slice(0, 4).map((tech) => (
                         <TechBadge key={tech} name={tech} />
                     ))}
                     {project.techStack.length > 4 && (

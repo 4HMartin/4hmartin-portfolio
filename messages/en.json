@@ -53,5 +53,13 @@
         "certificates_label": "certificates",
         "course-link_label": "course link",
         "verify_label": "verify"
+    },
+    "skills_section": {
+        "typescript_info": "TypeScript is a superset of JavaScript that adds static typing, helping catch errors during development before code runs, while compiling down to plain JavaScript for the browser or Node.js.",
+        "react_info": "React is a JavaScript library for building user interfaces through reusable components, using a declarative approach and a virtual DOM to efficiently update the UI when data changes.",
+        "tailwindcss_info": "Tailwind CSS is a utility-first CSS framework that lets you style elements directly in your markup using predefined classes, avoiding the need to write custom CSS from scratch.",
+        "nextjs_info": "Next.js is a React framework that adds features like server-side rendering, static site generation, file-based routing, and API routes, making it easier to build production-ready web applications, like this portfolio.",
+        "prismaorm_info": "Prisma ORM is a database toolkit for Node.js and TypeScript that lets you define your data model in a schema file and query your database using type-safe, auto-generated client code instead of writing raw SQL.",
+        "motion_info": "Framer Motion is an animation library for React that makes it easy to add smooth transitions, gestures, and interactive animations to components using simple, declarative syntax."
     }
 }

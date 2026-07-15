@@ -2,6 +2,7 @@
 
 import { ThemeProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { ReactNode } from "react";
 
 type ProvidersProps = {
@@ -31,7 +32,9 @@ export function Providers({
                 messages={messages}
                 timeZone={timeZone}
             >
-                {children}
+                <TooltipProvider>
+                    {children}
+                </TooltipProvider>
             </NextIntlClientProvider>
         </ThemeProvider>
     );
