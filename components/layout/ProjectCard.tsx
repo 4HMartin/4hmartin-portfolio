@@ -78,7 +78,7 @@ export default function ProjectCard({ project }: { project: Project; }) {
                 {/* TECH BADGES */}
                 <div className="flex flex-wrap gap-1">
                     {project.techStack.slice(0, 4).map((tech) => (
-                        <TechBadge key={tech} name={tech} />
+                        <TechBadge key={tech} variant="primary" name={tech} />
                     ))}
                     {project.techStack.length > 4 && (
                         <span className="text-gray-400 dark:text-gray-600 text-[10px] xs:text-xs px-1">
@@ -88,9 +88,9 @@ export default function ProjectCard({ project }: { project: Project; }) {
                 </div>
 
                 {/* SEPARATOR AUX LINE */}
-                <div className="relative w-full h-2 mt-2 mb-2 md:w-full border-b border-dashed border-gray-300
-                before:content-['◂'] before:absolute before:-left-1.5 before:-top-1.25 before:text-gray-300
-                after:content-['▸'] after:absolute after:-right-1.5 after:-top-1.25 after:text-gray-300"/>
+                <div className="relative w-full h-2 mt-2 mb-2 md:w-full border-b border-dashed border-gray-300 dark:border-gray-800
+                before:content-['◂'] before:absolute before:-left-1.5 before:-top-1.25 before:text-gray-300 dark:before:text-gray-800
+                after:content-['▸'] after:absolute after:-right-1.5 after:-top-1.25 after:text-gray-300 dark:after:text-gray-800"/>
 
                 <div className="flex items-center gap-3">
                     {/* PUBLIC URL */}

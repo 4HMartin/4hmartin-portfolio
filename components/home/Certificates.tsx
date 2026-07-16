@@ -14,7 +14,7 @@ export default function Certificates() {
 
             {/* PROJECTS CONTAINER */}
             <article className="mb-4 px-4 md:px-22 xl:px-26 2xl:px-52">
-                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 xl:p-6 gap-4 pt-4 xl:pt-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 xl:py-2 gap-4 pt-4 xl:pt-10">
                     {certificates.map((cert, index) => (
                         <motion.div
                             key={cert.slug}

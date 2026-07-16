@@ -218,7 +218,11 @@ export default function Hero() {
             </div>
 
             {/* RIGHT CONTENT */}
-            <div className="relative w-full lg:border-l lg:border-dashed lg:border-gray-800 lg:flex lg:justify-between">
+            <motion.div className="relative w-full lg:border-l lg:border-dashed lg:border-gray-800 lg:flex lg:justify-between"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ ease: "easeOut", duration: 0.3 }}
+            >
                 {/* Horizontal pattern separator */}
                 <div className="w-full h-7.5 bg-[url('/patterns/diagonal-lines-gray-300.svg')] bg-repeat opacity-20 lg:hidden" />
 
@@ -446,7 +450,7 @@ export default function Hero() {
                         ⊹
                     </motion.span>
                 </motion.div>
-            </div>
+            </motion.div>
         </section>
     )
 }

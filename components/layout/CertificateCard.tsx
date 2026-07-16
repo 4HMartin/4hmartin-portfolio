@@ -35,15 +35,15 @@ export default function CertificateCard({ cert }: { cert: Cert }) {
                 <CornerIcons />
             </div>
 
-            {/* PLATFORM */}
-            <Link href={cert.courseLink} target="_blank" className="text-xs text-violet-500 capitalize">
-                {cert.platform}
-            </Link>
-
             {/* NAME */}
-            <h3 className="text-gray-900 dark:text-gray-100 text-xs md:text-sm font-bold leading-tight mb-4">
+            <h3 className="text-gray-900 dark:text-gray-100 text-xs md:text-sm font-bold leading-tight mb-1">
                 {cert.name[locale]}
             </h3>
+
+            {/* PLATFORM */}
+            <Link href={cert.courseLink} target="_blank" className="text-xs text-violet-500 capitalize mb-4">
+                {cert.platform}
+            </Link>
 
             {/* OVERVIEW */}
             <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed mb-4">
@@ -58,9 +58,9 @@ export default function CertificateCard({ cert }: { cert: Cert }) {
             </div>
 
             {/* SEPARATOR AUX LINE */}
-            <div className="relative w-full h-2 mt-3 mb-4 md:w-full border-b border-dashed border-gray-300
-                before:content-['◂'] before:absolute before:-left-1.5 before:-top-1.25 before:text-gray-300
-                after:content-['▸'] after:absolute after:-right-1.5 after:-top-1.25 after:text-gray-300"/>
+            <div className="relative w-full h-2 mt-3 mb-4 md:w-full border-b border-dashed border-gray-300 dark:border-gray-800
+                before:content-['◂'] before:absolute before:-left-1.5 before:-top-1.25 before:text-gray-300 dark:before:text-gray-800
+                after:content-['▸'] after:absolute after:-right-1.5 after:-top-1.25 after:text-gray-300 dark:after:text-gray-800"/>
             
             <div className="flex items-center justify-between">
                 {/* COURSE LINK */}

@@ -22,7 +22,7 @@ export default function SectionHeader({ parentTranslations, titleLabel, sectionN
         >
             {/* TOP LEFT CORNER ICON */}
             <div className="hidden md:flex w-20.5 2xl:w-60 h-12.5 border-y border-dashed border-gray-300 dark:border-gray-800 items-center justify-start md:pl-2 xl:pl-3.5">
-                <motion.span className="hidden md:block text-violet-500"
+                <motion.span className="hidden md:block text-violet-500 dark:text-lime-500"
                     variants={flickerVariant}
                     initial="hidden"
                     whileInView="visible"
@@ -33,8 +33,8 @@ export default function SectionHeader({ parentTranslations, titleLabel, sectionN
             </div>
 
             {/* TEXT */}
-            <div className="border-y border-gray-300 dark:border-gray-800 w-full h-8 md:h-12.5 pt-1 px-4 flex items-center bg-[url('/patterns/diagonal-lines-gray-300.svg')] dark:bg-[url('/patterns/diagonal-lines-gray-800.svg')] bg-repeat">
-                <h2 className="text-xs uppercase tracking-wider font-bold">
+            <div className="border-y border-gray-300 dark:border-gray-800 w-full h-8 md:h-12.5 pt-1 px-4 xl:px-8 flex items-center bg-[url('/patterns/diagonal-lines-gray-300.svg')] dark:bg-[url('/patterns/diagonal-lines-gray-800.svg')] bg-repeat">
+                <h2 className="text-xs uppercase tracking-wider font-bold text-gray-950 dark:text-white">
                     <motion.span className="text-violet-500 mr-0.5 md:mr-1"
                         variants={flickerVariant}
                         initial="hidden"
@@ -49,7 +49,7 @@ export default function SectionHeader({ parentTranslations, titleLabel, sectionN
 
             {/* TOP RIGHT CORNER ICON */}
             <div className="hidden md:flex w-20.5 2xl:w-60 h-12.5 border-y border-dashed border-gray-300 dark:border-gray-800 items-center justify-end md:pr-2 xl:pr-3.5">
-                <motion.span className="hidden md:block text-violet-500"
+                <motion.span className="hidden md:block text-violet-500 dark:text-lime-500"
                     variants={flickerVariant}
                     initial="hidden"
                     whileInView="visible"
