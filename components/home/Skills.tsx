@@ -53,7 +53,7 @@ export default function Skills() {
                     />
                     {/* TECH BADGES */}
                     <div className="flex items-center flex-wrap gap-1 mt-4">
-                        {SkillsData.frontend.map((skill) => ( <TechBadge key={skill} variant="secondary" name={skill}/> ))}
+                        {SkillsData.backend.map((skill) => ( <TechBadge key={skill} variant="secondary" name={skill}/> ))}
                     </div>
 
                     <CornerIcons />
@@ -75,7 +75,7 @@ export default function Skills() {
                     />
                     {/* TECH BADGES */}
                     <div className="flex items-center flex-wrap gap-1 mt-4">
-                        {SkillsData.frontend.map((skill) => ( <TechBadge key={skill} variant="accent" name={skill}/> ))}
+                        {SkillsData.learning.map((skill) => ( <TechBadge key={skill} variant="accent" name={skill}/> ))}
                     </div>
 
                     <CornerIcons />
@@ -97,7 +97,7 @@ export default function Skills() {
                     />
                     {/* TECH BADGES */}
                     <div className="flex items-center flex-wrap gap-1 mt-4">
-                        {SkillsData.frontend.map((skill) => ( <TechBadge key={skill} variant="secondary" name={skill}/> ))}
+                        {SkillsData.tools.map((skill) => ( <TechBadge key={skill} variant="secondary" name={skill}/> ))}
                     </div>
 
                     <CornerIcons />
