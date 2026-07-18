@@ -30,7 +30,7 @@ import {
 import { useTranslations } from "next-intl"
 import SubmitButton from "../ui/SubmitButton"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import CornerIcons from "../ui/cornerIcons"
 
 export function ContactForm() {
 
@@ -85,17 +85,18 @@ export function ContactForm() {
     }
 
     return (
-        <Card className="w-full">
-            <CardContent className="w-full">
-                <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)}>
-                    <FieldGroup>
+        <Card className="w-full border-none py-0 px-0">
+            <CardContent className="w-full border-none mb-8">
+                <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="border-none overflow-x-visible">
+                    <FieldGroup className="overflow-x-visible">
                         {/* NAME CONTROLLER */}
                         <Controller
                             name="name"
                             control={form.control}
                             render={({ field, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="form-name">
+                                <Field data-invalid={fieldState.invalid} className="relative">
+                                    <FieldLabel htmlFor="form-name" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 tracking-wider bg-white translate-y-4.25">
+                                        <span className="translate-y-1 text-violet-500">⌜</span>
                                         {t('name_label')}
                                     </FieldLabel>
                                     <Input
@@ -104,10 +105,14 @@ export function ContactForm() {
                                         aria-invalid={fieldState.invalid}
                                         placeholder={t('name_placeholder')}
                                         autoComplete="off"
+                                        className="relative rounded-none border-gray-200 text-xs xs:text-sm"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
                                     )}
+                                    <span className="absolute -bottom-1 left-[97%] xs:left-[98%] md:left-[98.5%] bg-white text-violet-500">
+                                        ⌟
+                                    </span>
                                 </Field>
                             )}
                         />
@@ -117,8 +122,9 @@ export function ContactForm() {
                             name="email"
                             control={form.control}
                             render={({ field, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="form-email">
+                                <Field data-invalid={fieldState.invalid} className="relative">
+                                    <FieldLabel htmlFor="form-email" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 tracking-wider bg-white translate-y-4.25">
+                                        <span className="translate-y-1 text-violet-500">⌜</span>
                                         Email
                                     </FieldLabel>
                                     <Input
@@ -127,10 +133,14 @@ export function ContactForm() {
                                         aria-invalid={fieldState.invalid}
                                         placeholder={t('email_placeholder')}
                                         autoComplete="off"
+                                        className="relative rounded-none border-gray-200 text-xs xs:text-sm"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
                                     )}
+                                    <span className="absolute -bottom-1 left-[97%] xs:left-[98%] md:left-[98.5%] bg-white text-violet-500">
+                                        ⌟
+                                    </span>
                                 </Field>
                             )}
                         />
@@ -140,8 +150,9 @@ export function ContactForm() {
                             name="subject"
                             control={form.control}
                             render={({ field, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="form-subject">
+                                <Field data-invalid={fieldState.invalid} className="relative">
+                                    <FieldLabel htmlFor="form-subject" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 tracking-wider bg-white translate-y-4.25">
+                                        <span className="translate-y-1 text-violet-500">⌜</span>
                                         {t('subject_label')}
                                     </FieldLabel>
                                     <Input
@@ -150,10 +161,14 @@ export function ContactForm() {
                                         aria-invalid={fieldState.invalid}
                                         placeholder={t('subject_placeholder')}
                                         autoComplete="off"
+                                        className="relative rounded-none border-gray-200 text-xs xs:text-sm"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
                                     )}
+                                    <span className="absolute -bottom-1 left-[97%] xs:left-[98%] md:left-[98.5%] bg-white text-violet-500">
+                                        ⌟
+                                    </span>
                                 </Field>
                             )}
                         />
@@ -163,8 +178,9 @@ export function ContactForm() {
                             name="message"
                             control={form.control}
                             render={({ field, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid}>
-                                    <FieldLabel htmlFor="form-message">
+                                <Field data-invalid={fieldState.invalid} className="relative">
+                                    <FieldLabel htmlFor="form-message" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 tracking-wider bg-white translate-y-4.25">
+                                        <span className="translate-y-1 text-violet-500">⌜</span>
                                         {t('message_label')}
                                     </FieldLabel>
                                     <InputGroup>
@@ -173,19 +189,22 @@ export function ContactForm() {
                                             id="form-message"
                                             placeholder={t('message_placeholder')}
                                             rows={6}
-                                            className="min-h-24 resize-none"
+                                            className="min-h-24 resize-none text-xs xs:text-sm"
                                             aria-invalid={fieldState.invalid}
                                             maxLength={300}
                                         />
                                         <InputGroupAddon align="block-end">
-                                            <InputGroupText className="tabular-nums">
-                                                {field.value?.length}/300 characters
+                                            <InputGroupText className="tabular-nums text-xs xs:text-sm">
+                                                {field.value?.length}/300 {t('characters_label')}
                                             </InputGroupText>
                                         </InputGroupAddon>
                                     </InputGroup>
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
                                     )}
+                                    <span className="absolute -bottom-1 left-[97%] xs:left-[98%] md:left-[98.5%] bg-white text-violet-500">
+                                        ⌟
+                                    </span>
                                 </Field>
                             )}
                         />
@@ -201,9 +220,10 @@ export function ContactForm() {
                                         id="accept-terms"
                                         checked={value}
                                         onCheckedChange={(checked) => onChange(!!checked)}
+                                        className={"rounded-none"}
                                     />
 
-                                    <FieldLabel htmlFor="accept-terms" className="text-sm text-gray-600 leading-relaxed cursor-pointer relative inline">
+                                    <FieldLabel htmlFor="accept-terms" className="text-xs xs:text-sm text-gray-600 leading-relaxed cursor-pointer relative inline">
                                         {t('terms_message_1')}{' '}
                                         <Link href="/privacy-policy" className="text-primary hover:underline text-nowrap inline-block">
                                             {t('terms_message_2')}
