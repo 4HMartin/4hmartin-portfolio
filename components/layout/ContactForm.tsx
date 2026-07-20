@@ -84,9 +84,17 @@ export function ContactForm() {
         })
     }
 
+    function BTCornerIcon() {
+        return (
+            <span className="absolute -bottom-1 left-[97%] xs:left-[98%] md:left-[98.5%] lg:left-[97%] lg:-bottom-1.5 lg:pr-1 lg:w-fit lg:text-lg bg-white dark:bg-gray-950 text-violet-500 dark:text-lime-500">
+                ⌟
+            </span>
+        )
+    }
+
     return (
-        <Card className="w-full border-none py-0 px-0">
-            <CardContent className="w-full border-none mb-8">
+        <Card className="w-full border-none py-0 px-0 dark:bg-transparent">
+            <CardContent className="w-full border-none mb-5.5">
                 <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="border-none overflow-x-visible">
                     <FieldGroup className="overflow-x-visible">
                         {/* NAME CONTROLLER */}
@@ -95,8 +103,8 @@ export function ContactForm() {
                             control={form.control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid} className="relative">
-                                    <FieldLabel htmlFor="form-name" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 tracking-wider bg-white translate-y-4.25">
-                                        <span className="translate-y-1 text-violet-500">⌜</span>
+                                    <FieldLabel htmlFor="form-name" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25">
+                                        <span className="translate-y-1 text-violet-500 dark:text-lime-500">⌜</span>
                                         {t('name_label')}
                                     </FieldLabel>
                                     <Input
@@ -105,14 +113,12 @@ export function ContactForm() {
                                         aria-invalid={fieldState.invalid}
                                         placeholder={t('name_placeholder')}
                                         autoComplete="off"
-                                        className="relative rounded-none border-gray-200 text-xs xs:text-sm"
+                                        className="relative rounded-none border-gray-200 dark:border-gray-700 text-xs xs:text-sm dark:bg-gray-950"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
                                     )}
-                                    <span className="absolute -bottom-1 left-[97%] xs:left-[98%] md:left-[98.5%] bg-white text-violet-500">
-                                        ⌟
-                                    </span>
+                                    <BTCornerIcon />
                                 </Field>
                             )}
                         />
@@ -123,8 +129,8 @@ export function ContactForm() {
                             control={form.control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid} className="relative">
-                                    <FieldLabel htmlFor="form-email" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 tracking-wider bg-white translate-y-4.25">
-                                        <span className="translate-y-1 text-violet-500">⌜</span>
+                                    <FieldLabel htmlFor="form-email" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25">
+                                        <span className="translate-y-1 text-violet-500 dark:text-lime-500">⌜</span>
                                         Email
                                     </FieldLabel>
                                     <Input
@@ -133,14 +139,12 @@ export function ContactForm() {
                                         aria-invalid={fieldState.invalid}
                                         placeholder={t('email_placeholder')}
                                         autoComplete="off"
-                                        className="relative rounded-none border-gray-200 text-xs xs:text-sm"
+                                        className="relative rounded-none border-gray-200 dark:border-gray-700 text-xs xs:text-sm dark:bg-gray-95"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
                                     )}
-                                    <span className="absolute -bottom-1 left-[97%] xs:left-[98%] md:left-[98.5%] bg-white text-violet-500">
-                                        ⌟
-                                    </span>
+                                    <BTCornerIcon />
                                 </Field>
                             )}
                         />
@@ -151,8 +155,8 @@ export function ContactForm() {
                             control={form.control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid} className="relative">
-                                    <FieldLabel htmlFor="form-subject" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 tracking-wider bg-white translate-y-4.25">
-                                        <span className="translate-y-1 text-violet-500">⌜</span>
+                                    <FieldLabel htmlFor="form-subject" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25">
+                                        <span className="translate-y-1 text-violet-500 dark:text-lime-500">⌜</span>
                                         {t('subject_label')}
                                     </FieldLabel>
                                     <Input
@@ -161,14 +165,12 @@ export function ContactForm() {
                                         aria-invalid={fieldState.invalid}
                                         placeholder={t('subject_placeholder')}
                                         autoComplete="off"
-                                        className="relative rounded-none border-gray-200 text-xs xs:text-sm"
+                                        className="relative rounded-none border-gray-200 dark:border-gray-700 text-xs xs:text-sm dark:bg-gray-95"
                                     />
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
                                     )}
-                                    <span className="absolute -bottom-1 left-[97%] xs:left-[98%] md:left-[98.5%] bg-white text-violet-500">
-                                        ⌟
-                                    </span>
+                                    <BTCornerIcon />
                                 </Field>
                             )}
                         />
@@ -179,17 +181,17 @@ export function ContactForm() {
                             control={form.control}
                             render={({ field, fieldState }) => (
                                 <Field data-invalid={fieldState.invalid} className="relative">
-                                    <FieldLabel htmlFor="form-message" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 tracking-wider bg-white translate-y-4.25">
-                                        <span className="translate-y-1 text-violet-500">⌜</span>
+                                    <FieldLabel htmlFor="form-message" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25">
+                                        <span className="translate-y-1 text-violet-500 dark:text-lime-500">⌜</span>
                                         {t('message_label')}
                                     </FieldLabel>
-                                    <InputGroup>
+                                    <InputGroup className="dark:border-gray-700 dark:bg-gray-950">
                                         <InputGroupTextarea
                                             {...field}
                                             id="form-message"
                                             placeholder={t('message_placeholder')}
                                             rows={6}
-                                            className="min-h-24 resize-none text-xs xs:text-sm"
+                                            className="min-h-24 resize-none text-xs xs:text-sm dark:bg-gray-950"
                                             aria-invalid={fieldState.invalid}
                                             maxLength={300}
                                         />
@@ -202,9 +204,7 @@ export function ContactForm() {
                                     {fieldState.invalid && (
                                         <FieldError errors={[fieldState.error]} />
                                     )}
-                                    <span className="absolute -bottom-1 left-[97%] xs:left-[98%] md:left-[98.5%] bg-white text-violet-500">
-                                        ⌟
-                                    </span>
+                                    <BTCornerIcon />
                                 </Field>
                             )}
                         />
@@ -220,16 +220,16 @@ export function ContactForm() {
                                         id="accept-terms"
                                         checked={value}
                                         onCheckedChange={(checked) => onChange(!!checked)}
-                                        className={"rounded-none"}
+                                        className={"rounded-none checked:dark:bg-violet-500"}
                                     />
 
-                                    <FieldLabel htmlFor="accept-terms" className="text-xs xs:text-sm text-gray-600 leading-relaxed cursor-pointer relative inline">
+                                    <FieldLabel htmlFor="accept-terms" className="text-xs xs:text-sm text-gray-600 dark:text-gray-400 leading-relaxed cursor-pointer relative inline">
                                         {t('terms_message_1')}{' '}
-                                        <Link href="/privacy-policy" className="text-primary hover:underline text-nowrap inline-block">
+                                        <Link href="/privacy-policy" className="text-primary dark:text-lime-500 hover:underline text-nowrap inline-block">
                                             {t('terms_message_2')}
                                         </Link>
                                         {' '}{t('terms_message_3')}{' '}
-                                        <Link href="/legal-notice" className="text-primary hover:underline">
+                                        <Link href="/legal-notice" className="text-primary dark:text-lime-500 hover:underline">
                                             {t('terms_message_4')}
                                         </Link>
                                         .
@@ -241,7 +241,7 @@ export function ContactForm() {
                     </FieldGroup>
                 </form>
             </CardContent>
-            <CardFooter>
+            <CardFooter className="bg-transparent">
                 <Field orientation="horizontal">
                     {/* SUBMIT BUTTON */}
                     <SubmitButton
