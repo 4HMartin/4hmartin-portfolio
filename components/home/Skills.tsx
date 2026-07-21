@@ -13,7 +13,7 @@ export default function Skills() {
     const t = useTranslations('skills_section');
 
     return (
-        <section id="projects" className="relative bg-white dark:bg-gray-950">
+        <section id="skills" className="relative bg-white dark:bg-gray-950">
             {/* HEADER */}
             <SectionHeader parentTranslations="skills_section" titleLabel="skills_label" sectionNumber="05" />
 

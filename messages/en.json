@@ -119,5 +119,23 @@
     "terms_message_5": "I consent to the processing of my data for sending commercial information.",
     "build_label": "Let's build something.",
     "build_description_paragraph": "Open to freelance projects, full-time positions, and interesting collaborations. Send a message and I'll get back to you within 24 hours."
+  },
+  "footer": {
+    "home_label": "home",
+    "about_label": "about",
+    "projects_label": "projects",
+    "certs_label": "certs",
+    "skills_label": "skills",
+    "contact_label": "contact",
+    "built_label": "built with",
+    "system_label": "system status",
+    "portfolio_label": "portfolio",
+    "open_work_label": "open to work",
+    "response_time_label": "response time",
+    "system_op_label": "all system operational",
+    "legals_label": "legals",
+    "legal_notice_label": "legal notice",
+    "privacy_label": "privacy policy",
+    "cookie_label": "cookie policy"
   }
 }

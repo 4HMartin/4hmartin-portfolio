@@ -99,6 +99,7 @@ export default function Header() {
                     >
                         ∷
                     </motion.span>
+
                     {/* ABOUT */}
                     <ScrollLink to="about" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
@@ -112,6 +113,7 @@ export default function Header() {
                     >
                         ∷
                     </motion.span>
+
                     {/* PROJECTS */}
                     <ScrollLink to="projects" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
@@ -125,6 +127,7 @@ export default function Header() {
                     >
                         ∷
                     </motion.span>
+
                     {/* CERTS */}
                     <ScrollLink to="certs" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
@@ -138,6 +141,7 @@ export default function Header() {
                     >
                         ∷
                     </motion.span>
+
                     {/* SKILLS */}
                     <ScrollLink to="skills" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
@@ -151,6 +155,7 @@ export default function Header() {
                     >
                         ∷
                     </motion.span>
+                    
                     {/* CONTACT */}
                     <ScrollLink to="contact" offset={-56}
                         className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"

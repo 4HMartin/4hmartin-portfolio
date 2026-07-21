@@ -11,6 +11,7 @@ import { notFound } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FixedLinesPattern from "@/components/layout/FixedLinesPattern";
+import FixedBottomBar from "@/components/layout/FixedBottomBar";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -85,6 +86,7 @@ export default async function RootLayout({
             {children}
           </main>
           <Footer />
+          <FixedBottomBar />
         </Providers>
       </body>
     </html>
