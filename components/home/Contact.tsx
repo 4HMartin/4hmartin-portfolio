@@ -64,7 +64,7 @@ export default function Contact() {
                     {/* DEV EMAIL */}
                     <div className="relative group flex fle-col gap-4 w-120 lg:w-full py-2 px-6 mb-4">
                         <Link href={`mailto:${DEV_EMAIL}`} className="flex items-center gap-4 text-gray-600 dark:text-gray-300">
-                            <Mail className="w-4 h-4 text-gray-600 dark:text-gray-100 group-hover:text-violet-500" /> {DEV_EMAIL}
+                            <Mail className="w-4 h-4 text-gray-600 dark:text-gray-100 transition-all duration-150 group-hover:text-violet-500 dark:group-hover:text-violet-500" /> {DEV_EMAIL}
                         </Link>
                         <CornerIcons />
                     </div>

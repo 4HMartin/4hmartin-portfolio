@@ -63,7 +63,7 @@ export default function ProjectCard({ project }: { project: Project; }) {
                     </h3>
                     <Link
                         href={`/projects/${project.slug}`}
-                        className="relative w-6 h-6 xs:w-8 xs:h-8 flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors shrink-0"
+                        className="relative w-6 h-6 xs:w-8 xs:h-8 flex items-center justify-center text-gray-500 dark:text-lime-500 hover:text-violet-600 dark:hover:text-lime-400 transition-colors shrink-0"
                     >
                         <ArrowUpRight className="w-4 xs:w-5" />
                         <CornerIcons />
@@ -117,7 +117,7 @@ export default function ProjectCard({ project }: { project: Project; }) {
                     {/* VIEW DETAIL LINK */}
                     <Link
                         href={`/projects/${project.slug}`}
-                        className="ml-auto text-[10px] xs:text-xs uppercase text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors"
+                        className="ml-auto text-[10px] xs:text-xs uppercase text-violet-600 dark:text-lime-500 hover:text-violet-700 dark:hover:text-lime-400 transition-colors"
                     >
                         {t('view-docs_label')} ⇢
                     </Link>

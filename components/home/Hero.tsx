@@ -5,12 +5,13 @@ import { flickerVariant } from "@/lib/animations";
 import CustomCtaButton from "../ui/CustomCtaButton";
 import Link from "next/link";
 import Image from "next/image";
-import { Box } from "lucide-react";
+import { Box, CircleDot, Locate, LocateFixed } from "lucide-react";
 
 import ProfileBadge from "@/public/images/PROFILE_BADGE_V6.png";
 import M85mm from "@/public/images/85mm.png";
 import M54mm from "@/public/images/54mm.png";
 import M5mm from "@/public/images/5mm.png";
+import ScrambleText from "../ui/ScrambleText";
 
 export default function Hero() {
 
@@ -21,6 +22,7 @@ export default function Hero() {
 
     const CornerPlusIcon = ({ position, color }: { position: string, color: string }) => {
         return (
+            // animate-ping ?
             <motion.span className={`absolute ${position} ${color} text-xs bg-gray-950 w-3 flex items-center justify-center rounded-full cursor-default`}
                 variants={flickerVariant} initial="hidden" animate="visible"
             >
@@ -77,15 +79,15 @@ export default function Hero() {
                 </motion.div>
 
                 {/* VERTICAL LEFT LINES DECORATION - VISIBLE >2XL */}
-                <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-35.5 2xl:items-center">
+                <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-35.5 2xl:items-center 2xl:justify-between">
                     {/* CUBES LINES TOP ◌ ○ */}
-                    <div className="w-full h-[40%] flex flex-col items-center pt-6">
-                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-30 -translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-20 -translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-10 -translate-y-7" animationDelay={1} opacity={0.4} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-0 -translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-0 -translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="down" />
+                    <div className="group w-full h-[40%] flex flex-col items-center pt-6 transition-all duration-150 hover:scale-95">
+                        <IsometricCube primary={true} styles="z-40 transition-all duration-150" animationDelay={0.4} opacity={1} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-30 -translate-y-3 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.6} opacity={0.8} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-20 -translate-y-5 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.8} opacity={0.6} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-10 -translate-y-7 transition-all duration-150 group-hover:translate-y-0" animationDelay={1} opacity={0.4} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-9 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.2} opacity={0.2} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-11 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.4} opacity={0.1} animationDirection="down" />
                     </div>
 
                     {/* CUBE ISOMETRIC ICON */}
@@ -94,17 +96,19 @@ export default function Hero() {
                         initial="hidden"
                         animate="visible"
                     >
-                        <Box className="w-4 h-4 text-violet-900" />
+                        <CircleDot className="w-4 h-4 text-violet-600 animate-ping" />
+                        {/* <Box className="w-4 h-4 text-violet-900" /> */}
+                        {/* <LocateFixed className="w-4 h-4 text-violet-600 animate-ping" /> */}
                     </motion.div>
 
                     {/* CUBES LINES BOTTOM */}
-                    <div className="w-full h-[40%] flex flex-col items-center pb-6">
-                        <IsometricCube primary={false} styles="z-0 translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="up" />
-                        <IsometricCube primary={false} styles="z-0 translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="up" />
-                        <IsometricCube primary={false} styles="z-10 translate-y-7" animationDelay={1} opacity={0.4} animationDirection="up" />
-                        <IsometricCube primary={false} styles="z-20 translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="up" />
-                        <IsometricCube primary={false} styles="z-30 translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="up" />
-                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="up" />
+                    <div className="group w-full h-[40%] flex flex-col items-center pb-6 transition-all duration-150 hover:scale-95">
+                        <IsometricCube primary={false} styles="z-0 translate-y-11 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.4} opacity={0.1} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-0 translate-y-9 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.2} opacity={0.2} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-10 translate-y-7 transition-all duration-150 group-hover:translate-y-0" animationDelay={1} opacity={0.4} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-20 translate-y-5 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.8} opacity={0.6} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-30 translate-y-3 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.6} opacity={0.8} animationDirection="up" />
+                        <IsometricCube primary={true} styles="z-40 transition-all duration-150" animationDelay={0.4} opacity={1} animationDirection="up" />
                     </div>
                 </div>
 
@@ -132,6 +136,7 @@ export default function Hero() {
 
                     {/* TITLE + SHORT DESCRIPTION */}
                     <div>
+                        {/* FULL NAME */}
                         <motion.h1 className="text-white text-[50px] lg:text-7xl font-bold leading-12 lg:leading-18 mb-4 w-72.5"
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -139,13 +144,11 @@ export default function Hero() {
                         >
                             HEBER MARTIN RODRIGUEZ
                         </motion.h1>
-                        <motion.h2 className="text-violet-600 text-base xl:text-lg mb-4"
-                            initial={{ opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
-                        >
-                            FULL-STACK DEVELOPER
-                        </motion.h2>
+
+                        {/* SCRAMBLE TEXT ANIMATION */}
+                        <ScrambleText />
+
+                        {/* HERO DESCRIPTION */}
                         <motion.p className="text-xs xl:text-base text-gray-300 mb-4 xs:max-w-87.5"
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -407,30 +410,34 @@ export default function Hero() {
                 {/* VERTICAL RIGHT LINES DECORATION - VISIBLE >2XL */}
                 <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-37 2xl:items-center">
                     {/* CUBES LINES TOP ◌ ○ */}
-                    <div className="w-full h-[40%] flex flex-col items-center pt-6">
-                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-30 -translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-20 -translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-10 -translate-y-7" animationDelay={1} opacity={0.4} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-0 -translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="down" />
-                        <IsometricCube primary={false} styles="z-0 -translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="down" />
+                    <div className="group w-full h-[40%] flex flex-col items-center pt-6 transition-all duration-150 hover:scale-95">
+                        <IsometricCube primary={true} styles="z-40 transition-all duration-150" animationDelay={0.4} opacity={1} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-30 -translate-y-3 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.6} opacity={0.8} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-20 -translate-y-5 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.8} opacity={0.6} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-10 -translate-y-7 transition-all duration-150 group-hover:translate-y-0" animationDelay={1} opacity={0.4} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-9 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.2} opacity={0.2} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-11 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.4} opacity={0.1} animationDirection="down" />
                     </div>
+
                     {/* CUBE ISOMETRIC ICON */}
                     <motion.div className="w-full h-[20%] flex items-center justify-center"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
                     >
-                        <Box className="w-4 h-4 text-violet-900" />
+                        <CircleDot className="w-4 h-4 text-violet-600 animate-ping" />
+                        {/* <Box className="w-4 h-4 text-violet-900" /> */}
+                        {/* <LocateFixed className="w-4 h-4 text-violet-600 animate-ping" /> */}
                     </motion.div>
+
                     {/* CUBES LINES BOTTOM */}
-                    <div className="w-full h-[40%] flex flex-col items-center pb-6">
-                        <IsometricCube primary={false} styles="z-0 translate-y-11" animationDelay={1.4} opacity={0.1} animationDirection="up" />
-                        <IsometricCube primary={false} styles="z-0 translate-y-9" animationDelay={1.2} opacity={0.2} animationDirection="up" />
-                        <IsometricCube primary={false} styles="z-10 translate-y-7" animationDelay={1} opacity={0.4} animationDirection="up" />
-                        <IsometricCube primary={false} styles="z-20 translate-y-5" animationDelay={0.8} opacity={0.6} animationDirection="up" />
-                        <IsometricCube primary={false} styles="z-30 translate-y-3" animationDelay={0.6} opacity={0.8} animationDirection="up" />
-                        <IsometricCube primary={true} styles="z-40" animationDelay={0.4} opacity={1} animationDirection="up" />
+                    <div className="group w-full h-[40%] flex flex-col items-center pb-6 transition-all duration-150 hover:scale-95">
+                        <IsometricCube primary={false} styles="z-0 translate-y-11 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.4} opacity={0.1} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-0 translate-y-9 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.2} opacity={0.2} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-10 translate-y-7 transition-all duration-150 group-hover:translate-y-0" animationDelay={1} opacity={0.4} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-20 translate-y-5 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.8} opacity={0.6} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-30 translate-y-3 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.6} opacity={0.8} animationDirection="up" />
+                        <IsometricCube primary={true} styles="z-40 transition-all duration-150" animationDelay={0.4} opacity={1} animationDirection="up" />
                     </div>
                 </div>
 
