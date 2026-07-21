@@ -4,18 +4,16 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Controller, useForm } from "react-hook-form"
 import { toast } from "sonner"
 import * as z from "zod"
+import { motion } from "motion/react";
+import { fadeUp, flickerVariant } from "@/lib/animations";
 import { Checkbox } from "@/components/ui/checkbox"
 import {
     Card,
     CardContent,
-    CardDescription,
     CardFooter,
-    CardHeader,
-    CardTitle,
 } from "@/components/ui/card"
 import {
     Field,
-    FieldDescription,
     FieldError,
     FieldGroup,
     FieldLabel,
@@ -30,7 +28,10 @@ import {
 import { useTranslations } from "next-intl"
 import SubmitButton from "../ui/SubmitButton"
 import Link from "next/link"
-import CornerIcons from "../ui/cornerIcons"
+
+// Shadcn UI components with motion properties
+const MotionField = motion.create(Field);
+const MotionFieldLabel = motion.create(FieldLabel);
 
 export function ContactForm() {
 
@@ -102,11 +103,25 @@ export function ContactForm() {
                             name="name"
                             control={form.control}
                             render={({ field, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid} className="relative">
-                                    <FieldLabel htmlFor="form-name" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25">
+                                <MotionField
+                                    data-invalid={fieldState.invalid}
+                                    className="relative"
+                                    variants={fadeUp}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                >
+                                    <MotionFieldLabel
+                                        htmlFor="form-name"
+                                        className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25"
+                                        variants={flickerVariant}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                    >
                                         <span className="translate-y-1 text-violet-500 dark:text-lime-500">⌜</span>
                                         {t('name_label')}
-                                    </FieldLabel>
+                                    </MotionFieldLabel>
                                     <Input
                                         {...field}
                                         id="form-name"
@@ -119,7 +134,7 @@ export function ContactForm() {
                                         <FieldError errors={[fieldState.error]} />
                                     )}
                                     <BTCornerIcon />
-                                </Field>
+                                </MotionField>
                             )}
                         />
 
@@ -128,11 +143,26 @@ export function ContactForm() {
                             name="email"
                             control={form.control}
                             render={({ field, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid} className="relative">
-                                    <FieldLabel htmlFor="form-email" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25">
+                                <MotionField
+                                    data-invalid={fieldState.invalid}
+                                    className="relative"
+                                    variants={fadeUp}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    custom={0.2}
+                                >
+                                    <MotionFieldLabel
+                                        htmlFor="form-email"
+                                        className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25"
+                                        variants={flickerVariant}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                    >
                                         <span className="translate-y-1 text-violet-500 dark:text-lime-500">⌜</span>
                                         Email
-                                    </FieldLabel>
+                                    </MotionFieldLabel>
                                     <Input
                                         {...field}
                                         id="form-email"
@@ -145,7 +175,7 @@ export function ContactForm() {
                                         <FieldError errors={[fieldState.error]} />
                                     )}
                                     <BTCornerIcon />
-                                </Field>
+                                </MotionField>
                             )}
                         />
 
@@ -154,11 +184,26 @@ export function ContactForm() {
                             name="subject"
                             control={form.control}
                             render={({ field, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid} className="relative">
-                                    <FieldLabel htmlFor="form-subject" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25">
+                                <MotionField
+                                    data-invalid={fieldState.invalid}
+                                    className="relative"
+                                    variants={fadeUp}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    custom={0.4}
+                                >
+                                    <MotionFieldLabel
+                                        htmlFor="form-subject"
+                                        className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25"
+                                        variants={flickerVariant}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                    >
                                         <span className="translate-y-1 text-violet-500 dark:text-lime-500">⌜</span>
                                         {t('subject_label')}
-                                    </FieldLabel>
+                                    </MotionFieldLabel>
                                     <Input
                                         {...field}
                                         id="form-subject"
@@ -171,7 +216,7 @@ export function ContactForm() {
                                         <FieldError errors={[fieldState.error]} />
                                     )}
                                     <BTCornerIcon />
-                                </Field>
+                                </MotionField>
                             )}
                         />
 
@@ -180,11 +225,26 @@ export function ContactForm() {
                             name="message"
                             control={form.control}
                             render={({ field, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid} className="relative">
-                                    <FieldLabel htmlFor="form-message" className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25">
+                                <MotionField
+                                    data-invalid={fieldState.invalid}
+                                    className="relative"
+                                    variants={fadeUp}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    custom={0.6}
+                                >
+                                    <MotionFieldLabel
+                                        htmlFor="form-message"
+                                        className="max-w-fit z-10 pr-2 text-xs xs:text-sm uppercase text-violet-500 dark:text-lime-500 tracking-wider bg-white dark:bg-gray-950 translate-y-4.25"
+                                        variants={flickerVariant}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                    >
                                         <span className="translate-y-1 text-violet-500 dark:text-lime-500">⌜</span>
                                         {t('message_label')}
-                                    </FieldLabel>
+                                    </MotionFieldLabel>
                                     <InputGroup className="dark:border-gray-700 dark:bg-gray-950">
                                         <InputGroupTextarea
                                             {...field}
@@ -205,7 +265,7 @@ export function ContactForm() {
                                         <FieldError errors={[fieldState.error]} />
                                     )}
                                     <BTCornerIcon />
-                                </Field>
+                                </MotionField>
                             )}
                         />
 
@@ -214,16 +274,32 @@ export function ContactForm() {
                             name="acceptTerms"
                             control={form.control}
                             render={({ field: { onChange, value }, fieldState }) => (
-                                <Field data-invalid={fieldState.invalid} orientation="horizontal">
+                                <MotionField
+                                    data-invalid={fieldState.invalid}
+                                    orientation="horizontal"
+                                    // className="relative"
+                                    variants={fadeUp}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    custom={0.8}
+                                >
 
                                     <Checkbox
                                         id="accept-terms"
                                         checked={value}
                                         onCheckedChange={(checked) => onChange(!!checked)}
-                                        className={"rounded-none checked:dark:bg-violet-500"}
+                                        className={"rounded-none checked:dark:bg-violet-500 cursor-pointer"}
                                     />
 
-                                    <FieldLabel htmlFor="accept-terms" className="text-xs xs:text-sm text-gray-600 dark:text-gray-400 leading-relaxed cursor-pointer relative inline">
+                                    <MotionFieldLabel
+                                        htmlFor="accept-terms"
+                                        className="text-xs xs:text-sm text-gray-600 dark:text-gray-400 leading-relaxed cursor-pointer relative inline"
+                                        variants={flickerVariant}
+                                        initial="hidden"
+                                        whileInView="visible"
+                                        viewport={{ once: true }}
+                                    >
                                         {t('terms_message_1')}{' '}
                                         <Link href="/privacy-policy" className="text-primary dark:text-lime-500 hover:underline text-nowrap inline-block">
                                             {t('terms_message_2')}
@@ -234,21 +310,28 @@ export function ContactForm() {
                                         </Link>
                                         .
                                         {/* {t('terms_message_5')} */}
-                                    </FieldLabel>
-                                </Field>
+                                    </MotionFieldLabel>
+                                </MotionField>
                             )}
                         />
                     </FieldGroup>
                 </form>
             </CardContent>
             <CardFooter className="bg-transparent">
-                <Field orientation="horizontal">
+                <MotionField
+                    orientation="horizontal"
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    custom={1}
+                >
                     {/* SUBMIT BUTTON */}
                     <SubmitButton
                         text={t('submit_label')}
                         termsStatus={form.watch('acceptTerms')}
                     />
-                </Field>
+                </MotionField>
             </CardFooter>
         </Card>
     )
