@@ -23,10 +23,10 @@ export default function Footer() {
         <footer className="relative bg-gray-950 dark:border-t dark:border-dashed dark:border-gray-800 text-gray-400 flex flex-col 2xl:flex-row mb-4 md:px-22 xl:px-26 2xl:px-52">
 
             {/* CORNER ICONS DECORATION */}
-            <span className="absolute top-4 left-4 text-violet-500">⊹</span>
-            <span className="absolute bottom-4 left-4 text-violet-500">⊹</span>
-            <span className="absolute top-4 right-4 text-violet-500">⊹</span>
-            <span className="absolute bottom-4 right-4 text-violet-500">⊹</span>
+            <span className="absolute top-4 left-4 md:left-2 xl:left-4 text-violet-500">⊹</span>
+            <span className="absolute bottom-4 left-4 md:left-2 xl:left-4 text-violet-500">⊹</span>
+            <span className="absolute top-4 right-4 md:right-2 xl:right-4 text-violet-500">⊹</span>
+            <span className="absolute bottom-4 right-4 md:right-2 xl:right-4 text-violet-500">⊹</span>
 
             {/* <span className="absolute bottom-[50%] translate-y-[50%] left-21 text-gray-800 text-4xl">
                 <CircleDot />
