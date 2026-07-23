@@ -6,14 +6,14 @@ import {
     TooltipTrigger,
 } from "@/components/ui/tooltip";
 import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-  TableFooter
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+    TableFooter
 } from "@/components/ui/table"
 import Link from 'next/link';
 
@@ -21,8 +21,20 @@ export default async function FixedBottomBar() {
 
     const { data } = await getBtcPrice();
 
-    const lastUpdated = new Date(data.last_updated);
-    const lastUpdatedDisplay = `${lastUpdated.getDay()}/${lastUpdated.getMonth()}/${lastUpdated.getFullYear()} - ${lastUpdated.getHours()}:${lastUpdated.getMinutes()}:${lastUpdated.getSeconds() < 10 && '0'}${lastUpdated.getSeconds()}`;
+    const date = new Date(data.last_updated);
+
+    const formatter = new Intl.DateTimeFormat('en-GB', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false,
+        // timeZone: 'UTC' // Omit this line if you want local time instead
+    });
+
+    const formattedDate = formatter.format(date).replace(',', ' -');
 
     const btcPrice = data.price.toFixed(2);
     const percentChange = data.percent_change_24h.toFixed(2);
@@ -86,7 +98,7 @@ export default async function FixedBottomBar() {
                                     Last updated
                                 </TableCell>
                                 <TableCell className='text-end cursor-default text-violet-500'>
-                                    {lastUpdatedDisplay}
+                                    {formattedDate}
                                 </TableCell>
                             </TableRow>
                         </TableBody>
@@ -99,29 +111,6 @@ export default async function FixedBottomBar() {
                                 </TableCell>
                             </TableRow>
                         </TableFooter>
-
-                        {/* <thead>
-                            <tr>
-                                <th className='uppercase text-gray-600 tracking-widest'>
-                                    <span className='text-orange-500 -ml-2 mr-2'>₿</span>
-                                    {data.name}
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Actual price</td>
-                                <td>{data.prices.usd.price.toFixed(2)} $</td>
-                            </tr>
-                            <tr>
-                                <td>Change 24h</td>
-                                <td>{data.prices.usd.percent_change_24h.toFixed(2)} %</td>
-                            </tr>
-                            <tr>
-                                <td>Last updated</td>
-                                <td>{lastUpdatedDisplay}</td>
-                            </tr>
-                        </tbody> */}
                     </Table>
                 </TooltipContent>
             </Tooltip>
