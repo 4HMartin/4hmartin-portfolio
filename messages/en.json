@@ -101,7 +101,7 @@
     "required_email_error": "Email is required.",
     "invalid_email_error": "Invalid email value.",
     "subject_short_error": "Subject must be at least 3 characters.",
-    "subject_long_error": "Subject must be at most 26 characters.",
+    "subject_long_error": "Subject must be at most 36 characters.",
     "name_label": "Name",
     "name_placeholder": "Your name",
     "email_placeholder": "your@email.com",

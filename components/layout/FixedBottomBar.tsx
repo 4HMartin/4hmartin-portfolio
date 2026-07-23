@@ -1,5 +1,5 @@
 import { getBtcPrice } from '@/lib/coinmarketcap/get-btc-price';
-import { Terminal } from 'lucide-react';
+import { Bitcoin, Terminal } from 'lucide-react';
 import {
     Tooltip,
     TooltipContent,
@@ -57,6 +57,7 @@ export default async function FixedBottomBar() {
                 <TooltipTrigger className="text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default text-end w-[25%] xl:w-[20%] 3xl:w-40 border-l border-gray-300 dark:border-gray-800">
                     <p className="inline-flex items-center gap-1 pr-2">
                         <small className="text-violet-500">₿</small>
+                        {/* <Bitcoin className='text-violet-500 w-4 h-4'/> */}
                     </p>
 
                     {/* CURRENCY - DOLLARS */}
@@ -68,8 +69,9 @@ export default async function FixedBottomBar() {
                     <Table>
                         <TableHeader>
                             <TableRow className='hover:bg-violet-100 dark:bg-gray-950'>
-                                <TableHead colSpan={2} className='text-gray-800 dark:text-gray-400 uppercase tracking-widest font-bold cursor-default'>
-                                    <span className='text-orange-500 mr-2'>₿</span>
+                                <TableHead colSpan={2} className='flex items-center gap-2 text-gray-800 dark:text-gray-400 uppercase tracking-widest font-bold cursor-default'>
+                                    {/* <span className='text-orange-500 mr-2'>₿</span> */}
+                                    <Bitcoin className='text-orange-500 w-6'/>
                                     BITCOIN
                                 </TableHead>
                             </TableRow>

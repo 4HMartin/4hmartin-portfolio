@@ -1,7 +1,7 @@
 "use client"
 import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
-import { useRef, MouseEvent, useState } from 'react';
+import { useRef, MouseEvent } from 'react';
 import { fadeUp, flickerVariant } from "@/lib/animations";
 import CustomCtaButton from "../ui/CustomCtaButton";
 import Link from "next/link";

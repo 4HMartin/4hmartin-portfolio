@@ -1,33 +1,36 @@
 "use client"
-import * as React from "react"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { Controller, useForm } from "react-hook-form"
-import { toast } from "sonner"
-import * as z from "zod"
+import * as React from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Controller, useForm } from "react-hook-form";
+import axios from "axios";
+import { toast } from "sonner";
+import * as z from "zod";
 import { motion } from "motion/react";
 import { fadeUp, flickerVariant } from "@/lib/animations";
-import { Checkbox } from "@/components/ui/checkbox"
+import { Checkbox } from "@/components/ui/checkbox";
 import {
     Card,
     CardContent,
     CardFooter,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
     Field,
     FieldError,
     FieldGroup,
     FieldLabel,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
+} from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
 import {
     InputGroup,
     InputGroupAddon,
     InputGroupText,
     InputGroupTextarea,
-} from "@/components/ui/input-group"
-import { useTranslations } from "next-intl"
-import SubmitButton from "../ui/SubmitButton"
-import Link from "next/link"
+} from "@/components/ui/input-group";
+import { useTranslations } from "next-intl";
+import SubmitButton from "../ui/SubmitButton";
+import Link from "next/link";
+import CornerIcons from "../ui/cornerIcons";
+import { CircleDashed, CircleDot, CircleDotDashed, Diameter, Radius } from "lucide-react";
 
 // Shadcn UI components with motion properties
 const MotionField = motion.create(Field);
@@ -49,7 +52,7 @@ export function ContactForm() {
         subject: z
             .string()
             .min(3, t('subject_short_error'))
-            .max(26, t('subject_long_error')),
+            .max(36, t('subject_long_error')),
         message: z
             .string()
             .optional(),
@@ -68,21 +71,21 @@ export function ContactForm() {
         },
     })
 
-    function onSubmit(data: z.infer<typeof formSchema>) {
-        toast("You submitted the following values:", {
-            description: (
-                <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
-                    <code>{JSON.stringify(data, null, 2)}</code>
-                </pre>
-            ),
-            position: "bottom-right",
-            classNames: {
-                content: "flex flex-col gap-2",
-            },
-            style: {
-                "--border-radius": "calc(var(--radius)  + 4px)",
-            } as React.CSSProperties,
-        })
+    async function onSubmit(data: z.infer<typeof formSchema>) {
+
+        await new Promise((resolve) => setTimeout(resolve, 4000));
+
+        // try {
+        //     const responseSendEmail = await axios.post('/api/send-email', { ...data });
+
+        //     if (responseSendEmail.status === 200) {
+        //         form.reset();
+
+        //     }
+
+        // } catch (error) {
+        //     console.error(error);
+        // }
     }
 
     function BTCornerIcon() {
@@ -318,20 +321,28 @@ export function ContactForm() {
                 </form>
             </CardContent>
             <CardFooter className="bg-transparent">
-                <MotionField
-                    orientation="horizontal"
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    custom={1}
-                >
-                    {/* SUBMIT BUTTON */}
-                    <SubmitButton
-                        text={t('submit_label')}
-                        termsStatus={form.watch('acceptTerms')}
-                    />
-                </MotionField>
+                {form.formState.isSubmitting ?
+                    <div className="relative m-1 min-w-46.25 h-12 flex items-center justify-center">
+                        <CircleDashed className="w-9 h-9 animate-spin text-violet-500" />
+                        <CircleDotDashed className="w-7 h-7 animate-ping text-violet-500 absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2" />
+                        <CornerIcons />
+                    </div>
+                    :
+                    <MotionField
+                        orientation="horizontal"
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        custom={1}
+                    >
+                        {/* SUBMIT BUTTON */}
+                        <SubmitButton
+                            text={t('submit_label')}
+                            termsStatus={form.watch('acceptTerms')}
+                        />
+                    </MotionField>
+                }
             </CardFooter>
         </Card>
     )
