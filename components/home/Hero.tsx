@@ -1,11 +1,12 @@
 "use client"
 import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
-import { flickerVariant } from "@/lib/animations";
+import { useRef, MouseEvent, useState } from 'react';
+import { fadeUp, flickerVariant } from "@/lib/animations";
 import CustomCtaButton from "../ui/CustomCtaButton";
 import Link from "next/link";
 import Image from "next/image";
-import { Box, CircleDot, Locate, LocateFixed } from "lucide-react";
+import { CircleDot } from "lucide-react";
 
 import ProfileBadge from "@/public/images/PROFILE_BADGE_V6.png";
 import M85mm from "@/public/images/85mm.png";
@@ -19,6 +20,44 @@ export default function Hero() {
 
     const linkedinURL = process.env.NEXT_PUBLIC_LINKEDIN_URL;
     const githubURL = process.env.NEXT_PUBLIC_GITHUB_URL;
+
+    // Crosshair on cursor
+    const containerRef = useRef<HTMLDivElement>(null);
+    const vLineRef = useRef<HTMLDivElement>(null);
+    const hLineRef = useRef<HTMLDivElement>(null);
+    const xCoordinateRef = useRef<HTMLSpanElement>(null);
+    const yCoordinateRef = useRef<HTMLSpanElement>(null);
+
+    const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+        const rect = containerRef.current?.getBoundingClientRect();
+        if (!rect) return;
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        if (vLineRef.current) {
+            vLineRef.current.style.left = `${x}px`;
+        }
+        if (hLineRef.current) {
+            hLineRef.current.style.top = `${y}px`;
+        }
+        if (xCoordinateRef.current){
+            xCoordinateRef.current.textContent = `${x}`;
+        }
+        if (yCoordinateRef.current){
+            yCoordinateRef.current.textContent = `${y}`;
+        }
+    };
+
+    const handleMouseEnter = () => {
+        vLineRef.current?.style.setProperty('opacity', '1');
+        hLineRef.current?.style.setProperty('opacity', '1');
+    };
+
+    const handleMouseLeave = () => {
+        vLineRef.current?.style.setProperty('opacity', '0');
+        hLineRef.current?.style.setProperty('opacity', '0');
+    };
 
     const CornerPlusIcon = ({ position, color }: { position: string, color: string }) => {
         return (
@@ -58,11 +97,31 @@ export default function Hero() {
     }
 
     return (
-        <section id="hero" className="flex flex-col mt-14 bg-gray-950 lg:flex-row">
+        <section
+            id="hero"
+            ref={containerRef}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="relative overflow-hidden cursor-crosshair flex flex-col mt-14 bg-gray-950 lg:flex-row"
+        >
+
+            {/* Vertical dashed line */}
+            <div
+                ref={vLineRef}
+                className="absolute z-10 top-0 bottom-0 w-px border-l border-dashed border-gray-800 pointer-events-none opacity-0 transition-opacity duration-150"
+            />
+
+            {/* Horizontal dashed line */}
+            <div
+                ref={hLineRef}
+                className="absolute z-10 left-0 right-0 h-px border-t border-dashed border-gray-800 pointer-events-none opacity-0 transition-opacity duration-150"
+            />
 
             <div className="relative flex gap-0 w-full border-b border-gray-800 2xl:border-0">
+
                 {/* VERTICAL LEFT TEXT DECORATION */}
-                <motion.div className="border-r border-gray-800 md:border-0 2xl:border-r 2xl:border-gray-800 w-7.5 xl:w-11 2xl:w-12.75 min-h-full flex flex-col items-center justify-between py-2"
+                <motion.div className="z-10 bg-gray-950 border-r border-gray-800 md:border-0 2xl:border-r 2xl:border-gray-800 w-7.5 xl:w-11 2xl:w-12.75 min-h-full flex flex-col items-center justify-between py-2"
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ ease: "easeOut", duration: 0.6 }}
@@ -80,6 +139,7 @@ export default function Hero() {
 
                 {/* VERTICAL LEFT LINES DECORATION - VISIBLE >2XL */}
                 <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-35.5 2xl:items-center 2xl:justify-between">
+
                     {/* CUBES LINES TOP ◌ ○ */}
                     <div className="group w-full h-[40%] flex flex-col items-center pt-6 transition-all duration-150 hover:scale-95">
                         <IsometricCube primary={true} styles="z-40 transition-all duration-150" animationDelay={0.4} opacity={1} animationDirection="down" />
@@ -137,7 +197,7 @@ export default function Hero() {
                     {/* TITLE + SHORT DESCRIPTION */}
                     <div>
                         {/* FULL NAME */}
-                        <motion.h1 className="text-white text-[50px] lg:text-7xl font-bold leading-12 lg:leading-18 mb-4 w-72.5"
+                        <motion.h1 className="relative z-20 text-white text-[50px] lg:text-7xl font-bold leading-12 lg:leading-18 mb-4 w-72.5"
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
@@ -149,7 +209,7 @@ export default function Hero() {
                         <ScrambleText />
 
                         {/* HERO DESCRIPTION */}
-                        <motion.p className="text-xs xl:text-base text-gray-300 mb-4 xs:max-w-87.5"
+                        <motion.p className="relative z-20 text-xs xl:text-base text-gray-300 mb-4 xs:max-w-87.5"
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
@@ -159,7 +219,7 @@ export default function Hero() {
                     </div>
 
                     {/* BUTTONS */}
-                    <div className="pb-12 md:flex md:itmes-center md:gap-4 lg:flex-col">
+                    <div className="relative z-20 pb-12 md:flex md:itmes-center md:gap-4 lg:flex-col">
                         {/* Explore work button */}
                         <motion.div
                             initial={{ opacity: 0, y: 12 }}
@@ -203,7 +263,7 @@ export default function Hero() {
                 </article>
 
                 {/* VERTICAL RIGHT LINE DECORATION */}
-                <motion.div className="hidden md:flex lg:hidden w-7.5 min-h-full flex-col items-center justify-between py-2"
+                <motion.div className="hidden md:flex lg:hidden bg-gray-950 w-7.5 min-h-full flex-col items-center justify-between py-2"
                     initial={{ opacity: 0, x: 12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
@@ -234,7 +294,7 @@ export default function Hero() {
                     {/* DETAIL BOXES CONTAINER */}
                     <div className="absolute top-2 xs:top-6 flex items-start justify-between w-full">
                         {/* LEFT BOX DETAILS */}
-                        <motion.div className="relative w-27.5 xs:w-32 md:w-fit border border-lime-500/40 ml-2 xs:ml-6 md:ml-23 lg:ml-6 p-1 md:py-2 md:px-4 flex flex-col gap-1 xs:gap-3"
+                        <motion.div className="relative z-20 w-27.5 xs:w-32 md:w-fit bg-gray-950 border border-dashed border-lime-800 ml-2 xs:ml-6 md:ml-23 lg:ml-6 p-1 md:py-2 md:px-4 flex flex-col gap-1 xs:gap-3"
                             initial={{ opacity: 0, y: -12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
@@ -259,7 +319,7 @@ export default function Hero() {
                         </motion.div>
 
                         {/* RIGHT BOX DETAILS */}
-                        <motion.div className="relative w-26 xs:w-31 md:w-55 lg:w-36.5 3xl:w-70 border border-lime-500/40 mr-2 xs:mr-6 md:mr-23 lg:mr-6 p-1 md:py-2 md:px-4 flex flex-col md:flex-row md:flex-wrap gap-1 xs:gap-3"
+                        <motion.div className="relative z-20 w-26 xs:w-31 md:w-55 lg:w-36.5 3xl:w-70 bg-gray-950 border border-dashed border-lime-800 mr-2 xs:mr-6 md:mr-23 lg:mr-6 p-1 md:py-2 md:px-4 flex flex-col md:flex-row md:flex-wrap gap-1 xs:gap-3"
                             initial={{ opacity: 0, y: -12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
@@ -300,7 +360,7 @@ export default function Hero() {
                     </div>
 
                     {/* Image container */}
-                    <motion.div className="relative w-[70vw] max-w-67.5"
+                    <motion.div className="relative w-[70vw] max-w-67.5 group"
                         initial={{ opacity: 0, y: 12, x: -12 }}
                         animate={{ opacity: 1, y: 0, x: 0 }}
                         transition={{ ease: "easeOut", duration: 0.3 }}
@@ -311,10 +371,11 @@ export default function Hero() {
                             alt="Heber Martin Rodriguez profile photo"
                             priority={true}
                             quality={100}
+                            className="relative z-20"
                         />
 
                         {/* Height measurement 85mm */}
-                        <motion.div className="absolute left-[-10%] top-[24%] w-[15%] h-[67%]"
+                        <motion.div className="absolute left-[-10%] top-[24%] w-[15%] h-[67%] transition-all duration-150 group-hover:left-[-14%] group-hover:top-[23%]"
                             initial={{ opacity: 0, x: 24 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
@@ -327,7 +388,7 @@ export default function Hero() {
                         </motion.div>
 
                         {/* Width measurement 54mm */}
-                        <motion.div className="absolute bottom-[-4%] left-[5%] w-[84%] h-[13%]"
+                        <motion.div className="absolute bottom-[-4%] left-[5%] w-[84%] h-[13%] transition-all duration-150 group-hover:bottom-[-8%]"
                             initial={{ opacity: 0, y: -24 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.4 }}
@@ -340,7 +401,7 @@ export default function Hero() {
                         </motion.div>
 
                         {/* Depth measurement 5mm */}
-                        <motion.div className="absolute bottom-[-1%] right-[-19%] w-[32%] h-[6%]"
+                        <motion.div className="absolute bottom-[-1%] right-[-19%] w-[32%] h-[6%] transition-all duration-150 group-hover:bottom-[-2%] group-hover:right-[-24%]"
                             initial={{ opacity: 0, x: -24, y: -12 }}
                             animate={{ opacity: 1, x: 0, y: 0 }}
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.6 }}
@@ -353,57 +414,73 @@ export default function Hero() {
                         </motion.div>
 
                         {/* CASE PROPERTIES DETAILS */}
-                        <motion.div className="absolute top-[34%] right-[-18%] xs:right-[-22%] md:right-[-30%] lg:right-[-25%]"
-                            initial={{ opacity: 0, y: 12, x: -12 }}
-                            animate={{ opacity: 1, y: 0, x: 0 }}
+                        <motion.div className="absolute opacity-0! top-[34%] right-[-18%] xs:right-[-22%] md:right-[-30%] lg:right-[-25%] 2xl:right-[-35%] transition-all duration-150 group-hover:opacity-100! 2xl:group-hover:right-[-45%]"
+                            
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
                         >
                             {/* MATERIAL */}
-                            <div className="relative w- flex flex-col items-start mb-4">
-                                <p className="text-[7px] xs:text-[10px] text-lime-500 uppercase tracking-wider">
+                            <div className="relative flex flex-col items-start mb-4">
+                                <p className="text-[7px] xs:text-[10px] 2xl:text-sm text-lime-500 uppercase tracking-wider">
                                     MATERIAL
                                 </p>
-                                <p className="text-[6px] xs:text-[8px] text-gray-300">
+                                <p className="text-[6px] xs:text-[8px] 2xl:text-xs text-gray-300">
                                     {t('anodized_label')}
                                 </p>
                             </div>
                             {/* FINISH */}
-                            <div className="relative w- flex flex-col items-start mb-4">
-                                <p className="text-[7px] xs:text-[10px] text-lime-500 uppercase tracking-wider">
+                            <div className="relative flex flex-col items-start mb-4">
+                                <p className="text-[7px] xs:text-[10px] 2xl:text-sm text-lime-500 uppercase tracking-wider">
                                     {t('finish_label')}
                                 </p>
-                                <p className="text-[6px] xs:text-[8px] text-gray-300">
+                                <p className="text-[6px] xs:text-[8px] 2xl:text-xs text-gray-300">
                                     Matte
                                 </p>
                             </div>
                             {/* WEIGHT */}
-                            <div className="relative w- flex flex-col items-start mb-4">
-                                <p className="text-[7px] xs:text-[10px] text-lime-500 uppercase tracking-wider">
+                            <div className="relative flex flex-col items-start mb-4">
+                                <p className="text-[7px] xs:text-[10px] 2xl:text-sm text-lime-500 uppercase tracking-wider">
                                     {t('weight_label')}
                                 </p>
-                                <p className="text-[6px] xs:text-[8px] text-gray-300">
+                                <p className="text-[6px] xs:text-[8px] 2xl:text-xs text-gray-300">
                                     28.4 g
                                 </p>
                             </div>
                             {/* PROPERTIES */}
-                            <div className="relative w- flex flex-col items-start mb-4">
-                                <p className="text-[7px] xs:text-[10px] text-lime-500 uppercase tracking-wider mb-0.5">
+                            <div className="relative flex flex-col items-start mb-4">
+                                <p className="text-[7px] xs:text-[10px] 2xl:text-sm text-lime-500 uppercase tracking-wider mb-0.5">
                                     {t('properties_label')}
                                 </p>
-                                <p className="text-[6px] xs:text-[8px] text-gray-300 uppercase tracking-wider mb-1">
+                                <p className="text-[6px] xs:text-[8px] 2xl:text-xs text-gray-300 uppercase tracking-wider mb-1">
                                     ▹ {t('durable_label')}
                                 </p>
-                                <p className="text-[6px] xs:text-[8px] text-gray-300 uppercase tracking-wider mb-1">
+                                <p className="text-[6px] xs:text-[8px] 2xl:text-xs text-gray-300 uppercase tracking-wider mb-1">
                                     ▹ {t('lightweight_label')}
                                 </p>
-                                <p className="text-[6px] xs:text-[8px] text-gray-300 uppercase tracking-wider mb-1">
+                                <p className="text-[6px] xs:text-[8px] 2xl:text-xs text-gray-300 uppercase tracking-wider mb-1">
                                     ▹ premium
                                 </p>
-                                <p className="text-[6px] xs:text-[8px] text-gray-300 uppercase tracking-wider mb-1">
+                                <p className="text-[6px] xs:text-[8px] 2xl:text-xs text-gray-300 uppercase tracking-wider mb-1">
                                     ▹ {t('minimal_label')}
                                 </p>
                             </div>
                         </motion.div>
+                    </motion.div>
+
+                    {/* CROSSHAIR CURSOR COORDINATES */}
+                    <motion.div
+                        variants={fadeUp}
+                        initial="hidden"
+                        animate="visible"
+                        custom={0.6}
+                        className="absolute z-20 hidden xl:flex flex-col items-start bottom-6 right-6 min-w-24 py-2 px-4 bg-gray-950 border border-dashed border-lime-800 text-lime-500 text-base tracking-wider"
+                    >
+                        <p className="text-sm tracking-widest">X_<span ref={xCoordinateRef} className="text-gray-300 tracking-widest">0</span></p>
+                        <p className="text-sm tracking-widest">Y_<span ref={yCoordinateRef} className="text-gray-300 tracking-widest">0</span></p>
+
+                        <CornerPlusIcon position="-top-2 -left-1.5" color="text-lime-500" />
+                        <CornerPlusIcon position="-top-2 -right-1.5" color="text-lime-500" />
+                        <CornerPlusIcon position="-bottom-2 -right-1.5" color="text-lime-500" />
+                        <CornerPlusIcon position="-bottom-2 -left-1.5" color="text-lime-500" />
                     </motion.div>
                 </article>
 
@@ -442,7 +519,7 @@ export default function Hero() {
                 </div>
 
                 {/* VERTICAL RIGHT TEXT DECORATION */}
-                <motion.div className="hidden lg:flex w-7.5 xl:w-11 2xl:w-13.5 min-h-full flex-col items-center justify-between py-2 2xl:border-l 2xl:border-gray-800"
+                <motion.div className="hidden lg:flex z-10 bg-gray-950 w-7.5 xl:w-11 2xl:w-13.5 min-h-full flex-col items-center justify-between py-2 2xl:border-l 2xl:border-gray-800"
                     initial={{ opacity: 0, x: 12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ ease: "easeOut", duration: 0.6 }}

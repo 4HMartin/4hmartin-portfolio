@@ -109,7 +109,7 @@ export default function ScrambleText() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
-            className="uppercase font-mono font-bold tracking-wide text-violet-600 text-base xl:text-lg mb-4 flex flex-wrap"
+            className="relative z-20 uppercase font-mono font-bold tracking-wide text-violet-600 text-base xl:text-lg mb-4 flex flex-wrap"
         >
             {display.split("").map((char, i) => (
                 <motion.span
