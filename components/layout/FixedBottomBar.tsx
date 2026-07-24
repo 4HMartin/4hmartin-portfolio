@@ -8,7 +8,6 @@ import {
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
     TableHead,
     TableHeader,
@@ -43,18 +42,18 @@ export default async function FixedBottomBar() {
     return (
         <section className="fixed z-40 bottom-0 w-full flex items-center justify-between px-4 md:px-6 xl:px-10 3xl:px-4 bg-white dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800">
             {/* AVAILABLE */}
-            <article className="group text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default w-[25%] xl:w-[20%] 3xl:w-40 border-r border-gray-300 dark:border-gray-800">
+            <article className="group text-[7px] xs:text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default w-[25%] xl:w-[20%] 3xl:w-40 border-r border-gray-300 dark:border-gray-800">
                 <span className="text-violet-500 group-hover:text-lime-500 dark:text-lime-500 dark:group-hover:text-violet-500">◈</span> Available
             </article>
 
             {/* FTWR */}
-            <article className="text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default flex justify-center items-center w-[50%] xl:w-[60%] 3xl:w-full">
+            <article className="text-[7px] xs:text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default flex justify-center items-center w-[50%] xl:w-[60%] 3xl:w-full">
                 <div className='w-fit cursor-help'><Terminal className="text-violet-500 w-3.5 h-3.5 inline-flex" />FOLLOW_THE_WHITE_RABBIT</div>
             </article>
 
             {/* BTC */}
             <Tooltip>
-                <TooltipTrigger className="text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default text-end w-[25%] xl:w-[20%] 3xl:w-40 border-l border-gray-300 dark:border-gray-800">
+                <TooltipTrigger className="text-[7px] xs:text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default text-end w-[25%] xl:w-[20%] 3xl:w-40 border-l border-gray-300 dark:border-gray-800">
                     <p className="inline-flex items-center gap-1 pr-2">
                         <small className="text-violet-500">₿</small>
                         {/* <Bitcoin className='text-violet-500 w-4 h-4'/> */}

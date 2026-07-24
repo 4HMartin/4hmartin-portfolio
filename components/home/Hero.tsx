@@ -8,10 +8,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { CircleDot } from "lucide-react";
 
-import ProfileBadge from "@/public/images/PROFILE_BADGE_V6.png";
-import M85mm from "@/public/images/85mm.png";
-import M54mm from "@/public/images/54mm.png";
-import M5mm from "@/public/images/5mm.png";
+import ProfileBadge from "@/public/images/PROFILE_BADGE_V6.webp";
+import M85mm from "@/public/images/85mm.webp";
+import M54mm from "@/public/images/54mm.webp";
+import M5mm from "@/public/images/5mm.webp";
 import ScrambleText from "../ui/ScrambleText";
 
 export default function Hero() {

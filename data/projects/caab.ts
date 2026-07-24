@@ -47,7 +47,7 @@ export const caab: Project = {
   architectureImage: "/projects/security-system/architecture.png",
   dbDiagramImage: "/projects/security-system/db-diagram.png",
   screenshots: [
-    "/images/projects/caab/home_01.png",
+    "/images/projects/caab/home_01.webp",
     "/projects/security-system/screenshot-2.png",
   ],
 };

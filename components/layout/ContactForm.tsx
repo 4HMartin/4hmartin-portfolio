@@ -1,8 +1,6 @@
 "use client"
-import * as React from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
-import axios from "axios";
 import { toast } from "sonner";
 import * as z from "zod";
 import { motion } from "motion/react";
@@ -73,6 +71,7 @@ export function ContactForm() {
 
     async function onSubmit(data: z.infer<typeof formSchema>) {
 
+        // MANUAL DELAY FOR TESTING PURPOSES
         await new Promise((resolve) => setTimeout(resolve, 4000));
 
         // try {

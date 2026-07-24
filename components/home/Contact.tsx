@@ -1,8 +1,6 @@
 "use client"
 import SectionHeader from "../layout/SectionHeader";
 import { ThemeImage } from "../ui/ThemeImage";
-import CityMapLight from "@/public/images/palma_de_mallorca_map_light.webp";
-import CityMapDark from "@/public/images/palma_de_mallorca_map_dark.webp";
 import { useTranslations } from "next-intl";
 import { ContactForm } from "../layout/ContactForm";
 import CornerIcons from "../ui/cornerIcons";
@@ -12,6 +10,9 @@ import { motion } from "motion/react";
 import { fadeUp } from "@/lib/animations";
 import { LinkedInIcon } from "../icons/LinkedInIcon";
 import GitHubIcon from "../icons/GitHubIcon";
+
+import CityMapLight from "@/public/images/palma_de_mallorca_map_light.webp";
+import CityMapDark from "@/public/images/palma_de_mallorca_map_dark.webp";
 
 export default function Contact() {
 
