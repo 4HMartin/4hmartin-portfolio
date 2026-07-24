@@ -137,5 +137,15 @@
     "legal_notice_label": "legal notice",
     "privacy_label": "privacy policy",
     "cookie_label": "cookie policy"
+  },
+  "project_detail": {
+    "home_label": "home",
+    "projects_label": "projects",
+    "live_site_label": "live site",
+    "source_code_label": "source code",
+    "origin_label": "origin",
+    "section_label": "section",
+    "category_label": "category",
+    "development_label": "development type"
   }
 }

@@ -137,7 +137,7 @@ export default function Hero() {
                     </motion.span>
                 </motion.div>
 
-                {/* VERTICAL LEFT LINES DECORATION - VISIBLE >2XL */}
+                {/* VERTICAL LEFT CUBES DECORATION - VISIBLE >2XL */}
                 <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-35.5 2xl:items-center 2xl:justify-between">
 
                     {/* CUBES LINES TOP ◌ ○ */}

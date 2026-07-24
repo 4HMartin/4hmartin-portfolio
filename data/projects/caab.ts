@@ -4,17 +4,18 @@ export const caab: Project = {
   slug: "security-system-comparison",
   category: "production_ready",
   name: {
-    en: "SECURITY_SYSTEM_COMPARISON_APP",
-    es: "COMPARADOR_DE_SISTEMAS_DE_SEGURIDAD"
+    en: "SECURITY SYSTEM COMPARISON APP",
+    es: "COMPARADOR DE SISTEMAS DE SEGURIDAD"
   },
   developmentType: "full-stack web app",
   shortDescription: {
-    en: "Lorem ipsum dolor",
+    en: "A reference digital platform in the security sector for the Balearic Islands market - helping users compare, evaluate and request quotes for alarm systems for homes, offices and businesses.",
     es: "Lorem ipsum dolor"
   },
   publicUrl: "https://caab.4hmartin.com/",
   publicRepo: "https://github.com/...",
   mainGif: "/images/projects/caab/home_gif_01.gif",
+  mainGifSection: "Home",
   overview: {
     en: "Lorem ipsum dolor",
     es: "Lorem ipsum dolor"

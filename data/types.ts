@@ -16,6 +16,7 @@ export interface Project {
   publicUrl?: string;
   publicRepo?: string;
   mainGif: string;
+  mainGifSection: string;
   overview: Record<Locale, string>;
   techStack: string[];
   keyFeaturesUser: KeyFeature[];

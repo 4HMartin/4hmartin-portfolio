@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getProjectBySlug, getAllSlugs } from "@/lib/projects";
 import type { Metadata } from "next";
+import ProjectClient from "@/components/project/ProjectClient";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -11,6 +12,7 @@ export async function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
 
+// Dynamic metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
@@ -25,19 +27,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Main component
 export default async function ProjectPage({ params }: Props) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
 
   if (!project) notFound();
 
-  return (
-    <section className="min-h-screen flex flex-col gap-4 items-center justify-center">
-      {/* ProjectHero, TechStackBadges, KeyFeaturesList, etc. */}
-      <h1 className="text-gray-800 dark:text-gray-300">
-        PROJECT PAGE
-      </h1>
-      <h2>{project.name['en']}</h2>
-    </section>
-  );
+  return <ProjectClient project={project} />;
 }
