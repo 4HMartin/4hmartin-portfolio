@@ -43,6 +43,7 @@ export default function Contact() {
                         darkSrc={CityMapDark}
                         alt="Heber Martin Rodriguez Portfolio - City Map"
                         fill
+                        sizes="506px"
                         className="object-cover -z-10 opacity-50 md:object-[50%_86%] 3xl:object-[50%_75%] dark:3xl:object-[45%_75%] dark:scale-95"
                         preload
                         quality={100}

@@ -17,6 +17,7 @@ import {
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import CornerIcons from "../ui/cornerIcons";
+import { Box } from "lucide-react";
 
 interface ProjectHeroProps {
     project: Project;
@@ -27,7 +28,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
     const t = useTranslations('project_detail');
     const locale = useLocale();
 
-    // Crosshair on cursor
+    // CROSSHAIR ON CURSOR
     const containerRef = useRef<HTMLDivElement>(null);
     const vLineRef = useRef<HTMLDivElement>(null);
     const hLineRef = useRef<HTMLDivElement>(null);
@@ -65,14 +66,41 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
         hLineRef.current?.style.setProperty('opacity', '0');
     };
 
+    // CORNER PLUS ICON COMPONENT
     const CornerPlusIcon = ({ position, color }: { position: string, color: string }) => {
         return (
             // animate-ping ?
             <motion.span className={`absolute ${position} ${color} text-xs bg-gray-950 w-3 flex items-center justify-center rounded-full cursor-default`}
                 variants={flickerVariant} initial="hidden" animate="visible"
             >
-                ⊹
+                ∷
             </motion.span>
+        )
+    }
+
+    const IsometricCube = ({
+        primary, styles, animationDelay, opacity, animationDirection
+    }: {
+        primary: boolean, styles: string, animationDelay: number, opacity: number, animationDirection: string
+    }) => {
+
+        const yAxis = animationDirection === 'down' ? -12 : 12;
+        const xAxis = animationDirection === 'down' ? 12 : -12;
+
+        return (
+            <motion.div className={`${primary ? 'border-lime-500 text-lime-500' : 'border-dashed border-gray-500 text-gray-500'} relative rounded-full border bg-gray-950 w-10 h-10 flex items-center justify-center -rotate-45 skew-12 cursor-default ${styles}`}
+                initial={{
+                    opacity: 0, y: yAxis, x: xAxis, skewY: 18, skewX: 18
+                }}
+                animate={{ opacity: opacity, y: 0, x: 0, skewY: 18, skewX: 18 }}
+                transition={{ ease: 'easeOut', duration: 0.4, delay: animationDelay }}
+            >
+                <CornerPlusIcon position="-top-2.5 -left-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+                <CornerPlusIcon position="-top-2.5 -right-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+                <CornerPlusIcon position="-bottom-1.75 -left-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+                <CornerPlusIcon position="-bottom-1.75 -right-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+                {primary ? '◈' : '◇'}
+            </motion.div>
         )
     }
 
@@ -98,14 +126,66 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
             <div className="relative flex gap-0 w-full border-b border-gray-800 2xl:border-0">
 
                 {/* LEFT VERTICAL LINE TEXTURE */}
-                <motion.div className='z-10 top-0 min-h-full w-10 border-x border-gray-800 bg-[url("/patterns/texture_gray_800_6px.svg")] bg-repeat'
+                <motion.div className='z-10 md:hidden top-0 min-h-full w-10 border-x border-gray-800 bg-[url("/patterns/texture_gray_800_6px.svg")] bg-repeat'
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
                 />
 
+                {/* VERTICAL LEFT TEXT DECORATION */}
+                <motion.div className="hidden md:flex flex-col items-center justify-between z-10 bg-gray-950 border-r border-gray-800 md:border-0 2xl:border-r 2xl:border-gray-800 w-7.5 xl:w-11 2xl:w-12.75 min-h-full py-2"
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.6 }}
+                >
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
+                        ⊹
+                    </motion.span>
+                    <p className="[writing-mode:vertical-rl] text-[10px] tracking-widest text-gray-800">
+                        2026 - FULL-STACK DEVELOPER
+                    </p>
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
+                        ⊹
+                    </motion.span>
+                </motion.div>
+
+                {/* VERTICAL LEFT CUBES DECORATION - VISIBLE >2XL */}
+                <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-35.5 2xl:items-center 2xl:justify-between">
+
+                    {/* CUBES LINES TOP ◌ ○ */}
+                    <div className="group w-full h-[40%] flex flex-col items-center pt-6 transition-all duration-150 hover:scale-95">
+                        <IsometricCube primary={true} styles="z-40 transition-all duration-150" animationDelay={0.4} opacity={1} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-30 -translate-y-3 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.6} opacity={0.8} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-20 -translate-y-5 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.8} opacity={0.6} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-10 -translate-y-7 transition-all duration-150 group-hover:translate-y-0" animationDelay={1} opacity={0.4} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-9 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.2} opacity={0.2} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-11 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.4} opacity={0.1} animationDirection="down" />
+                    </div>
+
+                    {/* CUBE ISOMETRIC ICON */}
+                    <motion.div className="w-full h-[20%] flex items-center justify-center"
+                        variants={flickerVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {/* <CircleDot className="w-4 h-4 text-violet-600 animate-ping" /> */}
+                        <Box className="w-4 h-4 text-violet-900 animate-ping" />
+                        {/* <LocateFixed className="w-4 h-4 text-violet-600 animate-ping" /> */}
+                    </motion.div>
+
+                    {/* CUBES LINES BOTTOM */}
+                    <div className="group w-full h-[40%] flex flex-col items-center pb-6 transition-all duration-150 hover:scale-95">
+                        <IsometricCube primary={false} styles="z-0 translate-y-11 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.4} opacity={0.1} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-0 translate-y-9 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.2} opacity={0.2} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-10 translate-y-7 transition-all duration-150 group-hover:translate-y-0" animationDelay={1} opacity={0.4} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-20 translate-y-5 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.8} opacity={0.6} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-30 translate-y-3 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.6} opacity={0.8} animationDirection="up" />
+                        <IsometricCube primary={true} styles="z-40 transition-all duration-150" animationDelay={0.4} opacity={1} animationDirection="up" />
+                    </div>
+                </div>
+
                 {/* LEFT CONTENT */}
-                <article className="relative w-full text-gray-400 pt-10 px-2 md:px-12 lg:pl-14 lg:pr-4">
+                <article className="relative w-full text-gray-400 pt-10 px-2 md:px-14 lg:pl-14 lg:pr-4">
                     <motion.span className="md:hidden text-violet-500 absolute top-2 right-2" variants={flickerVariant} initial="hidden" animate="visible">
                         ⊹
                     </motion.span>
@@ -150,7 +230,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                     {/* TITLE + SHORT DESCRIPTION */}
                     <div>
                         {/* PROJECT NAME */}
-                        <motion.h1 className="relative z-20 text-white text-[40px] lg:text-7xl font-bold leading-12 lg:leading-18 mb-4 w-72.5"
+                        <motion.h1 className="relative z-20 text-white text-[40px] lg:text-7xl font-bold leading-12 lg:leading-18 mb-4 md:w-2/3"
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
@@ -236,13 +316,13 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                 {/* Horizontal pattern separator */}
                 <div className="w-full h-7.5 bg-[url('/patterns/diagonal-lines-gray-300.svg')] bg-repeat opacity-20 lg:hidden" />
 
-                <article className="relative w-full px-4 lg:px-0 lg:mr-10 pb-6 overflow-hidden flex flex-col items-center bg-[url('/patterns/bg_image_pattern_dots.png')] bg-repeat bg-contain border-t border-gray-800 2xl:border-0">
+                <article className="relative w-full px-4 md:px-22 lg:px-4 2xl:px-6 2xl:pt-4 lg:mr-10 pb-6 overflow-hidden flex flex-col items-center bg-[url('/patterns/bg_image_pattern_dots.png')] bg-repeat bg-contain border-t border-gray-800 2xl:border-0">
 
                     {/* DETAIL BOXES CONTAINER */}
-                    <div className="flex items-start justify-between w-full my-4">
+                    <div className="flex lg:flex-col xl:flex-row lg:gap-4 items-start justify-between w-full my-4 lg:mb-22">
 
                         {/* LEFT BOX DETAILS */}
-                        <motion.div className="relative z-20 w-fit bg-gray-950 border border-dashed border-lime-800  xs:ml-6 md:ml-23 lg:ml-6 px-2 py-1 md:py-2 md:px-4 flex flex-col gap-1 xs:gap-3"
+                        <motion.div className="relative z-20 w-fit bg-gray-950 border border-dashed border-lime-800 px-2 py-1 md:py-2 md:px-4 flex flex-col lg:flex-row xl:flex-col lg:w-full xl:w-fit lg:justify-between gap-1 xs:gap-3"
                             initial={{ opacity: 0, y: -12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
@@ -251,7 +331,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                             <CornerPlusIcon position="-top-2 -right-1.5" color="text-lime-400" />
                             <CornerPlusIcon position="-bottom-2 -right-1.5" color="text-lime-400" />
                             <CornerPlusIcon position="-bottom-2 -left-1.5" color="text-lime-400" />
-                            
+
                             {/* ORIGIN */}
                             <div className="flex flex-col items-start gap-0 overflow-hidden">
                                 <p className="text-[9px] xs:text-xs xl:text-sm text-lime-500 uppercase">
@@ -273,7 +353,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         </motion.div>
 
                         {/* RIGHT BOX DETAILS */}
-                        <motion.div className="relative z-20 w-fit bg-gray-950 border border-dashed border-lime-800 xs:mr-6 md:mr-23 lg:mr-6 px-2 py-1 md:py-2 md:px-4 flex flex-col md:flex-row md:flex-wrap gap-1 xs:gap-3"
+                        <motion.div className="relative z-20 w-fit bg-gray-950 border border-dashed border-lime-800 px-2 py-1 md:py-2 md:px-4 flex flex-col lg:flex-row xl:flex-col lg:w-full xl:w-fit lg:justify-between gap-1 xs:gap-3"
                             initial={{ opacity: 0, y: -12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
@@ -282,38 +362,39 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                             <CornerPlusIcon position="-top-2 -right-1.5" color="text-lime-400" />
                             <CornerPlusIcon position="-bottom-2 -right-1.5" color="text-lime-400" />
                             <CornerPlusIcon position="-bottom-2 -left-1.5" color="text-lime-400" />
+
                             {/* CATEGORY */}
-                            <div>
-                                <p className="text-[9px] xs:text-xs 3xl:text-sm text-lime-500 uppercase">
+                            <div className="flex flex-col">
+                                <p className="text-[9px] xs:text-xs xl:text-sm text-lime-500 uppercase">
                                     {t('category_label')}
                                 </p>
-                                <p className="text-[8px] xs:text-[10px] 3xl:text-sm text-gray-300">
-                                    {project.category.replaceAll(' ','_')}
+                                <p className="text-[8px] xs:text-xs xl:text-sm text-gray-300">
+                                    {project.category.replaceAll(' ', '_')}
                                 </p>
                             </div>
                             {/* DEVELOPMENT TYPE */}
-                            <div className="lg:hidden 3xl:block">
-                                <p className="text-[9px] xs:text-xs 3xl:text-sm text-lime-500 uppercase">
+                            <div className="flex flex-col">
+                                <p className="text-[9px] xs:text-xs xl:text-sm text-lime-500 uppercase">
                                     {t('development_label')}
                                 </p>
-                                <p className="text-[8px] xs:text-[10px] 3xl:text-sm text-gray-300">
-                                    {project.developmentType.replaceAll(' ','_')}
+                                <p className="text-[8px] xs:text-xs xl:text-sm text-gray-300">
+                                    {project.developmentType.replaceAll(' ', '_')}
                                 </p>
                             </div>
                         </motion.div>
                     </div>
 
                     {/* Image container */}
-                    <motion.div className="relative w-full group"
+                    <motion.div className="relative w-full group p-2"
                         initial={{ opacity: 0, y: 12, x: -12 }}
                         animate={{ opacity: 1, y: 0, x: 0 }}
                         transition={{ ease: "easeOut", duration: 0.3 }}
                     >
-                        {/* Main profile card image */}
+                        {/* Main project gif */}
                         <Image
                             src={project.mainGif}
-                            alt="Heber Martin Rodriguez profile photo"
-                            width={600}
+                            alt="Heber Martin Rodriguez - Project gif"
+                            width={700}
                             height={400}
                             priority={true}
                             quality={100}
@@ -340,6 +421,57 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         <CornerPlusIcon position="-bottom-2 -left-1.5" color="text-lime-500" />
                     </motion.div>
                 </article>
+
+                {/* VERTICAL RIGHT LINES DECORATION - VISIBLE >2XL */}
+                <div className="hidden 2xl:flex 2xl:flex-col 2xl:w-37 2xl:items-center">
+                    {/* CUBES LINES TOP ◌ ○ */}
+                    <div className="group w-full h-[40%] flex flex-col items-center pt-6 transition-all duration-150 hover:scale-95">
+                        <IsometricCube primary={true} styles="z-40 transition-all duration-150" animationDelay={0.4} opacity={1} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-30 -translate-y-3 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.6} opacity={0.8} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-20 -translate-y-5 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.8} opacity={0.6} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-10 -translate-y-7 transition-all duration-150 group-hover:translate-y-0" animationDelay={1} opacity={0.4} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-9 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.2} opacity={0.2} animationDirection="down" />
+                        <IsometricCube primary={false} styles="z-0 -translate-y-11 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.4} opacity={0.1} animationDirection="down" />
+                    </div>
+
+                    {/* CUBE ISOMETRIC ICON */}
+                    <motion.div className="w-full h-[20%] flex items-center justify-center"
+                        variants={flickerVariant}
+                        initial="hidden"
+                        animate="visible"
+                    >
+                        {/* <CircleDot className="w-4 h-4 text-violet-600 animate-ping" /> */}
+                        <Box className="w-4 h-4 text-violet-900 animate-ping" />
+                        {/* <LocateFixed className="w-4 h-4 text-violet-600 animate-ping" /> */}
+                    </motion.div>
+
+                    {/* CUBES LINES BOTTOM */}
+                    <div className="group w-full h-[40%] flex flex-col items-center pb-6 transition-all duration-150 hover:scale-95">
+                        <IsometricCube primary={false} styles="z-0 translate-y-11 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.4} opacity={0.1} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-0 translate-y-9 transition-all duration-150 group-hover:translate-y-0" animationDelay={1.2} opacity={0.2} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-10 translate-y-7 transition-all duration-150 group-hover:translate-y-0" animationDelay={1} opacity={0.4} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-20 translate-y-5 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.8} opacity={0.6} animationDirection="up" />
+                        <IsometricCube primary={false} styles="z-30 translate-y-3 transition-all duration-150 group-hover:translate-y-0" animationDelay={0.6} opacity={0.8} animationDirection="up" />
+                        <IsometricCube primary={true} styles="z-40 transition-all duration-150" animationDelay={0.4} opacity={1} animationDirection="up" />
+                    </div>
+                </div>
+
+                {/* VERTICAL RIGHT TEXT DECORATION */}
+                <motion.div className="hidden lg:flex z-10 bg-gray-950 w-7.5 xl:w-11 2xl:w-13.5 min-h-full flex-col items-center justify-between py-2 2xl:border-l 2xl:border-gray-800"
+                    initial={{ opacity: 0, x: 12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ ease: "easeOut", duration: 0.6 }}
+                >
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
+                        ⊹
+                    </motion.span>
+                    <p className="[writing-mode:vertical-rl] text-[10px] tracking-widest text-gray-800">
+                        PORTFOLIO WEB
+                    </p>
+                    <motion.span className="text-violet-500" variants={flickerVariant} initial="hidden" animate="visible">
+                        ⊹
+                    </motion.span>
+                </motion.div>
             </motion.div>
         </section>
     )

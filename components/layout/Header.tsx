@@ -75,6 +75,9 @@ export default function Header() {
                             lightSrc={ImagotypeLight}
                             darkSrc={ImagotypeDark}
                             alt="4HMartin Imagotype"
+                            width={168}
+                            height={136}
+                            loading="eager"
                             className="w-36 p-6 brightness-0 dark:brightness-200 scale-150"
                         />
                         <CornerIcons />

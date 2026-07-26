@@ -384,6 +384,7 @@ export default function Hero() {
                                 src={M85mm}
                                 alt="Heber Martin Rodriguez card measurement"
                                 fill
+                                sizes="41px"
                             />
                         </motion.div>
 
@@ -397,6 +398,7 @@ export default function Hero() {
                                 src={M54mm}
                                 alt="Heber Martin Rodriguez card measurement"
                                 fill
+                                sizes="228px"
                             />
                         </motion.div>
 
@@ -410,6 +412,7 @@ export default function Hero() {
                                 src={M5mm}
                                 alt="Heber Martin Rodriguez card measurement"
                                 fill
+                                sizes="88px"
                             />
                         </motion.div>
 
