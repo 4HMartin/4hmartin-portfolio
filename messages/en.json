@@ -146,6 +146,7 @@
     "origin_label": "origin",
     "section_label": "section",
     "category_label": "category",
-    "development_label": "development type"
+    "development_label": "development type",
+    "overview_label": "overview"
   }
 }

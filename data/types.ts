@@ -17,7 +17,8 @@ export interface Project {
   publicRepo?: string;
   mainGif: string;
   mainGifSection: string;
-  overview: Record<Locale, string>;
+  // Cada párrafo es un elemento del array
+  overview: Record<Locale, string[]>;
   techStack: string[];
   keyFeaturesUser: KeyFeature[];
   keyFeaturesAdmin: KeyFeature[];

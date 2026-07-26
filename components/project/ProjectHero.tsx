@@ -193,8 +193,8 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         ⊹
                     </motion.span>
 
-                    {/* TOP DETAILS */}
-                    <motion.div className="text-gray-800 text-xs mb-4"
+                    {/* BREADCRUMB CONTAINER */}
+                    <motion.div className="text-gray-800 text-xs mb-4 2xl:mb-12"
                         initial={{ opacity: 0, y: 12 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
@@ -205,21 +205,21 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                                 <BreadcrumbItem>
                                     <BreadcrumbLink render={
                                         <Link href={'/'} />
-                                    } className="uppercase text-xs tracking-widest text-violet-800">
-                                        {t('home_label')}
+                                    } className="z-20 uppercase text-xs tracking-widest text-lime-500 hover:text-lime-400">
+                                        ◂{t('home_label')}
                                     </BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator />
                                 <BreadcrumbItem>
                                     <BreadcrumbLink render={
                                         <Link href={'/#projects'} />
-                                    } className="uppercase text-xs tracking-widest text-violet-800">
-                                        {t('projects_label')}
+                                    } className="z-20 uppercase text-xs tracking-widest text-lime-500 hover:text-lime-400">
+                                        ◂{t('projects_label')}
                                     </BreadcrumbLink>
                                 </BreadcrumbItem>
                                 <BreadcrumbSeparator />
                                 <BreadcrumbItem>
-                                    <BreadcrumbPage className="uppercase text-xs tracking-widest text-violet-500">
+                                    <BreadcrumbPage className="uppercase text-xs tracking-widest text-gray-600">
                                         {project.slug}
                                     </BreadcrumbPage>
                                 </BreadcrumbItem>
@@ -229,8 +229,19 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
 
                     {/* TITLE + SHORT DESCRIPTION */}
                     <div>
+                        {/* CATEGORY */}
+                        <motion.span
+                            initial={{ opacity: 0, y: 12 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.15, ease: "easeOut", delay: 0.2 }}
+                            className={`${project.category === 'production_ready' ? 'bg-violet-600' : 
+                                project.category === 'in_development' ? 'bg-lime-600' : 'bg-gray-700'
+                            } px-2 uppercase text-xs text-white`}>
+                            {project.category}
+                        </motion.span>
+
                         {/* PROJECT NAME */}
-                        <motion.h1 className="relative z-20 text-white text-[40px] lg:text-7xl font-bold leading-12 lg:leading-18 mb-4 md:w-2/3"
+                        <motion.h1 className="relative z-20 text-white text-[40px] lg:text-7xl font-bold leading-12 lg:leading-18 my-4 md:w-2/3 3xl:w-full"
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut", delay: 0.2 }}
@@ -249,7 +260,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         </motion.h2>
 
                         {/* SHORT DESCRIPTION */}
-                        <motion.p className="relative z-20 text-xs xl:text-base text-gray-300 mb-4 xs:max-w-87.5"
+                        <motion.p className="relative z-20 text-xs xl:text-base text-gray-300 mb-4 xs:max-w-87.5 3xl:max-w-full 2xl:min-h-33.5"
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut", delay: 0.4 }}
@@ -264,7 +275,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                             initial={{ opacity: 0, y: 12 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.3, ease: "easeOut", delay: 0.6 }}
-                            className="flex flex-col gap-2"
+                            className="flex flex-col 2xl:flex-row gap-2 2xl:gap-4"
                         >
                             {/* LIVE SITE BUTTON */}
                             <CustomCtaButton
@@ -319,7 +330,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                 <article className="relative w-full px-4 md:px-22 lg:px-4 2xl:px-6 2xl:pt-4 lg:mr-10 pb-6 overflow-hidden flex flex-col items-center bg-[url('/patterns/bg_image_pattern_dots.png')] bg-repeat bg-contain border-t border-gray-800 2xl:border-0">
 
                     {/* DETAIL BOXES CONTAINER */}
-                    <div className="flex lg:flex-col xl:flex-row lg:gap-4 items-start justify-between w-full my-4 lg:mb-22">
+                    <div className="flex lg:flex-col xl:flex-row lg:gap-4 items-start justify-between w-full my-4 lg:mb-4">
 
                         {/* LEFT BOX DETAILS */}
                         <motion.div className="relative z-20 w-fit bg-gray-950 border border-dashed border-lime-800 px-2 py-1 md:py-2 md:px-4 flex flex-col lg:flex-row xl:flex-col lg:w-full xl:w-fit lg:justify-between gap-1 xs:gap-3"
