@@ -25,6 +25,7 @@ export interface Project {
   architectureImage?: string;
   dbDiagramImage?: string;
   screenshots: string[];
+  relatedProjects: Record<Project['slug'], Project['publicUrl']>[];
 }
 
 export interface Cert {

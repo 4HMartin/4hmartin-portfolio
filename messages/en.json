@@ -148,6 +148,10 @@
     "category_label": "category",
     "development_label": "development type",
     "overview_label": "overview",
-    "tech_stack_label": "tech_stack"
+    "tech_stack_label": "tech_stack",
+    "technologies_label": "technologies",
+    "links_label": "links",
+    "other_pjt_label": "other projects",
+    "back_portfolio_label": "back to portfolio"
   }
 }

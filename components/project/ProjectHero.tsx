@@ -236,7 +236,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                             transition={{ duration: 0.15, ease: "easeOut", delay: 0.2 }}
                             className={`${project.category === 'production_ready' ? 'bg-violet-600' : 
                                 project.category === 'in_development' ? 'bg-lime-600' : 'bg-gray-700'
-                            } relative z-20 px-2 uppercase text-xs text-white`}>
+                            } relative w-fit z-20 px-2 py-0.5 uppercase text-xs text-white`}>
                             {project.category}
                         </motion.span>
 
@@ -287,14 +287,16 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                                 height="h-8 lg:h-12"
                             />
                             {/* GITHUB REPO */}
-                            <CustomCtaButton
-                                variant="neutral"
-                                text={t('source_code_label')}
-                                icon="ExternalLink"
-                                target={project.publicRepo!}
-                                width="w-36 lg:w-40"
-                                height="h-8 lg:h-12"
-                            />
+                            {project.publicRepo &&
+                                <CustomCtaButton
+                                    variant="neutral"
+                                    text={t('source_code_label')}
+                                    icon="ExternalLink"
+                                    target={project.publicRepo}
+                                    width="w-36 lg:w-40"
+                                    height="h-8 lg:h-12"
+                                />
+                            }
                         </motion.div>
                     </div>
                 </article>

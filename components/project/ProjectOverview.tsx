@@ -4,6 +4,8 @@ import { Project, Locale } from "@/data/types";
 import { motion } from "motion/react";
 import { useLocale } from "next-intl";
 import SectionHeader from "../layout/SectionHeader";
+import { fadeUp } from "@/lib/animations";
+import CornerIcons from "../ui/cornerIcons";
 
 interface ProjectOverviewProps {
     overview: Project["overview"];
@@ -14,15 +16,24 @@ export default function ProjectOverview({ overview }: ProjectOverviewProps){
     const locale = useLocale();
 
     return (
-        <section className="md:mx-17 lg:mr-0 xl:ml-20 2xl:ml-48 lg:w-2/3 border border-red-500">
+        <section className="h-fit md:mx-17 lg:mr-0 xl:ml-20 2xl:ml-48 lg:w-2/3 lg:border-b lg:border-gray-300">
             {/* SECTION HEADER */}
             <SectionHeader parentTranslations="project_detail" titleLabel="overview_label" sectionNumber="02" />
 
-            <article className="px-4 py-6 flex flex-col gap-4">
+            <article className="relative px-4 py-6 flex flex-col gap-4">
+                <CornerIcons />
+
                 {overview[locale as Locale].map((paragraph, index) => (
-                    <p key={index} className="text-xs xl:text-base text-gray-600">
+                    <motion.p
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        custom={0.2 * (index + 1)}
+                        key={index}
+                        className="text-xs xl:text-base text-gray-600 dark:text-gray-300"
+                    >
                         {paragraph}
-                    </p>
+                    </motion.p>
                 ))}
             </article>
         </section>

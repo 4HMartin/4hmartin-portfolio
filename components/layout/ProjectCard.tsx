@@ -105,15 +105,17 @@ export default function ProjectCard({ project }: { project: Project; }) {
                         </Link>
                     )}
                     {/* REPO URL */}
-                    <Link
-                        href={project.publicRepo!}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-1 text-[10px] xs:text-xs text-gray-500 dark:text-gray-500 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
-                    >
-                        <GitHubIcon className="w-2 md:w-3 h-2 md:h-3 text-secondary dark:text-gray-300 transition-all duration-150 hover:text-primary dark:hover:text-violet-500" />
-                        REPO
-                    </Link>
+                    {project.publicRepo &&
+                        <Link
+                            href={project.publicRepo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 text-[10px] xs:text-xs text-gray-500 dark:text-gray-500 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                        >
+                            <GitHubIcon className="w-2 md:w-3 h-2 md:h-3 text-secondary dark:text-gray-300 transition-all duration-150 hover:text-primary dark:hover:text-violet-500" />
+                            REPO
+                        </Link>
+                    }
                     {/* VIEW DETAIL LINK */}
                     <Link
                         href={`/projects/${project.slug}`}

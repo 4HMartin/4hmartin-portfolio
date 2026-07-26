@@ -17,7 +17,13 @@ export default function ProjectClient({ project }: ProjectClientProps) {
             <section className="flex flex-col lg:flex-row">
                 <ProjectOverview overview={project.overview} />
 
-                <ProjectTechStack />
+                <ProjectTechStack
+                    techStack={project.techStack}
+                    publicURL={project.publicUrl}
+                    publicRepo={project.publicRepo}
+                    category={project.category}
+                    relatedProjects={project.relatedProjects}
+                />
             </section>
         </>
     )
