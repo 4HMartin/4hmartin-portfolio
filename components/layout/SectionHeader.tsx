@@ -21,7 +21,7 @@ export default function SectionHeader({ parentTranslations, titleLabel, sectionN
             viewport={{ once: true, amount: "some" }}
         >
             {/* TOP LEFT CORNER ICON */}
-            <div className="hidden md:flex w-20.5 2xl:w-60 h-12.5 border-y border-dashed border-gray-300 dark:border-gray-800 items-center justify-start md:pl-2 xl:pl-3.5">
+            <div className={`${parentTranslations === 'project_detail' ? 'hidden' : 'hidden md:flex w-20.5 2xl:w-60 h-12.5 border-y border-dashed border-gray-300 dark:border-gray-800 items-center justify-start md:pl-2 xl:pl-3.5'}`}>
                 <motion.span className="hidden md:block text-violet-500 dark:text-lime-500"
                     variants={flickerVariant}
                     initial="hidden"
@@ -48,7 +48,7 @@ export default function SectionHeader({ parentTranslations, titleLabel, sectionN
             </div>
 
             {/* TOP RIGHT CORNER ICON */}
-            <div className="hidden md:flex w-20.5 2xl:w-60 h-12.5 border-y border-dashed border-gray-300 dark:border-gray-800 items-center justify-end md:pr-2 xl:pr-3.5">
+            <div className={`${parentTranslations === 'project_detail' ? 'hidden' : 'hidden md:flex w-20.5 2xl:w-60 h-12.5 border-y border-dashed border-gray-300 dark:border-gray-800 items-center justify-end md:pr-2 xl:pr-3.5'}`}>
                 <motion.span className="hidden md:block text-violet-500 dark:text-lime-500"
                     variants={flickerVariant}
                     initial="hidden"

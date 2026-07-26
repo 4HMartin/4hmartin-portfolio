@@ -147,6 +147,7 @@
     "section_label": "section",
     "category_label": "category",
     "development_label": "development type",
-    "overview_label": "overview"
+    "overview_label": "overview",
+    "tech_stack_label": "tech_stack"
   }
 }

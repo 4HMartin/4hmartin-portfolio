@@ -14,7 +14,7 @@ export default function ProjectOverview({ overview }: ProjectOverviewProps){
     const locale = useLocale();
 
     return (
-        <section>
+        <section className="md:mx-17 lg:mr-0 xl:ml-20 2xl:ml-48 lg:w-2/3 border border-red-500">
             {/* SECTION HEADER */}
             <SectionHeader parentTranslations="project_detail" titleLabel="overview_label" sectionNumber="02" />
 

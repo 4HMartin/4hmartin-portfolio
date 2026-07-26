@@ -236,7 +236,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                             transition={{ duration: 0.15, ease: "easeOut", delay: 0.2 }}
                             className={`${project.category === 'production_ready' ? 'bg-violet-600' : 
                                 project.category === 'in_development' ? 'bg-lime-600' : 'bg-gray-700'
-                            } px-2 uppercase text-xs text-white`}>
+                            } relative z-20 px-2 uppercase text-xs text-white`}>
                             {project.category}
                         </motion.span>
 
