@@ -11,26 +11,28 @@ interface ProjectOverviewProps {
     overview: Project["overview"];
 }
 
-export default function ProjectOverview({ overview }: ProjectOverviewProps){
+export default function ProjectOverview({ overview }: ProjectOverviewProps) {
 
     const locale = useLocale();
 
     return (
-        <section className="h-fit md:mx-17 lg:mr-0 xl:ml-20 2xl:ml-48 lg:w-2/3 lg:border-b lg:border-gray-300">
+        <section className="relative h-fit lg:border-b lg:border-gray-300 lg:dark:border-gray-800">
+            <CornerIcons />
+
             {/* SECTION HEADER */}
             <SectionHeader parentTranslations="project_detail" titleLabel="overview_label" sectionNumber="02" />
 
             <article className="relative px-4 py-6 flex flex-col gap-4">
-                <CornerIcons />
 
                 {overview[locale as Locale].map((paragraph, index) => (
                     <motion.p
                         variants={fadeUp}
                         initial="hidden"
                         whileInView="visible"
+                        viewport={{ once: true }}
                         custom={0.2 * (index + 1)}
                         key={index}
-                        className="text-xs xl:text-base text-gray-600 dark:text-gray-300"
+                        className="text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                     >
                         {paragraph}
                     </motion.p>

@@ -133,7 +133,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                 />
 
                 {/* VERTICAL LEFT TEXT DECORATION */}
-                <motion.div className="hidden md:flex flex-col items-center justify-between z-10 bg-gray-950 border-r border-gray-800 md:border-0 2xl:border-r 2xl:border-gray-800 w-7.5 xl:w-11 2xl:w-12.75 min-h-full py-2"
+                <motion.div className="hidden md:flex flex-col items-center justify-between z-10 bg-gray-950 border-r border-gray-800 md:border-0 2xl:border-r 2xl:border-gray-800 3xl:dark:border-b 3xl:dark:border-dashed 3xl:dark:border-gray-800 w-7.5 xl:w-11 2xl:w-12.75 min-h-full py-2"
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ ease: "easeOut", duration: 0.6 }}
@@ -470,7 +470,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                 </div>
 
                 {/* VERTICAL RIGHT TEXT DECORATION */}
-                <motion.div className="hidden lg:flex z-10 bg-gray-950 w-7.5 xl:w-11 2xl:w-13.5 min-h-full flex-col items-center justify-between py-2 2xl:border-l 2xl:border-gray-800"
+                <motion.div className="hidden lg:flex z-10 bg-gray-950 w-7.5 xl:w-11 2xl:w-13.5 min-h-full flex-col items-center justify-between py-2 2xl:border-l 2xl:border-gray-800 3xl:dark:border-b 3xl:dark:border-dashed 3xl:dark:border-gray-800"
                     initial={{ opacity: 0, x: 12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ ease: "easeOut", duration: 0.6 }}
