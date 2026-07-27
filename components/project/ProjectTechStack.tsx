@@ -21,11 +21,11 @@ interface ProjectTechStackProps {
     publicURL: Project['publicUrl'];
     publicRepo: Project['publicRepo'];
     category: Project['category'];
-    relatedProjects: Project['relatedProjects'];
+    otherProjects: Project['otherProjects'];
 }
 
 export default function ProjectTechStack(
-    { techStack, publicURL, publicRepo, category, relatedProjects }: ProjectTechStackProps
+    { techStack, publicURL, publicRepo, category, otherProjects }: ProjectTechStackProps
 ) {
     const t = useTranslations('project_detail');
 
@@ -120,12 +120,16 @@ export default function ProjectTechStack(
                     <h4 className="uppercase text-sm tracking-wider text-gray-600 dark:text-gray-300">
                         {t('other_pjt_label')}
                     </h4>
-                    {/* RELATED PROJECTS */}
-                    {relatedProjects &&
-                        relatedProjects.map((project) => (
-                            <div key={project.slug} className="w-full px-2 py-1 border border-gray-300 dark:border-gray-700 flex items-center justify-between uppercase text-xs text-gray-600 dark:text-gray-300 group transition-colors duration-150 hover:border-violet-600">
-                                {project.slug} <MoveUpRight className="w-3 text-gray-600 dark:text-gray-300 transition-colors duration-150 group-hover:text-violet-600"/>
-                            </div>
+                    {/* OTHER PROJECTS */}
+                    {otherProjects &&
+                        otherProjects.map((slug) => (
+                            <Link
+                                key={slug}
+                                href={`/projects/${slug}`}
+                                className="w-full px-2 py-1 border border-gray-300 dark:border-gray-700 flex items-center justify-between uppercase text-xs text-gray-600 dark:text-gray-300 group transition-colors duration-150 hover:border-violet-600"
+                            >
+                                {slug} <MoveUpRight className="w-3 text-gray-600 dark:text-gray-300 transition-colors duration-150 group-hover:text-violet-600"/>
+                            </Link>
                         ))
                     }
                 </div>

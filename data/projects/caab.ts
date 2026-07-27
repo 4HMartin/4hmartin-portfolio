@@ -57,14 +57,5 @@ export const caab: Project = {
     "/images/projects/caab/home_01.webp",
     "/projects/security-system/screenshot-2.png",
   ],
-  relatedProjects: [
-    {
-      slug: "rodriguez-events-wedding-catering",
-      publicUrl: "https://rodriguez-events.com/",
-    },
-    {
-      slug: "massage-arte-website",
-      publicUrl: "https://massagearte.com/",
-    }
-  ],
+  otherProjects: ["rodriguez-events-wedding-catering", "massage-arte-website"],
 };

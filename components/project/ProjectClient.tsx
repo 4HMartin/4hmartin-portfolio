@@ -22,7 +22,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                     publicURL={project.publicUrl}
                     publicRepo={project.publicRepo}
                     category={project.category}
-                    relatedProjects={project.relatedProjects}
+                    otherProjects={project.otherProjects}
                 />
             </section>
         </>
