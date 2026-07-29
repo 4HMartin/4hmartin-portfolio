@@ -131,11 +131,33 @@ export const caab: Project = {
       },
     },
   ],
-  architectureImage: "/projects/security-system/architecture.png",
-  dbDiagramImage: "/projects/security-system/db-diagram.png",
-  screenshots: [
-    "/images/projects/caab/home_01.webp",
-    "/projects/security-system/screenshot-2.png",
-  ],
+  images: {
+    architectureImage: {
+      src: "/images/projects/caab/home_01.webp",
+      alt: "Project architecture diagram - 4hmartin",
+      title: "Project architecture diagram",
+      imageFit: "contain",
+    },
+    dbDiagramImage: {
+      src: "/images/projects/caab/home_01.png",
+      alt: "Project database entity relationship diagram - 4hmartin",
+      title: "Database Entity Relationship Diagram",
+      imageFit: "contain",
+    },
+    screenshots: [
+      {
+        src: "/images/projects/caab/home_01.webp",
+        alt: "Hero section desktop screenshot - 4hmartin",
+        title: "Hero section desktop screenshot",
+        imageFit: "contain",
+      },
+      {
+        src: "/images/projects/caab/home_01.webp",
+        alt: "Hero section desktop screenshot - 4hmartin",
+        title: "Hero section desktop screenshot",
+        imageFit: "contain",
+      },
+    ],
+  },
   otherProjects: ["rodriguez-events-wedding-catering", "massage-arte-website"],
 };

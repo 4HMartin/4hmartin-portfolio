@@ -155,6 +155,8 @@
     "back_portfolio_label": "back to portfolio",
     "key_features_label": "key features",
     "for_users_label": "for end users",
-    "for_admin_label": "for admin"
+    "for_admin_label": "for admin",
+    "architecture_label": "architecture diagram",
+    "database_label": "database diagram"
   }
 }

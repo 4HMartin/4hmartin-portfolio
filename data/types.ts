@@ -7,6 +7,17 @@ export interface KeyFeature {
   value: Record<Locale, string>;
 }
 
+/**
+ * @description Lightbox Slide props
+ */
+export type buildItemProps = {
+    // id: number
+    src: string;
+    alt: string;
+    title: string;
+    imageFit: "contain" | "cover";
+}
+
 export interface Project {
   slug: string; // usado para la URL: /projects/[slug]
   category: ProjectCategory;
@@ -22,9 +33,11 @@ export interface Project {
   techStack: string[];
   keyFeaturesUser: KeyFeature[];
   keyFeaturesAdmin: KeyFeature[];
-  architectureImage?: string;
-  dbDiagramImage?: string;
-  screenshots: string[];
+  images: {
+    architectureImage?: buildItemProps;
+    dbDiagramImage?: buildItemProps;
+    screenshots: buildItemProps[];
+  }
   otherProjects: Project['slug'][];
 }
 

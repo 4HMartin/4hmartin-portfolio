@@ -91,7 +91,7 @@ h1,h2,h3,h4,h5 {
   /* violet-400 */
   --primary-light: #A684FF;
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: #030213;
+  --secondary: rgb(3, 2, 19);
   --secondary-foreground: #FFF;
   --muted: oklch(0.97 0 0);
   --muted-foreground: oklch(0.556 0 0);

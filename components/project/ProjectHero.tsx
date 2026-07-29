@@ -410,6 +410,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                             width={700}
                             height={400}
                             priority={true}
+                            unoptimized={true}
                             quality={100}
                             className="relative z-20"
                         />
