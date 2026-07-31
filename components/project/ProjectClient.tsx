@@ -6,6 +6,8 @@ import ProjectTechStack from "./ProjectTechStack";
 import ProjectKeyFeatures from "./ProjectKeyFeatures";
 import ProjectArchitecture from "./ProjectArchitecture";
 import ProjectDatabase from "./ProjectDatabase";
+import ProjectFigmaWireframe from "./ProjectFigmaWireframe";
+import ProjectScreenshots from "./ProjectScreenshots";
 
 import { useMemo, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
@@ -31,6 +33,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
         const images: buildItemProps[] = [];
         project.images.architectureImage && images.push(project.images.architectureImage);
         project.images.dbDiagramImage && images.push(project.images.dbDiagramImage);
+        project.images.figmaWireframe && images.push(project.images.figmaWireframe);
         project.images.screenshots.forEach((image) => images.push(image));
 
         return images
@@ -53,6 +56,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                         keyFeaturesUsers={project.keyFeaturesUser}
                         keyFeaturesAdmin={project.keyFeaturesAdmin}
                     />
+                    
                     <div className="flex flex-col lg:flex-row w-full">
                         {project.images.architectureImage && 
                             <ProjectArchitecture
@@ -66,7 +70,18 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                                 handleLightboxOpen={handleLightboxOpen}
                             />
                         }
+                        {project.images.figmaWireframe && project.publicFigmaWireframe &&
+                            <ProjectFigmaWireframe
+                                figmaWireframe={project.images.figmaWireframe}
+                                publicFigmaWireframe={project.publicFigmaWireframe}
+                                handleLightboxOpen={handleLightboxOpen}
+                            />
+                        }
                     </div>
+                    <ProjectScreenshots
+                        screenshots={project.images.screenshots}
+                        handleLightboxOpen={handleLightboxOpen}
+                    />
                 </div>
                 <ProjectTechStack
                     techStack={project.techStack}
@@ -96,7 +111,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                         fontSize: "1.15rem",
                         fontWeight: 600,
                         color: "#ffffff",
-                        paddingLeft: "4rem",
+                        paddingLeft: "5rem",
                         paddingTop: "4px"
                     },
                     captionsDescription: {

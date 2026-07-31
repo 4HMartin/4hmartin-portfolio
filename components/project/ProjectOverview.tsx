@@ -20,7 +20,7 @@ export default function ProjectOverview({ overview }: ProjectOverviewProps) {
             <CornerIcons />
 
             {/* SECTION HEADER */}
-            <SectionHeader parentTranslations="project_detail" titleLabel="overview_label" sectionNumber="02" />
+            <SectionHeader parentTranslations="project_detail" titleLabel="overview_label" />
 
             <article className="relative px-4 py-6 flex flex-col gap-4">
 

@@ -15,11 +15,11 @@ interface ProjectDatabaseProps {
 export default function ProjectDatabase({ dbDiagramImage, handleLightboxOpen }: ProjectDatabaseProps) {
 
     return (
-        <section className="relative h-fit w-full lg:border-b lg:border-gray-300 lg:dark:border-gray-800">
+        <section className="relative h-full w-full lg:border-b lg:border-r lg:border-gray-300 lg:dark:border-gray-800">
             <CornerIcons />
 
             {/* SECTION HEADER */}
-            <SectionHeader parentTranslations="project_detail" titleLabel="database_label" sectionNumber="05" />
+            <SectionHeader parentTranslations="project_detail" titleLabel="database_label" />
 
             <article className="px-4 py-6 flex items-center justify-center">
                 <motion.div

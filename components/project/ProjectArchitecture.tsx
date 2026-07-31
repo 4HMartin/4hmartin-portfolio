@@ -19,7 +19,7 @@ export default function ProjectArchitecture({ architectureImage, handleLightboxO
             <CornerIcons />
 
             {/* SECTION HEADER */}
-            <SectionHeader parentTranslations="project_detail" titleLabel="architecture_label" sectionNumber="04" />
+            <SectionHeader parentTranslations="project_detail" titleLabel="architecture_label" />
 
             <article className="px-4 py-6 flex items-center justify-center">
                 <motion.div

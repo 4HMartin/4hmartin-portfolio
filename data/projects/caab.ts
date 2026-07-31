@@ -14,6 +14,7 @@ export const caab: Project = {
   },
   publicUrl: "https://caab.4hmartin.com/",
   // publicRepo: "https://github.com/...",
+  publicFigmaWireframe: "https://www.figma.com/design/OcT9ub8DM78aPceYIdpcJP/Wireframe---comparadoralarmasbaleares.com?node-id=0-1&t=pVNVAG05XO2lx6NL-1",
   mainGif: "/images/projects/caab/home_gif_01.gif",
   mainGifSection: "Home",
   overview: {
@@ -133,29 +134,192 @@ export const caab: Project = {
   ],
   images: {
     architectureImage: {
-      src: "/images/projects/caab/home_01.webp",
+      src: "/images/projects/caab/architecture_infographic_diagram.webp",
       alt: "Project architecture diagram - 4hmartin",
       title: "Project architecture diagram",
       imageFit: "contain",
     },
     dbDiagramImage: {
-      src: "/images/projects/caab/home_01.png",
+      src: "/images/projects/caab/db_erd.webp",
       alt: "Project database entity relationship diagram - 4hmartin",
       title: "Database Entity Relationship Diagram",
       imageFit: "contain",
+    },
+    figmaWireframe: {
+      src: "/images/projects/caab/figma_wireframe_1.webp",
+      alt: "Figma wireframe",
+      title: "Figma wireframe",
+      imageFit: "contain",
+      imageFormat: "desktop"
     },
     screenshots: [
       {
         src: "/images/projects/caab/home_01.webp",
         alt: "Hero section desktop screenshot - 4hmartin",
-        title: "Hero section desktop screenshot",
+        title: "Home - Hero section - Desktop screenshot",
         imageFit: "contain",
+        imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/home_01.webp",
-        alt: "Hero section desktop screenshot - 4hmartin",
-        title: "Hero section desktop screenshot",
+        src: "/images/projects/caab/home_contact_form.webp",
+        alt: "Contact form desktop screenshot - 4hmartin",
+        title: "Home - Contact form - Desktop screenshot",
         imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/partner_companies_page.webp",
+        alt: "Partner companies - Companies grid - Desktop screenshot",
+        title: "Partner companies - Companies grid - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/partner_company_detailed.webp",
+        alt: "Partner companies - Companies grid - Desktop screenshot",
+        title: "Partner companies - Company details - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/how_it_works_page.webp",
+        alt: "How it works - Desktop screenshot",
+        title: "How it works - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/comparator_page.webp",
+        alt: "Comparator - Products grid - Desktop screenshot",
+        title: "Comparator - Products grid - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/comparator_filters.webp",
+        alt: "Comparator - Filters - Desktop screenshot",
+        title: "Comparator - Filters - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/comparator_compare_products.webp",
+        alt: "Comparator - Selected products to compare - Desktop screenshot",
+        title: "Comparator - Selected products to compare - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/comparison_result.webp",
+        alt: "Comparator - Product comparison table - Desktop screenshot",
+        title: "Comparator - Product comparison table - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/multi_step_form.webp",
+        alt: "Request quote - Multi-steps form - Desktop screenshot",
+        title: "Request quote - Multi-steps form - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/home_hero_mobile.webp",
+        alt: "Home - Hero section - Mobile screenshot",
+        title: "Home - Hero section - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile"
+      },
+      {
+        src: "/images/projects/caab/partner_companies_mobile.webp",
+        alt: "Partner companies - Mobile screenshot",
+        title: "Partner companies - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile"
+      },
+      {
+        src: "/images/projects/caab/how_it_works_mobile.webp",
+        alt: "How it works - Mobile screenshot",
+        title: "How it works - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile"
+      },
+      {
+        src: "/images/projects/caab/comparator_filters_mobile.webp",
+        alt: "Comparator filters - Mobile screenshot",
+        title: "Comparator filters - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile"
+      },
+      {
+        src: "/images/projects/caab/demo_advice_modal.webp",
+        alt: "Demo advice - Desktop screenshot",
+        title: "Demo advice - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile"
+      },
+      {
+        src: "/images/projects/caab/admin_panel_login.webp",
+        alt: "Admin panel - Login form - Desktop screenshot",
+        title: "Admin panel - Login form - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "tablet"
+      },
+      {
+        src: "/images/projects/caab/admin_panel_dashboard.webp",
+        alt: "Admin panel - Dashboard - Desktop screenshot",
+        title: "Admin panel - Dashboard - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/admin_panel_products.webp",
+        alt: "Admin panel - Products list - Desktop screenshot",
+        title: "Admin panel - Products list - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/admin_panel_product_create.webp",
+        alt: "Admin panel - Create new product - Desktop screenshot",
+        title: "Admin panel - Create new product - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "tablet"
+      },
+      {
+        src: "/images/projects/caab/admin_panel_companies.webp",
+        alt: "Admin panel - Companies list - Desktop screenshot",
+        title: "Admin panel - Companies list - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/admin_panel_company_create.webp",
+        alt: "Admin panel - Create new company - Desktop screenshot",
+        title: "Admin panel - Create new company - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "tablet"
+      },
+      {
+        src: "/images/projects/caab/admin_panel_contacts.webp",
+        alt: "Admin panel - Contacts generated via request form - Desktop screenshot",
+        title: "Admin panel - Contacts generated via request form - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/request_quote_email_template_0.webp",
+        alt: "Request quote email example - Admin view (Gmail) - Desktop screenshot",
+        title: "Request quote email example - Admin view (Gmail) - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/request_quote_email_template_1.webp",
+        alt: "Request quote email example - Admin view (Gmail) - Desktop screenshot",
+        title: "Request quote email example - Admin view (Gmail) - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
       },
     ],
   },

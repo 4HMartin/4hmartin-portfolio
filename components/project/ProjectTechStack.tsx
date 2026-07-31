@@ -42,7 +42,7 @@ export default function ProjectTechStack(
             <CornerIcons />
 
             {/* SECTION HEADER */}
-            <SectionHeader parentTranslations="project_detail" titleLabel="tech_stack_label" sectionNumber="06" />
+            <SectionHeader parentTranslations="project_detail" titleLabel="tech_stack_label" />
 
             <article className="relative h-[95%] px-4 py-6 flex flex-col gap-4">
 

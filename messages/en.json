@@ -157,6 +157,9 @@
     "for_users_label": "for end users",
     "for_admin_label": "for admin",
     "architecture_label": "architecture diagram",
-    "database_label": "database diagram"
+    "database_label": "database diagram",
+    "figma_label": "figma wireframe",
+    "view_wireframe_label": "view public wireframe",
+    "screenshots_demos_label": "screenshots & demos"
   }
 }

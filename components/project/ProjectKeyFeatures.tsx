@@ -33,7 +33,7 @@ export default function ProjectKeyFeatures({ keyFeaturesUsers, keyFeaturesAdmin 
             <CornerIcons />
 
             {/* SECTION HEADER */}
-            <SectionHeader parentTranslations="project_detail" titleLabel="key_features_label" sectionNumber="03" />
+            <SectionHeader parentTranslations="project_detail" titleLabel="key_features_label" />
 
             <article className="relative px-4 py-6 flex flex-col gap-4">
                 {/* SUBTITLE - FOR END USERS */}

@@ -16,6 +16,7 @@ export type buildItemProps = {
     alt: string;
     title: string;
     imageFit: "contain" | "cover";
+    imageFormat?: "desktop" | "tablet" | "mobile";
 }
 
 export interface Project {
@@ -26,6 +27,7 @@ export interface Project {
   shortDescription: Record<Locale, string>;
   publicUrl?: string;
   publicRepo?: string;
+  publicFigmaWireframe?: string;
   mainGif: string;
   mainGifSection: string;
   // Cada párrafo es un elemento del array
@@ -36,6 +38,7 @@ export interface Project {
   images: {
     architectureImage?: buildItemProps;
     dbDiagramImage?: buildItemProps;
+    figmaWireframe?: buildItemProps;
     screenshots: buildItemProps[];
   }
   otherProjects: Project['slug'][];
