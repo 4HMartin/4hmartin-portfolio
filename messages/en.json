@@ -167,5 +167,17 @@
     "figma_label": "figma wireframe",
     "view_wireframe_label": "view public wireframe",
     "screenshots_demos_label": "screenshots & demos"
+  },
+  "legal_notice": {
+    "legal_notice_label": "legal notice",
+    "index_label": "index",
+    "home_label": "home",
+    "legals_label": "legals",
+    "owner_id_label": "owner's identification data",
+    "purpose_label": "purpose and objective of the website",
+    "terms_label": "terms of use of this site",
+    "content_label": "content responsibility",
+    "correct_use_label": "correct use of the site by the user",
+    "applicable_label": "applicable legislation and juridiction"
   }
 }
