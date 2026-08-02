@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { buildItemProps } from "@/data/types";
+import { buildItemProps, Project } from "@/data/types";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import SectionHeader from "../layout/SectionHeader";
@@ -11,7 +11,7 @@ import FigmaIcon from "../icons/FigmaIcon";
 
 interface ProjectFigmaWireframeProps {
     figmaWireframe: buildItemProps;
-    publicFigmaWireframe: string;
+    publicFigmaWireframe: Project['publicFigmaWireframe'];
     handleLightboxOpen: (imgSrc: string) => void;
 }
 
@@ -36,7 +36,7 @@ export default function ProjectFigmaWireframe({ figmaWireframe, publicFigmaWiref
                     viewport={{ once: true }}
                     custom={0.6}
                 >
-                    <Link href={publicFigmaWireframe} target="_blank" className="z-10 flex items-center gap-2 text-sm uppercase tracking-wider text-gray-700 dark:text-gray-300 group-hover:text-gray-950 group-hover:dark:text-gray-100">
+                    <Link href={publicFigmaWireframe!} target="_blank" className="z-10 flex items-center gap-2 text-sm uppercase tracking-wider text-gray-700 dark:text-gray-300 group-hover:text-gray-950 group-hover:dark:text-gray-100">
                         <FigmaIcon className="w-5" stroke="#7f22fe" />
                         {t('view_wireframe_label')}
                     </Link>

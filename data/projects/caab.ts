@@ -27,7 +27,7 @@ export const caab: Project = {
       "Más allá de la simple comparación, la plataforma actúa como un puente estratégico entre los clientes interesados y los proveedores de seguridad verificados, y cuenta con formularios inteligentes de generación de clientes potenciales, un sistema de solicitud de presupuestos y un proceso de reserva de asesoramiento presencial.",
     ],
   },
-  techStack: ["TypeScript", "React", "TailwindCSS"],
+  techStack: ["Next.js", "TypeScript", "React", "TailwindCSS", "Motion", "Next-Intl", "Postgre SQL", "Prisma ORM", "Better Auth", "Nodemailer", "RHF", "Zod", "FTP"],
   keyFeaturesUser: [
     {
       key: {

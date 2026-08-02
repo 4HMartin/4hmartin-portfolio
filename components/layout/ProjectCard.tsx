@@ -22,7 +22,7 @@ export default function ProjectCard({ project }: { project: Project; }) {
     return (
         <div className="border border-gray-200 dark:border-gray-800 hover:border-violet-300 dark:hover:border-violet-700 transition-colors flex flex-col group">
 
-            {/* MAIN GIF */}
+            {/* PROJECT IMAGE PREVIEW */}
             <div className="relative bg-violet-100 dark:bg-violet-950 aspect-video flex items-center justify-center pl-8 overflow-hidden border-b border-gray-200 dark:border-gray-800 group-hover:border-violet-300 dark:group-hover:border-violet-800 transition-colors">
                 <Link href={`/projects/${project.slug}`} className="flex flex-col items-center w-full h-[80%] -rotate-6 scale-105 transition-all duration-300 hover:scale-100">
                     <ThemeImage
@@ -34,8 +34,8 @@ export default function ProjectCard({ project }: { project: Project; }) {
                         className="z-10"
                     />
                     <Image
-                        src={project.screenshots[0]}
-                        alt="Heber Martin Rodriguez - Project main gif"
+                        src={project.images.screenshots[0].src}
+                        alt={project.images.screenshots[0].alt}
                         width={480}
                         height={280}
                         unoptimized

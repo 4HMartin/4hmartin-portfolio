@@ -87,6 +87,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                     techStack={project.techStack}
                     publicURL={project.publicUrl}
                     publicRepo={project.publicRepo}
+                    publicFigmaWireframe={project.publicFigmaWireframe}
                     category={project.category}
                     otherProjects={project.otherProjects}
                 />

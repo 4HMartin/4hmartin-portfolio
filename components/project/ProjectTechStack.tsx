@@ -9,6 +9,7 @@ import SectionHeader from "../layout/SectionHeader";
 import { ExternalLink, Globe, MoveUpRight } from "lucide-react";
 import { fadeUp } from "@/lib/animations";
 import GitHubIcon from "../icons/GitHubIcon";
+import FigmaIcon from "../icons/FigmaIcon";
 
 const SeparatorAuxLine = () => (
     <motion.div
@@ -26,12 +27,13 @@ interface ProjectTechStackProps {
     techStack: Project['techStack'];
     publicURL: Project['publicUrl'];
     publicRepo: Project['publicRepo'];
+    publicFigmaWireframe: Project['publicFigmaWireframe'];
     category: Project['category'];
     otherProjects: Project['otherProjects'];
 }
 
 export default function ProjectTechStack(
-    { techStack, publicURL, publicRepo, category, otherProjects }: ProjectTechStackProps
+    { techStack, publicURL, publicRepo, publicFigmaWireframe, category, otherProjects }: ProjectTechStackProps
 ) {
     const t = useTranslations('project_detail');
 
@@ -44,7 +46,7 @@ export default function ProjectTechStack(
             {/* SECTION HEADER */}
             <SectionHeader parentTranslations="project_detail" titleLabel="tech_stack_label" />
 
-            <article className="relative h-[95%] px-4 py-6 flex flex-col gap-4">
+            <article className="relative h-[98%] px-4 py-6 flex flex-col gap-4">
 
                 {/* TECH BADGES */}
                 <motion.div
@@ -90,7 +92,14 @@ export default function ProjectTechStack(
                     >
                         <Link href={publicURL ?? 'https://github.com/4HMartin'} target="_blank" className="z-10 flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
                             <Globe className="w-4 h-4 text-gray-600 dark:text-gray-100 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500" />
-                            {publicURL?.replace('https://', '')}
+                            <div className="flex items-center justify-between w-full">
+                                <span className="text-xs uppercase tracking-wider text-gray-700 dark:text-gray-300">
+                                    Live site
+                                </span>
+                                <span className="text-sm text-gray-400 transition-colors duration-150 group-hover:text-violet-600">
+                                    {publicURL?.replace('https://', '')}
+                                </span>
+                            </div>
                         </Link>
                         <CornerIcons />
                     </motion.div>
@@ -106,7 +115,38 @@ export default function ProjectTechStack(
                         >
                             <Link href={publicRepo} target="_blank" className="z-10 flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300">
                                 <GitHubIcon className="w-4 h-4 text-gray-600 dark:text-gray-100 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500" />
-                                {publicRepo.replace('https://', '')}
+                                <div className="flex items-center justify-between w-full">
+                                    <span className="text-xs uppercase tracking-wider text-gray-700 dark:text-gray-300">
+                                        GitHub Repo
+                                    </span>
+                                    <span className="text-sm text-gray-400 transition-colors duration-150 group-hover:text-violet-600">
+                                        {publicRepo.replace('https://', '')}
+                                    </span>
+                                </div>
+                            </Link>
+                            <CornerIcons />
+                        </motion.div>
+                    }
+
+                    {publicFigmaWireframe &&
+                        <motion.div className="relative group gap-4 w-full py-2 px-4"
+                            variants={fadeUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            custom={0.6}
+                        >
+                            <Link href={publicFigmaWireframe} target="_blank" className="z-10 flex items-center gap-3 text-sm text-gray-600 dark:text-gray-300">
+                                {/* <Globe className="w-4 h-4 text-gray-600 dark:text-gray-100 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500" /> */}
+                                <FigmaIcon className="w-5" stroke="#7f22fe" />
+                                <div className="flex items-center justify-between w-full">
+                                    <span className="text-xs uppercase tracking-wider text-gray-700 dark:text-gray-300">
+                                        {t('figma_label')}
+                                    </span>
+                                    <span className="text-sm text-gray-400 transition-colors duration-150 group-hover:text-violet-600">
+                                        {publicFigmaWireframe.replace('https://','').slice(0,30)}
+                                    </span>
+                                </div>
                             </Link>
                             <CornerIcons />
                         </motion.div>
@@ -130,8 +170,8 @@ export default function ProjectTechStack(
                     </h4>
                     {/* CATEGORY */}
                     <span className={`${category === 'production_ready' ? 'bg-violet-600' :
-                            category === 'in_development' ? 'bg-lime-600' : 'bg-gray-700'
-                            } relative w-fit z-20 px-2 py-0.5 uppercase text-xs text-white`}>
+                        category === 'in_development' ? 'bg-lime-600' : 'bg-gray-700'
+                        } relative w-fit z-20 px-2 py-0.5 uppercase text-xs text-white`}>
                         {category}
                     </span>
                 </motion.div>
@@ -157,7 +197,7 @@ export default function ProjectTechStack(
                             <Link
                                 key={slug}
                                 href={`/projects/${slug}`}
-                                className="w-full px-2 py-1 border border-gray-300 dark:border-gray-700 flex items-center justify-between uppercase text-xs text-gray-600 dark:text-gray-300 group transition-colors duration-150 hover:border-violet-600"
+                                className="w-full px-2 py-1 border border-gray-300 dark:border-gray-700 flex items-center justify-between uppercase text-xs text-gray-600 dark:text-gray-300 group transition-colors duration-150 hover:border-violet-600 dark:hover:border-violet-600"
                             >
                                 {slug} <MoveUpRight className="w-3 text-gray-600 dark:text-gray-300 transition-colors duration-150 group-hover:text-violet-600" />
                             </Link>
@@ -172,8 +212,8 @@ export default function ProjectTechStack(
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    custom={1}
-                    className="absolute bottom-4 left-4 uppercase text-xs text-violet-600 transition-colors duration-150 hover:text-violet-800"
+                    custom={0.6}
+                    className="absolute bottom-1 left-4 uppercase text-xs text-violet-600 transition-colors duration-150 hover:text-violet-800"
                 >
                     ⇠ {t('back_portfolio_label')}
                 </MotionLink>
