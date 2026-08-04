@@ -202,7 +202,7 @@ export default function Header() {
                     <CustomCtaButton
                         variant="primary"
                         text={t('hire-me_label')}
-                        target="/#contact"
+                        target="contact"
                         width="w-30 lg:w-[110px]"
                         height="h-8 lg:h-12"
                     />

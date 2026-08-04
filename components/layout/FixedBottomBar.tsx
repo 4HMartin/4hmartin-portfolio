@@ -18,7 +18,7 @@ import Link from 'next/link';
 
 export default async function FixedBottomBar() {
 
-    const {success, cachedData, positive, error} = await getBtcPrice();
+    const {success, cachedData, positive} = await getBtcPrice();
 
     return (
         <section className="fixed z-40 bottom-0 w-full flex items-center justify-between px-4 md:px-6 xl:px-10 3xl:px-4 bg-white dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800">

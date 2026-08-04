@@ -118,6 +118,7 @@ export default function Hero() {
                 className="absolute z-10 left-0 right-0 h-px border-t border-dashed border-gray-800 pointer-events-none opacity-0 transition-opacity duration-150"
             />
 
+            {/* LEFT CONTENT CONTAINER */}
             <div className="relative flex gap-0 w-full border-b border-gray-800 2xl:border-0">
 
                 {/* VERTICAL LEFT TEXT DECORATION */}
@@ -230,7 +231,7 @@ export default function Hero() {
                                 variant="primary"
                                 text={t('explore-work_label')}
                                 icon="MoveDown"
-                                target="/#projects"
+                                target="projects"
                                 width="w-36 lg:w-40"
                                 height="h-8 lg:h-12"
                             />

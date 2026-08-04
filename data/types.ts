@@ -55,3 +55,15 @@ export interface Cert {
   certLink: string;
   filename: string;
 }
+
+export interface CustomCtaButtonProps {
+    variant: "primary" | "secondary" | "neutral",
+    text: string,
+    icon?: string,
+    target: string,
+    width: string,
+    height: string,
+    setIsOpen?: (value: boolean) => void
+}
+
+export type InnerButtonProps = Omit<CustomCtaButtonProps, 'target'>;

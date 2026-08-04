@@ -154,7 +154,7 @@ export default function MobileMenu() {
                                 variant="primary"
                                 text={t('hire-me_label')}
                                 icon="MoveDown"
-                                target="/#contact"
+                                target="contact"
                                 width="w-40"
                                 height="h-10"
                                 setIsOpen={setIsOpen}
