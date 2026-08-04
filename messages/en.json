@@ -284,6 +284,26 @@
     "data_controller_p_value_4": "dev@4hmartin.com",
     "data_controller_p_key_5": "Main Activity:",
     "data_controller_p_value_5": "Full-stack Software Development, Programming, and Independent Tech Consulting.",
-    "data_controller_p_2": "For any questions, requests, or clarifications regarding this Privacy Policy, how your personal data is handled, or to exercise your data protection rights, you can contact the Data Controller directly via the Contact Email listed above."
+    "data_controller_p_2": "For any questions, requests, or clarifications regarding this Privacy Policy, how your personal data is handled, or to exercise your data protection rights, you can contact the Data Controller directly via the Contact Email listed above.",
+    "data_collected_p_1": "This website only collects personal data that is strictly necessary to fulfill its objectives (responding to professional inquiries and ensuring site security). Depending on how you interact with this portfolio, the following types of data may be processed:",
+    "data_collected_sub_1": "data provided voluntarily by the user",
+    "data_collected_p_2": "When you use the contact form, schedule an interview via an integrated calendar, or send an email directly to the Owner, you may provide:",
+    "data_collected_p_key_1": "Identification Data:",
+    "data_collected_p_value_1": "First and last name.",
+    "data_collected_p_key_2": "Contact Information:",
+    "data_collected_p_value_2": "Email address",
+    "data_collected_p_key_3": "Professional Data:",
+    "data_collected_p_value_3": "Company name, job title, or recruiter agency you represent.",
+    "data_collected_p_key_4": "Message Content:",
+    "data_collected_p_value_4": "Any details, project briefs, job descriptions, or links (such as your company website or LinkedIn profile) that you choose to include in your message.",
+    "data_collected_sub_2": "data collected automatically",
+    "data_collected_p_3": "When you browse this portfolio, certain technical information is captured automatically by the hosting servers, security firewalls, or basic analytics plugins to ensure the site runs smoothly and securely. This includes:",
+    "data_collected_p_key_5": "Network Data:",
+    "data_collected_p_value_5": "Your Internet Protocol (IP) address (which is anonymized where possible).",
+    "data_collected_p_key_6": "Browser & Device Metadata:",
+    "data_collected_p_value_6": "Device type (mobile, desktop, tablet), operating system, browser version, and language settings.",
+    "data_collected_p_key_7": "Browsing Behavior:",
+    "data_collected_p_value_7": "Date and time of the visit, the pages or project case studies viewed, time spent on specific sections, and the referring website (the link you clicked to find this portfolio).",
+    "data_collected_p_4": "This website does not collect, store, or process any sensitive data (such as financial information, social security numbers, or health data)."
   }
 }

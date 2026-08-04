@@ -417,7 +417,7 @@ export default function PrivacyPolicy() {
 
             {/** WHAT PERSONAL DATA IS COLLECTED? */}
             <section id="data-collected">
-                <SectionHeader parentTranslations="privacy_policy" titleLabel="terms_label" />
+                <SectionHeader parentTranslations="privacy_policy" titleLabel="data_collected_label" />
                 <motion.article
                     variants={fadeUp}
                     initial="hidden"
@@ -425,25 +425,19 @@ export default function PrivacyPolicy() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                 >
-                    <p className="xl:mb-4">{t('terms_p_1')}</p>
-                    <p className="xl:mb-4"><strong>{t('terms_sub_1')}</strong></p>
-                    <p className="xl:mb-4">{t('terms_p_2')}</p>
-                    <p>· {t('terms_l_1')}</p>
-                    <p>· {t('terms_l_2')}</p>
-                    <p>· {t('terms_l_3')}</p>
-                    <p>· {t('terms_l_4')}</p>
-                    <p className="xl:my-4"><strong>{t('terms_sub_2')}</strong></p>
-                    <p className="xl:mb-4">{t('terms_p_3')}</p>
-                    <p><strong className="capitalize">· {t('terms_l_5_key')}</strong> {t('terms_l_5_value')}</p>
-                    <p><strong className="capitalize">· {t('terms_l_6_key')}</strong> {t('terms_l_6_value')}</p>
-                    <p>· {t('terms_l_7')}</p>
-                    <p className="xl:my-4"><strong>{t('terms_sub_3')}</strong></p>
-                    <p className="xl:mb-4">{t('terms_p_4')}</p>
-                    <p className="xl:mb-4">{t('terms_p_5')}</p>
-                    <p>· {t('terms_l_8')}</p>
-                    <p>· {t('terms_l_9')}</p>
-                    <p>· {t('terms_l_10')}</p>
-
+                    <p className="xl:mb-4">{t('data_collected_p_1')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('data_collected_sub_1')}</strong></p>
+                    <p className="xl:mb-4">{t('data_collected_p_2')}</p>
+                    <p><strong className="capitalize">· {t('data_collected_p_key_1')}</strong> {t('data_collected_p_value_1')}</p>
+                    <p><strong className="capitalize">· {t('data_collected_p_key_2')}</strong> {t('data_collected_p_value_2')}</p>
+                    <p><strong className="capitalize">· {t('data_collected_p_key_3')}</strong> {t('data_collected_p_value_3')}</p>
+                    <p><strong className="capitalize">· {t('data_collected_p_key_4')}</strong> {t('data_collected_p_value_4')}</p>
+                    <p className="xl:my-4 capitalize"><strong>{t('data_collected_sub_2')}</strong></p>
+                    <p className="xl:mb-4">{t('data_collected_p_3')}</p>
+                    <p><strong className="capitalize">· {t('data_collected_p_key_5')}</strong> {t('data_collected_p_value_5')}</p>
+                    <p><strong className="capitalize">· {t('data_collected_p_key_6')}</strong> {t('data_collected_p_value_6')}</p>
+                    <p><strong className="capitalize">· {t('data_collected_p_key_7')}</strong> {t('data_collected_p_value_7')}</p>
+                    <p className="xl:mb-4">{t('data_collected_p_4')}</p>
                 </motion.article>
             </section>
 
