@@ -184,7 +184,7 @@ export default function LegalNotice() {
                                 {t('index_label')}
                             </motion.h2>
 
-                            {/* SHORT DESCRIPTION */}
+                            {/* INDEX LIST */}
                             <motion.ul className="relative z-20 flex flex-col gap-2"
                                 initial={{ opacity: 0, y: 12 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -347,7 +347,13 @@ export default function LegalNotice() {
             {/** OWNER'S IDENTIFICATION DATA */}
             <section id="owner_id_data">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="owner_id_label" />
-                <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
+                <motion.article
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
+                >
                     <p className="xl:mb-4">{t('owner_p_1')}</p>
                     <p><strong className="capitalize">{t('website_owner_label')}</strong> Heber Martin Rodríguez Cabrera.</p>
                     <p><strong className="capitalize">{t('tax_id_label')}</strong> 41711051E.</p>
@@ -356,26 +362,38 @@ export default function LegalNotice() {
                     <p><strong className="capitalize">{t('contact_phone_label')}</strong> +34 640 77 44 30</p>
                     <p><strong className="capitalize">{t('main_activity_label')}</strong> {t('activity_desc')}</p>
                     <p><strong className="capitalize">{t('domain_name_label')}</strong> 4hmartin.com</p>
-                </article>
+                </motion.article>
             </section>
 
             {/** PURPOSE AND OBJECTIVE OF THE WEBSITE */}
             <section id="purpose">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="purpose_label" />
-                <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
+                <motion.article
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
+                >
                     <p className="xl:mb-4">{t('purpose_p_1')}</p>
                     <p className="xl:mb-4">{t('purpose_p_2')}</p>
                     <p><strong className="capitalize">· {t('purpose_p_3_key')}</strong> {t('purpose_p_3_value')}</p>
                     <p><strong className="capitalize">· {t('purpose_p_4_key')}</strong> {t('purpose_p_4_value')}</p>
                     <p><strong className="capitalize">· {t('purpose_p_5_key')}</strong> {t('purpose_p_5_value')}</p>
                     <p className="xl:my-4">{t('purpose_p_6')}</p>
-                </article>
+                </motion.article>
             </section>
 
             {/** TERMS OF USE OF THE SITE */}
             <section id="terms">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="terms_label" />
-                <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
+                <motion.article
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
+                >
                     <p className="xl:mb-4">{t('terms_p_1')}</p>
                     <p className="xl:mb-4"><strong>{t('terms_sub_1')}</strong></p>
                     <p className="xl:mb-4">{t('terms_p_2')}</p>
@@ -395,13 +413,19 @@ export default function LegalNotice() {
                     <p>· {t('terms_l_9')}</p>
                     <p>· {t('terms_l_10')}</p>
 
-                </article>
+                </motion.article>
             </section>
 
             {/** CONTENT RESPONSIBILITY */}
             <section id="content-responsibility">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="content_label" />
-                <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
+                <motion.article
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
+                >
                     <p className="xl:mb-4">{t('content_p_1')}</p>
                     <p className="xl:mb-4"><strong>{t('content_sub_1')}</strong></p>
                     <p className="xl:mb-4">{t('content_p_2')}</p>
@@ -412,13 +436,19 @@ export default function LegalNotice() {
                     <p className="xl:mb-4">{t('content_p_3')}</p>
                     <p>· {t('content_l_1')}</p>
                     <p>· {t('content_l_2')}</p>
-                </article>
+                </motion.article>
             </section>
 
             {/** CORRECT USE OF THE SITE BY THE USER */}
             <section id="correct-use">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="correct_use_label" />
-                <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
+                <motion.article
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
+                >
                     <p className="xl:mb-4">{t('correct_p_1')}</p>
                     <p className="xl:mb-4"><strong>{t('correct_sub_1')}</strong></p>
                     <p className="xl:mb-4">{t('correct_p_2')}</p>
@@ -432,17 +462,23 @@ export default function LegalNotice() {
                     <p><strong className="capitalize">· {t('correct_p_key_6')}</strong> {t('correct_p_value_6')}</p>
                     <p><strong className="capitalize">· {t('correct_p_key_7')}</strong> {t('correct_p_value_7')}</p>
                     <p className="xl:my-4">{t('correct_p_4')}</p>
-                </article>
+                </motion.article>
             </section>
 
             {/** APPLICABLE LEGISLATION AND JURISDICTION */}
             <section id="applicable">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="applicable_label" />
-                <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
+                <motion.article
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
+                >
                     <p className="xl:mb-4">{t('applicable_p_1')}</p>
                     <p className="xl:mb-4">{t('applicable_p_2')}</p>
                     <p className="xl:mb-4">{t('applicable_p_3')}</p>
-                </article>
+                </motion.article>
             </section>
         </div>
     )
