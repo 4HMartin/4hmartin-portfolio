@@ -229,6 +229,26 @@
     "content_sub_2": "Responsibility for Technological Deliverables",
     "content_p_3": "Regarding code snippets, proof-of-concept projects, or tutorials hosted or displayed on this website:",
     "content_l_1": "They are provided 'as is' for demonstrative and portfolio purposes only.",
-    "content_l_2": "The Owner is not responsible for any issues, security vulnerabilities, or damages that may arise if a User decides to copy, clone, or implement portions of this code into external, production environments without independent verification."
+    "content_l_2": "The Owner is not responsible for any issues, security vulnerabilities, or damages that may arise if a User decides to copy, clone, or implement portions of this code into external, production environments without independent verification.",
+    "correct_p_1": "The User agrees to make appropriate, responsible, and lawful use of this website, its features, and its content, in strict accordance with current legislation, good faith, moral standards, and public order.",
+    "correct_sub_1": "User Obligations",
+    "correct_p_2": "By accessing this website, the User expressly agrees to:",
+    "correct_p_key_1": "Provide Accurate Information:",
+    "correct_p_value_1": "Ensure that any data provided through contact forms, email links, or scheduling tools is truthful, accurate, and up to date.",
+    "correct_p_key_2": "Respect System Integrity:",
+    "correct_p_value_2": "Refrain from any action that could damage, disable, overburden, or impair the website's infrastructure, servers, networks, or connected databases.",
+    "correct_p_key_3": "Authorized Use Only:",
+    "correct_p_value_3": "Access the website solely through the user interfaces provided. Unauthorized attempts to access restricted areas, administrative panels, or underlying source code are strictly prohibited.",
+    "correct_sub_2": "Prohibited Conduct",
+    "correct_p_3": "The User shall not, under any circumstances, carry out the following actions:",
+    "correct_p_key_4": "Malicious Inputs:",
+    "correct_p_value_4": "Inject, transmit, or introduce computer viruses, malware, trojans, logic bombs, or any other malicious scripts or code (including SQL injection or Cross-Site Scripting attacks) designed to disrupt or manipulate the site's functionality.",
+    "correct_p_key_5": "Form and API Abuse:",
+    "correct_p_value_5": "Use contact forms, automated scripts, bots, or email links to flood the server, send spam, distribute unsolicited commercial messages, or execute Denial of Service (DoS/DDoS) actions.",
+    "correct_p_key_6": "Data Scraping:",
+    "correct_p_value_6": "Extract, harvest, or scrape content, text, project data, images, or personal contact details from this website using automated tools (crawlers, scrapers, spiders) without the express written permission of the Owner.",
+    "correct_p_key_7": "Impersonation:",
+    "correct_p_value_7": "Impersonate any other person or entity, or misrepresent their identity or affiliation when contacting the Owner.",
+    "correct_p_4": "The Owner reserves the right to deny or withdraw access to the website and its services, without prior notice, from any User who breaches the terms outlined in this section, and may pursue legal remedies if necessary."
   }
 }

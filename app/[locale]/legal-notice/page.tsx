@@ -418,13 +418,29 @@ export default function LegalNotice() {
             {/** CORRECT USE OF THE SITE BY THE USER */}
             <section id="correct-use">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="correct_use_label" />
-
+                <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
+                    <p className="xl:mb-4">{t('correct_p_1')}</p>
+                    <p className="xl:mb-4"><strong>{t('correct_sub_1')}</strong></p>
+                    <p className="xl:mb-4">{t('correct_p_2')}</p>
+                    <p><strong className="capitalize">· {t('correct_p_key_1')}</strong> {t('correct_p_value_1')}</p>
+                    <p><strong className="capitalize">· {t('correct_p_key_2')}</strong> {t('correct_p_value_2')}</p>
+                    <p><strong className="capitalize">· {t('correct_p_key_3')}</strong> {t('correct_p_value_3')}</p>
+                    <p className="xl:my-4"><strong>{t('correct_sub_2')}</strong></p>
+                    <p className="xl:mb-4">{t('correct_p_3')}</p>
+                    <p><strong className="capitalize">· {t('correct_p_key_4')}</strong> {t('correct_p_value_4')}</p>
+                    <p><strong className="capitalize">· {t('correct_p_key_5')}</strong> {t('correct_p_value_5')}</p>
+                    <p><strong className="capitalize">· {t('correct_p_key_6')}</strong> {t('correct_p_value_6')}</p>
+                    <p><strong className="capitalize">· {t('correct_p_key_7')}</strong> {t('correct_p_value_7')}</p>
+                    <p className="xl:my-4">{t('correct_p_4')}</p>
+                </article>
             </section>
 
             {/** APPLICABLE LEGISLATION AND JURISDICTION */}
             <section id="applicable">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="applicable_label" />
+                <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
 
+                </article>
             </section>
         </div>
     )
