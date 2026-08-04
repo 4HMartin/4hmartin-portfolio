@@ -18,26 +18,7 @@ import Link from 'next/link';
 
 export default async function FixedBottomBar() {
 
-    const { data } = await getBtcPrice();
-
-    const date = new Date(data.last_updated);
-
-    const formatter = new Intl.DateTimeFormat('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-        // timeZone: 'UTC' // Omit this line if you want local time instead
-    });
-
-    const formattedDate = formatter.format(date).replace(',', ' -');
-
-    const btcPrice = data.price.toFixed(2);
-    const percentChange = data.percent_change_24h.toFixed(2);
-    const positive = !percentChange.startsWith('-');
+    const {success, cachedData, positive, error} = await getBtcPrice();
 
     return (
         <section className="fixed z-40 bottom-0 w-full flex items-center justify-between px-4 md:px-6 xl:px-10 3xl:px-4 bg-white dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800">
@@ -52,69 +33,78 @@ export default async function FixedBottomBar() {
             </article>
 
             {/* BTC */}
-            <Tooltip>
-                <TooltipTrigger className="text-[7px] xs:text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default text-end w-[25%] xl:w-[20%] 3xl:w-40 border-l border-gray-300 dark:border-gray-800">
-                    <p className="inline-flex items-center gap-1 pr-2">
-                        <small className="text-violet-500">₿</small>
-                        {/* <Bitcoin className='text-violet-500 w-4 h-4'/> */}
-                    </p>
+            {success && cachedData ?
+                <Tooltip>
+                    <TooltipTrigger className="text-[7px] xs:text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default text-end w-[25%] xl:w-[20%] 3xl:w-40 border-l border-gray-300 dark:border-gray-800">
+                        <p className="inline-flex items-center gap-1 pr-2">
+                            <small className="text-violet-500">₿</small>
+                            {/* <Bitcoin className='text-violet-500 w-4 h-4'/> */}
+                        </p>
 
-                    {/* CURRENCY - DOLLARS */}
-                    <p className="inline-flex items-center">
-                        {btcPrice} $
-                    </p>
-                </TooltipTrigger>
-                <TooltipContent side='top' sideOffset={10} className={"rounded-none shadow-md p-0"}>
-                    <Table>
-                        <TableHeader>
-                            <TableRow className='hover:bg-violet-100 dark:bg-gray-950'>
-                                <TableHead colSpan={2} className='flex items-center gap-2 text-gray-800 dark:text-gray-400 uppercase tracking-widest font-bold cursor-default'>
-                                    {/* <span className='text-orange-500 mr-2'>₿</span> */}
-                                    <Bitcoin className='text-orange-500 w-6'/>
-                                    BITCOIN
-                                </TableHead>
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody>
-                            <TableRow className='hover:bg-violet-100 text-gray-600 dark:text-gray-400 dark:bg-slate-950'>
-                                <TableCell className='uppercase tracking-widest text-xs font-bold cursor-default'>
-                                    Actual price
-                                </TableCell>
-                                <TableCell className='text-end cursor-default text-violet-500'>
-                                    {btcPrice} $
-                                </TableCell>
-                            </TableRow>
+                        {/* CURRENCY - DOLLARS */}
+                        <p className="inline-flex items-center">
+                            {cachedData.data.price} $
+                        </p>
+                    </TooltipTrigger>
+                    <TooltipContent side='top' sideOffset={10} className={"rounded-none shadow-md p-0"}>
+                        <Table>
+                            <TableHeader>
+                                <TableRow className='hover:bg-violet-100 dark:bg-gray-950'>
+                                    <TableHead colSpan={2} className='flex items-center gap-2 text-gray-800 dark:text-gray-400 uppercase tracking-widest font-bold cursor-default'>
+                                        {/* <span className='text-orange-500 mr-2'>₿</span> */}
+                                        <Bitcoin className='text-orange-500 w-6' />
+                                        BITCOIN
+                                    </TableHead>
+                                </TableRow>
+                            </TableHeader>
+                            <TableBody>
+                                <TableRow className='hover:bg-violet-100 text-gray-600 dark:text-gray-400 dark:bg-slate-950'>
+                                    <TableCell className='uppercase tracking-widest text-xs font-bold cursor-default'>
+                                        Actual price
+                                    </TableCell>
+                                    <TableCell className='text-end cursor-default text-violet-500'>
+                                        {cachedData.data.price} $
+                                    </TableCell>
+                                </TableRow>
 
-                            <TableRow className='hover:bg-violet-100 text-gray-600 dark:text-gray-400 dark:bg-slate-950'>
-                                <TableCell className='uppercase tracking-widest text-xs font-bold cursor-default'>
-                                    Change 24h
-                                </TableCell>
-                                <TableCell className={`text-end cursor-default ${positive ? 'text-lime-500' : 'text-red-500'}`}>
-                                    {percentChange} %
-                                </TableCell>
-                            </TableRow>
+                                <TableRow className='hover:bg-violet-100 text-gray-600 dark:text-gray-400 dark:bg-slate-950'>
+                                    <TableCell className='uppercase tracking-widest text-xs font-bold cursor-default'>
+                                        Change 24h
+                                    </TableCell>
+                                    <TableCell className={`text-end cursor-default ${positive ? 'text-lime-500' : 'text-red-500'}`}>
+                                        {cachedData.data.percent_change_24h} %
+                                    </TableCell>
+                                </TableRow>
 
-                            <TableRow className='hover:bg-violet-100 text-gray-600 dark:text-gray-400 dark:bg-slate-950'>
-                                <TableCell className='uppercase tracking-widest text-xs font-bold cursor-default'>
-                                    Last updated
-                                </TableCell>
-                                <TableCell className='text-end cursor-default text-violet-500'>
-                                    {formattedDate}
-                                </TableCell>
-                            </TableRow>
-                        </TableBody>
-                        <TableFooter>
-                            <TableRow className='dark:bg-gray-950'>
-                                <TableCell colSpan={2} className='text-xs'>
-                                    <Link href={'https://coinmarketcap.com/api/documentation/pro-api-reference/cryptocurrency#simple-price'} target='_blank' className='hover:text-violet-500 dark:text-gray-600'>
-                                        Powered by Coinmarketcap API
-                                    </Link>
-                                </TableCell>
-                            </TableRow>
-                        </TableFooter>
-                    </Table>
-                </TooltipContent>
-            </Tooltip>
+                                <TableRow className='hover:bg-violet-100 text-gray-600 dark:text-gray-400 dark:bg-slate-950'>
+                                    <TableCell className='uppercase tracking-widest text-xs font-bold cursor-default'>
+                                        Last updated
+                                    </TableCell>
+                                    <TableCell className='text-end cursor-default text-violet-500'>
+                                        {cachedData.data.last_updated}
+                                    </TableCell>
+                                </TableRow>
+                            </TableBody>
+                            <TableFooter>
+                                <TableRow className='dark:bg-gray-950'>
+                                    <TableCell colSpan={2} className='text-xs'>
+                                        <Link href={'https://coinmarketcap.com/api/documentation/pro-api-reference/cryptocurrency#simple-price'} target='_blank' className='hover:text-violet-500 dark:text-gray-600'>
+                                            Powered by Coinmarketcap API
+                                        </Link>
+                                    </TableCell>
+                                </TableRow>
+                            </TableFooter>
+                        </Table>
+                    </TooltipContent>
+                </Tooltip>
+                :
+                <span className='flex items-center gap-2 pl-0 cursor-default w-[25%] xl:w-[20%] 3xl:w-40 border-l border-gray-300 dark:border-gray-800'>
+                    <Bitcoin className='text-orange-500 w-3.5' />
+                    <small className='w-full text-[7px] xs:text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest'>
+                        VIRES_IN_NUMERIS
+                    </small>
+                </span>
+            }
         </section>
     )
 }
