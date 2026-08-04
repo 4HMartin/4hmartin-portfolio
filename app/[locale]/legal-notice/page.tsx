@@ -439,7 +439,9 @@ export default function LegalNotice() {
             <section id="applicable">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="applicable_label" />
                 <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
-
+                    <p className="xl:mb-4">{t('applicable_p_1')}</p>
+                    <p className="xl:mb-4">{t('applicable_p_2')}</p>
+                    <p className="xl:mb-4">{t('applicable_p_3')}</p>
                 </article>
             </section>
         </div>
