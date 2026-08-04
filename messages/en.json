@@ -216,6 +216,19 @@
     "terms_p_5": "The Owner shall not be held liable for damages of any kind resulting from:",
     "terms_l_8": "Temporary unavailability, maintenance downtime, or lack of continuity of the website.",
     "terms_l_9": "The presence of malicious software or viruses transmitted despite having implemented standard technical security measures.",
-    "terms_l_10": "The improper or illegal use that Users may make of the contents of this website."
+    "terms_l_10": "The improper or illegal use that Users may make of the contents of this website.",
+    "content_p_1": "The Owner of this website strives to ensure that all information, project descriptions, and technical data displayed are accurate, up-to-date, and free of typographical errors. However, the Owner does not guarantee the absolute completeness or permanent accuracy of all content and reserves the right to modify, update, or remove content at any time without prior notice.",
+    "content_sub_1": "Third-Party Links and External Content",
+    "content_p_2": "This portfolio contains links to external, third-party websites (e.g., live client websites, open-source repositories, LinkedIn profiles, or external articles).",
+    "content_p_key_1": "No control:",
+    "content_p_value_1": "The Owner has no control over, and assumes no responsibility for, the content, privacy policies, practices, or availability of any third-party websites.",
+    "content_p_key_2": "No Endorsement:",
+    "content_p_value_2": "The inclusion of these links does not imply any association, merger, or endorsement of the connected entities or their content.",
+    "content_p_key_3": "Broken Links:",
+    "content_p_value_3": "Because the web is dynamic, external links may change or break. If any user detects that a link leads to illegal, inappropriate, or broken content, they are encouraged to report it to the Owner via the contact email to facilitate its prompt removal.",
+    "content_sub_2": "Responsibility for Technological Deliverables",
+    "content_p_3": "Regarding code snippets, proof-of-concept projects, or tutorials hosted or displayed on this website:",
+    "content_l_1": "They are provided 'as is' for demonstrative and portfolio purposes only.",
+    "content_l_2": "The Owner is not responsible for any issues, security vulnerabilities, or damages that may arise if a User decides to copy, clone, or implement portions of this code into external, production environments without independent verification."
   }
 }

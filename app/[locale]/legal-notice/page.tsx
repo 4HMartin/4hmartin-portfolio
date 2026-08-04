@@ -192,7 +192,11 @@ export default function LegalNotice() {
                             >
                                 {/* OWNER'S IDENTIFICATION DATA */}
                                 <li>
-                                    <ScrollLink to="owner_id_data" offset={-56} aria-label="4HMartin Portfolio - Owner identification data" className="w-full uppercase text-xs 2xl:text-sm text-gray-300 tracking-widest cursor-pointer transition-colors duration-150 hover:text-violet-500 flex items-center justify-between">
+                                    <ScrollLink
+                                        to="owner_id_data"
+                                        offset={-56}
+                                        aria-label="4HMartin Portfolio - Owner identification data"
+                                        className="w-full uppercase text-xs 2xl:text-sm text-gray-300 tracking-widest cursor-pointer transition-colors duration-150 hover:text-violet-500 flex items-center justify-between">
                                         <p>⊢ {t('owner_id_label')}</p>
                                         <span>⊣</span>
                                     </ScrollLink>
@@ -397,6 +401,18 @@ export default function LegalNotice() {
             {/** CONTENT RESPONSIBILITY */}
             <section id="content-responsibility">
                 <SectionHeader parentTranslations="legal_notice" titleLabel="content_label" />
+                <article className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300">
+                    <p className="xl:mb-4">{t('content_p_1')}</p>
+                    <p className="xl:mb-4"><strong>{t('content_sub_1')}</strong></p>
+                    <p className="xl:mb-4">{t('content_p_2')}</p>
+                    <p><strong className="capitalize">· {t('content_p_key_1')}</strong> {t('content_p_value_1')}</p>
+                    <p><strong className="capitalize">· {t('content_p_key_2')}</strong> {t('content_p_value_2')}</p>
+                    <p><strong className="capitalize">· {t('content_p_key_3')}</strong> {t('content_p_value_3')}</p>
+                    <p className="xl:my-4"><strong>{t('content_sub_2')}</strong></p>
+                    <p className="xl:mb-4">{t('content_p_3')}</p>
+                    <p>· {t('content_l_1')}</p>
+                    <p>· {t('content_l_2')}</p>
+                </article>
             </section>
 
             {/** CORRECT USE OF THE SITE BY THE USER */}
