@@ -11,6 +11,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import IMAGOTYPE_WHITE_LINES from "@/public/IMAGOTYPE_WHITE_LINES.webp";
 import CornerIcons from "@/components/ui/cornerIcons";
 import SectionHeader from "@/components/layout/SectionHeader";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export default function PrivacyPolicy() {
 
@@ -443,7 +444,7 @@ export default function PrivacyPolicy() {
 
             {/** PURPOSE OF DATA PROCESSING */}
             <section id="data-processing">
-                <SectionHeader parentTranslations="privacy_policy" titleLabel="content_label" />
+                <SectionHeader parentTranslations="privacy_policy" titleLabel="data_processing_label" />
                 <motion.article
                     variants={fadeUp}
                     initial="hidden"
@@ -451,22 +452,21 @@ export default function PrivacyPolicy() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                 >
-                    <p className="xl:mb-4">{t('content_p_1')}</p>
-                    <p className="xl:mb-4"><strong>{t('content_sub_1')}</strong></p>
-                    <p className="xl:mb-4">{t('content_p_2')}</p>
-                    <p><strong className="capitalize">· {t('content_p_key_1')}</strong> {t('content_p_value_1')}</p>
-                    <p><strong className="capitalize">· {t('content_p_key_2')}</strong> {t('content_p_value_2')}</p>
-                    <p><strong className="capitalize">· {t('content_p_key_3')}</strong> {t('content_p_value_3')}</p>
-                    <p className="xl:my-4"><strong>{t('content_sub_2')}</strong></p>
-                    <p className="xl:mb-4">{t('content_p_3')}</p>
-                    <p>· {t('content_l_1')}</p>
-                    <p>· {t('content_l_2')}</p>
+                    <p className="xl:mb-4">{t('data_processing_p_1')}</p>
+                    <p className="xl:mb-4">{t('data_processing_p_2')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('data_processing_sub_1')}</strong></p>
+                    <p><strong className="capitalize">· {t('data_processing_p_key_1')}</strong> {t('data_processing_p_value_1')}</p>
+                    <p><strong className="capitalize">· {t('data_processing_p_key_2')}</strong> {t('data_processing_p_value_2')}</p>
+                    <p><strong className="capitalize">· {t('data_processing_p_key_3')}</strong> {t('data_processing_p_value_3')}</p>
+                    <p className="xl:my-4 capitalize"><strong>{t('data_processing_sub_2')}</strong></p>
+                    <p><strong className="capitalize">· {t('data_processing_p_key_4')}</strong> {t('data_processing_p_value_4')}</p>
+                    <p><strong className="capitalize">· {t('data_processing_p_key_5')}</strong> {t('data_processing_p_value_5')}</p>
                 </motion.article>
             </section>
 
             {/** LEGAL BASIS FOR PROCESSING */}
             <section id="basis-processing">
-                <SectionHeader parentTranslations="privacy_policy" titleLabel="correct_use_label" />
+                <SectionHeader parentTranslations="privacy_policy" titleLabel="basis_processing_label" />
                 <motion.article
                     variants={fadeUp}
                     initial="hidden"
@@ -474,25 +474,22 @@ export default function PrivacyPolicy() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                 >
-                    <p className="xl:mb-4">{t('correct_p_1')}</p>
-                    <p className="xl:mb-4"><strong>{t('correct_sub_1')}</strong></p>
-                    <p className="xl:mb-4">{t('correct_p_2')}</p>
-                    <p><strong className="capitalize">· {t('correct_p_key_1')}</strong> {t('correct_p_value_1')}</p>
-                    <p><strong className="capitalize">· {t('correct_p_key_2')}</strong> {t('correct_p_value_2')}</p>
-                    <p><strong className="capitalize">· {t('correct_p_key_3')}</strong> {t('correct_p_value_3')}</p>
-                    <p className="xl:my-4"><strong>{t('correct_sub_2')}</strong></p>
-                    <p className="xl:mb-4">{t('correct_p_3')}</p>
-                    <p><strong className="capitalize">· {t('correct_p_key_4')}</strong> {t('correct_p_value_4')}</p>
-                    <p><strong className="capitalize">· {t('correct_p_key_5')}</strong> {t('correct_p_value_5')}</p>
-                    <p><strong className="capitalize">· {t('correct_p_key_6')}</strong> {t('correct_p_value_6')}</p>
-                    <p><strong className="capitalize">· {t('correct_p_key_7')}</strong> {t('correct_p_value_7')}</p>
-                    <p className="xl:my-4">{t('correct_p_4')}</p>
+                    <p className="xl:mb-4">{t('legal_basis_p_1')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('legal_basis_sub_1')}</strong></p>
+                    <p className="xl:mb-4">{t('legal_basis_p_2')}</p>
+                    <p><strong className="capitalize">· {t('legal_basis_p_key_1')}</strong> {t('legal_basis_p_value_1')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('legal_basis_sub_2')}</strong></p>
+                    <p className="xl:mb-4">{t('legal_basis_p_3')}</p>
+                    <p className="xl:mb-4"><strong>{t('legal_basis_sub_3')}</strong></p>
+                    <p className="xl:mb-4">{t('legal_basis_p_4')}</p>
+                    <p className="xl:mb-4">· {t('legal_basis_l_1')}</p>
+                    <p className="xl:mb-4">· {t('legal_basis_l_2')}</p>
                 </motion.article>
             </section>
 
             {/** DATA RETENTION PERIOD */}
             <section id="data-retention">
-                <SectionHeader parentTranslations="privacy_policy" titleLabel="applicable_label" />
+                <SectionHeader parentTranslations="privacy_policy" titleLabel="data_retention_label" />
                 <motion.article
                     variants={fadeUp}
                     initial="hidden"
@@ -500,15 +497,19 @@ export default function PrivacyPolicy() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                 >
-                    <p className="xl:mb-4">{t('applicable_p_1')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_2')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_3')}</p>
+                    <p className="xl:mb-4">{t('data_retention_p_1')}</p>
+                    <p className="xl:mb-4">{t('data_retention_p_2')}</p>
+                    <p><strong className="capitalize">· {t('data_retention_p_key_1')}</strong> {t('data_retention_p_value_1')}</p>
+                    <p><strong className="capitalize">· {t('data_retention_p_key_2')}</strong> {t('data_retention_p_value_2')}</p>
+                    <p><strong className="capitalize">· {t('data_retention_p_key_3')}</strong> {t('data_retention_p_value_3')}</p>
+                    <p><strong className="capitalize">· {t('data_retention_p_key_4')}</strong> {t('data_retention_p_value_4')}</p>
+                    <p className="xl:mb-4">{t('data_retention_p_3')}</p>
                 </motion.article>
             </section>
 
             {/** DATA RECIPIENTS AND THIRD PARTY DISCLOUSURES */}
             <section id="data-recipients">
-                <SectionHeader parentTranslations="privacy_policy" titleLabel="applicable_label" />
+                <SectionHeader parentTranslations="privacy_policy" titleLabel="data_recipients_label" />
                 <motion.article
                     variants={fadeUp}
                     initial="hidden"
@@ -516,15 +517,20 @@ export default function PrivacyPolicy() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                 >
-                    <p className="xl:mb-4">{t('applicable_p_1')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_2')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_3')}</p>
+                    <p className="xl:mb-4">{t('data_recipients_p_1')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('data_recipients_sub_1')}</strong></p>
+                    <p className="xl:mb-4">{t('data_recipients_p_2')}</p>
+                    <p><strong className="capitalize">· {t('data_recipients_p_key_1')}</strong> {t('data_recipients_p_value_1')}</p>
+                    <p><strong className="capitalize">· {t('data_recipients_p_key_2')}</strong> {t('data_recipients_p_value_2')}</p>
+                    <p className="xl:mb-4">{t('data_recipients_p_3')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('data_recipients_sub_2')}</strong></p>
+                    <p className="xl:mb-4">{t('data_recipients_p_4')}</p>
                 </motion.article>
             </section>
 
             {/** DATA SECURITY MEASURES */}
             <section id="data-security-measures">
-                <SectionHeader parentTranslations="privacy_policy" titleLabel="applicable_label" />
+                <SectionHeader parentTranslations="privacy_policy" titleLabel="data_security_label" />
                 <motion.article
                     variants={fadeUp}
                     initial="hidden"
@@ -532,15 +538,21 @@ export default function PrivacyPolicy() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                 >
-                    <p className="xl:mb-4">{t('applicable_p_1')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_2')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_3')}</p>
+                    <p className="xl:mb-4">{t('data_security_p_1')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('data_security_sub_1')}</strong></p>
+                    <p><strong className="capitalize">· {t('data_security_p_key_1')}</strong> {t('data_security_p_value_1')}</p>
+                    <p><strong className="capitalize">· {t('data_security_p_key_2')}</strong> {t('data_security_p_value_2')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('data_security_sub_2')}</strong></p>
+                    <p><strong className="capitalize">· {t('data_security_p_key_3')}</strong> {t('data_security_p_value_3')}</p>
+                    <p><strong className="capitalize">· {t('data_security_p_key_4')}</strong> {t('data_security_p_value_4')}</p>
+                    <p><strong className="capitalize">· {t('data_security_p_key_5')}</strong> {t('data_security_p_value_5')}</p>
+                    <p className="xl:mb-4">{t('data_security_p_2')}</p>
                 </motion.article>
             </section>
 
             {/** YOUR RIGHTS AS A DATA SUBJECT */}
             <section id="rights">
-                <SectionHeader parentTranslations="privacy_policy" titleLabel="applicable_label" />
+                <SectionHeader parentTranslations="privacy_policy" titleLabel="rights_label" />
                 <motion.article
                     variants={fadeUp}
                     initial="hidden"
@@ -548,15 +560,25 @@ export default function PrivacyPolicy() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                 >
-                    <p className="xl:mb-4">{t('applicable_p_1')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_2')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_3')}</p>
+                    <p className="xl:mb-4">{t('rights_p_1')}</p>
+                    <p className="xl:mb-4">{t('rights_p_2')}</p>
+                    <p><strong className="capitalize">· {t('rights_p_key_1')}</strong> {t('rights_p_value_1')}</p>
+                    <p><strong className="capitalize">· {t('rights_p_key_2')}</strong> {t('rights_p_value_2')}</p>
+                    <p><strong className="capitalize">· {t('rights_p_key_3')}</strong> {t('rights_p_value_3')}</p>
+                    <p><strong className="capitalize">· {t('rights_p_key_4')}</strong> {t('rights_p_value_4')}</p>
+                    <p><strong className="capitalize">· {t('rights_p_key_5')}</strong> {t('rights_p_value_5')}</p>
+                    <p><strong className="capitalize">· {t('rights_p_key_6')}</strong> {t('rights_p_value_6')}</p>
+                    <p><strong className="capitalize">· {t('rights_p_key_7')}</strong> {t('rights_p_value_7')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('rights_sub_1')}</strong></p>
+                    <p className="xl:mb-4">{t('rights_p_3')}</p>
+                    <p className="xl:mb-4">{t('rights_p_4')}</p>
+                    <p className="xl:mb-4">{t('rights_p_5')}</p>
                 </motion.article>
             </section>
 
             {/** COOKIES AND ANALYTICS */}
             <section id="cookies">
-                <SectionHeader parentTranslations="privacy_policy" titleLabel="applicable_label" />
+                <SectionHeader parentTranslations="privacy_policy" titleLabel="cookies_label" />
                 <motion.article
                     variants={fadeUp}
                     initial="hidden"
@@ -564,15 +586,49 @@ export default function PrivacyPolicy() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                 >
-                    <p className="xl:mb-4">{t('applicable_p_1')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_2')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_3')}</p>
+                    <p className="xl:mb-4">{t('cookies_p_1')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('cookies_sub_1')}</strong></p>
+                    <p className="xl:mb-4">{t('cookies_p_2')}</p>
+                    <p><strong className="capitalize">· {t('cookies_p_key_1')}</strong> {t('cookies_p_value_1')}</p>
+                    <p><strong className="capitalize">· {t('cookies_p_key_2')}</strong> {t('cookies_p_value_2')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('cookies_sub_2')}</strong></p>
+                    <p className="xl:mb-4">{t('cookies_p_3')}</p>
+                    {/* COOKIES TABLE */}
+                    <Table>
+                        <TableHeader>
+                            <TableRow>
+                                <TableHead className="w-25">{t('cookies_name_label')}</TableHead>
+                                <TableHead>{t('cookies_provider_label')}</TableHead>
+                                <TableHead>{t('cookies_purpose_label')}</TableHead>
+                                <TableHead className="text-right">{t('cookies_expiration_label')}</TableHead>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody>
+                            <TableRow>
+                                <TableCell className="font-medium">_ga</TableCell>
+                                <TableCell>Google Analytics</TableCell>
+                                <TableCell>{t('cookies_purpose_p_1')}</TableCell>
+                                <TableCell className="text-right">{t('cookies_expiration_1')}</TableCell>
+                            </TableRow>
+                            <TableRow>
+                                <TableCell className="font-medium">_ga_*</TableCell>
+                                <TableCell>Google Analytics</TableCell>
+                                <TableCell>{t('cookies_purpose_p_2')}</TableCell>
+                                <TableCell className="text-right">{t('cookies_expiration_2')}</TableCell>
+                            </TableRow>
+                        </TableBody>
+                    </Table>
+
+                    <p className="xl:my-4 capitalize"><strong>{t('cookies_sub_3')}</strong></p>
+                    <p className="xl:mb-4">{t('cookies_p_4')}</p>
+                    <p><strong className="capitalize">· {t('cookies_p_key_3')}</strong> {t('cookies_p_value_3')}</p>
+                    <p><strong className="capitalize">· {t('cookies_p_key_4')}</strong> {t('cookies_p_value_4')}</p>
                 </motion.article>
             </section>
 
             {/** UPDATES TO THIS PRIVACY POLICY */}
             <section id="updates">
-                <SectionHeader parentTranslations="privacy_policy" titleLabel="applicable_label" />
+                <SectionHeader parentTranslations="privacy_policy" titleLabel="updates_label" />
                 <motion.article
                     variants={fadeUp}
                     initial="hidden"
@@ -580,9 +636,13 @@ export default function PrivacyPolicy() {
                     viewport={{ once: true, amount: 0.2 }}
                     className="p-4 xl:p-8 2xl:p-4 md:mx-18 xl:mx-20 2xl:mx-48 flex flex-col gap-2 text-xs xl:text-sm text-gray-700 dark:text-gray-300"
                 >
-                    <p className="xl:mb-4">{t('applicable_p_1')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_2')}</p>
-                    <p className="xl:mb-4">{t('applicable_p_3')}</p>
+                    <p className="xl:mb-4">{t('updates_p_1')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('updates_sub_1')}</strong></p>
+                    <p className="xl:mb-4">{t('updates_p_2')}</p>
+                    <p className="xl:mb-4 capitalize"><strong>{t('updates_sub_2')}</strong></p>
+                    <p className="xl:mb-4">{t('updates_p_3')}</p>
+                    <p className="xl:mb-4">{t('updates_p_4')}</p>
+                    <p className="xl:mb-4">{t('updates_p_5')}</p>
                 </motion.article>
             </section>
         </div>
