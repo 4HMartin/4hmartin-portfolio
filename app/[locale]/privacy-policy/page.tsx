@@ -11,7 +11,7 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import IMAGOTYPE_WHITE_LINES from "@/public/IMAGOTYPE_WHITE_LINES.webp";
 import CornerIcons from "@/components/ui/cornerIcons";
 import SectionHeader from "@/components/layout/SectionHeader";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 export default function PrivacyPolicy() {
 
