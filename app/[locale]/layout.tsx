@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FixedLinesPattern from "@/components/layout/FixedLinesPattern";
@@ -61,22 +62,23 @@ export default async function RootLayout({
     >
       <head>
         {/* Theme initialization script - prevents flash */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const theme = localStorage.getItem('theme') || 'system';
-                const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
-                if (isDark) {
-                  document.documentElement.classList.add('dark');
-                } else {
-                  document.documentElement.classList.remove('dark');
-                }
-              } catch (e) {}
-            `,
-          }}
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
           suppressHydrationWarning
-        />
+        >
+          {`
+            try {
+              const theme = localStorage.getItem('theme') || 'system';
+              const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+              if (isDark) {
+                document.documentElement.classList.add('dark');
+              } else {
+                document.documentElement.classList.remove('dark');
+              }
+            } catch (e) {}
+          `}
+        </Script>
       </head>
       <body className="relative min-h-full flex flex-col overflow-x-hidden">
         <Providers locale={locale} messages={messages}>

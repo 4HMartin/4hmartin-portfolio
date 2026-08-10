@@ -42,7 +42,7 @@ export async function getBtcPrice(): Promise<GetBtcPriceResult> {
       `${SITE_URL}/api/btc`,
     );
 
-    console.log("## RESPONSE: ", response);
+    // console.log("## RESPONSE: ", response);
 
     const date = new Date(response.data.data.last_updated);
 

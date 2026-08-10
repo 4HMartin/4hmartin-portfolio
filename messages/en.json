@@ -454,5 +454,9 @@
     "web_analytics_p_7": "In order to offer Users more options regarding how Google Analytics collects their data, the Google Analytics opt-out browser add-on has been created. This add-on instructs the Google Analytics JavaScript code (ga.js) that information about the website visit should not be sent to Google Analytics. However, it does not prevent information from being sent to the website itself or to other web analytics services.",
     "web_analytics_p_8": "The User may refuse the processing of data or information by refusing the use of cookies by selecting the appropriate settings of their browser, however, the User should know that if they do so they may not be able to use the full functionality of this Website.",
     "web_analytics_p_9": "By using this Website, the User consents to the processing of their information by Google and the Owner in the manner and for the purposes indicated above. For more information about this tool and Google's privacy policy, Users are recommended to visit the following link:"
+  },
+  "not-found": {
+    "page_not_found_label": "page not found",
+    "back_to_home_label": "back to home"
   }
 }
