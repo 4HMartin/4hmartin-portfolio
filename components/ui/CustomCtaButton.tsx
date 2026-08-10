@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { CustomCtaButtonProps, InnerButtonProps } from "@/data/types";
 
-
 const InnerButton = ({ variant, text, icon, width, height, setIsOpen }: InnerButtonProps) => {
 
     const IconComponent = icon ? IconMap[icon] : null;
