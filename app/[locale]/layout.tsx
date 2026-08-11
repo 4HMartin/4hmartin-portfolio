@@ -128,7 +128,7 @@ export default async function RootLayout({
           <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" className="hidden invisible"></iframe>
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <ManageCookiesButton />
+        {/* <ManageCookiesButton /> */}
       </body>
     </html>
   );

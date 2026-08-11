@@ -15,16 +15,18 @@ import {
     TableFooter
 } from "@/components/ui/table"
 import Link from 'next/link';
+import ManageCookiesButton from '@/components/layout/ManageCookiesButton';
 
 export default async function FixedBottomBar() {
 
-    const {success, cachedData, positive} = await getBtcPrice();
+    const { success, cachedData, positive } = await getBtcPrice();
 
     return (
         <section className="fixed z-40 bottom-0 w-full flex items-center justify-between px-4 md:px-6 xl:px-10 3xl:px-4 bg-white dark:bg-gray-950 border-t border-gray-300 dark:border-gray-800">
             {/* AVAILABLE */}
             <article className="group text-[7px] xs:text-[10px] text-gray-600 dark:text-gray-500 uppercase tracking-widest cursor-default w-[25%] xl:w-[20%] 3xl:w-40 border-r border-gray-300 dark:border-gray-800">
-                <span className="text-violet-500 group-hover:text-lime-500 dark:text-lime-500 dark:group-hover:text-violet-500">◈</span> Available
+                {/* <span className="text-violet-500 group-hover:text-lime-500 dark:text-lime-500 dark:group-hover:text-violet-500">◈</span> Available */}
+                <ManageCookiesButton />
             </article>
 
             {/* FTWR */}
