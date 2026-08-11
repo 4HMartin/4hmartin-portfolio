@@ -11,7 +11,6 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 import { GoogleTagManager } from "@next/third-parties/google";
 import CookieConsentProvider from "@/components/layout/CookieConsentProvider";
-import ManageCookiesButton from "@/components/layout/ManageCookiesButton";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import FixedLinesPattern from "@/components/layout/FixedLinesPattern";
@@ -127,8 +126,6 @@ export default async function RootLayout({
         <noscript>
           <iframe src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`} height="0" width="0" className="hidden invisible"></iframe>
         </noscript>
-        {/* End Google Tag Manager (noscript) */}
-        {/* <ManageCookiesButton /> */}
       </body>
     </html>
   );
