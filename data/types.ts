@@ -67,3 +67,11 @@ export interface CustomCtaButtonProps {
 }
 
 export type InnerButtonProps = Omit<CustomCtaButtonProps, 'target'>;
+
+export {}
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag: (...args: unknown[]) => void;
+  }
+}

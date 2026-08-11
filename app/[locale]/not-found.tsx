@@ -56,6 +56,7 @@ export default function NotFound() {
                             alt="Page not found - 404 follow the white rabbit"
                             width={840}
                             height={460}
+                            className="w-auto h-auto"
                         />
                     </article>
                 </section>
