@@ -34,7 +34,7 @@ export default function ProjectArchitecture({ architectureImage, handleLightboxO
                     <Image
                         src={`${architectureImage.src}`}
                         alt={`${architectureImage.alt}`}
-                        objectFit={`${architectureImage.imageFit}`}
+                        // objectFit={`${architectureImage.imageFit}`}
                         width={580}
                         height={330}
                         // fill

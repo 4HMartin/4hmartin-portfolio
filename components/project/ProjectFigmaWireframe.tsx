@@ -55,7 +55,7 @@ export default function ProjectFigmaWireframe({ figmaWireframe, publicFigmaWiref
                     <Image
                         src={`${figmaWireframe.src}`}
                         alt={`${figmaWireframe.alt}`}
-                        objectFit={`${figmaWireframe.imageFit}`}
+                        // objectFit={`${figmaWireframe.imageFit}`}
                         width={580}
                         height={330}
                         // fill

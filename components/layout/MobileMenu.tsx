@@ -2,7 +2,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
-import Image from "next/image";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import { useLocale, useTranslations } from "next-intl";
 import { Drawer, DrawerContent, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer";
@@ -17,62 +16,36 @@ import { LinkedInIcon } from "../icons/LinkedInIcon";
 import ImagotypeLight from "@/public/IMAGOTYPE_LIGHT.png";
 import ImagotypeDark from "@/public/IMAGOTYPE_DARK.png";
 import GitHubIcon from "../icons/GitHubIcon";
+import { usePathname } from "next/navigation";
 
 export default function MobileMenu() {
     const [isOpen, setIsOpen] = useState(false);
     const isDesktop = useMediaQuery("(min-width: 768px)");
 
     const t = useTranslations('navigation');
-    const locale = useLocale();
+    const pathname = usePathname();
 
     const linkedinURL = process.env.NEXT_PUBLIC_LINKEDIN_URL;
     const githubURL = process.env.NEXT_PUBLIC_GITHUB_URL;
 
-    const NavLinks = () => (
-        <>
-            <ScrollLink to={'hero'} offset={-56} onClick={() => setIsOpen(false)} className={` text-secondary dark:text-gray-400 relative flex items-center justify-between uppercase tracking-widest text-sm font-medium active:text-primary w-full text-center`}>
+    const NavLinkMobile = ({ to, ariaLabel, href, textLabel, linkNumber }: { to: string, ariaLabel: string, href: string, textLabel: string, linkNumber: string }) => {
+        return pathname === '/' || pathname === '/es' ?
+            <ScrollLink to={to} offset={-56} aria-label={ariaLabel} onClick={() => setIsOpen(false)}
+                className="text-secondary dark:text-gray-400 relative flex items-center justify-between uppercase tracking-widest text-sm font-medium active:text-primary w-full text-center"
+            >
                 <span className="text-gray-300 dark:text-gray-800 text-2xl -ml-0.5">⊢</span>
-                {t('home_label')}
-                <span className="absolute left-6 text-gray-200 dark:text-gray-800">01</span>
+                {t(textLabel)}
+                <span className="absolute left-6 text-gray-200 dark:text-gray-800">0{linkNumber}</span>
                 <span className="text-gray-300 dark:text-gray-800 text-2xl -mr-1">⊣</span>
             </ScrollLink>
-
-            <ScrollLink to={'about'} offset={-56} onClick={() => setIsOpen(false)} className={`text-secondary dark:text-gray-400 relative flex items-center justify-between uppercase tracking-widest text-sm font-medium active:text-primary w-full text-center`}>
+            :
+            <Link href={href} onClick={() => setIsOpen(false)} className="text-secondary dark:text-gray-400 relative flex items-center justify-between uppercase tracking-widest text-sm font-medium active:text-primary w-full text-center">
                 <span className="text-gray-300 dark:text-gray-800 text-2xl -ml-0.5">⊢</span>
-                {t('about_label')}
-                <span className="absolute left-6 text-gray-200 dark:text-gray-800">02</span>
+                {t(textLabel)}
+                <span className="absolute left-6 text-gray-200 dark:text-gray-800">0{linkNumber}</span>
                 <span className="text-gray-300 dark:text-gray-800 text-2xl -mr-1">⊣</span>
-            </ScrollLink>
-
-            <ScrollLink to={'projects'} offset={-56} onClick={() => setIsOpen(false)} className={`text-secondary dark:text-gray-400 relative flex items-center justify-between uppercase tracking-widest text-sm font-medium active:text-primary w-full text-center`}>
-                <span className="text-gray-300 dark:text-gray-800 text-2xl -ml-0.5">⊢</span>
-                {t('projects_label')}
-                <span className="absolute left-6 text-gray-200 dark:text-gray-800">03</span>
-                <span className="text-gray-300 dark:text-gray-800 text-2xl -mr-1">⊣</span>
-            </ScrollLink>
-
-            <ScrollLink to={'certs'} offset={-56} onClick={() => setIsOpen(false)} className={`text-secondary dark:text-gray-400 relative flex items-center justify-between uppercase tracking-widest text-sm font-medium active:text-primary w-full text-center`}>
-                <span className="text-gray-300 dark:text-gray-800 text-2xl -ml-0.5">⊢</span>
-                {t('certs_label')}
-                <span className="absolute left-6 text-gray-200 dark:text-gray-800">04</span>
-                <span className="text-gray-300 dark:text-gray-800 text-2xl -mr-1">⊣</span>
-            </ScrollLink>
-
-            <ScrollLink to={'skills'} offset={-56} onClick={() => setIsOpen(false)} className={`text-secondary dark:text-gray-400 relative flex items-center justify-between uppercase tracking-widest text-sm font-medium active:text-primary w-full text-center`}>
-                <span className="text-gray-300 dark:text-gray-800 text-2xl -ml-0.5">⊢</span>
-                {t('skills_label')}
-                <span className="absolute left-6 text-gray-200 dark:text-gray-800">05</span>
-                <span className="text-gray-300 dark:text-gray-800 text-2xl -mr-1">⊣</span>
-            </ScrollLink>
-
-            <ScrollLink to={'contact'} offset={-56} onClick={() => setIsOpen(false)} className={`text-secondary dark:text-gray-400 relative flex items-center justify-between uppercase tracking-widest text-sm font-medium active:text-primary w-full text-center`}>
-                <span className="text-gray-300 dark:text-gray-800 text-2xl -ml-0.5">⊢</span>
-                {t('contact_label')}
-                <span className="absolute left-6 text-gray-200 dark:text-gray-800">06</span>
-                <span className="text-gray-300 dark:text-gray-800 text-2xl -mr-1">⊣</span>
-            </ScrollLink>
-        </>
-    );
+            </Link>
+    }
 
     // Corner icons for grid icons
     const CornerIconsMobile = () => {
@@ -99,7 +72,7 @@ export default function MobileMenu() {
         <div>
             <Drawer swipeDirection="right" open={isOpen} onOpenChange={setIsOpen}>
                 <DrawerTrigger aria-label="Open navigation menu" className="relative h-12 w-12 ml-1 flex items-center justify-center">
-                    <MenuIcon className="text-secondary dark:text-gray-400"/>
+                    <MenuIcon className="text-secondary dark:text-gray-400" />
                     <CornerIcons />
                 </DrawerTrigger>
                 <DrawerContent className={'px-4 dark:bg-gray-950'}>
@@ -146,7 +119,12 @@ export default function MobileMenu() {
                         </DrawerTitle>
                         {/* Links */}
                         <div className="flex flex-col justify-center items-center gap-6">
-                            <NavLinks />
+                            <NavLinkMobile to="hero" ariaLabel="4HMartin Portfolio - Hero section" href="/#hero" textLabel="home_label" linkNumber="1" />
+                            <NavLinkMobile to="about" ariaLabel="4HMartin Portfolio - About section" href="/#about" textLabel="about_label" linkNumber="2" />
+                            <NavLinkMobile to="projects" ariaLabel="4HMartin Portfolio - Projects section" href="/#projects" textLabel="projects_label" linkNumber="3" />
+                            <NavLinkMobile to="certs" ariaLabel="4HMartin Portfolio - Certs section" href="/#certs" textLabel="certs_label" linkNumber="4" />
+                            <NavLinkMobile to="skills" ariaLabel="4HMartin Portfolio - Skills section" href="/#skills" textLabel="skills_label" linkNumber="5" />
+                            <NavLinkMobile to="contact" ariaLabel="4HMartin Portfolio - Contact section" href="/#contact" textLabel="contact_label" linkNumber="6" />
                         </div>
                         <div className="flex items-center justify-center mt-6">
 
@@ -176,14 +154,14 @@ export default function MobileMenu() {
                         {/* Linkedin link */}
                         <div className="relative group w-14 h-14 place-self-end flex items-center justify-center">
                             <Link href={linkedinURL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'}>
-                                <LinkedInIcon className="w-6 h-6 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400"/>
+                                <LinkedInIcon className="w-6 h-6 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400" />
                             </Link>
                             <CornerIconsMobile />
                         </div>
                         {/* GitHub link */}
                         <div className="relative group w-14 h-14 flex items-center justify-center">
                             <Link href={githubURL ?? 'https://github.com/4HMartin'}>
-                                <GitHubIcon className="w-6 h-6 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400"/>
+                                <GitHubIcon className="w-6 h-6 text-secondary dark:text-gray-400 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-400" />
                             </Link>
                             <CornerIconsMobile />
                         </div>

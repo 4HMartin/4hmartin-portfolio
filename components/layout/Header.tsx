@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from "motion/react";
+import { usePathname } from "next/navigation";
 import { Link as ScrollLink } from 'react-scroll';
 import Link from "next/link";
 import { useTranslations } from "next-intl";
@@ -16,6 +17,7 @@ import { flickerVariant } from "@/lib/animations";
 import ImagotypeLight from "@/public/IMAGOTYPE_LIGHT.png";
 import ImagotypeDark from "@/public/IMAGOTYPE_DARK.png";
 import CustomCtaButton from "../ui/CustomCtaButton";
+import { useEffect } from "react";
 
 export default function Header() {
 
@@ -55,6 +57,21 @@ export default function Header() {
         )
     }
 
+    const pathname = usePathname();
+
+    const HeaderLink = ({ to, ariaLabel, href, textLabel }: { to: string, ariaLabel: string, href: string, textLabel: string }) => {
+        return pathname === '/' || pathname === '/es' ?
+            <ScrollLink to={to} offset={-56} aria-label={ariaLabel}
+                className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
+            >
+                {t(textLabel)}
+            </ScrollLink>
+            :
+            <Link href={href} className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400">
+                {t(textLabel)}
+            </Link>
+    }
+
     return (
         <motion.header className="fixed z-50 top-0 w-full h-14 flex justify-between items-center bg-background border-b-[0.5px] border-gray-300 dark:border-gray-800 dark:bg-background"
             initial={{ opacity: 0 }}
@@ -90,81 +107,47 @@ export default function Header() {
                 {/* Navigation */}
                 <nav className="relative h-14 hidden md:flex items-center px-4 lg:px-8 gap-2 lg:gap-3 xl:gap-4 text-sm lg:text-base">
                     {/* HOME-HERO */}
-                    <ScrollLink to="hero" offset={-56}
-                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
-                    >
-                        {t('home_label')}
-                    </ScrollLink>
+                    <HeaderLink to="hero" ariaLabel="4HMartin Portfolio - Hero section" href="/#hero" textLabel="home_label" />
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
-                    >
-                        ∷
-                    </motion.span>
+                    >∷</motion.span>
 
                     {/* ABOUT */}
-                    <ScrollLink to="about" offset={-56}
-                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
-                    >
-                        {t('about_label')}
-                    </ScrollLink>
+                    <HeaderLink to="about" ariaLabel="4HMartin Portfolio - About section" href="/#about" textLabel="about_label" />
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
-                    >
-                        ∷
-                    </motion.span>
+                    >∷</motion.span>
 
                     {/* PROJECTS */}
-                    <ScrollLink to="projects" offset={-56}
-                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
-                    >
-                        {t('projects_label')}
-                    </ScrollLink>
+                    <HeaderLink to="projects" ariaLabel="4HMartin Portfolio - Projects section" href="/#projects" textLabel="projects_label" />
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
-                    >
-                        ∷
-                    </motion.span>
+                    >∷</motion.span>
 
                     {/* CERTS */}
-                    <ScrollLink to="certs" offset={-56}
-                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
-                    >
-                        {t('certs_label')}
-                    </ScrollLink>
+                    <HeaderLink to="certs" ariaLabel="4HMartin Portfolio - Certs section" href="/#certs" textLabel="certs_label" />
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
-                    >
-                        ∷
-                    </motion.span>
+                    >∷</motion.span>
 
                     {/* SKILLS */}
-                    <ScrollLink to="skills" offset={-56}
-                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
-                    >
-                        {t('skills_label')}
-                    </ScrollLink>
+                    <HeaderLink to="skills" ariaLabel="4HMartin Portfolio - Skills section" href="/#skills" textLabel="skills_label" />
                     <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
                         variants={flickerVariant}
                         initial="hidden"
                         animate="visible"
-                    >
-                        ∷
-                    </motion.span>
-                    
+                    >∷</motion.span>
+
                     {/* CONTACT */}
-                    <ScrollLink to="contact" offset={-56}
-                        className="text-secondary dark:text-gray-300 uppercase tracking-wider font-mono transition-all duration-150 hover:text-primary cursor-pointer dark:hover:text-violet-400"
-                    >
-                        {t('contact_label')}
-                    </ScrollLink>
+                    <HeaderLink to="contact" ariaLabel="4HMartin Portfolio - Contact section" href="/#contact" textLabel="contact_label" />
                 </nav>
             </div>
 

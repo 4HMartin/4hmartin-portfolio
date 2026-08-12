@@ -3,6 +3,7 @@ import { IconMap } from "./IconMap";
 import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { CustomCtaButtonProps, InnerButtonProps } from "@/data/types";
+import { usePathname } from "next/navigation";
 
 const InnerButton = ({ variant, text, icon, width, height, setIsOpen }: InnerButtonProps) => {
 
@@ -44,6 +45,7 @@ const InnerButton = ({ variant, text, icon, width, height, setIsOpen }: InnerBut
 export default function CustomCtaButton({ variant, text, icon, target, width, height, setIsOpen }: CustomCtaButtonProps) {
 
     const externalLink = target.startsWith('https');
+    const pathname = usePathname();
 
     return externalLink ? (
         <Link href={target} target="_blank" rel="noopener noreferrer">
@@ -56,8 +58,8 @@ export default function CustomCtaButton({ variant, text, icon, target, width, he
                 setIsOpen={setIsOpen}
             />
         </Link>
-    ) : (
-        <ScrollLink
+    ) : pathname === '/' || pathname === '/es' ?
+        (<ScrollLink
             to={target}
             smooth={true}
             duration={250}
@@ -71,6 +73,17 @@ export default function CustomCtaButton({ variant, text, icon, target, width, he
                 height={height}
                 setIsOpen={setIsOpen}
             />
-        </ScrollLink>
-    );
+        </ScrollLink>)
+        :
+        (<Link href={`/#${target}`}>
+            <InnerButton
+                variant={variant}
+                text={text}
+                icon={icon}
+                width={width}
+                height={height}
+                setIsOpen={setIsOpen}
+            />
+        </Link>
+        );
 }

@@ -34,7 +34,7 @@ export default function ProjectDatabase({ dbDiagramImage, handleLightboxOpen }: 
                     <Image
                         src={`${dbDiagramImage.src}`}
                         alt={`${dbDiagramImage.alt}`}
-                        objectFit={`${dbDiagramImage.imageFit}`}
+                        // objectFit={`${dbDiagramImage.imageFit}`}
                         width={580}
                         height={330}
                         // fill

@@ -36,13 +36,13 @@ export default function ProjectScreenshots({ screenshots, handleLightboxOpen }: 
                         <Image
                             src={`${image.src}`}
                             alt={`${image.alt}`}
-                            objectFit={`${image.imageFit}`}
+                            // objectFit={`${image.imageFit}`}
                             width={image.imageFormat === "mobile" ? 75 : image.imageFormat === "tablet" ? 155 : 580}
                             height={330}
                             // fill
                             // sizes="(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 33vw"
                             loading="lazy"
-                            className="brightness-90 transition-all duration-150 group-hover:brightness-100"
+                            className="w-auto h-auto brightness-90 transition-all duration-150 group-hover:brightness-100"
                         />
                         <CornerIcons />
                     </motion.div>
