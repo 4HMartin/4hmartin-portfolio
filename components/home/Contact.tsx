@@ -144,7 +144,7 @@ export default function Contact() {
                 </article>
 
                 {/* FORM SECTION */}
-                <article className="relative w-full lg:w-1/2 3xl:w-1/3 lg:min-h-154.5 px-4 xl:px-6 2xl:px-4 py-8 lg:py-10.75 dark:border-b dark:border-dashed dark:border-gray-800">
+                <article className="relative w-full lg:w-1/2 3xl:w-1/3 lg:min-h-154.5 px-4 xl:px-6 2xl:px-4 pb-8 lg:pb-10.75 dark:border-b dark:border-dashed dark:border-gray-800">
                     {/* CONTACT FORM - RHF + ZOD */}
                     <ContactForm />
 

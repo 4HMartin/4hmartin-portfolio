@@ -1,8 +1,9 @@
 "use client"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Controller, useForm } from "react-hook-form";
-import { toast } from "sonner";
+import axios from "axios";
 import * as z from "zod";
+import { Turnstile } from '@marsidev/react-turnstile';
 import { motion } from "motion/react";
 import { fadeUp, flickerVariant } from "@/lib/animations";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -28,7 +29,7 @@ import { useTranslations } from "next-intl";
 import SubmitButton from "../ui/SubmitButton";
 import Link from "next/link";
 import CornerIcons from "../ui/cornerIcons";
-import { CircleDashed, CircleDot, CircleDotDashed, Diameter, Radius } from "lucide-react";
+import { CircleDashed, CircleDotDashed } from "lucide-react";
 
 // Shadcn UI components with motion properties
 const MotionField = motion.create(Field);
@@ -37,6 +38,8 @@ const MotionFieldLabel = motion.create(FieldLabel);
 export function ContactForm() {
 
     const t = useTranslations('contact_section');
+
+    const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!;
 
     const formSchema = z.object({
         name: z
@@ -55,7 +58,9 @@ export function ContactForm() {
             .string()
             .optional(),
         acceptTerms: z
-            .boolean()
+            .boolean(),
+        turnstileToken:
+            z.string().min(1, "Please complete the verification"),
     })
 
     const form = useForm<z.infer<typeof formSchema>>({
@@ -72,19 +77,18 @@ export function ContactForm() {
     async function onSubmit(data: z.infer<typeof formSchema>) {
 
         // MANUAL DELAY FOR TESTING PURPOSES
-        await new Promise((resolve) => setTimeout(resolve, 4000));
+        // await new Promise((resolve) => setTimeout(resolve, 4000));
 
-        // try {
-        //     const responseSendEmail = await axios.post('/api/send-email', { ...data });
+        try {
+            const responseSendEmail = await axios.post('/api/send-email', { ...data });
 
-        //     if (responseSendEmail.status === 200) {
-        //         form.reset();
+            if (responseSendEmail.status === 200) {
+                form.reset();
+            }
 
-        //     }
-
-        // } catch (error) {
-        //     console.error(error);
-        // }
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     function BTCornerIcon() {
@@ -99,7 +103,7 @@ export function ContactForm() {
         <Card className="w-full border-none py-0 px-0 dark:bg-transparent">
             <CardContent className="w-full border-none mb-5.5">
                 <form id="contact-form" onSubmit={form.handleSubmit(onSubmit)} className="border-none overflow-x-visible">
-                    <FieldGroup className="overflow-x-visible">
+                    <FieldGroup className="overflow-x-visible gap-2.5">
                         {/* NAME CONTROLLER */}
                         <Controller
                             name="name"
@@ -313,6 +317,33 @@ export function ContactForm() {
                                         .
                                         {/* {t('terms_message_5')} */}
                                     </MotionFieldLabel>
+                                </MotionField>
+                            )}
+                        />
+
+                        {/* CLOUDFLARE TURNSTILE VERIFICATION */}
+                        <Controller
+                            name="turnstileToken"
+                            control={form.control}
+                            render={({ field, fieldState }) => (
+                                <MotionField
+                                    data-invalid={fieldState.invalid}
+                                    className="relative"
+                                    variants={fadeUp}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true }}
+                                    custom={0.4}
+                                >
+                                    <Turnstile 
+                                        siteKey={TURNSTILE_SITE_KEY}
+                                        onSuccess={(token) => field.onChange(token)}
+                                        onError={() => field.onChange('')}
+                                        onExpire={() => field.onChange('')}
+                                    />
+                                    {fieldState.invalid && (
+                                        <FieldError errors={[fieldState.error]} />
+                                    )}
                                 </MotionField>
                             )}
                         />
