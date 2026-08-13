@@ -322,6 +322,50 @@ export const caab: Project = {
         imageFormat: "desktop"
       },
     ],
+    designInspiration: [
+      {
+        src: "/images/projects/caab/logotype_options.webp",
+        alt: "Logotype options for the client",
+        title: "Design inspiration - Logotype options for the client",
+        imageFit: "contain",
+        imageFormat: "mobile"
+      },
+      {
+        src: "/images/projects/caab/header_navigation_design_example.webp",
+        alt: "Header/Navigation design inspiration",
+        title: "Design inspiration - Header/Navigation (runonflux.com)",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/versus_ui_inspiration.webp",
+        alt: "UI and filters examples",
+        title: "Design inspiration - UI and filters examples (versus.com)",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/kimovil_ui_inspiration_1.webp",
+        alt: "UI and filters examples",
+        title: "Design inspiration - UI comparison example 1 (kimovil.com)",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/kimovil_ui_inspiration_2.webp",
+        alt: "UI and filters examples",
+        title: "Design inspiration - UI comparison example 2 (kimovil.com)",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/caab/tools_for_picking_colors.webp",
+        alt: "Material design color picker",
+        title: "Design inspiration - Material design - Tools for picking colors (m2.material.io)",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+    ]
   },
   otherProjects: ["rodriguez-events-wedding-catering", "massage-arte-website"],
 };

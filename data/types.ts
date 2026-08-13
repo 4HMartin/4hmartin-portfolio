@@ -40,6 +40,7 @@ export interface Project {
     dbDiagramImage?: buildItemProps;
     figmaWireframe?: buildItemProps;
     screenshots: buildItemProps[];
+    designInspiration?: buildItemProps[];
   }
   otherProjects: Project['slug'][];
 }

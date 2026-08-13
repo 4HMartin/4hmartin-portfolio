@@ -166,7 +166,8 @@
     "database_label": "database diagram",
     "figma_label": "figma wireframe",
     "view_wireframe_label": "view public wireframe",
-    "screenshots_demos_label": "screenshots & demos"
+    "screenshots_demos_label": "screenshots & demos",
+    "design_inspiration_label": "design inspiration"
   },
   "legal_notice": {
     "legal_notice_label": "legal notice",

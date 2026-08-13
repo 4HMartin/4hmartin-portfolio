@@ -8,6 +8,7 @@ import ProjectArchitecture from "./ProjectArchitecture";
 import ProjectDatabase from "./ProjectDatabase";
 import ProjectFigmaWireframe from "./ProjectFigmaWireframe";
 import ProjectScreenshots from "./ProjectScreenshots";
+import ProjectDesignInspiration from "./ProjectDesignInspiration";
 
 import { useMemo, useState } from "react";
 import Lightbox from "yet-another-react-lightbox";
@@ -34,7 +35,12 @@ export default function ProjectClient({ project }: ProjectClientProps) {
         project.images.architectureImage && images.push(project.images.architectureImage);
         project.images.dbDiagramImage && images.push(project.images.dbDiagramImage);
         project.images.figmaWireframe && images.push(project.images.figmaWireframe);
-        project.images.screenshots.forEach((image) => images.push(image));
+        project.images.screenshots.forEach(
+            (image) => images.push(image)
+        );
+        project.images.designInspiration && project.images.designInspiration.forEach(
+            (image) => images.push(image)
+        );
 
         return images
     },[project.images]);
@@ -81,7 +87,13 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                     <ProjectScreenshots
                         screenshots={project.images.screenshots}
                         handleLightboxOpen={handleLightboxOpen}
-                    />
+                        />
+                    {project.images.designInspiration && 
+                        <ProjectDesignInspiration
+                            screenshots={project.images.designInspiration}
+                            handleLightboxOpen={handleLightboxOpen}
+                        />
+                    }
                 </div>
                 <ProjectTechStack
                     techStack={project.techStack}
