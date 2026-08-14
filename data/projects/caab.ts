@@ -10,7 +10,7 @@ export const caab: Project = {
   developmentType: "full-stack web app",
   shortDescription: {
     en: "A reference digital platform in the security sector for the Balearic Islands market - helping users compare, evaluate and request quotes for alarm systems for homes, offices and businesses.",
-    es: "Lorem ipsum dolor",
+    es: "Una plataforma digital de referencia en el sector de la seguridad para el mercado de las Islas Baleares, que ayuda a los usuarios a comparar, evaluar y solicitar presupuestos de sistemas de alarma para viviendas, oficinas y empresas.",
   },
   publicUrl: "https://caab.4hmartin.com/",
   // publicRepo: "https://github.com/...",
@@ -27,7 +27,7 @@ export const caab: Project = {
       "Más allá de la simple comparación, la plataforma actúa como un puente estratégico entre los clientes interesados y los proveedores de seguridad verificados, y cuenta con formularios inteligentes de generación de clientes potenciales, un sistema de solicitud de presupuestos y un proceso de reserva de asesoramiento presencial.",
     ],
   },
-  techStack: ["Next.js", "TypeScript", "React", "TailwindCSS", "Motion", "Next-Intl", "Postgre SQL", "Prisma ORM", "Better Auth", "Nodemailer", "RHF", "Zod", "FTP"],
+  techStack: ["Next.js", "TypeScript", "React", "TailwindCSS", "Shadcn UI", "Motion", "Next-Intl", "Postgre SQL", "Prisma ORM", "Better Auth", "Nodemailer", "RHF", "Zod", "FTP"],
   keyFeaturesUser: [
     {
       key: {

@@ -96,7 +96,8 @@
     "nodemailer_info": "Nodemailer es un módulo para aplicaciones Node.js que permite enviar correos electrónicos fácilmente, con soporte para SMTP, archivos adjuntos, contenido HTML e integración con varios proveedores de servicios de correo electrónico.",
     "rhf_info": "React Hook Form es una biblioteca ligera para gestionar formularios en React que utiliza componentes no controlados y hooks para minimizar los re-renderizados, ofreciendo un rendimiento rápido y una gestión sencilla de la validación.",
     "zod_info": "Zod es una biblioteca de declaración y validación de esquemas orientada a TypeScript que te permite definir las formas de los datos una sola vez y usarlas para validar e inferir tipos tanto en tiempo de compilación como en tiempo de ejecución.",
-    "ftp_info": "FTP (File Transfer Protocol) es un protocolo de red estándar utilizado para transferir archivos entre un cliente y un servidor a través de una red, comúnmente utilizado para subir o descargar archivos a un servidor de alojamiento."
+    "ftp_info": "FTP (File Transfer Protocol) es un protocolo de red estándar utilizado para transferir archivos entre un cliente y un servidor a través de una red, comúnmente utilizado para subir o descargar archivos a un servidor de alojamiento.",
+    "cloudinary_info": "Cloudinary ofrece almacenamiento en la nube, optimización, transformaciones y una rápida entrega de las imágenes y los archivos multimedia que utiliza la aplicación."
   },
   "contact_section": {
     "contact_label": "contacto",
@@ -163,9 +164,12 @@
     "for_users_label": "para usuarios finales",
     "for_admin_label": "para administradores",
     "architecture_label": "diagrama de arquitectura",
+    "pagespeed_label": "reporte de pagespeed insights",
     "database_label": "diagrama de base de datos",
     "figma_label": "wireframe de figma",
     "view_wireframe_label": "ver wireframe público",
+    "sitemap_index_label": "gsc sitemap index",
+    "gsc_report_label": "gsc reporte",
     "screenshots_demos_label": "capturas de pantalla y demos",
     "design_inspiration_label": "inspiración del diseño"
   },

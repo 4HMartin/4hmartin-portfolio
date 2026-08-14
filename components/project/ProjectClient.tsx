@@ -5,8 +5,11 @@ import ProjectOverview from "./ProjectOverview";
 import ProjectTechStack from "./ProjectTechStack";
 import ProjectKeyFeatures from "./ProjectKeyFeatures";
 import ProjectArchitecture from "./ProjectArchitecture";
+import ProjectPageSpeed from "./ProjectPageSpeed";
 import ProjectDatabase from "./ProjectDatabase";
 import ProjectFigmaWireframe from "./ProjectFigmaWireframe";
+import ProjectGscSitemapIndex from "./ProjectGscSitemapIndex";
+import ProjectGscReportImage from "./ProjectGscReportImage";
 import ProjectScreenshots from "./ProjectScreenshots";
 import ProjectDesignInspiration from "./ProjectDesignInspiration";
 
@@ -33,8 +36,11 @@ export default function ProjectClient({ project }: ProjectClientProps) {
     const slides = useMemo(() => {
         const images: buildItemProps[] = [];
         project.images.architectureImage && images.push(project.images.architectureImage);
+        project.images.pageSpeedImage && images.push(project.images.pageSpeedImage);
         project.images.dbDiagramImage && images.push(project.images.dbDiagramImage);
         project.images.figmaWireframe && images.push(project.images.figmaWireframe);
+        project.images.gscSitemapIndexImage && images.push(project.images.gscSitemapIndexImage);
+        project.images.gscReportImage && images.push(project.images.gscReportImage);
         project.images.screenshots.forEach(
             (image) => images.push(image)
         );
@@ -70,6 +76,13 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                                 handleLightboxOpen={handleLightboxOpen}
                             />
                         }
+                        {project.images.pageSpeedImage && project.publicPageSpeedReport &&
+                            <ProjectPageSpeed
+                                pageSpeedImage={project.images.pageSpeedImage}
+                                publicPageSpeedReport={project.publicPageSpeedReport}
+                                handleLightboxOpen={handleLightboxOpen}
+                            />
+                        }
                         {project.images.dbDiagramImage && 
                             <ProjectDatabase
                                 dbDiagramImage={project.images.dbDiagramImage}
@@ -84,6 +97,23 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                             />
                         }
                     </div>
+
+                    <div className="flex flex-col lg:flex-row w-full">
+                        {project.images.gscSitemapIndexImage && project.publicSitemap && 
+                            <ProjectGscSitemapIndex
+                                gscSitemapIndexImage={project.images.gscSitemapIndexImage}
+                                publicSitemap={project.publicSitemap}
+                                handleLightboxOpen={handleLightboxOpen}
+                            />
+                        }
+                        {project.images.gscReportImage &&
+                            <ProjectGscReportImage
+                                gscReportImage={project.images.gscReportImage}
+                                handleLightboxOpen={handleLightboxOpen}
+                            />
+                        }
+                    </div>
+
                     <ProjectScreenshots
                         screenshots={project.images.screenshots}
                         handleLightboxOpen={handleLightboxOpen}

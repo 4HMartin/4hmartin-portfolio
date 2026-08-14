@@ -55,11 +55,8 @@ export default function ProjectFigmaWireframe({ figmaWireframe, publicFigmaWiref
                     <Image
                         src={`${figmaWireframe.src}`}
                         alt={`${figmaWireframe.alt}`}
-                        // objectFit={`${figmaWireframe.imageFit}`}
-                        width={580}
+                        width={figmaWireframe.imageFormat === "mobile" ? 75 : figmaWireframe.imageFormat === "tablet" ? 155 : 580}
                         height={330}
-                        // fill
-                        // sizes="(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 33vw"
                         loading="lazy"
                         className="brightness-90 transition-all duration-150 group-hover:brightness-100"
                     />

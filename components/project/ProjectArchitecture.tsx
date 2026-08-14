@@ -34,11 +34,8 @@ export default function ProjectArchitecture({ architectureImage, handleLightboxO
                     <Image
                         src={`${architectureImage.src}`}
                         alt={`${architectureImage.alt}`}
-                        // objectFit={`${architectureImage.imageFit}`}
-                        width={580}
+                        width={architectureImage.imageFormat === "mobile" ? 75 : architectureImage.imageFormat === "tablet" ? 155 : 580}
                         height={330}
-                        // fill
-                        // sizes="(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 33vw"
                         loading="lazy"
                         className="brightness-90 transition-all duration-150 group-hover:brightness-100"
                     />

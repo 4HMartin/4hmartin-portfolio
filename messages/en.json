@@ -96,7 +96,8 @@
     "nodemailer_info": "Nodemailer is a module for Node.js applications that allows sending emails easily, supporting SMTP, attachments, HTML content, and integration with various email service providers.",
     "rhf_info": "React Hook Form is a lightweight library for managing forms in React that uses uncontrolled components and hooks to minimize re-renders, offering fast performance and simple validation handling.",
     "zod_info": "Zod is a TypeScript-first schema declaration and validation library that lets you define data shapes once and use them to validate and infer types at both compile time and runtime.",
-    "ftp_info": "FTP (File Transfer Protocol) is a standard network protocol used to transfer files between a client and a server over a network, commonly used for uploading or downloading files to a hosting server."
+    "ftp_info": "FTP (File Transfer Protocol) is a standard network protocol used to transfer files between a client and a server over a network, commonly used for uploading or downloading files to a hosting server.",
+    "cloudinary_info": "Cloudinary provides cloud storage, optimization, transformations, and fast delivery for images and media used by the application."
   },
   "contact_section": {
     "contact_label": "contact",
@@ -163,9 +164,12 @@
     "for_users_label": "for end users",
     "for_admin_label": "for admin",
     "architecture_label": "architecture diagram",
+    "pagespeed_label": "pagespeed insights report",
     "database_label": "database diagram",
     "figma_label": "figma wireframe",
     "view_wireframe_label": "view public wireframe",
+    "sitemap_index_label": "gsc sitemap index",
+    "gsc_report_label": "gsc report image",
     "screenshots_demos_label": "screenshots & demos",
     "design_inspiration_label": "design inspiration"
   },

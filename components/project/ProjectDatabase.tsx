@@ -35,7 +35,7 @@ export default function ProjectDatabase({ dbDiagramImage, handleLightboxOpen }: 
                         src={`${dbDiagramImage.src}`}
                         alt={`${dbDiagramImage.alt}`}
                         // objectFit={`${dbDiagramImage.imageFit}`}
-                        width={580}
+                        width={dbDiagramImage.imageFormat === "mobile" ? 75 : dbDiagramImage.imageFormat === "tablet" ? 155 : 580}
                         height={330}
                         // fill
                         // sizes="(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 33vw"

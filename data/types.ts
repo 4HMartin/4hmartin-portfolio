@@ -28,6 +28,8 @@ export interface Project {
   publicUrl?: string;
   publicRepo?: string;
   publicFigmaWireframe?: string;
+  publicPageSpeedReport?: string;
+  publicSitemap?: string;
   mainGif: string;
   mainGifSection: string;
   // Cada párrafo es un elemento del array
@@ -37,8 +39,11 @@ export interface Project {
   keyFeaturesAdmin: KeyFeature[];
   images: {
     architectureImage?: buildItemProps;
+    pageSpeedImage?: buildItemProps;
     dbDiagramImage?: buildItemProps;
     figmaWireframe?: buildItemProps;
+    gscSitemapIndexImage?: buildItemProps;
+    gscReportImage?: buildItemProps;
     screenshots: buildItemProps[];
     designInspiration?: buildItemProps[];
   }
