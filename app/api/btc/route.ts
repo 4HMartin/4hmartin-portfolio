@@ -7,7 +7,8 @@ export const revalidate = 120;
 
 export async function GET() {
     try {
-        const apiKey = process.env.COINMARKETCAP_API_KEY;
+        // const apiKey = process.env.COINMARKETCAP_API_KEY;
+        const apiKey = "";
 
         if (!apiKey) {
             return NextResponse.json(

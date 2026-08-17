@@ -367,5 +367,5 @@ export const caab: Project = {
       },
     ]
   },
-  otherProjects: ["rodriguez-events-wedding-catering", "massage-arte-website"],
+  otherProjects: ["rodriguez-events-website", "massage-arte-website"],
 };

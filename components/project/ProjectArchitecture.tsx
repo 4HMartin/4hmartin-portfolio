@@ -37,7 +37,7 @@ export default function ProjectArchitecture({ architectureImage, handleLightboxO
                         width={architectureImage.imageFormat === "mobile" ? 75 : architectureImage.imageFormat === "tablet" ? 155 : 580}
                         height={330}
                         loading="lazy"
-                        className="brightness-90 transition-all duration-150 group-hover:brightness-100"
+                        className="w-auto h-auto brightness-90 transition-all duration-150 group-hover:brightness-100"
                     />
                     <CornerIcons />
                 </motion.div>

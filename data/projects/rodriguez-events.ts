@@ -192,166 +192,251 @@ export const rodriguezEvents: Project = {
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/home_contact_form.webp",
-        alt: "Contact form desktop screenshot - 4hmartin",
-        title: "Home - Contact form - Desktop screenshot",
+        src: "/images/projects/rodriguez-events/home_02.webp",
+        alt: "Home - About banner desktop screenshot - 4hmartin",
+        title: "Home - About banner - Desktop screenshot",
         imageFit: "contain",
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/partner_companies_page.webp",
-        alt: "Partner companies - Companies grid - Desktop screenshot",
-        title: "Partner companies - Companies grid - Desktop screenshot",
+        src: "/images/projects/rodriguez-events/home_03.webp",
+        alt: "Home - Reviews carousel desktop screenshot - 4hmartin",
+        title: "Home - Reviews carousel - Desktop screenshot",
         imageFit: "contain",
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/partner_company_detailed.webp",
-        alt: "Partner companies - Companies grid - Desktop screenshot",
-        title: "Partner companies - Company details - Desktop screenshot",
+        src: "/images/projects/rodriguez-events/weddings_01.webp",
+        alt: "Services Weddings - Hero desktop screenshot - 4hmartin",
+        title: "Services Weddings - Hero - Desktop screenshot",
         imageFit: "contain",
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/how_it_works_page.webp",
-        alt: "How it works - Desktop screenshot",
-        title: "How it works - Desktop screenshot",
+        src: "/images/projects/rodriguez-events/weddings_02.webp",
+        alt: "Services Weddings - Experience description desktop screenshot - 4hmartin",
+        title: "Services Weddings - Experience description - Desktop screenshot",
         imageFit: "contain",
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/comparator_page.webp",
-        alt: "Comparator - Products grid - Desktop screenshot",
-        title: "Comparator - Products grid - Desktop screenshot",
+        src: "/images/projects/rodriguez-events/chef_at_home_01.webp",
+        alt: "Services Chef at Home - Hero section desktop screenshot - 4hmartin",
+        title: "Services Chef at Home - Hero section - Desktop screenshot",
         imageFit: "contain",
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/comparator_filters.webp",
-        alt: "Comparator - Filters - Desktop screenshot",
-        title: "Comparator - Filters - Desktop screenshot",
+        src: "/images/projects/rodriguez-events/chef_at_home_02.webp",
+        alt: "Services Chef at Home - Experience description desktop screenshot - 4hmartin",
+        title: "Services Chef at Home - Experience description - Desktop screenshot",
         imageFit: "contain",
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/comparator_compare_products.webp",
-        alt: "Comparator - Selected products to compare - Desktop screenshot",
-        title: "Comparator - Selected products to compare - Desktop screenshot",
+        src: "/images/projects/rodriguez-events/chef_at_home_03.webp",
+        alt: "Services Chef at Home - Inclusive banner desktop screenshot - 4hmartin",
+        title: "Services Chef at Home - Inclusive banner - Desktop screenshot",
         imageFit: "contain",
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/comparison_result.webp",
-        alt: "Comparator - Product comparison table - Desktop screenshot",
-        title: "Comparator - Product comparison table - Desktop screenshot",
+        src: "/images/projects/rodriguez-events/corporate_01.webp",
+        alt: "Services Corporate - Hero section desktop screenshot - 4hmartin",
+        title: "Services Corporate - Hero section - Desktop screenshot",
         imageFit: "contain",
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/multi_step_form.webp",
-        alt: "Request quote - Multi-steps form - Desktop screenshot",
-        title: "Request quote - Multi-steps form - Desktop screenshot",
+        src: "/images/projects/rodriguez-events/corporate_02.webp",
+        alt: "Services Corporate - Service Types desktop screenshot - 4hmartin",
+        title: "Services Corporate - Service Types - Desktop screenshot",
         imageFit: "contain",
         imageFormat: "desktop"
       },
       {
-        src: "/images/projects/caab/home_hero_mobile.webp",
-        alt: "Home - Hero section - Mobile screenshot",
+        src: "/images/projects/rodriguez-events/corporate_03.webp",
+        alt: "Services Corporate - Logistics & Capacity desktop screenshot - 4hmartin",
+        title: "Services Corporate - Logistics & Capacity - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/cloudinary_assets.webp",
+        alt: "Gallery - Cloudinary admin dashboard desktop screenshot - 4hmartin",
+        title: "Gallery - Cloudinary admin dashboard - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/gallery_01.webp",
+        alt: "Gallery - Filters desktop screenshot - 4hmartin",
+        title: "Gallery - Filters - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/gallery_02.webp",
+        alt: "Gallery - Masonry grid desktop screenshot - 4hmartin",
+        title: "Gallery - Masonry grid - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/gallery_03.webp",
+        alt: "Gallery - Lightbox view open desktop screenshot - 4hmartin",
+        title: "Gallery - Lightbox view open - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/events_01.webp",
+        alt: "Events & Menus - Hero section desktop screenshot - 4hmartin",
+        title: "Events & Menus - Hero section - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/events_02.webp",
+        alt: "Events & Menus - Bistro information desktop screenshot - 4hmartin",
+        title: "Events & Menus - Bistro information - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/events_03.webp",
+        alt: "Events & Menus - Bistro menu modal open desktop screenshot - 4hmartin",
+        title: "Events & Menus - Bistro menu modal open - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/events_04.webp",
+        alt: "Events & Menus - Bistro Latin night event modal desktop screenshot - 4hmartin",
+        title: "Events & Menus - Bistro Latin night event modal open - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/events_05.webp",
+        alt: "Events & Menus - Event modal open desktop screenshot - 4hmartin",
+        title: "Events & Menus - Event modal open - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/about_01.webp",
+        alt: "About - Hero section desktop screenshot - 4hmartin",
+        title: "About - Hero section - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/about_02.webp",
+        alt: "About - The team images desktop screenshot - 4hmartin",
+        title: "About - The team images - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/about_03.webp",
+        alt: "About - Co-founders section desktop screenshot - 4hmartin",
+        title: "About - Co-founders section - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/about_04.webp",
+        alt: "About - Passion & Experience section desktop screenshot - 4hmartin",
+        title: "About - Passion & Experience section - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/about_05.webp",
+        alt: "About - TWIA Regional Winner desktop screenshot - 4hmartin",
+        title: "About - TWIA Regional Winner - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/partners_01.webp",
+        alt: "Partners - Hero section desktop screenshot - 4hmartin",
+        title: "Partners - Hero section - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/partners_02.webp",
+        alt: "Partners - Partners information cards desktop screenshot - 4hmartin",
+        title: "Partners - Partners information cards - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/contact_01.webp",
+        alt: "Contact - Hero section desktop screenshot - 4hmartin",
+        title: "Contact - Hero section - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/contact_02.webp",
+        alt: "Contact - Complete form desktop screenshot - 4hmartin",
+        title: "Contact - Complete form - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/privacy_policy_01.webp",
+        alt: "Privacy Policy page - desktop screenshot - 4hmartin",
+        title: "Privacy Policy - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/cookie_policy_01.webp",
+        alt: "Cookie Policy page - desktop screenshot - 4hmartin",
+        title: "Cookie Policy - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/terms_conditions_01.webp",
+        alt: "Terms Conditions page - desktop screenshot - 4hmartin",
+        title: "Terms & Conditions - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop"
+      },
+      {
+        src: "/images/projects/rodriguez-events/home_mobile_01.webp",
+        alt: "Home - Hero section mobile screenshot - 4hmartin",
         title: "Home - Hero section - Mobile screenshot",
         imageFit: "contain",
         imageFormat: "mobile"
       },
       {
-        src: "/images/projects/caab/partner_companies_mobile.webp",
-        alt: "Partner companies - Mobile screenshot",
-        title: "Partner companies - Mobile screenshot",
+        src: "/images/projects/rodriguez-events/home_mobile_02.webp",
+        alt: "Home - About section mobile screenshot - 4hmartin",
+        title: "Home - About section - Mobile screenshot",
         imageFit: "contain",
         imageFormat: "mobile"
       },
       {
-        src: "/images/projects/caab/how_it_works_mobile.webp",
-        alt: "How it works - Mobile screenshot",
-        title: "How it works - Mobile screenshot",
+        src: "/images/projects/rodriguez-events/weddings_mobile_01.webp",
+        alt: "Services Weddings - Reviews section mobile screenshot - 4hmartin",
+        title: "Services Weddings - Reviews section - Mobile screenshot",
         imageFit: "contain",
         imageFormat: "mobile"
       },
       {
-        src: "/images/projects/caab/comparator_filters_mobile.webp",
-        alt: "Comparator filters - Mobile screenshot",
-        title: "Comparator filters - Mobile screenshot",
+        src: "/images/projects/rodriguez-events/gallery_mobile_01.webp",
+        alt: "Gallery - Filters section mobile screenshot - 4hmartin",
+        title: "Gallery - Filters section - Mobile screenshot",
         imageFit: "contain",
         imageFormat: "mobile"
       },
-      {
-        src: "/images/projects/caab/demo_advice_modal.webp",
-        alt: "Demo advice - Desktop screenshot",
-        title: "Demo advice - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "mobile"
-      },
-      {
-        src: "/images/projects/caab/admin_panel_login.webp",
-        alt: "Admin panel - Login form - Desktop screenshot",
-        title: "Admin panel - Login form - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "tablet"
-      },
-      {
-        src: "/images/projects/caab/admin_panel_dashboard.webp",
-        alt: "Admin panel - Dashboard - Desktop screenshot",
-        title: "Admin panel - Dashboard - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "desktop"
-      },
-      {
-        src: "/images/projects/caab/admin_panel_products.webp",
-        alt: "Admin panel - Products list - Desktop screenshot",
-        title: "Admin panel - Products list - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "desktop"
-      },
-      {
-        src: "/images/projects/caab/admin_panel_product_create.webp",
-        alt: "Admin panel - Create new product - Desktop screenshot",
-        title: "Admin panel - Create new product - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "tablet"
-      },
-      {
-        src: "/images/projects/caab/admin_panel_companies.webp",
-        alt: "Admin panel - Companies list - Desktop screenshot",
-        title: "Admin panel - Companies list - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "desktop"
-      },
-      {
-        src: "/images/projects/caab/admin_panel_company_create.webp",
-        alt: "Admin panel - Create new company - Desktop screenshot",
-        title: "Admin panel - Create new company - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "tablet"
-      },
-      {
-        src: "/images/projects/caab/admin_panel_contacts.webp",
-        alt: "Admin panel - Contacts generated via request form - Desktop screenshot",
-        title: "Admin panel - Contacts generated via request form - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "desktop"
-      },
-      {
-        src: "/images/projects/caab/request_quote_email_template_0.webp",
-        alt: "Request quote email example - Admin view (Gmail) - Desktop screenshot",
-        title: "Request quote email example - Admin view (Gmail) - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "desktop"
-      },
-      {
-        src: "/images/projects/caab/request_quote_email_template_1.webp",
-        alt: "Request quote email example - Admin view (Gmail) - Desktop screenshot",
-        title: "Request quote email example - Admin view (Gmail) - Desktop screenshot",
-        imageFit: "contain",
-        imageFormat: "desktop"
-      },
+      
     ],
     designInspiration: [
       {
