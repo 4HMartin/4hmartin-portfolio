@@ -13,8 +13,8 @@ export const massagearte: Project = {
     es: "Massage Arte es una página web de lujo, de una sola página (landing page), diseñada para atraer a una clientela de alto nivel y agilizar el proceso de reserva y pago de un servicio profesional de masajes.",
   },
   publicUrl: "https://massagearte.com/",
-//   publicPageSpeedReport: "https://pagespeed.web.dev/analysis/https-rodriguez-events-com/x6j9277nn9?utm_source=search_console&form_factor=desktop&hl=en",
-//   publicSitemap: "https://rodriguez-events.com/sitemap.xml",
+  //   publicPageSpeedReport: "https://pagespeed.web.dev/analysis/https-rodriguez-events-com/x6j9277nn9?utm_source=search_console&form_factor=desktop&hl=en",
+  //   publicSitemap: "https://rodriguez-events.com/sitemap.xml",
   // publicFigmaWireframe: "",
   // publicRepo: "https://github.com/...",
   mainGif: "/images/projects/massagearte/main_gif.gif",
@@ -31,7 +31,7 @@ export const massagearte: Project = {
       "Secure payments via Stripe integration.",
       "Automatic synchronization with professional's Google Calendar.",
       "Instant notifications via email.",
-      "Multiple massage services with flexible scheduling.", 
+      "Multiple massage services with flexible scheduling.",
     ],
     es: [
       "Massage Arte es una página web, de una sola página, diseñada para atraer a una clientela de alto nivel y agilizar el proceso de reserva y pago de un servicio profesional de masajes.",
@@ -44,7 +44,7 @@ export const massagearte: Project = {
       "Pagos seguros mediante la integración con Stripe.",
       "Sincronización automática con el Google Calendar del profesional.",
       "Notificaciones instantáneas por correo electrónico.",
-      "Múltiples servicios de masaje con horarios flexibles."
+      "Múltiples servicios de masaje con horarios flexibles.",
     ],
   },
   techStack: [
@@ -57,9 +57,39 @@ export const massagearte: Project = {
     "RHF",
     "Zod",
     "Nodemailer",
-    "Next-intl"
+    "Next-intl",
   ],
   keyFeaturesUser: [
+    {
+      key: {
+        en: "Instant Booking System",
+        es: "Sistema de reservas instantáneo",
+      },
+      value: {
+        en: "Seamless, no-registration reservation from with real-time availability.",
+        es: "Reserva sencilla y sin necesidad de registrarse, con disponibilidad en tiempo real.",
+      },
+    },
+    {
+      key: {
+        en: "Secure Payment Processing",
+        es: "Proceso de pago seguro",
+      },
+      value: {
+        en: "Stripe-powered payments with automatic confirmation",
+        es: "Pagos a través de Stripe con confirmación automática",
+      },
+    },
+    {
+      key: {
+        en: "Multi-language Support",
+        es: "Compatibilidad con varios idiomas",
+      },
+      value: {
+        en: "Spanish and English (i18n with next-intl).",
+        es: "Español e Inglés (i18n con next-intl).",
+      },
+    },
     {
       key: {
         en: "Design fully responsive",
@@ -82,42 +112,12 @@ export const massagearte: Project = {
     },
     {
       key: {
-        en: "Auto-scrolling reviews carousel",
-        es: "Carrusel de reseñas con desplazamiento automático",
-      },
-      value: {
-        en: "Pauses on hover; 16 verified Google reviews.",
-        es: "Se detiene al pasar el cursos por encima; 16 reseñas verificadas de Google.",
-      },
-    },
-    {
-      key: {
-        en: "Masonry portfolio grid",
-        es: "Cuadrícula de portfolio tipo 'Masonry'.",
-      },
-      value: {
-        en: "Responsive 2-col → 4-col → 12-col layout + Lazy loading for performance.",
-        es: "Diseño adaptativo de 2 columnas → 4 columnas → 12 columnas + carga diferida para mejorar el rendimiento.",
-      },
-    },
-    {
-      key: {
         en: "Sticky header",
         es: "Encabezado fijo al scroll",
       },
       value: {
         en: "Backdrop blur on scroll with mobile slide-out drawer menu (Shadcn UI).",
         es: "Desenfoque del fondo al desplazarse con el menú deslizante de móvil (Shadcn UI).",
-      },
-    },
-    {
-      key: {
-        en: "TWIA Award badge",
-        es: "Insignia del premio TWIA",
-      },
-      value: {
-        en: "2025 Wedding Industry Awards nominee.",
-        es: "Nominado a los Wedding Industry Awards 2025.",
       },
     },
     {
@@ -134,6 +134,26 @@ export const massagearte: Project = {
   keyFeaturesAdmin: [
     {
       key: {
+        en: "Real-Time Calendar Sync",
+        es: "Sincronización de calendario en tiempo real",
+      },
+      value: {
+        en: "Automatic Google Calendar integration for the therapist.",
+        es: "Integración automática con Google Calendar para el terapeuta.",
+      },
+    },
+    {
+      key: {
+        en: "Multi-Channel Notifications",
+        es: "Notificaciones multicanal",
+      },
+      value: {
+        en: "Email, WhatsApp Business or mobile push notifications.",
+        es: "Email, WhatsApp Business o notificaciones push de móvil.",
+      },
+    },
+    {
+      key: {
         en: "Capture leads",
         es: "Captar clientes potenciales",
       },
@@ -142,24 +162,14 @@ export const massagearte: Project = {
         es: "Plantilla de email personalizada para las consultas desde formulario web.",
       },
     },
-    {
-      key: {
-        en: "Cloudinary - Gallery images management platform",
-        es: "Cloudinary - Plataforma para gestionar las imágenes de la galería",
-      },
-      value: {
-        en: "Administrator account for adding/removing images and editing the gallery category.",
-        es: "Cuenta de usuario administrador para añadir/eliminar imágenes y editar la categoría de la galería.",
-      },
-    },
   ],
   images: {
     architectureImage: {
-      src: "/images/projects/rodriguez-events/rodriguez_events_web_architecture.webp",
+      src: "/images/projects/massagearte/architecture_diagram.webp",
       alt: "Project architecture diagram - 4hmartin",
       title: "Project architecture diagram",
       imageFit: "contain",
-      imageFormat: "tablet"
+      imageFormat: "tablet",
     },
     // pageSpeedImage: {
     //   src: "/images/projects/rodriguez-events/pagespeed_insights_report_14-08-2026.webp",
@@ -180,8 +190,7 @@ export const massagearte: Project = {
     //   alt: "Project Google Search Console Report - 4hmartin",
     //   title: "Project Google Search Console Report",
     //   imageFit: "contain",
-    //   imageFormat: "desktop"
-    // },
+    //   imageFormat: "desktop" },
     // dbDiagramImage: {
     //   src: "/images/projects/caab/db_erd.webp",
     //   alt: "Project database entity relationship diagram - 4hmartin",
@@ -201,10 +210,169 @@ export const massagearte: Project = {
         alt: "Hero section desktop screenshot - 4hmartin",
         title: "Home - Hero section english - Desktop screenshot",
         imageFit: "contain",
-        imageFormat: "desktop"
+        imageFormat: "desktop",
       },
-      
-      
+      {
+        src: "/images/projects/massagearte/about_en.webp",
+        alt: "About section desktop screenshot - 4hmartin",
+        title: "About section english - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/services_en.webp",
+        alt: "Services section desktop screenshot - 4hmartin",
+        title: "Services section english - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/services_en_02.webp",
+        alt: "Services section desktop screenshot - 4hmartin",
+        title: "Services section english - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/booking_es_01.webp",
+        alt: "Booking section desktop screenshot - 4hmartin",
+        title: "Booking section ES - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/booking_es_02.webp",
+        alt: "Booking section desktop screenshot - 4hmartin",
+        title: "Booking section ES - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/faq_es_01.webp",
+        alt: "FAQ section desktop screenshot - 4hmartin",
+        title: "FAQ section ES - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/faq_es_02.webp",
+        alt: "FAQ section desktop screenshot - 4hmartin",
+        title: "FAQ section ES - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/contact_es_01.webp",
+        alt: "Contact section desktop screenshot - 4hmartin",
+        title: "Contact section ES - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/privacy_policy_en.webp",
+        alt: "Privacy policy page desktop screenshot - 4hmartin",
+        title: "Privacy Policy EN - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/cookie_policy_en.webp",
+        alt: "Cookie policy page desktop screenshot - 4hmartin",
+        title: "Cookie Policy EN - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/legal_notice_en.webp",
+        alt: "Legal Notice page desktop screenshot - 4hmartin",
+        title: "Legal Notice EN - Desktop screenshot",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/home_en_tablet.webp",
+        alt: "Hero section tablet screenshot - 4hmartin",
+        title: "Hero section EN - Tablet screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile",
+      },
+      {
+        src: "/images/projects/massagearte/about_en_tablet.webp",
+        alt: "About section tablet screenshot - 4hmartin",
+        title: "About section EN - Tablet screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile",
+      },
+      {
+        src: "/images/projects/massagearte/home_en_mobile.webp",
+        alt: "Hero section mobile screenshot - 4hmartin",
+        title: "Hero section EN - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile",
+      },
+      {
+        src: "/images/projects/massagearte/home_en_mobile_menu_open.webp",
+        alt: "Mobile menu open screenshot - 4hmartin",
+        title: "Mobile menu open EN - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile",
+      },
+      {
+        src: "/images/projects/massagearte/about_en_mobile.webp",
+        alt: "About section EN - Mobile screenshot - 4hmartin",
+        title: "About section EN - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile",
+      },
+      {
+        src: "/images/projects/massagearte/services_en_mobile.webp",
+        alt: "Services section EN - Mobile screenshot - 4hmartin",
+        title: "Services section EN - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile",
+      },
+      {
+        src: "/images/projects/massagearte/booking_en_mobile.webp",
+        alt: "Booking section EN - Mobile screenshot - 4hmartin",
+        title: "Booking section EN - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile",
+      },
+      {
+        src: "/images/projects/massagearte/faq_en_mobile.webp",
+        alt: "FAQ section EN - Mobile screenshot - 4hmartin",
+        title: "FAQ section EN - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile",
+      },
+      {
+        src: "/images/projects/massagearte/contact_en_mobile.webp",
+        alt: "Contact section EN - Mobile screenshot - 4hmartin",
+        title: "Contact section EN - Mobile screenshot",
+        imageFit: "contain",
+        imageFormat: "mobile",
+      },
+      {
+        src: "/images/projects/massagearte/cal-com_platform_01.webp",
+        alt: "Cal.com booking system provider screenshot - 4hmartin",
+        title: "Cal.com booking system provider - Available services",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/cal-com_platform_02.webp",
+        alt: "Cal.com booking system provider screenshot - 4hmartin",
+        title: "Cal.com booking system provider - Public url profile",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
+        src: "/images/projects/massagearte/cal-com_platform_03.webp",
+        alt: "Cal.com booking system provider screenshot - 4hmartin",
+        title: "Cal.com booking system provider - Schedule management",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
     ],
     // designInspiration: [
     //   {
