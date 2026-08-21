@@ -3,6 +3,7 @@ import { Project, Locale } from "@/data/types";
 import { motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 import SectionHeader from "../layout/SectionHeader";
+import { CodeBlock } from "./CodeBlock";
 import { fadeUp } from "@/lib/animations";
 import CornerIcons from "../ui/cornerIcons";
 
@@ -19,7 +20,7 @@ const SeparatorAuxLine = () => (
 )
 
 interface ProjectKeyFeaturesProps {
-    keyFeaturesUsers: Project['keyFeaturesUser'];
+    keyFeaturesUsers?: Project['keyFeaturesUser'];
     keyFeaturesAdmin: Project['keyFeaturesAdmin'];
 }
 
@@ -36,49 +37,60 @@ export default function ProjectKeyFeatures({ keyFeaturesUsers, keyFeaturesAdmin 
             <SectionHeader parentTranslations="project_detail" titleLabel="key_features_label" />
 
             <article className="relative px-4 py-6 flex flex-col gap-4">
+
                 {/* SUBTITLE - FOR END USERS */}
-                <motion.h4
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    custom={0.2}
-                    className="uppercase text-xs xl:text-sm font-bold text-gray-700 dark:text-gray-300"
-                >
-                    {t('for_users_label').replaceAll(' ', '_')}
-                </motion.h4>
+                {keyFeaturesUsers &&
+                    <>
+                    <motion.h4
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        custom={0.2}
+                        className="uppercase text-xs xl:text-sm font-bold text-gray-700 dark:text-gray-300"
+                    >
+                        {t('for_users_label').replaceAll(' ', '_')}
+                    </motion.h4>
 
-                <motion.ul
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    custom={0.4}
-                    className="list-none list-inside"
-                >
-                    {keyFeaturesUsers.map((feature, index) => {
-                        return (
-                            <div
-                                key={feature.key['en']}
-                                className="flex items-start gap-1"
-                            >
-                                <span className="text-xs xl:text-sm text-violet-600">
-                                    {index < 10 && '0'}{`${index + 1}.`}
-                                </span>
-                                <li
-                                    className="text-xs xl:text-sm text-gray-700 dark:text-gray-300 mb-4"
+                    <motion.ul
+                        variants={fadeUp}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        custom={0.4}
+                        className="list-none list-inside"
+                    >
+                        {keyFeaturesUsers.map((feature, index) => {
+                            return (
+                                <div
+                                    key={feature.key['en']}
+                                    className="flex items-start gap-1"
                                 >
-                                    <strong>
-                                        {feature.key[locale as Locale]} ▸
-                                    </strong>
-                                    {' '}{feature.value[locale as Locale]}
-                                </li>
-                            </div>
-                        )
-                    })}
-                </motion.ul>
+                                    <span className="text-xs xl:text-sm text-violet-600">
+                                        {index < 10 && '0'}{`${index + 1}.`}
+                                    </span>
+                                    <li
+                                        className="text-xs xl:text-sm text-gray-700 dark:text-gray-300 mb-4"
+                                    >
+                                        <strong>
+                                            {feature.key[locale as Locale]}
+                                        </strong>
+                                        {' '}{feature.value &&
+                                            feature.value[locale as Locale].map((paragraph, idx) => (
+                                                <p key={idx} className="pt-1">
+                                                    {paragraph}
+                                                </p>
+                                            ))
+                                        }
+                                    </li>
+                                </div>
+                            )
+                        })}
+                    </motion.ul>
 
-                <SeparatorAuxLine />
+                    <SeparatorAuxLine />
+                    </>
+                }
 
                 {/* SUBTITLE - FOR ADMIN */}
                 <motion.h4
@@ -102,21 +114,30 @@ export default function ProjectKeyFeatures({ keyFeaturesUsers, keyFeaturesAdmin 
                 >
                     {keyFeaturesAdmin.map((feature, index) => {
                         return (
-                            <div
-                                key={feature.key['en']}
-                                className="flex items-start gap-1"
-                            >
-                                <span className="text-xs xl:text-sm text-violet-600">
-                                    {index < 10 && '0'}{`${index + 1}.`}
-                                </span>
-                                <li
-                                    className="text-xs xl:text-sm text-gray-700 dark:text-gray-300 mb-4"
-                                >
-                                    <strong>
-                                        {feature.key[locale as Locale]} ▸
-                                    </strong>
-                                    {' '}{feature.value[locale as Locale]}
-                                </li>
+                            <div key={feature.key['en']} className={`${feature.code && 'pb-4'}`}>
+                                <div className="flex items-start gap-1">
+                                    <span className="text-xs xl:text-sm text-violet-600">
+                                        {index < 9 && '0'}{`${index + 1}.`}
+                                    </span>
+                                    <li
+                                        className="text-xs xl:text-sm text-gray-700 dark:text-gray-300 mb-4"
+                                    >
+                                        <strong>
+                                            {feature.key[locale as Locale]}
+                                        </strong>
+                                        {' '}{feature.value &&
+                                            feature.value[locale as Locale].map((paragraph, idx) => (
+                                                <p key={idx} className="pt-1.5">
+                                                    {paragraph}
+                                                </p>
+                                            ))
+                                        }
+                                    </li>
+                                </div>
+                                {/* CODE BLOCK SECTION */}
+                                {feature.code &&
+                                    <CodeBlock code={feature.code} language={feature.codeLang} />
+                                }
                             </div>
                         )
                     })}

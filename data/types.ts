@@ -4,7 +4,9 @@ export type Locale = "en" | "es";
 
 export interface KeyFeature {
   key: Record<Locale, string>;
-  value: Record<Locale, string>;
+  value?: Record<Locale, string[]>;
+  code?: string;
+  codeLang?: string;
 }
 
 /**
@@ -35,7 +37,7 @@ export interface Project {
   // Cada párrafo es un elemento del array
   overview: Record<Locale, string[]>;
   techStack: string[];
-  keyFeaturesUser: KeyFeature[];
+  keyFeaturesUser?: KeyFeature[];
   keyFeaturesAdmin: KeyFeature[];
   images: {
     architectureImage?: buildItemProps;

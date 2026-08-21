@@ -54,8 +54,8 @@ export const rodriguezEvents: Project = {
         es: "Diseño totalmente adaptativo",
       },
       value: {
-        en: "Mobile-first design across all breakpoints (320px -> 1536px+).",
-        es: "Diseño mobile-first a través de todos los breakpoints (320px -> 1536px+).",
+        en: ["Mobile-first design across all breakpoints (320px -> 1536px+)."],
+        es: ["Diseño mobile-first a través de todos los breakpoints (320px -> 1536px+)."],
       },
     },
     {
@@ -64,8 +64,8 @@ export const rodriguezEvents: Project = {
         es: "Animaciones de scroll",
       },
       value: {
-        en: "Framer Motion 'whileInView' entrance animations on every section.",
-        es: "Animaciones de entrada 'whileInView' de Framer Motion en cada sección.",
+        en: ["Framer Motion 'whileInView' entrance animations on every section."],
+        es: ["Animaciones de entrada 'whileInView' de Framer Motion en cada sección."],
       },
     },
     {
@@ -74,8 +74,8 @@ export const rodriguezEvents: Project = {
         es: "Carrusel de reseñas con desplazamiento automático",
       },
       value: {
-        en: "Pauses on hover; 16 verified Google reviews.",
-        es: "Se detiene al pasar el cursos por encima; 16 reseñas verificadas de Google.",
+        en: ["Pauses on hover; 16 verified Google reviews."],
+        es: ["Se detiene al pasar el cursos por encima; 16 reseñas verificadas de Google."],
       },
     },
     {
@@ -84,8 +84,8 @@ export const rodriguezEvents: Project = {
         es: "Cuadrícula de portfolio tipo 'Masonry'.",
       },
       value: {
-        en: "Responsive 2-col → 4-col → 12-col layout + Lazy loading for performance.",
-        es: "Diseño adaptativo de 2 columnas → 4 columnas → 12 columnas + carga diferida para mejorar el rendimiento.",
+        en: ["Responsive 2-col → 4-col → 12-col layout + Lazy loading for performance."],
+        es: ["Diseño adaptativo de 2 columnas → 4 columnas → 12 columnas + carga diferida para mejorar el rendimiento."],
       },
     },
     {
@@ -94,8 +94,8 @@ export const rodriguezEvents: Project = {
         es: "Encabezado fijo al scroll",
       },
       value: {
-        en: "Backdrop blur on scroll with mobile slide-out drawer menu (Shadcn UI).",
-        es: "Desenfoque del fondo al desplazarse con el menú deslizante de móvil (Shadcn UI).",
+        en: ["Backdrop blur on scroll with mobile slide-out drawer menu (Shadcn UI)."],
+        es: ["Desenfoque del fondo al desplazarse con el menú deslizante de móvil (Shadcn UI)."],
       },
     },
     {
@@ -104,8 +104,8 @@ export const rodriguezEvents: Project = {
         es: "Insignia del premio TWIA",
       },
       value: {
-        en: "2025 Wedding Industry Awards nominee.",
-        es: "Nominado a los Wedding Industry Awards 2025.",
+        en: ["2025 Wedding Industry Awards nominee."],
+        es: ["Nominado a los Wedding Industry Awards 2025."],
       },
     },
     {
@@ -114,8 +114,8 @@ export const rodriguezEvents: Project = {
         es: "Accesibilidad",
       },
       value: {
-        en: "Semantic HTML, keyboard navigation, ARIA labels, VisuallyHidden titles on drawers.",
-        es: "HTML semántico, navegación por teclado, etiquetas ARIA, títulos «VisuallyHidden» en los paneles deslizantes.",
+        en: ["Semantic HTML, keyboard navigation, ARIA labels, VisuallyHidden titles on drawers."],
+        es: ["HTML semántico, navegación por teclado, etiquetas ARIA, títulos «VisuallyHidden» en los paneles deslizantes."],
       },
     },
   ],
@@ -126,8 +126,8 @@ export const rodriguezEvents: Project = {
         es: "Captar clientes potenciales",
       },
       value: {
-        en: "Personalised email template for enquiries submitted via the web form.",
-        es: "Plantilla de email personalizada para las consultas desde formulario web.",
+        en: ["Personalised email template for enquiries submitted via the web form."],
+        es: ["Plantilla de email personalizada para las consultas desde formulario web."],
       },
     },
     {
@@ -136,8 +136,8 @@ export const rodriguezEvents: Project = {
         es: "Cloudinary - Plataforma para gestionar las imágenes de la galería",
       },
       value: {
-        en: "Administrator account for adding/removing images and editing the gallery category.",
-        es: "Cuenta de usuario administrador para añadir/eliminar imágenes y editar la categoría de la galería.",
+        en: ["Administrator account for adding/removing images and editing the gallery category."],
+        es: ["Cuenta de usuario administrador para añadir/eliminar imágenes y editar la categoría de la galería."],
       },
     },
   ],

@@ -13,7 +13,7 @@ export const massagearte: Project = {
     es: "Massage Arte es una página web de lujo, de una sola página (landing page), diseñada para atraer a una clientela de alto nivel y agilizar el proceso de reserva y pago de un servicio profesional de masajes.",
   },
   publicUrl: "https://massagearte.com/",
-  //   publicPageSpeedReport: "https://pagespeed.web.dev/analysis/https-rodriguez-events-com/x6j9277nn9?utm_source=search_console&form_factor=desktop&hl=en",
+  publicPageSpeedReport: "https://pagespeed.web.dev/analysis/https-massagearte-com/9db7qkf8gj?use_original_url=true&hl=en&form_factor=desktop",
   //   publicSitemap: "https://rodriguez-events.com/sitemap.xml",
   // publicFigmaWireframe: "",
   // publicRepo: "https://github.com/...",
@@ -66,8 +66,8 @@ export const massagearte: Project = {
         es: "Sistema de reservas instantáneo",
       },
       value: {
-        en: "Seamless, no-registration reservation from with real-time availability.",
-        es: "Reserva sencilla y sin necesidad de registrarse, con disponibilidad en tiempo real.",
+        en: ["Seamless, no-registration reservation from with real-time availability."],
+        es: ["Reserva sencilla y sin necesidad de registrarse, con disponibilidad en tiempo real."],
       },
     },
     {
@@ -76,8 +76,8 @@ export const massagearte: Project = {
         es: "Proceso de pago seguro",
       },
       value: {
-        en: "Stripe-powered payments with automatic confirmation",
-        es: "Pagos a través de Stripe con confirmación automática",
+        en: ["Stripe-powered payments with automatic confirmation"],
+        es: ["Pagos a través de Stripe con confirmación automática"],
       },
     },
     {
@@ -86,8 +86,8 @@ export const massagearte: Project = {
         es: "Compatibilidad con varios idiomas",
       },
       value: {
-        en: "Spanish and English (i18n with next-intl).",
-        es: "Español e Inglés (i18n con next-intl).",
+        en: ["Spanish and English (i18n with next-intl)."],
+        es: ["Español e Inglés (i18n con next-intl)."],
       },
     },
     {
@@ -96,8 +96,8 @@ export const massagearte: Project = {
         es: "Diseño totalmente adaptativo",
       },
       value: {
-        en: "Mobile-first design across all breakpoints (320px -> 1536px+).",
-        es: "Diseño mobile-first a través de todos los breakpoints (320px -> 1536px+).",
+        en: ["Mobile-first design across all breakpoints (320px -> 1536px+)."],
+        es: ["Diseño mobile-first a través de todos los breakpoints (320px -> 1536px+)."],
       },
     },
     {
@@ -106,8 +106,8 @@ export const massagearte: Project = {
         es: "Animaciones de scroll",
       },
       value: {
-        en: "Framer Motion 'whileInView' entrance animations on every section.",
-        es: "Animaciones de entrada 'whileInView' de Framer Motion en cada sección.",
+        en: ["Framer Motion 'whileInView' entrance animations on every section."],
+        es: ["Animaciones de entrada 'whileInView' de Framer Motion en cada sección."],
       },
     },
     {
@@ -116,8 +116,8 @@ export const massagearte: Project = {
         es: "Encabezado fijo al scroll",
       },
       value: {
-        en: "Backdrop blur on scroll with mobile slide-out drawer menu (Shadcn UI).",
-        es: "Desenfoque del fondo al desplazarse con el menú deslizante de móvil (Shadcn UI).",
+        en: ["Backdrop blur on scroll with mobile slide-out drawer menu (Shadcn UI)."],
+        es: ["Desenfoque del fondo al desplazarse con el menú deslizante de móvil (Shadcn UI)."],
       },
     },
     {
@@ -126,8 +126,8 @@ export const massagearte: Project = {
         es: "Accesibilidad",
       },
       value: {
-        en: "Semantic HTML, keyboard navigation, ARIA labels, VisuallyHidden titles on drawers.",
-        es: "HTML semántico, navegación por teclado, etiquetas ARIA, títulos 'VisuallyHidden' en los paneles deslizantes.",
+        en: ["Semantic HTML, keyboard navigation, ARIA labels, VisuallyHidden titles on drawers."],
+        es: ["HTML semántico, navegación por teclado, etiquetas ARIA, títulos 'VisuallyHidden' en los paneles deslizantes."],
       },
     },
   ],
@@ -138,8 +138,8 @@ export const massagearte: Project = {
         es: "Sincronización de calendario en tiempo real",
       },
       value: {
-        en: "Automatic Google Calendar integration for the therapist.",
-        es: "Integración automática con Google Calendar para el terapeuta.",
+        en: ["Automatic Google Calendar integration for the therapist."],
+        es: ["Integración automática con Google Calendar para el terapeuta."],
       },
     },
     {
@@ -148,8 +148,8 @@ export const massagearte: Project = {
         es: "Notificaciones multicanal",
       },
       value: {
-        en: "Email, WhatsApp Business or mobile push notifications.",
-        es: "Email, WhatsApp Business o notificaciones push de móvil.",
+        en: ["Email, WhatsApp Business or mobile push notifications."],
+        es: ["Email, WhatsApp Business o notificaciones push de móvil."],
       },
     },
     {
@@ -158,8 +158,8 @@ export const massagearte: Project = {
         es: "Captar clientes potenciales",
       },
       value: {
-        en: "Personalised email template for enquiries submitted via the web form.",
-        es: "Plantilla de email personalizada para las consultas desde formulario web.",
+        en: ["Personalised email template for enquiries submitted via the web form."],
+        es: ["Plantilla de email personalizada para las consultas desde formulario web."],
       },
     },
   ],
@@ -171,13 +171,13 @@ export const massagearte: Project = {
       imageFit: "contain",
       imageFormat: "tablet",
     },
-    // pageSpeedImage: {
-    //   src: "/images/projects/rodriguez-events/pagespeed_insights_report_14-08-2026.webp",
-    //   alt: "Project PageSpeed Insights Report - 4hmartin",
-    //   title: "Project PageSpeed Insights Report",
-    //   imageFit: "contain",
-    //   imageFormat: "desktop"
-    // },
+    pageSpeedImage: {
+      src: "/images/projects/massagearte/pagespeed_insights_report_v1.webp",
+      alt: "Project PageSpeed Insights Report - 4hmartin",
+      title: "Project PageSpeed Insights Report",
+      imageFit: "contain",
+      imageFormat: "desktop"
+    },
     // gscSitemapIndexImage: {
     //   src: "/images/projects/rodriguez-events/gsc_sitemap_index.webp",
     //   alt: "Project Sitemap Indexation on Google Search - 4hmartin",

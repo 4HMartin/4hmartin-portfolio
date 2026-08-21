@@ -35,8 +35,8 @@ export const caab: Project = {
         es: "Comparación interactiva",
       },
       value: {
-        en: "select multiple products and compare them side by side in real time, with clearly structured differences.",
-        es: "Selecciona varios productos y compáralos uno al lado del otro en tiempo real, con las diferencias claramente estructuradas.",
+        en: ["Select multiple products and compare them side by side in real time, with clearly structured differences."],
+        es: ["Selecciona varios productos y compáralos uno al lado del otro en tiempo real, con las diferencias claramente estructuradas."],
       },
     },
     {
@@ -45,8 +45,8 @@ export const caab: Project = {
         es: "Filtros avanzados",
       },
       value: {
-        en: "filter by alarm type, price range, security level, smart home compatibility, contract duration, company, and more.",
-        es: "Filtra por tipo de alarma, rango de precios, nivel de seguridad, compatibilidad con el hogar inteligente, duración del contrato, empresa y mucho más.",
+        en: ["Filter by alarm type, price range, security level, smart home compatibility, contract duration, company, and more."],
+        es: ["Filtra por tipo de alarma, rango de precios, nivel de seguridad, compatibilidad con el hogar inteligente, duración del contrato, empresa y mucho más."],
       },
     },
     {
@@ -55,8 +55,8 @@ export const caab: Project = {
         es: "Formularios de contacto inteligentes",
       },
       value: {
-        en: "adaptive fields pre-filled from the selected comparison, reducing friction at conversion. [global state - zustand]",
-        es: "campos adaptativos rellenados previamente a partir de la comparación seleccionada, lo que reduce las dificultades en la conversión. [estado global - zustand]",
+        en: ["Adaptive fields pre-filled from the selected comparison, reducing friction at conversion. [global state - zustand]"],
+        es: ["Campos adaptativos rellenados previamente a partir de la comparación seleccionada, lo que reduce las dificultades en la conversión. [estado global - zustand]"],
       },
     },
     {
@@ -65,8 +65,8 @@ export const caab: Project = {
         es: "Revisión de facturas (Fase 2)",
       },
       value: {
-        en: "upload a current alarm invoice to receive a personalised market analysis within 48 hours.",
-        es: "Sube una factura reciente de Alarm para recibir un análisis de mercado personalizado en un plazo de 48 horas.",
+        en: ["Upload a current alarm invoice to receive a personalised market analysis within 48 hours."],
+        es: ["Sube una factura reciente de Alarm para recibir un análisis de mercado personalizado en un plazo de 48 horas."],
       },
     },
     {
@@ -75,8 +75,8 @@ export const caab: Project = {
         es: "Compatibilidad con varios idiomas",
       },
       value: {
-        en: "Spanish, English, Catalan and German via i18n.",
-        es: "Español, inglés, catalán y alemán a través de i18n.",
+        en: ["Spanish, English, Catalan and German via i18n."],
+        es: ["Español, inglés, catalán y alemán a través de i18n."],
       },
     },
     {
@@ -85,8 +85,8 @@ export const caab: Project = {
         es: "Diseño totalmente adaptativo",
       },
       value: {
-        en: "optimised for mobile, tablet and desktop.",
-        es: "Optimizado para móviles, tabletas y ordenadores de sobremesa.",
+        en: ["Optimised for mobile, tablet and desktop."],
+        es: ["Optimizado para móviles, tabletas y ordenadores de sobremesa."],
       },
     },
   ],
@@ -97,8 +97,8 @@ export const caab: Project = {
         es: "Sistema de autenticación",
       },
       value: {
-        en: "An authentication system using Better Auth has been implemented to provide access to the administration panel.",
-        es: "Para el acceso al panel de administración se implementa un sistema de autenticación utilizando Better Auth.",
+        en: ["An authentication system using Better Auth has been implemented to provide access to the administration panel."],
+        es: ["Para el acceso al panel de administración se implementa un sistema de autenticación utilizando Better Auth."],
       },
     },
     {
@@ -107,8 +107,8 @@ export const caab: Project = {
         es: "Panel completo de gestión de contenidos",
       },
       value: {
-        en: "manage partner companies (CRUD), product listings (CRUD), available features/services (CRUD) and manage contact requests.",
-        es: "Gestionar empresas colaboradoras (CRUD), listados de productos (CRUD), funciones y servicios disponibles (CRUD) y gestionar las solicitudes de contacto.",
+        en: ["Manage partner companies (CRUD), product listings (CRUD), available features/services (CRUD) and manage contact requests."],
+        es: ["Gestionar empresas colaboradoras (CRUD), listados de productos (CRUD), funciones y servicios disponibles (CRUD) y gestionar las solicitudes de contacto."],
       },
     },
     {
@@ -117,8 +117,8 @@ export const caab: Project = {
         es: "Notificaciones de clientes potenciales.",
       },
       value: {
-        en: "Automatic email alerts when a user submits a form, including the comparison data generated (email template designed for multiple email clients).",
-        es: "Alertas automáticas por correo electrónico cuando un usuario envía un formulario, incluyendo los datos comparativos generados (plantilla de correo electrónico diseñada para múltiples clientes de correo electrónico).",
+        en: ["Automatic email alerts when a user submits a form, including the comparison data generated (email template designed for multiple email clients)."],
+        es: ["Alertas automáticas por correo electrónico cuando un usuario envía un formulario, incluyendo los datos comparativos generados (plantilla de correo electrónico diseñada para múltiples clientes de correo electrónico)."],
       },
     },
     {
@@ -127,8 +127,8 @@ export const caab: Project = {
         es: "Visualización de datos.",
       },
       value: {
-        en: "charts showing all grouped data, created using the re-charts library.",
-        es: "Gráficos que muestran todos los datos agrupados, creados con la biblioteca re-charts.",
+        en: ["Charts showing all grouped data, created using the re-charts library."],
+        es: ["Gráficos que muestran todos los datos agrupados, creados con la biblioteca re-charts."],
       },
     },
   ],

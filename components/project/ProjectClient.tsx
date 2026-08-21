@@ -63,19 +63,23 @@ export default function ProjectClient({ project }: ProjectClientProps) {
 
             <section className="flex flex-col lg:flex-row">
                 <div className="flex flex-col md:mx-17 lg:mr-0 xl:ml-20 2xl:ml-48 lg:w-2/3">
+                    {/* OVERVIEW SECTION */}
                     <ProjectOverview overview={project.overview} />
+                    {/* KEY FEATURES SECTION */}
                     <ProjectKeyFeatures
                         keyFeaturesUsers={project.keyFeaturesUser}
                         keyFeaturesAdmin={project.keyFeaturesAdmin}
                     />
                     
                     <div className="flex flex-col lg:flex-row w-full">
+                        {/* ARCHITECTURE DIAGRAM SECTION */}
                         {project.images.architectureImage && 
                             <ProjectArchitecture
                                 architectureImage={project.images.architectureImage}
                                 handleLightboxOpen={handleLightboxOpen}
                             />
                         }
+                        {/* PAGESPEED INSIGHTS REPORT IMAGE SECTION */}
                         {project.images.pageSpeedImage && project.publicPageSpeedReport &&
                             <ProjectPageSpeed
                                 pageSpeedImage={project.images.pageSpeedImage}
@@ -83,12 +87,14 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                                 handleLightboxOpen={handleLightboxOpen}
                             />
                         }
+                        {/* DATABASE DIAGRAM IMAGE SECTION */}
                         {project.images.dbDiagramImage && 
                             <ProjectDatabase
                                 dbDiagramImage={project.images.dbDiagramImage}
                                 handleLightboxOpen={handleLightboxOpen}
                             />
                         }
+                        {/* FIGMA WIREFRAME IMAGE SECTION */}
                         {project.images.figmaWireframe && project.publicFigmaWireframe &&
                             <ProjectFigmaWireframe
                                 figmaWireframe={project.images.figmaWireframe}
@@ -99,6 +105,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                     </div>
 
                     <div className="flex flex-col lg:flex-row w-full">
+                        {/* GOOGLE SEARCH CONSOLE SITEMAP INDEXATION IMAGE SECTION */}
                         {project.images.gscSitemapIndexImage && project.publicSitemap && 
                             <ProjectGscSitemapIndex
                                 gscSitemapIndexImage={project.images.gscSitemapIndexImage}
@@ -106,6 +113,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                                 handleLightboxOpen={handleLightboxOpen}
                             />
                         }
+                        {/* GOOGLE SEARCH CONSOLE REPORT IMAGE SECTION */}
                         {project.images.gscReportImage &&
                             <ProjectGscReportImage
                                 gscReportImage={project.images.gscReportImage}
@@ -114,10 +122,12 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                         }
                     </div>
 
+                    {/* SCREENSHOTS AND DEMOS SECTION */}
                     <ProjectScreenshots
                         screenshots={project.images.screenshots}
                         handleLightboxOpen={handleLightboxOpen}
                         />
+                    {/* DESIGN INSPIRATION IMAGES SECTION */}
                     {project.images.designInspiration && 
                         <ProjectDesignInspiration
                             screenshots={project.images.designInspiration}
@@ -125,6 +135,7 @@ export default function ProjectClient({ project }: ProjectClientProps) {
                         />
                     }
                 </div>
+                {/* TECH STACK ASIDE */}
                 <ProjectTechStack
                     techStack={project.techStack}
                     publicURL={project.publicUrl}

@@ -97,7 +97,12 @@
     "rhf_info": "React Hook Form is a lightweight library for managing forms in React that uses uncontrolled components and hooks to minimize re-renders, offering fast performance and simple validation handling.",
     "zod_info": "Zod is a TypeScript-first schema declaration and validation library that lets you define data shapes once and use them to validate and infer types at both compile time and runtime.",
     "ftp_info": "FTP (File Transfer Protocol) is a standard network protocol used to transfer files between a client and a server over a network, commonly used for uploading or downloading files to a hosting server.",
-    "cloudinary_info": "Cloudinary provides cloud storage, optimization, transformations, and fast delivery for images and media used by the application."
+    "cloudinary_info": "Cloudinary provides cloud storage, optimization, transformations, and fast delivery for images and media used by the application.",
+    "headlessui_info": "Headless UI is a set of unstyled, fully accessible UI components for React and Vue that provide behavior and ARIA compliance out of the box, giving developers complete control over styling.",
+    "contextapi_info": "The Context API is a built-in React feature that allows data to be shared across the component tree without manually passing props down through every level, commonly used for global state like themes or auth.",
+    "usereducer_info": "useReducer is a React hook for managing complex state logic through a reducer function and dispatched actions, offering a predictable alternative to useState when state transitions depend on previous state or involve multiple sub-values.",
+    "usememo_info": "useMemo is a React hook that memoizes the result of an expensive computation, recalculating it only when its dependencies change, helping avoid unnecessary re-computations on every render.",
+    "customhook_info": "A custom hook is a reusable JavaScript function whose name starts with 'use' that encapsulates stateful logic built from React's built-in hooks, allowing developers to share behavior across components without duplicating code."
   },
   "contact_section": {
     "contact_label": "contact",
