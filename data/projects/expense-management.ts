@@ -290,6 +290,13 @@ export type BudgetActions =
     },
     screenshots: [
       {
+        src: "/images/projects/expense-management/home_01.webp",
+        alt: "User interface main view desktop screenshot - 4hmartin",
+        title: "User interface main view - Modal form",
+        imageFit: "contain",
+        imageFormat: "desktop",
+      },
+      {
         src: "/images/projects/expense-management/initial_step.webp",
         alt: "Define your budget desktop screenshot - 4hmartin",
         title: "Define your budget - Initial step",
@@ -307,13 +314,6 @@ export type BudgetActions =
         src: "/images/projects/expense-management/modal_form_03.webp",
         alt: "New expense error modal form desktop screenshot - 4hmartin",
         title: "New expense form error - Modal form",
-        imageFit: "contain",
-        imageFormat: "desktop",
-      },
-      {
-        src: "/images/projects/expense-management/home_01.webp",
-        alt: "User interface main view desktop screenshot - 4hmartin",
-        title: "User interface main view - Modal form",
         imageFit: "contain",
         imageFormat: "desktop",
       },

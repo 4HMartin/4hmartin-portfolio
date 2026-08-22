@@ -237,7 +237,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                             className={`${project.category === 'production_ready' ? 'bg-violet-600' : 
                                 project.category === 'in_development' ? 'bg-lime-600' : 'bg-gray-700'
                             } relative w-fit z-20 px-2 py-0.5 uppercase text-xs text-white`}>
-                            {project.category}
+                            {t(`${project.category}_label`)}
                         </motion.span>
 
                         {/* PROJECT NAME */}
@@ -382,7 +382,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                                     {t('category_label')}
                                 </p>
                                 <p className="text-[8px] xs:text-xs xl:text-sm text-gray-300">
-                                    {project.category.replaceAll(' ', '_')}
+                                    {t(`${project.category}_label`)}
                                 </p>
                             </div>
                             {/* DEVELOPMENT TYPE */}
