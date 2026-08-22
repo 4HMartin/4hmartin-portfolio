@@ -38,9 +38,9 @@ export const rodriguezEvents: Project = {
   techStack: [
     "Next.js",
     "React",
+    "Shadcn UI",
     "TypeScript",
     "TailwindCSS",
-    "Shadcn UI",
     "Motion",
     "RHF",
     "Zod",

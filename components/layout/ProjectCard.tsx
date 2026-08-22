@@ -71,7 +71,7 @@ export default function ProjectCard({ project }: { project: Project; }) {
                 </div>
 
                 {/* SHORT DESCRIPTION */}
-                <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed flex-1">
+                <p className="min-h-22.5! max-h-22.5! overflow-hidden text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed flex-1">
                     {project.shortDescription[locale]}
                 </p>
 
