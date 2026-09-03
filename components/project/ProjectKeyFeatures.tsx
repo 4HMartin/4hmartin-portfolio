@@ -19,6 +19,20 @@ const SeparatorAuxLine = () => (
     after:content-['▸'] after:absolute after:-right-1.5 after:-top-1.25 after:text-gray-300 dark:after:text-gray-800"/>
 )
 
+interface FormattedTextProps {
+    text: string;
+}
+const FormattedText = ({ text }: FormattedTextProps) => {
+    const parts = text.split(/(\*\*[^*]+\*\*)/g);
+
+    return parts.map((part, i) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={i}>{part.slice(2, -2)}</strong>;
+        }
+        return part;
+    });
+}
+
 interface ProjectKeyFeaturesProps {
     keyFeaturesUsers?: Project['keyFeaturesUser'];
     keyFeaturesAdmin: Project['keyFeaturesAdmin'];
@@ -128,7 +142,8 @@ export default function ProjectKeyFeatures({ keyFeaturesUsers, keyFeaturesAdmin 
                                         {' '}{feature.value &&
                                             feature.value[locale as Locale].map((paragraph, idx) => (
                                                 <p key={idx} className="pt-1.5">
-                                                    {paragraph}
+                                                    {/* Applies bold to words wrapped in "**<word>**" */}
+                                                    <FormattedText text={paragraph} />
                                                 </p>
                                             ))
                                         }

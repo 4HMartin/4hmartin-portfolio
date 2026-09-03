@@ -14,6 +14,43 @@ import M54mm from "@/public/images/54mm.webp";
 import M5mm from "@/public/images/5mm.webp";
 import ScrambleText from "../ui/ScrambleText";
 
+const CornerPlusIcon = ({ position, color }: { position: string, color: string }) => {
+    return (
+        // animate-ping ?
+        <motion.span className={`absolute ${position} ${color} text-xs bg-gray-950 w-3 flex items-center justify-center rounded-full cursor-default`}
+                     variants={flickerVariant} initial="hidden" animate="visible"
+        >
+            ⊹
+        </motion.span>
+    )
+}
+
+const IsometricCube = ({
+                           primary, styles, animationDelay, opacity, animationDirection
+                       }: {
+    primary: boolean, styles: string, animationDelay: number, opacity: number, animationDirection: string
+}) => {
+
+    const yAxis = animationDirection === 'down' ? -12 : 12;
+    const xAxis = animationDirection === 'down' ? 12 : -12;
+
+    return (
+        <motion.div className={`${primary ? 'border-lime-500 text-lime-500' : 'border-dashed border-gray-500 text-gray-500'} relative border bg-gray-950 w-10 h-10 flex items-center justify-center -rotate-45 skew-12 cursor-default ${styles}`}
+                    initial={{
+                        opacity: 0, y: yAxis, x: xAxis, skewY: 18, skewX: 18
+                    }}
+                    animate={{ opacity: opacity, y: 0, x: 0, skewY: 18, skewX: 18 }}
+                    transition={{ ease: 'easeOut', duration: 0.4, delay: animationDelay }}
+        >
+            <CornerPlusIcon position="-top-2.5 -left-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+            <CornerPlusIcon position="-top-2.5 -right-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+            <CornerPlusIcon position="-bottom-1.75 -left-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+            <CornerPlusIcon position="-bottom-1.75 -right-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
+            {primary ? '○' : '◌'}
+        </motion.div>
+    )
+}
+
 export default function Hero() {
 
     const t = useTranslations('hero_section');
@@ -59,43 +96,6 @@ export default function Hero() {
         hLineRef.current?.style.setProperty('opacity', '0');
     };
 
-    const CornerPlusIcon = ({ position, color }: { position: string, color: string }) => {
-        return (
-            // animate-ping ?
-            <motion.span className={`absolute ${position} ${color} text-xs bg-gray-950 w-3 flex items-center justify-center rounded-full cursor-default`}
-                variants={flickerVariant} initial="hidden" animate="visible"
-            >
-                ⊹
-            </motion.span>
-        )
-    }
-
-    const IsometricCube = ({
-        primary, styles, animationDelay, opacity, animationDirection
-    }: {
-        primary: boolean, styles: string, animationDelay: number, opacity: number, animationDirection: string
-    }) => {
-
-        const yAxis = animationDirection === 'down' ? -12 : 12;
-        const xAxis = animationDirection === 'down' ? 12 : -12;
-
-        return (
-            <motion.div className={`${primary ? 'border-lime-500 text-lime-500' : 'border-dashed border-gray-500 text-gray-500'} relative border bg-gray-950 w-10 h-10 flex items-center justify-center -rotate-45 skew-12 cursor-default ${styles}`}
-                initial={{
-                    opacity: 0, y: yAxis, x: xAxis, skewY: 18, skewX: 18
-                }}
-                animate={{ opacity: opacity, y: 0, x: 0, skewY: 18, skewX: 18 }}
-                transition={{ ease: 'easeOut', duration: 0.4, delay: animationDelay }}
-            >
-                <CornerPlusIcon position="-top-2.5 -left-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
-                <CornerPlusIcon position="-top-2.5 -right-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
-                <CornerPlusIcon position="-bottom-1.75 -left-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
-                <CornerPlusIcon position="-bottom-1.75 -right-1.5" color={`${primary ? 'text-lime-400' : 'text-lime-400 '}`} />
-                {primary ? '○' : '◌'}
-            </motion.div>
-        )
-    }
-
     return (
         <section
             id="hero"
@@ -107,16 +107,10 @@ export default function Hero() {
         >
 
             {/* Vertical dashed line */}
-            <div
-                ref={vLineRef}
-                className="absolute z-10 top-0 bottom-0 w-px border-l border-dashed border-gray-800 pointer-events-none opacity-0 transition-opacity duration-150"
-            />
+            <div ref={vLineRef} className="absolute z-10 top-0 bottom-0 w-px border-l border-dashed border-gray-800 pointer-events-none opacity-0 transition-opacity duration-150" />
 
             {/* Horizontal dashed line */}
-            <div
-                ref={hLineRef}
-                className="absolute z-10 left-0 right-0 h-px border-t border-dashed border-gray-800 pointer-events-none opacity-0 transition-opacity duration-150"
-            />
+            <div ref={hLineRef} className="absolute z-10 left-0 right-0 h-px border-t border-dashed border-gray-800 pointer-events-none opacity-0 transition-opacity duration-150" />
 
             {/* LEFT CONTENT CONTAINER */}
             <div className="relative flex gap-0 w-full border-b border-gray-800 2xl:border-0">
@@ -188,7 +182,9 @@ export default function Hero() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
                     >
-                        <span>/01</span>
+                        <span className="h-fit border border-amber-400 text-[10px] tracking-widest text-amber-400 px-2 py-0.5">
+                            BETA
+                        </span>
                         <div className="flex flex-col items-end gap-2">
                             <span>▸ PORTFOLIO_V1.0</span>
                             <span>100%</span>
@@ -419,7 +415,7 @@ export default function Hero() {
 
                         {/* CASE PROPERTIES DETAILS */}
                         <motion.div className="absolute opacity-0! top-[34%] right-[-18%] xs:right-[-22%] md:right-[-30%] lg:right-[-25%] 2xl:right-[-35%] transition-all duration-150 group-hover:opacity-100! 2xl:group-hover:right-[-45%]"
-                            
+
                             transition={{ ease: "easeOut", duration: 0.3, delay: 0.2 }}
                         >
                             {/* MATERIAL */}

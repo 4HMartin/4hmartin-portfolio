@@ -6,7 +6,7 @@ import { BookOpen, CodeXml, SquareTerminal, Wrench } from "lucide-react";
 import { useTranslations } from "next-intl";
 import CornerIcons from "../ui/cornerIcons";
 import { motion } from "motion/react";
-import { fadeUp } from "@/lib/animations";
+import { fadeUp, fadeLeft } from "@/lib/animations";
 
 export default function Skills() {
 
@@ -50,7 +50,7 @@ export default function Skills() {
                         {SkillsData.frontend.map((skill, index) => (
                             <motion.div
                                 key={skill}
-                                variants={fadeUp}
+                                variants={fadeLeft}
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
@@ -96,7 +96,7 @@ export default function Skills() {
                         {SkillsData.backend.map((skill, index) => (
                             <motion.div
                                 key={skill}
-                                variants={fadeUp}
+                                variants={fadeLeft}
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
@@ -142,7 +142,7 @@ export default function Skills() {
                         {SkillsData.learning.map((skill, index) => (
                             <motion.div
                                 key={skill}
-                                variants={fadeUp}
+                                variants={fadeLeft}
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
@@ -188,7 +188,7 @@ export default function Skills() {
                         {SkillsData.tools.map((skill, index) => (
                             <motion.div
                                 key={skill}
-                                variants={fadeUp}
+                                variants={fadeLeft}
                                 initial="hidden"
                                 whileInView="visible"
                                 viewport={{ once: true }}
@@ -208,7 +208,7 @@ export default function Skills() {
 
             {/* LEGEND FOOTER */}
             <motion.p className="flex items-center gap-2 w-full p-4 md:px-22 xl:px-26 2xl:px-54 xl:py-4 text-[10px] md:text-xs text-gray-400"
-                variants={fadeUp}
+                variants={fadeLeft}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}

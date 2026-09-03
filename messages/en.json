@@ -102,7 +102,9 @@
     "contextapi_info": "The Context API is a built-in React feature that allows data to be shared across the component tree without manually passing props down through every level, commonly used for global state like themes or auth.",
     "usereducer_info": "useReducer is a React hook for managing complex state logic through a reducer function and dispatched actions, offering a predictable alternative to useState when state transitions depend on previous state or involve multiple sub-values.",
     "usememo_info": "useMemo is a React hook that memoizes the result of an expensive computation, recalculating it only when its dependencies change, helping avoid unnecessary re-computations on every render.",
-    "customhook_info": "A custom hook is a reusable JavaScript function whose name starts with 'use' that encapsulates stateful logic built from React's built-in hooks, allowing developers to share behavior across components without duplicating code."
+    "customhook_info": "A custom hook is a reusable JavaScript function whose name starts with 'use' that encapsulates stateful logic built from React's built-in hooks, allowing developers to share behavior across components without duplicating code.",
+    "openrouterai_info": "Openrouter is a unified API gateway that provides access to multiple Large Language Model providers (OpenAI, Anthropic, Mistral, etc.) through a single interface and API key, simplifying model switching and cost optimization.",
+    "reactrouterdom_info": "React Router DOM is a library that enables client-side routing in React applications, allowing developers to build single-page applications with multiple views that update without full page reloads using declarative route definitions and navigation components."
   },
   "contact_section": {
     "contact_label": "contact",

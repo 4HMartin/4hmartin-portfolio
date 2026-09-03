@@ -24,3 +24,12 @@ export const fadeUp = {
     transition: { duration: 0.3, delay: customDelay, ease: "easeOut" as EasingDefinition }
   })
 }
+
+export const fadeLeft = {
+  hidden: { opacity: 0, x: 12 },
+  visible: (customDelay: number) => ({
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.3, delay: customDelay, ease: "easeOut" as EasingDefinition }
+  })
+}

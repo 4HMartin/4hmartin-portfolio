@@ -26,7 +26,7 @@ export default function TechBadge({ variant, name }: TechBadgeProps) {
             </TooltipTrigger>
             <TooltipContent side="bottom" sideOffset={10} className="rounded-none shadow-md max-w-2xs">
                 <p className="relative p-1">
-                    {t(`${name.toLowerCase().trim().replace('.', '').replace(' ','')}_info`)}
+                    {t(`${name.toLowerCase().trim().replaceAll('.', '').replaceAll(' ','')}_info`)}
                 </p>
             </TooltipContent>
         </Tooltip>
