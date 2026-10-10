@@ -47,22 +47,12 @@ export const portfolio: Project = {
     keyFeaturesUser: [
         {
             key: {
-                en: "Design fully responsive",
-                es: "Diseño totalmente adaptativo",
+                en: "Single-page home",
+                es: "Single-page-home",
             },
             value: {
-                en: ["Mobile-first design across all breakpoints (320px -> 1536px+)."],
-                es: ["Diseño mobile-first a través de todos los breakpoints (320px -> 1536px+)."],
-            },
-        },
-        {
-            key: {
-                en: "Scroll animations",
-                es: "Animaciones de scroll",
-            },
-            value: {
-                en: ["Framer Motion 'whileInView' entrance animations on every section."],
-                es: ["Animaciones de entrada 'whileInView' de Framer Motion en cada sección."],
+                en: ["Hero, About, Projects, Certificates, Skills and Contact sections, using smooth scrolling navigation."],
+                es: ["Secciones Hero, About, Projects, Certificates, Skills y Contact, utilizando navegación por scroll suave."],
             },
         },
         {
@@ -87,6 +77,36 @@ export const portfolio: Project = {
         },
         {
             key: {
+                en: "Design fully responsive",
+                es: "Diseño totalmente adaptativo",
+            },
+            value: {
+                en: ["Mobile-first design across all breakpoints (320px -> 1536px+)."],
+                es: ["Diseño mobile-first a través de todos los breakpoints (320px -> 1536px+)."],
+            },
+        },
+        {
+            key: {
+                en: "Image lightbox",
+                es: "Image lightbox",
+            },
+            value: {
+                en: ["with captions, counter and zoom (yet-another-react-lightbox) integrated with next/image."],
+                es: ["Con leyendas, contador y zoom (yet-another-react-lightbox) integrado con next/image."],
+            },
+        },
+        {
+            key: {
+                en: "Scroll animations",
+                es: "Animaciones de scroll",
+            },
+            value: {
+                en: ["Framer Motion 'whileInView' entrance animations on every section."],
+                es: ["Animaciones de entrada 'whileInView' de Framer Motion en cada sección."],
+            },
+        },
+        {
+            key: {
                 en: "Light/dark adaptive theme",
                 es: "Tema claro/oscuro adaptativo",
             },
@@ -103,6 +123,34 @@ export const portfolio: Project = {
             value: {
                 en: ["The website main language is English, with the option to switch to Spanish using the language selector via 'next-intl'."],
                 es: ["Idioma principal de la web en Inglés con la opción a traducción al Español utilizando selector de idioma via 'next-intl'."],
+            },
+        },
+        {
+            key: {
+                en: "Animations",
+                es: "Animaciones",
+            },
+            value: {
+                en: [
+                    "Animations with Motion (scroll-triggered fade-ins, flicker effects, scramble text, isometric cubes, crosshair cursor)."
+                ],
+                es: [
+                    "Animaciones con movimiento (apariciones progresivas activadas al desplazarse, efectos de parpadeo, texto aleatorio, cubos isométricos, cursor en forma de cruz)."
+                ],
+            },
+        },
+        {
+            key: {
+                en: "Live Bitcoin price widget",
+                es: "Widget con el precio en tiempo real de Bitcoin",
+            },
+            value: {
+                en: [
+                    "Live BTC price widget in the fixed bottom bar (server-side cached API route)."
+                ],
+                es: [
+                    "Widget con el precio en tiempo real del BTC en la barra inferior fija (ruta de API almacenada en caché del lado del servidor)."
+                ],
             },
         },
         {
@@ -134,6 +182,16 @@ export const portfolio: Project = {
                 en: ["Semantic HTML, keyboard navigation, ARIA labels, VisuallyHidden titles on drawers."],
                 es: ["HTML semántico, navegación por teclado, etiquetas ARIA, títulos «VisuallyHidden» en los paneles deslizantes."],
             },
+        },
+        {
+            key: {
+                en: "Custom 404",
+                es: "Custom 404",
+            },
+            value: {
+                en: ["Custom 404 page with a themed design."],
+                es: ["Página 404 personalizada con un diseño temático."],
+            },
         }
     ],
     keyFeaturesAdmin: [
@@ -149,12 +207,26 @@ export const portfolio: Project = {
         },
         {
             key: {
-                en: "Detailed project documentation page",
+                en: "Detailed project documentation page (/projects/[slug])",
                 es: "Página de documentación detallada del proyecto",
             },
             value: {
-                en: ["Each project has its own detailed documentation page."],
-                es: ["Cada proyecto cuenta con su propia página de documentación detallada."],
+                en: ["Statically generated at build time (SSG), including overview, key features, tech stack, architecture/database/wireframe diagrams, PageSpeed and Search Console reports, screenshots and design inspiration."],
+                es: ["Generado estáticamente en el momento de la compilación (SSG), incluyendo una descripción general, características principales, pila tecnológica, diagramas de arquitectura, base de datos y esquemas de diseño, informes de PageSpeed y Search Console, capturas de pantalla e inspiración de diseño."],
+            },
+        },
+        {
+            key: {
+                en: "Contact form",
+                es: "Formulario de contacto",
+            },
+            value: {
+                en: [
+                    "Contact form with client-side validation (React Hook Form + Zod), Cloudflare Turnstile anti-bot check and server-side email delivery via Nodemailer."
+                ],
+                es: [
+                    "Formulario de contacto con validación del lado del cliente (React Hook Form + Zod), verificación antibots de Cloudflare Turnstile y envío de correos electrónicos del lado del servidor a través de Nodemailer."
+                ],
             },
         },
         {
@@ -180,6 +252,20 @@ export const portfolio: Project = {
                 es: [
                     "SEO mediante la implementación de Google Analytics 4, Google Search Console y Google Tag Manager.",
                     "Gestión de cookies utilizando la librería 'vanilla-cookieconsent'."
+                ],
+            },
+        },
+        {
+            key: {
+                en: "Legal pages",
+                es: "Páginas legales",
+            },
+            value: {
+                en: [
+                    "Legal Notice, Privacy Policy and Cookie Policy."
+                ],
+                es: [
+                    "Aviso legal, Política de privacidad y Política de cookies."
                 ],
             },
         },

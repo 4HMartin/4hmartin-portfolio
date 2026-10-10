@@ -81,7 +81,7 @@ export default function ProjectKeyFeatures({ keyFeaturesUsers, keyFeaturesAdmin 
                                     className="flex items-start gap-1"
                                 >
                                     <span className="text-xs xl:text-sm text-violet-600">
-                                        {index < 10 && '0'}{`${index + 1}.`}
+                                        {index < 9 && '0'}{`${index + 1}.`}
                                     </span>
                                     <li
                                         className="text-xs xl:text-sm text-gray-700 dark:text-gray-300 mb-4"
