@@ -47,7 +47,7 @@ export default function ProjectCard({ project }: { project: Project; }) {
                 <div
                     className={`absolute top-2 left-2 text-[9px] xs:text-xs uppercase tracking-wider px-2 py-0.5 ${project.category === "production_ready"
                         ? "bg-violet-600 text-white"
-                        : "bg-gray-700 text-white"
+                        : project.category === "practice" ? "bg-gray-700 text-white" : "bg-lime-500 text-white"
                         }`}
                 >
                     {catLabel}

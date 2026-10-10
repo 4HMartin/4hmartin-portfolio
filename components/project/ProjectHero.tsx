@@ -448,7 +448,7 @@ export default function ProjectHero({project}: ProjectHeroProps) {
                                 animate={{opacity: 1, y: 0, x: 0}}
                                 transition={{ease: "easeOut", duration: 0.3}}
                     >
-                        {/* Main project gif */}
+                        {/* Main project GIF */}
                         <Image
                             src={project.mainGif}
                             alt="Heber Martin Rodriguez - Project gif"
