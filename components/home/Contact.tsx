@@ -25,7 +25,7 @@ export default function Contact() {
     return (
         <section id="contact" className="relative">
             {/* HEADER */}
-            <SectionHeader parentTranslations="contact_section" titleLabel="contact_label" sectionNumber="06" />
+            <SectionHeader parentTranslations="contact_section" titleLabel="contact_label" sectionNumber="05" />
 
             {/* MAIN CONTAINER */}
             <div className="flex flex-col lg:flex-row lg:flex-wrap items-center lg:items-start md:mx-17 xl:mx-20 2xl:mx-48">

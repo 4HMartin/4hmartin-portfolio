@@ -122,9 +122,9 @@ export default function MobileMenu() {
                             <NavLinkMobile to="hero" ariaLabel="4HMartin Portfolio - Hero section" href="/#hero" textLabel="home_label" linkNumber="1" />
                             <NavLinkMobile to="about" ariaLabel="4HMartin Portfolio - About section" href="/#about" textLabel="about_label" linkNumber="2" />
                             <NavLinkMobile to="projects" ariaLabel="4HMartin Portfolio - Projects section" href="/#projects" textLabel="projects_label" linkNumber="3" />
-                            <NavLinkMobile to="certs" ariaLabel="4HMartin Portfolio - Certs section" href="/#certs" textLabel="certs_label" linkNumber="4" />
-                            <NavLinkMobile to="skills" ariaLabel="4HMartin Portfolio - Skills section" href="/#skills" textLabel="skills_label" linkNumber="5" />
-                            <NavLinkMobile to="contact" ariaLabel="4HMartin Portfolio - Contact section" href="/#contact" textLabel="contact_label" linkNumber="6" />
+                            {/*<NavLinkMobile to="certs" ariaLabel="4HMartin Portfolio - Certs section" href="/#certs" textLabel="certs_label" linkNumber="4" />*/}
+                            <NavLinkMobile to="skills" ariaLabel="4HMartin Portfolio - Skills section" href="/#skills" textLabel="skills_label" linkNumber="4" />
+                            <NavLinkMobile to="contact" ariaLabel="4HMartin Portfolio - Contact section" href="/#contact" textLabel="contact_label" linkNumber="5" />
                         </div>
                         <div className="flex items-center justify-center mt-6">
 

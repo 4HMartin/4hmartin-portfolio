@@ -19,43 +19,43 @@ import ImagotypeDark from "@/public/IMAGOTYPE_DARK.png";
 import CustomCtaButton from "../ui/CustomCtaButton";
 import { useEffect } from "react";
 
+// Separator details
+const SeparatorDetails = ({ hiddeIcon }: { hiddeIcon?: string }) => {
+    return (
+        <motion.div className="hidden xl:flex items-center justify-center relative w-10 h-14 cursor-default"
+                    variants={flickerVariant}
+                    initial="hidden"
+                    animate="visible"
+        >
+            <span className="text-gray-300 dark:text-gray-800 text-xl cursor-default">∷</span>
+            <span className={`${hiddeIcon === 'right' && 'hidden'} absolute -right-1 text-xl text-gray-300 dark:text-gray-800 cursor-default`}>
+                    ⊣
+                </span>
+            <span className={`${hiddeIcon === 'left' && 'hidden'} absolute -left-1 text-xl text-gray-300 dark:text-gray-800 cursor-default`}>
+                    ⊢
+                </span>
+            <span className="absolute left-2 top-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
+                    ⌏
+                </span>
+            <span className="absolute right-2 top-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
+                    ⌎
+                </span>
+            <span className="absolute left-2 bottom-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
+                    ⌍
+                </span>
+            <span className="absolute right-2 bottom-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
+                    ⌌
+                </span>
+        </motion.div>
+    )
+}
+
 export default function Header() {
 
     const t = useTranslations('navigation');
 
     const linkedinURL = process.env.NEXT_PUBLIC_LINKEDIN_URL;
     const githubURL = process.env.NEXT_PUBLIC_GITHUB_URL;
-
-    // Separator details
-    const SeparatorDetails = ({ hiddeIcon }: { hiddeIcon?: string }) => {
-        return (
-            <motion.div className="hidden xl:flex items-center justify-center relative w-10 h-14 cursor-default"
-                variants={flickerVariant}
-                initial="hidden"
-                animate="visible"
-            >
-                <span className="text-gray-300 dark:text-gray-800 text-xl cursor-default">∷</span>
-                <span className={`${hiddeIcon === 'right' && 'hidden'} absolute -right-1 text-xl text-gray-300 dark:text-gray-800 cursor-default`}>
-                    ⊣
-                </span>
-                <span className={`${hiddeIcon === 'left' && 'hidden'} absolute -left-1 text-xl text-gray-300 dark:text-gray-800 cursor-default`}>
-                    ⊢
-                </span>
-                <span className="absolute left-2 top-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
-                    ⌏
-                </span>
-                <span className="absolute right-2 top-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
-                    ⌎
-                </span>
-                <span className="absolute left-2 bottom-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
-                    ⌍
-                </span>
-                <span className="absolute right-2 bottom-2 text-xl text-gray-300 dark:text-gray-800 cursor-default">
-                    ⌌
-                </span>
-            </motion.div>
-        )
-    }
 
     const pathname = usePathname();
 
@@ -131,12 +131,12 @@ export default function Header() {
                     >∷</motion.span>
 
                     {/* CERTS */}
-                    <HeaderLink to="certs" ariaLabel="4HMartin Portfolio - Certs section" href="/#certs" textLabel="certs_label" />
-                    <motion.span className="text-gray-300 dark:text-gray-800 cursor-default"
-                        variants={flickerVariant}
-                        initial="hidden"
-                        animate="visible"
-                    >∷</motion.span>
+                    {/*<HeaderLink to="certs" ariaLabel="4HMartin Portfolio - Certs section" href="/#certs" textLabel="certs_label" />*/}
+                    {/*<motion.span className="text-gray-300 dark:text-gray-800 cursor-default"*/}
+                    {/*    variants={flickerVariant}*/}
+                    {/*    initial="hidden"*/}
+                    {/*    animate="visible"*/}
+                    {/*>∷</motion.span>*/}
 
                     {/* SKILLS */}
                     <HeaderLink to="skills" ariaLabel="4HMartin Portfolio - Skills section" href="/#skills" textLabel="skills_label" />

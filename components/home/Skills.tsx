@@ -15,7 +15,7 @@ export default function Skills() {
     return (
         <section id="skills" className="relative bg-white dark:bg-gray-950">
             {/* HEADER */}
-            <SectionHeader parentTranslations="skills_section" titleLabel="skills_label" sectionNumber="05" />
+            <SectionHeader parentTranslations="skills_section" titleLabel="skills_label" sectionNumber="04" />
 
             {/* CONTAINER */}
             <div className="grid grid-cols-1 gap-1 md:gap-0 md:mx-17 xl:mx-20 2xl:mx-48 md:grid-cols-2 2xl:grid-cols-4">
