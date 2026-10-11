@@ -27,6 +27,8 @@ export default function LanguageSelector() {
       {/* Botón del selector */}
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle language"
+        name="toggle-language"
         className="flex items-center gap-0.5 pl-4 md:pl-2 lg:pl-3 py-3 justify-center bg-transparent transition-all duration-150 lg:w-fit group hover:cursor-pointer"
       >
         <Globe className="w-6 md:w-3 lg:w-5 h-6 md:h-3 lg:h-5 text-secondary dark:text-gray-300 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500" />

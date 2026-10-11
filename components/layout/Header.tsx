@@ -163,16 +163,16 @@ export default function Header() {
                     <ThemeSwitch />
                     <CornerIcons />
                 </div>
-                {/* Linkedin link */}
+                {/* LinkedIn link */}
                 <div className="relative group w-8 lg:w-12 h-8 lg:h-12 place-self-end md:place-self-auto flex items-center justify-center hover:cursor-pointer 2xl:mr-2">
-                    <Link href={linkedinURL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'} target="_blank" className="z-10">
+                    <Link href={linkedinURL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'} target="_blank" className="z-10" aria-label="LinkedIn">
                         <LinkedInIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary dark:text-gray-300 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500" />
                     </Link>
                     <CornerIcons />
                 </div>
                 {/* GitHub link */}
                 <div className="relative group w-8 lg:w-12 h-8 lg:h-12 flex items-center justify-center hover:cursor-pointer">
-                    <Link href={githubURL ?? 'https://github.com/4HMartin'} target="_blank" className="z-10">
+                    <Link href={githubURL ?? 'https://github.com/4HMartin'} target="_blank" className="z-10" aria-label="GitHub">
                         <GitHubIcon className="w-3 lg:w-5 h-3 lg:h-5 text-secondary dark:text-gray-300 transition-all duration-150 group-hover:text-primary dark:group-hover:text-violet-500" />
                     </Link>
                     <CornerIcons />

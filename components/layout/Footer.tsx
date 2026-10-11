@@ -51,21 +51,21 @@ export default function Footer() {
                 <article className="flex items-center gap-4">
                     {/* LINKEDIN */}
                     <div className="relative group w-8 xs:w-10 lg:w-12 h-8 xs:h-10 lg:h-12 place-self-end md:place-self-auto flex items-center justify-center hover:cursor-pointer 2xl:mr-2">
-                        <Link href={LINKEDIN_URL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'} target="_blank" className="z-10">
+                        <Link href={LINKEDIN_URL ?? 'https://www.linkedin.com/in/heber-martin-rodriguez/'} target="_blank" className="z-10" aria-label="LinkedIn">
                             <LinkedInIcon className="w-3 xs:w-4 lg:w-5 h-3 xs:h-4 lg:h-5 text-gray-400 transition-all duration-150 group-hover:text-violet-500" />
                         </Link>
                         <CornerIcons />
                     </div>
                     {/* GITHUB */}
                     <div className="relative group w-8 xs:w-10 lg:w-12 h-8 xs:h-10 lg:h-12 flex items-center justify-center hover:cursor-pointer">
-                        <Link href={GITHUB_URL ?? 'https://github.com/4HMartin'} target="_blank" className="z-10">
+                        <Link href={GITHUB_URL ?? 'https://github.com/4HMartin'} target="_blank" className="z-10" aria-label="Github">
                             <GitHubIcon className="w-3 xs:w-4 lg:w-5 h-3 xs:h-4 lg:h-5 text-gray-400 transition-all duration-150 group-hover:text-violet-500" />
                         </Link>
                         <CornerIcons />
                     </div>
                     {/* EMAIL */}
                     <div className="relative group w-8 xs:w-10 lg:w-12 h-8 xs:h-10 lg:h-12 flex items-center justify-center hover:cursor-pointer">
-                        <Link href={`mailto:${DEV_EMAIL}`}>
+                        <Link href={`mailto:${DEV_EMAIL}`} aria-label="Email">
                             <Mail className="w-3 xs:w-4 lg:w-5 h-3 xs:h-4 lg:h-5 text-gray-400 transition-all duration-150 group-hover:text-violet-500" />
                         </Link>
                         <CornerIcons />

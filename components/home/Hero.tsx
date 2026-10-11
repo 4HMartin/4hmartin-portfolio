@@ -366,6 +366,7 @@ export default function Hero() {
                         <Image
                             src={ProfileBadge}
                             alt="Heber Martin Rodriguez profile photo"
+                            fetchPriority="high"
                             priority={true}
                             quality={100}
                             className="relative z-20"
@@ -379,6 +380,7 @@ export default function Hero() {
                         >
                             <Image
                                 src={M85mm}
+                                fetchPriority="high"
                                 alt="Heber Martin Rodriguez card measurement"
                                 fill
                                 sizes="41px"
@@ -393,6 +395,7 @@ export default function Hero() {
                         >
                             <Image
                                 src={M54mm}
+                                fetchPriority="high"
                                 alt="Heber Martin Rodriguez card measurement"
                                 fill
                                 sizes="228px"
@@ -407,6 +410,7 @@ export default function Hero() {
                         >
                             <Image
                                 src={M5mm}
+                                fetchPriority="high"
                                 alt="Heber Martin Rodriguez card measurement"
                                 fill
                                 sizes="88px"
