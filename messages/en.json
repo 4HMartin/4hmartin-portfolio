@@ -135,6 +135,7 @@
     "build_description_paragraph": "Open to freelance projects, full-time positions, and interesting collaborations. Send a message and I'll get back to you within 24 hours."
   },
   "footer": {
+    "navigation_label": "navigation",
     "home_label": "home",
     "about_label": "about",
     "projects_label": "projects",
