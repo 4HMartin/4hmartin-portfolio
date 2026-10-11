@@ -14,7 +14,7 @@ export const portfolio: Project = {
     },
     publicUrl: "https://4hmartin.com/",
     // publicPageSpeedReport: "",
-    publicSitemap: "https://4hmartin.com/sitemap.xml",
+    // publicSitemap: "https://4hmartin.com/sitemap.xml",
     publicFigmaWireframe: "https://www.figma.com/design/raAV09phqeYuicLVIDI9gg/Portfolio-mockup---4hmartin.com?node-id=0-1&t=I6Uyi3TCVweKqcHZ-1",
     publicRepo: "https://github.com/4HMartin/4hmartin-portfolio",
     mainGif: "/images/projects/portfolio/portfolio_project_v1_loop.webp",
