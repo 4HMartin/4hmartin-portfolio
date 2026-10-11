@@ -79,7 +79,7 @@ export default function Footer() {
                 {/* NAVIGATION */}
                 <article className="flex flex-col items-start gap-4 2xl:pl-4 2xl:pt-8 2xl:border-r 2xl:border-dashed 2xl:border-gray-800">
                     <h5 className="uppercase text-xs text-gray-400 font-bold tracking-widest">
-                        {t('navigation')}
+                        {t('navigation_label')}
                     </h5>
                     <ScrollLink to="hero" offset={-56} aria-label="4HMartin Portfolio - Home" className="uppercase text-xs text-gray-500 tracking-widest cursor-pointer transition-colors duration-150 hover:text-violet-500">
                         {t('home_label')}
