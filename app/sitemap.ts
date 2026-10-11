@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next";
 
-const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://4hmartin.com';
 
 // Update these dates manually whenever a page's content changes.
 // Format: YYYY-MM-DD — Google uses this to decide recrawl priority.
