@@ -27,9 +27,9 @@ export const portfolio: Project = {
             "This is the first of many versions of my online presence.",
         ],
         es: [
-            "En el continuo desarrollo de mi presencia digital, orgulloso de presentar un portfolio diseñado a mi gusto personal donde se recopilan mis experiencias en el sector y projectos con impacto real en los emprendimientos de las personas que depositaron su confianza en mis habilidades.",
-            "Esta plataforma tiene como objetivo crear un puente de conexión entre mis servicios como desarrollador full-stack y personas o entidades con bacantes en projectos freelace, puestos a jornada completa o colaboraciones interesantes.",
-            "Invito a todos los visitantes de este sitio web que se mantengan actualizados con el contenido puesto que irá creciendo junto a mi carrera como desarrollador.",
+            "En el continuo desarrollo de mi presencia digital, orgulloso de presentar un portfolio diseñado a mi gusto personal donde se recopilan mis experiencias en el sector y proyectos con impacto real en los emprendimientos de las personas que depositaron su confianza en mis habilidades.",
+            "Esta plataforma tiene como objetivo crear un puente de conexión entre mis servicios como desarrollador full-stack y personas o entidades con bacantes en projectos freelance, puestos a jornada completa o colaboraciones interesantes.",
+            "Invito a todos los visitantes de este sitio web que se mantengan actualizados con el contenido, puesto que irá creciendo junto a mi carrera como desarrollador.",
             "Esta es la primera de muchas versiones de mi huella en internet."
         ],
     },
