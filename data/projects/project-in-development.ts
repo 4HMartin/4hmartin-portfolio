@@ -12,13 +12,13 @@ export const projectInDevelopment: Project = {
         en: "Coming soon to Sundew Court, The Happy Quail. Bar and restaurant ran by Emma and Heber of Rodriguez Events.",
         es: "Próximamente en Sundew Court: 'The Happy Quail', un bar y restaurante dirigido por Emma y Heber, de 'Rodriguez Events'.",
     },
-    publicUrl: "https://4hmartin.com/",
+    publicUrl: "https://thehappyquail.co.uk",
     // publicPageSpeedReport: "",
     // publicSitemap: "",
     // publicFigmaWireframe: "",
     // publicRepo: "https://github.com/4HMartin/",
-    mainGif: "/images/projects/project-in-development/under_construction.webp",
-    mainGifSection: "Dev Environment",
+    mainGif: "/images/projects/project-in-development/screenshot_home_coming_soon.webp",
+    mainGifSection: "Home",
     overview: {
         en: [
             "Landing page for 'The Happy Quail Restaurant'.",
@@ -115,6 +115,13 @@ export const projectInDevelopment: Project = {
         //     imageFormat: "tablet",
         // },
         screenshots: [
+            {
+                src: "/images/projects/project-in-development/screenshot_home_coming_soon.webp",
+                alt: "Project under construction - 4hmartin",
+                title: "Project under construction",
+                imageFit: "contain",
+                imageFormat: "desktop",
+            },
             {
                 src: "/images/projects/project-in-development/under_construction.webp",
                 alt: "Project under construction - 4hmartin",
